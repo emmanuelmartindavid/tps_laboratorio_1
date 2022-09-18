@@ -78,12 +78,7 @@ int main(void) {
 
 				loadPlayer(&goalkeeperCounter, &defenderCounter,
 						&midfielderCounter, &strikerCounter);
-//
-//				if (goalkeeperCounter < 3 || defenderCounter < 5
-//						|| midfielderCounter <5 || strikerCounter < 5) {
-//					flagPlayers=1;
-//
-//				}
+
 
 				loadLeague(&afcCounter, &cafCounter, &concacafCounter,
 						&conmebolCounter, &uefaCounter, &ofcCounter);
@@ -156,3 +151,10 @@ int main(void) {
 
 	return EXIT_SUCCESS;
 }
+
+//
+//				if (goalkeeperCounter < 3 || defenderCounter < 5
+//						|| midfielderCounter <5 || strikerCounter < 5) {
+//					flagPlayers=1;
+//
+//				}
