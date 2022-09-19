@@ -2,15 +2,18 @@
 #define CARGADEDATOS_CALCULOS_H_
 
 
-void loadCost(float* pPriceLodgin, float* pPriceFood, float* pPriceTransport);
-void loadPlayer(int *pGoalkeeperCounter, int *pDefenderCounter,
-		int *pMidfieldCounter, int *pStrikerCounter);
-void loadLeague(int *pAfcCounter, int *pCafCounter, int *pConcacafCounter,
-		int *pConmebolCounter, int *pUefaCounter, int *pOfcCounter);
-void calculates(int* pAfcCounter, int* pCafCounter, int* pConcacafCounter,
-		int* pConmebolCounter, int* pUefaCounter, int* pOfcCounter, int* pTotalCounter,
-		float* pPriceLodgin, float* pPriceFood, float* pPriceTransport, float* pAverageAfc,
-		float* pAverageCaf, float* pAverageConcacaf, float* pAverageConmebol,
-		float* pAverageUefa, float* pAverageOfc, float* pTotalPrice, float* pIncrementPrice, float* pIncrementTotalPrice);
+int loadCost(float* pPriceLodgin, float* pPriceFood, float* pPriceTransport);
+int loadShirt (int pShirt);
+int loadPlayer(int* pGoalkeeperCounter, int* pDefenderCounter,
+		int* pMidfielderCounter, int* pStrikerCounter);
+int loadConfederation(int* pAfcCounter, int* pCafCounter, int* pConcacafCounter,
+		int* pConmebolCounter, int* pUefaCounter, int* pOfcCounter);
+int calculateAverage_Price(int AfcCounter, int CafCounter,
+		int ConcacafCounter, int ConmebolCounter, int UefaCounter,
+		int OfcCounter, int TotalCounter, float PriceLodgin,
+		float PriceFood, float PriceTransport, float *pAverageAfc,
+		float *pAverageCaf, float *pAverageConcacaf, float *pAverageConmebol,
+		float *pAverageUefa, float *pAverageOfc, float *pTotalPrice,
+		float *pIncrementPrice, float *pIncrementTotalPrice);
 
 #endif /* CARGADEDATOS_CALCULOS_H_ */

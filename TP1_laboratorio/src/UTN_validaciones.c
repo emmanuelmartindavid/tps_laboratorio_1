@@ -5,7 +5,7 @@
 #define LEN 1000000
 
 int getString(char *string, int len) {
-	int retorno = -1;
+	int ret = -1;
 	char bufferString[LEN];
 
 	if (string != NULL && string > 0) {
@@ -18,11 +18,11 @@ int getString(char *string, int len) {
 			}
 			if (strnlen(bufferString, sizeof(bufferString)) <= len) {
 				strncpy(string, bufferString, len);
-				retorno = 0;
+				ret = 0;
 			}
 		}
 	}
-	return retorno;
+	return ret;
 }
 
 int getInt(int *pResult) {
@@ -77,12 +77,12 @@ int utn_getNumber(int *pResult, char *message, char *errorMessage, int minimus,
 }
 
 int getFloat(float *pResult) {
-	int ret = 0;
+	int ret = -1;
 	char option[LEN];
 	if (pResult != NULL) {
 		if (getString(option, sizeof(option)) == 0 && isFloat(option)) {
 			*pResult = atof(option);
-			ret = 1;
+			ret = 0;
 		}
 	}
 	return ret;
@@ -90,7 +90,7 @@ int getFloat(float *pResult) {
 
 int isFloat(char *string) {
 	int i = 0;
-	int ret = 1;
+	int ret = -1;
 	int pointCounter = 0;
 
 	if (string != NULL && strlen(string) > 0) {

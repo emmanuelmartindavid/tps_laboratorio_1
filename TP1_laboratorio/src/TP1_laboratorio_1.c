@@ -16,7 +16,7 @@ int main(void) {
 	int options;
 	int minimum = 1;
 	int maximus = 5;
-	int retry = 3;
+	int retry = 5;
 	int goalkeeperCounter = 0;
 	int defenderCounter = 0;
 	int midfielderCounter = 0;
@@ -24,8 +24,6 @@ int main(void) {
 	float priceFood = 0;
 	float priceLodgin = 0;
 	float priceTransport = 0;
-	int flagCost = 0;
-	int flagLoad = 0;
 	int flagCalculations = 0;
 	int afcCounter = 0;
 	int cafCounter = 0;
@@ -43,79 +41,85 @@ int main(void) {
 	float incrementPrice = 0;
 	float incrementTotalPrice = 0;
 	int totalCounter = 0;
-
+	int shirt = 0;
 
 	do {
+		printf("\t\t MENU PRINCIPAL\n"
+				"1. Carga de los costos de Mantenimiento\n"
+				" Costo de Hospedaje -> $%.2f\n"
+				" Costo de Comida -> $%.2f\n"
+				" Costo de Transoporte -> $%.2f\n"
+				"2. Carga de Jugadores\n"
+				" Arqueros -> %d\n"
+				" Defensores -> %d\n"
+				" Mediocampistas -> %d\n"
+				" Delanteros -> %d\n"
+				"3. Realizar todos los calculos\n"
+				"4. Informar resultados\n"
+				"5. Salir", priceLodgin, priceFood, priceTransport,
+				goalkeeperCounter, defenderCounter, midfielderCounter,
+				strikerCounter);
 
-			printf("\t\t MENU PRINCIPAL\n"
-					"1. Carga de los costos de Mantenimiento\n"
-					" Costo de Hospedaje -> $%.2f\n"
-					" Costo de Comida -> $%.2f\n"
-					" Costo de Transoporte -> $%.2f\n"
-					"2. Carga de Jugadores\n"
-					" Arqueros -> %d\n"
-					" Defensores -> %d\n"
-					" Mediocampistas -> %d\n"
-					" Delanteros -> %d\n"
-					"3. Realizar todos los calculos\n"
-					"4. Informar resultados\n"
-					"5. Salir", priceLodgin, priceFood, priceTransport,
-					goalkeeperCounter, defenderCounter, midfielderCounter,
-					strikerCounter);
-
-
-		if (utn_getNumber(&options, "\n Ingrese opcion \n",
-				"\n Opcion incorrecta\n ", minimum, maximus, retry) == 0)
+		if (utn_getNumber(&options, "\nIngrese opcion\n",
+				"\nOpcion incorrecta\n ", minimum, maximus, retry) == 0) {
 
 			switch (options) {
 
 			case 1:
-				flagCost = 1;
-				loadCost(&priceLodgin, &priceFood, &priceTransport);
+				if (loadCost(&priceLodgin, &priceFood, &priceTransport) == 0) {
+
+					printf("\n\nSe cargó correctamente\n\n");
+				}
+
 				break;
 			case 2:
-				flagLoad = 1;
+				if (loadShirt(shirt) == 0
+						&& loadPlayer(&goalkeeperCounter, &defenderCounter,
+								&midfielderCounter, &strikerCounter) == 0
+						&& loadConfederation(&afcCounter, &cafCounter,
+								&concacafCounter, &conmebolCounter,
+								&uefaCounter, &ofcCounter) == 0) {
 
-				loadPlayer(&goalkeeperCounter, &defenderCounter,
-						&midfielderCounter, &strikerCounter);
+					printf("\n\nSe realizo la carga de su jugador\n\n");
 
+				} else {
 
-				loadLeague(&afcCounter, &cafCounter, &concacafCounter,
-						&conmebolCounter, &uefaCounter, &ofcCounter);
+					printf("\nAlgo no se cargo correctamente\n");
+				}
 
 				printf(" AFC CONTADOR %d\n", afcCounter);
+				printf(" AFC CONTADOR %d\n", cafCounter);
+				printf(" AFC CONTADOR %d\n", concacafCounter);
+				printf(" AFC CONTADOR %d\n", conmebolCounter);
+				printf(" AFC CONTADOR %d\n", uefaCounter);
+				printf(" AFC CONTADOR %d\n", ofcCounter);
 
 				break;
 			case 3:
 				flagCalculations = 1;
-				if (flagCost == 1 && flagLoad == 1 && priceLodgin != 0
-						&& priceFood != 0 && priceTransport != 0
-						&& goalkeeperCounter == 2 && defenderCounter == 4
-						&& midfielderCounter == 4 && strikerCounter == 4) {
+				if (priceLodgin != 0 && priceFood != 0 && priceTransport != 0
+						&& goalkeeperCounter == 2 && defenderCounter == 2
+						&& midfielderCounter == 2 && strikerCounter == 2
+						&& calculateAverage_Price(afcCounter, cafCounter,
+								concacafCounter, conmebolCounter, uefaCounter,
+								ofcCounter, totalCounter, priceLodgin,
+								priceFood, priceTransport, &averageAfc,
+								&averageCaf, &averageConcacaf, &averageConmebol,
+								&averageUefa, &averageOfc, &totalPrice,
+								&incrementPrice, &incrementTotalPrice) == 0) {
 
-					calculates(&afcCounter, &cafCounter, &concacafCounter,
-							&conmebolCounter, &uefaCounter, &ofcCounter,
-							&totalCounter, &priceLodgin, &priceFood,
-							&priceTransport, &averageAfc, &averageCaf,
-							&averageConcacaf, &averageConmebol, &averageUefa,
-							&averageOfc, &totalPrice, &incrementPrice,
-							&incrementTotalPrice);
-
-					printf(
-							"\nSe realizaron todos los resultados correctamente.\n\n");
+					printf("\n\nSe realizaron todos los resultados correctamente.\n\n");
 
 				} else {
-					printf(
-							"\nNo puede ingresar a esta opcion sin cargar los datos (su equipo, sus costos) y todos los costos.\n\n");
+					printf("\n\nNo puede ingresar a esta opcion sin cargar los datos (SU EQUIPO COMPLETO, TODOS SUS COSTOS).\n\n");
 				}
 				break;
 			case 4:
 
-				if (flagCost == 1 && flagLoad == 1 && flagCalculations == 1
-						&& priceLodgin != 0 && priceFood != 0
+				if (flagCalculations == 1 && priceLodgin != 0 && priceFood != 0
 						&& priceTransport != 0 && goalkeeperCounter == 2
-						&& defenderCounter == 4 && midfielderCounter == 4
-						&& strikerCounter == 4) {
+						&& defenderCounter == 2 && midfielderCounter == 2
+						&& strikerCounter == 2) {
 
 					printf("\t\t INFORMAR TODOS LOS RESULTADOS\n"
 							"Promedio AFC %.2f\n"
@@ -128,33 +132,28 @@ int main(void) {
 							averageOfc);
 
 					if (incrementTotalPrice > 0) {
-						printf(
-								"El costo de mantenimiento era $%.2f y recibio un aumento de $%.2f. Su nuevo valor es de $%.2f\n\n",
+						printf("El costo de mantenimiento era $%.2f y recibio un aumento de $%.2f. Su nuevo valor es de $%.2f\n\n",
 								totalPrice, incrementPrice,
 								incrementTotalPrice);
 					} else {
-						printf("Costo de mantenimiento es $%.2f\n\n", totalPrice);
+						printf("Costo de mantenimiento es $%.2f\n\n",
+								totalPrice);
 					}
 
 				} else {
-					printf(
-							"\nNo puede ingresar a esta opcion sin cargar  TODOS los datos (SU EQUIPO, SUS COSTOS) y realizar los calculos\n\n");
+					printf("\n\nNo puede ingresar a esta opcion sin cargar TODOS LOS DATOS Y REALIZAR LOS CALCULOS\n\n");
 				}
 				break;
 			case 5:
-				printf("ADIOS");
-				fflush(stdin);
+				printf("AD10S");
 				break;
 			}
+		} else {
+
+			printf("\nAlgo salió mal. VOLVAMOS A INTERTARLO\n");
+		}
 
 	} while (options != 5);
 
 	return EXIT_SUCCESS;
 }
-
-//
-//				if (goalkeeperCounter < 3 || defenderCounter < 5
-//						|| midfielderCounter <5 || strikerCounter < 5) {
-//					flagPlayers=1;
-//
-//				}
