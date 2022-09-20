@@ -29,7 +29,7 @@ int getInt(int *pResult) {
 	int ret = 0;
 	char option[LEN];
 	if (pResult != NULL) {
-		if (getString(option, sizeof(option)) == 0 && isNumeric(option)) {
+		if (getString(option, sizeof(option)) == 0 && isNumeric(option) == 1) {
 			*pResult = atoi(option);
 			ret = 1;
 		}
@@ -57,23 +57,26 @@ int utn_getNumber(int *pResult, char *message, char *errorMessage, int minimus,
 		int maximus, int retry) {
 	int ret;
 	int num = 0;
-	while (retry > 0) {
-		printf(message);
-		if (getInt(&num) == 1) {
-			if (num <= maximus && num >= minimus)
-				break;
+	if (pResult != NULL && message != NULL && errorMessage != NULL) {
+		while (retry > 0) {
+			printf(message);
+			if (getInt(&num) == 1) {
+				if (num <= maximus && num >= minimus)
+					break;
+			}
+			fflush(stdin);
+			retry--;
+			printf(errorMessage);
 		}
-		fflush(stdin);
-		retry--;
-		printf(errorMessage);
-	}
-	if (retry == 0) {
-		ret = -1;
-	} else {
-		ret = 0;
-		*pResult = num;
+		if (retry == 0) {
+			ret = -1;
+		} else {
+			ret = 0;
+			*pResult = num;
+		}
 	}
 	return ret;
+
 }
 
 int getFloat(float *pResult) {
@@ -82,7 +85,7 @@ int getFloat(float *pResult) {
 	if (pResult != NULL) {
 		if (getString(option, sizeof(option)) == 0 && isFloat(option)) {
 			*pResult = atof(option);
-			ret = 0;
+			ret = 1;
 		}
 	}
 	return ret;
@@ -112,6 +115,7 @@ int utn_getNumberFloat(float *pResult, char *message, char *errorMessage,
 		float minimus, float maximus, int retry) {
 	int ret;
 	float num = 0;
+	if (pResult != NULL && message != NULL && errorMessage != NULL) {
 	while (retry > 0) {
 		printf(message);
 		if (getFloat(&num) == 1) {
@@ -127,6 +131,7 @@ int utn_getNumberFloat(float *pResult, char *message, char *errorMessage,
 	} else {
 		ret = 0;
 		*pResult = num;
+	}
 	}
 	return ret;
 }

@@ -31,6 +31,7 @@ int main(void) {
 	int conmebolCounter = 0;
 	int uefaCounter = 0;
 	int ofcCounter = 0;
+	int confederationTotal=0;
 	float averageAfc;
 	float averageCaf;
 	float averageConcacaf;
@@ -40,7 +41,6 @@ int main(void) {
 	float totalPrice = 0;
 	float incrementPrice = 0;
 	float incrementTotalPrice = 0;
-	int totalCounter = 0;
 	int shirt = 0;
 
 	do {
@@ -66,52 +66,64 @@ int main(void) {
 			switch (options) {
 
 			case 1:
-				if (loadCost(&priceLodgin, &priceFood, &priceTransport) == 0) {
+				if (priceLodgin == 0 || priceFood == 0 || priceTransport == 0) {
+					if (loadCost(&priceLodgin, &priceFood, &priceTransport)
+							== 0) {
 
-					printf("\n\nSe cargó correctamente\n\n");
+						printf("\n\nSu costo se cargó correctamente\n\n");
+					}
+				} else {
+					printf("\n\nYa realizo la carga de costos\n\n");
 				}
 
 				break;
 			case 2:
-				if (loadShirt(shirt) == 0
-						&& loadPlayer(&goalkeeperCounter, &defenderCounter,
-								&midfielderCounter, &strikerCounter) == 0
-						&& loadConfederation(&afcCounter, &cafCounter,
-								&concacafCounter, &conmebolCounter,
-								&uefaCounter, &ofcCounter) == 0) {
 
-					printf("\n\nSe realizo la carga de su jugador\n\n");
+				if (goalkeeperCounter != 2 || defenderCounter != 2
+						|| midfielderCounter != 2 || strikerCounter != 2) {
+					if (loadNumberShirt(shirt) == 0
+							&& loadPlayer(&goalkeeperCounter, &defenderCounter,
+									&midfielderCounter, &strikerCounter) == 0
+							&& loadConfederation(&afcCounter, &cafCounter,
+									&concacafCounter, &conmebolCounter,
+									&uefaCounter, &ofcCounter) == 0) {
 
+						printf("\n\nSe realizo la carga de su jugador\n\n");
+
+					}
 				} else {
 
-					printf("\nAlgo no se cargo correctamente\n");
+					printf("\n\nYa realizo la carga de jugadores\n\n");
 				}
 
 				printf(" AFC CONTADOR %d\n", afcCounter);
-				printf(" AFC CONTADOR %d\n", cafCounter);
-				printf(" AFC CONTADOR %d\n", concacafCounter);
-				printf(" AFC CONTADOR %d\n", conmebolCounter);
-				printf(" AFC CONTADOR %d\n", uefaCounter);
-				printf(" AFC CONTADOR %d\n", ofcCounter);
+				printf(" CAF CONTADOR %d\n", cafCounter);
+				printf(" CONCACAF CONTADOR %d\n", concacafCounter);
+				printf(" CONMEBOL CONTADOR %d\n", conmebolCounter);
+				printf(" UEFA CONTADOR %d\n", uefaCounter);
+				printf(" OFC CONTADOR %d\n", ofcCounter);
 
 				break;
 			case 3:
-				flagCalculations = 1;
+
 				if (priceLodgin != 0 && priceFood != 0 && priceTransport != 0
 						&& goalkeeperCounter == 2 && defenderCounter == 2
 						&& midfielderCounter == 2 && strikerCounter == 2
 						&& calculateAverage_Price(afcCounter, cafCounter,
 								concacafCounter, conmebolCounter, uefaCounter,
-								ofcCounter, totalCounter, priceLodgin,
+								ofcCounter, confederationTotal, priceLodgin,
 								priceFood, priceTransport, &averageAfc,
 								&averageCaf, &averageConcacaf, &averageConmebol,
 								&averageUefa, &averageOfc, &totalPrice,
 								&incrementPrice, &incrementTotalPrice) == 0) {
 
-					printf("\n\nSe realizaron todos los resultados correctamente.\n\n");
+					printf(
+							"\t\tSE REALIZARON LOS CALCULOS CORRECTAMENTE.\n\n");
+					flagCalculations = 1;
 
 				} else {
-					printf("\n\nNo puede ingresar a esta opcion sin cargar los datos (SU EQUIPO COMPLETO, TODOS SUS COSTOS).\n\n");
+					printf(
+							"\t\tNo puede ingresar a esta opcion sin cargar los datos (SU EQUIPO COMPLETO, TODOS SUS COSTOS).\n\n");
 				}
 				break;
 			case 4:
@@ -132,7 +144,8 @@ int main(void) {
 							averageOfc);
 
 					if (incrementTotalPrice > 0) {
-						printf("El costo de mantenimiento era $%.2f y recibio un aumento de $%.2f. Su nuevo valor es de $%.2f\n\n",
+						printf(
+								"El costo de mantenimiento era $%.2f y recibio un aumento de $%.2f. Su nuevo valor es de $%.2f\n\n",
 								totalPrice, incrementPrice,
 								incrementTotalPrice);
 					} else {
@@ -141,7 +154,8 @@ int main(void) {
 					}
 
 				} else {
-					printf("\n\nNo puede ingresar a esta opcion sin cargar TODOS LOS DATOS Y REALIZAR LOS CALCULOS\n\n");
+					printf(
+							"\t\tNO PUEDE INGRESAR A ESTA OPCION SIN CARGAR TODOS LOS DATOS Y REALIZAR LOS CALCULOS\n\n");
 				}
 				break;
 			case 5:
@@ -150,7 +164,7 @@ int main(void) {
 			}
 		} else {
 
-			printf("\nAlgo salió mal. VOLVAMOS A INTERTARLO\n");
+			printf("\t\tAlgo salió mal. VOLVAMOS A INTERTARLO\n\n");
 		}
 
 	} while (options != 5);

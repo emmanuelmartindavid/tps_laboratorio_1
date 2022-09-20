@@ -7,7 +7,7 @@
 int loadCost(float *pPriceLodgin, float *pPriceFood, float *pPriceTransport) {
 
 	float minimumPrice = 1;
-	float maximusPrice = 100000000;
+	float maximusPrice = 100000000000;
 	int retryPrice = 3;
 	int option;
 	float priceFood = 0;
@@ -16,6 +16,7 @@ int loadCost(float *pPriceLodgin, float *pPriceFood, float *pPriceTransport) {
 	int ret = -1;
 
 	if (pPriceLodgin != NULL && pPriceFood != NULL && pPriceTransport != NULL) {
+		ret = 0;
 		if (utn_getNumber(&option, "\nIngrese costo a cargar:\n"
 				"1. Costo hospedaje.\n"
 				"2. Costo comida.\n"
@@ -73,15 +74,28 @@ int loadCost(float *pPriceLodgin, float *pPriceFood, float *pPriceTransport) {
 
 }
 
-int loadShirt(int Shirt) {
+int loadNumberShirt(int NumberShirt) {
 
 	int shirt = 0;
 	int ret = -1;
+	int i;
+	int j;
 	if (utn_getNumber(&shirt,
 			"\nIngrese numero de camiseta. Solo entre el 1 y el 99\n",
 			"\n Opcion incorrecta\n ", 1, 99, 5) == 0) {
 		ret = 0;
 	} else {
+//		for (i = 0; i < 100; i++)
+//			for (j = i + 1; j < 100; j++) {
+//				if ( ==) {
+//
+//					printf(
+//							"position[%d] = number %d = position[%d] = number %d\n",
+//							i, number[i], j, number[j]);
+//				}
+//			}
+//		}
+
 		printf("Solo entre 0 y 99");
 	}
 
@@ -208,11 +222,12 @@ int loadConfederation(int *pAfcCounter, int *pCafCounter, int *pConcacafCounter,
 }
 
 int calculateAverage_Price(int AfcCounter, int CafCounter, int ConcacafCounter,
-		int ConmebolCounter, int UefaCounter, int OfcCounter, int TotalCounter,
-		float PriceLodgin, float PriceFood, float PriceTransport,
-		float *pAverageAfc, float *pAverageCaf, float *pAverageConcacaf,
-		float *pAverageConmebol, float *pAverageUefa, float *pAverageOfc,
-		float *pTotalPrice, float *pIncrementPrice, float *pIncrementTotalPrice) {
+		int ConmebolCounter, int UefaCounter, int OfcCounter,
+		int confederationTotal, float PriceLodgin, float PriceFood,
+		float PriceTransport, float *pAverageAfc, float *pAverageCaf,
+		float *pAverageConcacaf, float *pAverageConmebol, float *pAverageUefa,
+		float *pAverageOfc, float *pTotalPrice, float *pIncrementPrice,
+		float *pIncrementTotalPrice) {
 
 	int ret = -1;
 
@@ -221,21 +236,22 @@ int calculateAverage_Price(int AfcCounter, int CafCounter, int ConcacafCounter,
 			&& pAverageOfc != NULL && pTotalPrice != NULL
 			&& pIncrementPrice != NULL && pIncrementTotalPrice != NULL) {
 
-		*pAverageAfc = (float) AfcCounter / 6;
-		*pAverageCaf = (float) CafCounter / 6;
-		*pAverageConcacaf = (float) ConcacafCounter / 6;
-		*pAverageConmebol = (float) ConmebolCounter / 6;
-		*pAverageUefa = (float) UefaCounter / 6;
-		*pAverageOfc = (float) OfcCounter / 6;
+		confederationTotal = AfcCounter + CafCounter + ConcacafCounter
+				+ ConmebolCounter + UefaCounter + OfcCounter;
+
+		*pAverageAfc = (float) AfcCounter / confederationTotal;
+		*pAverageCaf = (float) CafCounter / confederationTotal;
+		*pAverageConcacaf = (float) ConcacafCounter / confederationTotal;
+		*pAverageConmebol = (float) ConmebolCounter / confederationTotal;
+		*pAverageUefa = (float) UefaCounter / confederationTotal;
+		*pAverageOfc = (float) OfcCounter / confederationTotal;
 
 		*pTotalPrice = PriceFood + PriceLodgin + PriceTransport;
-		TotalCounter = AfcCounter + CafCounter + ConcacafCounter
-				+ ConmebolCounter + OfcCounter + UefaCounter;
 
-		if (pAverageUefa > pAverageAfc && pAverageUefa > pAverageCaf
-				&& pAverageUefa > pAverageConcacaf
-				&& pAverageUefa > pAverageConmebol
-				&& pAverageUefa > pAverageOfc) {
+		if (*pAverageUefa > *pAverageAfc && *pAverageUefa > *pAverageCaf
+				&& *pAverageUefa > *pAverageConcacaf
+				&& *pAverageUefa > *pAverageConmebol
+				&& *pAverageUefa > *pAverageOfc) {
 			*pIncrementPrice = *pTotalPrice * 0.35;
 			*pIncrementTotalPrice = *pTotalPrice + *pIncrementPrice;
 		}
