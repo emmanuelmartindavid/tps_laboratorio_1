@@ -8,7 +8,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "UTN_validaciones.h"
-#include "cargaDeDatos-calculos.h"
+#include "cargaDatos.h"
+#include "calculos.h"
 
 int main(void) {
 
@@ -31,7 +32,7 @@ int main(void) {
 	int conmebolCounter = 0;
 	int uefaCounter = 0;
 	int ofcCounter = 0;
-	int confederationTotal=0;
+	int confederationTotal = 0;
 	float averageAfc;
 	float averageCaf;
 	float averageConcacaf;
@@ -70,7 +71,7 @@ int main(void) {
 					if (loadCost(&priceLodgin, &priceFood, &priceTransport)
 							== 0) {
 
-						printf("\n\nSu costo se cargó correctamente\n\n");
+						printf("\n\nSu costo se cargo correctamente\n\n");
 					}
 				} else {
 					printf("\n\nYa realizo la carga de costos\n\n");
@@ -109,16 +110,18 @@ int main(void) {
 				if (priceLodgin != 0 && priceFood != 0 && priceTransport != 0
 						&& goalkeeperCounter == 2 && defenderCounter == 2
 						&& midfielderCounter == 2 && strikerCounter == 2
-						&& calculateAverage_Price(afcCounter, cafCounter,
+						&& calculateAverageConfederation(afcCounter, cafCounter,
 								concacafCounter, conmebolCounter, uefaCounter,
-								ofcCounter, confederationTotal, priceLodgin,
-								priceFood, priceTransport, &averageAfc,
+								ofcCounter, confederationTotal, &averageAfc,
 								&averageCaf, &averageConcacaf, &averageConmebol,
-								&averageUefa, &averageOfc, &totalPrice,
+								&averageUefa, &averageOfc) == 0
+						&& calculateMaintenance(priceLodgin, priceFood,
+								priceTransport, averageAfc, averageCaf,
+								averageConcacaf, averageConmebol,
+								averageUefa, averageOfc, &totalPrice,
 								&incrementPrice, &incrementTotalPrice) == 0) {
 
-					printf(
-							"\t\tSE REALIZARON LOS CALCULOS CORRECTAMENTE.\n\n");
+					printf("\t\tSE REALIZARON LOS CALCULOS CORRECTAMENTE.\n\n");
 					flagCalculations = 1;
 
 				} else {

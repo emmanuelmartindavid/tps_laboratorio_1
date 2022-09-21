@@ -8,10 +8,7 @@ int utn_getNumber(int *pResult, char *message, char *errorMessage, int minimus,
 		int maximus, int retry);
 int getFloat(float *pResult);
 int isFloat(char *string);
-int myGetsFloat(char *string, int len);
 int utn_getNumberFloat(float *pResult, char *message, char *errorMessage,
 		float minimus, float maximus, int retry);
-
-
 
 #endif /* UTN_VALIDACIONES_H_ */

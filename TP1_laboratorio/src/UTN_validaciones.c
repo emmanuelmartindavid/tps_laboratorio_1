@@ -116,22 +116,22 @@ int utn_getNumberFloat(float *pResult, char *message, char *errorMessage,
 	int ret;
 	float num = 0;
 	if (pResult != NULL && message != NULL && errorMessage != NULL) {
-	while (retry > 0) {
-		printf(message);
-		if (getFloat(&num) == 1) {
-			if (num <= maximus && num >= minimus)
-				break;
+		while (retry > 0) {
+			printf(message);
+			if (getFloat(&num) == 1) {
+				if (num <= maximus && num >= minimus)
+					break;
+			}
+			fflush(stdin);
+			retry--;
+			printf(errorMessage);
 		}
-		fflush(stdin);
-		retry--;
-		printf(errorMessage);
-	}
-	if (retry == 0) {
-		ret = -1;
-	} else {
-		ret = 0;
-		*pResult = num;
-	}
+		if (retry == 0) {
+			ret = -1;
+		} else {
+			ret = 0;
+			*pResult = num;
+		}
 	}
 	return ret;
 }

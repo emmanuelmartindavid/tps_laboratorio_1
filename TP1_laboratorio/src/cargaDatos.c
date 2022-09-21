@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "UTN_validaciones.h"
-#include "cargaDeDatos-calculos.h"
+#include "cargaDatos.h"
 
 int loadCost(float *pPriceLodgin, float *pPriceFood, float *pPriceTransport) {
 
@@ -78,13 +78,15 @@ int loadNumberShirt(int NumberShirt) {
 
 	int shirt = 0;
 	int ret = -1;
-	int i;
-	int j;
+	//int i;
+	//int j;
 	if (utn_getNumber(&shirt,
 			"\nIngrese numero de camiseta. Solo entre el 1 y el 99\n",
-			"\n Opcion incorrecta\n ", 1, 99, 5) == 0) {
+			"\nOpcion incorrecta\n", 1, 99, 5) == 0) {
 		ret = 0;
-	} else {
+
+	}
+
 //		for (i = 0; i < 100; i++)
 //			for (j = i + 1; j < 100; j++) {
 //				if ( ==) {
@@ -95,9 +97,6 @@ int loadNumberShirt(int NumberShirt) {
 //				}
 //			}
 //		}
-
-		printf("Solo entre 0 y 99");
-	}
 
 	return ret;
 
@@ -117,7 +116,7 @@ int loadPlayer(int *pGoalkeeperCounter, int *pDefenderCounter,
 				"1. Arquero\n"
 				"2. Defensor\n"
 				"3. Mediocampista\n"
-				"4. Delantero\n", "\nOpcion incorrecta\n ", minimum, maximus,
+				"4. Delantero\n", "\nOpcion incorrecta\n", minimum, maximus,
 				retry) == 0) {
 
 			switch (position) {
@@ -159,10 +158,9 @@ int loadPlayer(int *pGoalkeeperCounter, int *pDefenderCounter,
 				break;
 			}
 		} else {
-			printf("\nAlgo salió mal\n");
+			printf("\nREINTENTE POR FAVOR. SOLOS NUMEROS VALIDOS\n");
 		}
 	}
-
 	return ret;
 }
 
@@ -177,13 +175,13 @@ int loadConfederation(int *pAfcCounter, int *pCafCounter, int *pConcacafCounter,
 	if (pAfcCounter != NULL && pCafCounter != NULL && pConcacafCounter != NULL
 			&& pConmebolCounter != NULL && pUefaCounter != NULL
 			&& pOfcCounter != NULL) {
-		if (utn_getNumber(&league, "Ingresar su Confederacion: \n"
+		if (utn_getNumber(&league, "Ingresar su Confederacion:\n"
 				"1. AFC\n"
 				"2. CAF\n"
 				"3. CONCACAF\n"
 				"4. CONMEBOL\n"
 				"5. UEFA\n"
-				"6. OFC\n", "\nOpcion incorrecta\n ", minimum, maximus, retry)
+				"6. OFC\n", "\nOpcion incorrecta\n", minimum, maximus, retry)
 				== 0) {
 
 			switch (league) {
@@ -213,51 +211,8 @@ int loadConfederation(int *pAfcCounter, int *pCafCounter, int *pConcacafCounter,
 				break;
 			}
 		} else {
-			printf("\nAlgo salió mal\n");
+			printf("\nREINTENTE POR FAVOR. SOLOS NUMEROS VALIDOS\n");
 		}
-	} else {
-		printf("\nAlgo no se cargó correctamente\n");
 	}
 	return ret;
 }
-
-int calculateAverage_Price(int AfcCounter, int CafCounter, int ConcacafCounter,
-		int ConmebolCounter, int UefaCounter, int OfcCounter,
-		int confederationTotal, float PriceLodgin, float PriceFood,
-		float PriceTransport, float *pAverageAfc, float *pAverageCaf,
-		float *pAverageConcacaf, float *pAverageConmebol, float *pAverageUefa,
-		float *pAverageOfc, float *pTotalPrice, float *pIncrementPrice,
-		float *pIncrementTotalPrice) {
-
-	int ret = -1;
-
-	if (pAverageAfc != NULL && pAverageCaf != NULL && pAverageConcacaf != NULL
-			&& pAverageConmebol != NULL && pAverageUefa != NULL
-			&& pAverageOfc != NULL && pTotalPrice != NULL
-			&& pIncrementPrice != NULL && pIncrementTotalPrice != NULL) {
-
-		confederationTotal = AfcCounter + CafCounter + ConcacafCounter
-				+ ConmebolCounter + UefaCounter + OfcCounter;
-
-		*pAverageAfc = (float) AfcCounter / confederationTotal;
-		*pAverageCaf = (float) CafCounter / confederationTotal;
-		*pAverageConcacaf = (float) ConcacafCounter / confederationTotal;
-		*pAverageConmebol = (float) ConmebolCounter / confederationTotal;
-		*pAverageUefa = (float) UefaCounter / confederationTotal;
-		*pAverageOfc = (float) OfcCounter / confederationTotal;
-
-		*pTotalPrice = PriceFood + PriceLodgin + PriceTransport;
-
-		if (*pAverageUefa > *pAverageAfc && *pAverageUefa > *pAverageCaf
-				&& *pAverageUefa > *pAverageConcacaf
-				&& *pAverageUefa > *pAverageConmebol
-				&& *pAverageUefa > *pAverageOfc) {
-			*pIncrementPrice = *pTotalPrice * 0.35;
-			*pIncrementTotalPrice = *pTotalPrice + *pIncrementPrice;
-		}
-		ret = 0;
-	}
-
-	return ret;
-}
-
