@@ -1,9 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 #include "UTN_validaciones.h"
 #include "cargaDatos.h"
-
+/// @param pPriceLodgin
+/// @param pPriceFood
+/// @param pPriceTransport
+/// @return
 int loadCost(float *pPriceLodgin, float *pPriceFood, float *pPriceTransport) {
 
 	float minimumPrice = 1;
@@ -34,7 +36,7 @@ int loadCost(float *pPriceLodgin, float *pPriceFood, float *pPriceTransport) {
 					*pPriceLodgin = priceLodgin;
 					ret = 0;
 				} else {
-					printf("\n\nYa ingresó este costo\n\n");
+					printf("\t\tYa ingreso este costo\n\n");
 				}
 				break;
 			case 2:
@@ -47,7 +49,7 @@ int loadCost(float *pPriceLodgin, float *pPriceFood, float *pPriceTransport) {
 					*pPriceFood = priceFood;
 					ret = 0;
 				} else {
-					printf("\n\nYa ingresó este costo\n\n");
+					printf("\t\tYa ingreso este costo\n\n");
 				}
 
 				break;
@@ -61,47 +63,38 @@ int loadCost(float *pPriceLodgin, float *pPriceFood, float *pPriceTransport) {
 					*pPriceTransport = priceTransport;
 					ret = 0;
 				} else {
-					printf("\n\nYa ingresó este costo\n\n");
+					printf("\t\tYa ingreso este costo\n\n");
 				}
 				break;
 			}
 		} else {
-			printf("\n\nAlgo salió mal.\n\n");
+			printf("\t\tREINTENTE POR FAVOR. SOLO COSTOS VALIDOS\n\n");
 		}
 	}
 
 	return ret;
 
 }
-
+/// @param NumberShirt
+/// @return
 int loadNumberShirt(int NumberShirt) {
 
 	int shirt = 0;
 	int ret = -1;
-	//int i;
-	//int j;
+
 	if (utn_getNumber(&shirt,
 			"\nIngrese numero de camiseta. Solo entre el 1 y el 99\n",
 			"\nOpcion incorrecta\n", 1, 99, 5) == 0) {
 		ret = 0;
 
 	}
-
-//		for (i = 0; i < 100; i++)
-//			for (j = i + 1; j < 100; j++) {
-//				if ( ==) {
-//
-//					printf(
-//							"position[%d] = number %d = position[%d] = number %d\n",
-//							i, number[i], j, number[j]);
-//				}
-//			}
-//		}
-
 	return ret;
-
 }
-
+/// @param pGoalkeeperCounter
+/// @param pDefenderCounter
+/// @param pMidfielderCounter
+/// @param pStrikerCounter
+/// @return
 int loadPlayer(int *pGoalkeeperCounter, int *pDefenderCounter,
 		int *pMidfielderCounter, int *pStrikerCounter) {
 
@@ -126,44 +119,50 @@ int loadPlayer(int *pGoalkeeperCounter, int *pDefenderCounter,
 					(*pGoalkeeperCounter)++;
 					ret = 0;
 				} else {
-					printf("No puede haber mas de 2 arqueros\n");
+					printf("\t\tNo puede haber mas de 2 arqueros\n");
 
 				}
 				break;
 			case 2:
-				if (*pDefenderCounter < 2) {
+				if (*pDefenderCounter < 8) {
 					(*pDefenderCounter)++;
 					ret = 0;
 
 				} else {
-					printf("No puede haber mas de 8 defensores\n");
+					printf("\t\tNo puede haber mas de 8 defensores\n");
 
 				}
 				break;
 			case 3:
-				if (*pMidfielderCounter < 2) {
+				if (*pMidfielderCounter < 8) {
 					(*pMidfielderCounter)++;
 					ret = 0;
 				} else {
-					printf("No puede haber mas de 8 mediocampistas\n");
+					printf("\t\tNo puede haber mas de 8 mediocampistas\n");
 				}
 				break;
 			case 4:
-				if (*pStrikerCounter < 2) {
+				if (*pStrikerCounter < 4) {
 					(*pStrikerCounter)++;
 					ret = 0;
 				} else {
-					printf("No puede haber mas de 4 delanteros\n");
+					printf("\t\tNo puede haber mas de 4 delanteros\n");
 				}
 				break;
 			}
 		} else {
-			printf("\nREINTENTE POR FAVOR. SOLOS NUMEROS VALIDOS\n");
+			printf("\t\tREINTENTE POR FAVOR. SOLO NUMEROS VALIDOS\n");
 		}
 	}
 	return ret;
 }
-
+/// @param pAfcCounter
+/// @param pCafCounter
+/// @param pConcacafCounter
+/// @param pConmebolCounter
+/// @param pUefaCounter
+/// @param pOfcCounter
+/// @return
 int loadConfederation(int *pAfcCounter, int *pCafCounter, int *pConcacafCounter,
 		int *pConmebolCounter, int *pUefaCounter, int *pOfcCounter) {
 
@@ -211,7 +210,7 @@ int loadConfederation(int *pAfcCounter, int *pCafCounter, int *pConcacafCounter,
 				break;
 			}
 		} else {
-			printf("\nREINTENTE POR FAVOR. SOLOS NUMEROS VALIDOS\n");
+			printf("\t\tREINTENTE POR FAVOR. SOLO NUMEROS VALIDOS\n");
 		}
 	}
 	return ret;

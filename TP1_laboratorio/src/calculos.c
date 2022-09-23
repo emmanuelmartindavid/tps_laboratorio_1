@@ -1,7 +1,20 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "calculos.h"
-
+/// @param AfcCounter
+/// @param CafCounter
+/// @param ConcacafCounter
+/// @param ConmebolCounter
+/// @param UefaCounter
+/// @param OfcCounter
+/// @param confederationTotal
+/// @param pAverageAfc
+/// @param pAverageCaf
+/// @param pAverageConcacaf
+/// @param pAverageConmebol
+/// @param pAverageUefa
+/// @param pAverageOfc
+/// @return
 int calculateAverageConfederation(int AfcCounter, int CafCounter,
 		int ConcacafCounter, int ConmebolCounter, int UefaCounter,
 		int OfcCounter, int confederationTotal, float *pAverageAfc,
@@ -31,8 +44,8 @@ int calculateAverageConfederation(int AfcCounter, int CafCounter,
 
 int calculateMaintenance(float PriceLodgin, float PriceFood,
 		float PriceTransport, float pAverageAfc, float pAverageCaf,
-		float pAverageConcacaf, float pAverageConmebol, float pAverageUefa,
-		float pAverageOfc, float *pTotalPrice, float *pIncrementPrice,
+		float AverageConcacaf, float AverageConmebol, float AverageUefa,
+		float AverageOfc, float *pTotalPrice, float *pIncrementPrice,
 		float *pIncrementTotalPrice) {
 
 	int ret = -1;
@@ -42,10 +55,10 @@ int calculateMaintenance(float PriceLodgin, float PriceFood,
 
 		*pTotalPrice = PriceFood + PriceLodgin + PriceTransport;
 
-		if (pAverageUefa > pAverageAfc && pAverageUefa > pAverageCaf
-				&& pAverageUefa > pAverageConcacaf
-				&& pAverageUefa > pAverageConmebol
-				&& pAverageUefa > pAverageOfc) {
+		if (AverageUefa > pAverageAfc && AverageUefa > pAverageCaf
+				&& AverageUefa > AverageConcacaf
+				&& AverageUefa > AverageConmebol
+				&& AverageUefa > AverageOfc) {
 			*pIncrementPrice = *pTotalPrice * 0.35;
 			*pIncrementTotalPrice = *pTotalPrice + *pIncrementPrice;
 		}

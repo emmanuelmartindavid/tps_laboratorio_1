@@ -3,7 +3,11 @@
 #include <string.h>
 #include "UTN_validaciones.h"
 #define LEN 1000000
-
+/// @brief
+///
+/// @param string
+/// @param len
+/// @return
 int getString(char *string, int len) {
 	int ret = -1;
 	char bufferString[LEN];
@@ -24,27 +28,33 @@ int getString(char *string, int len) {
 	}
 	return ret;
 }
-
+/// @brief
+///
+/// @param pResult
+/// @return
 int getInt(int *pResult) {
-	int ret = 0;
+	int ret = -1;
 	char option[LEN];
 	if (pResult != NULL) {
-		if (getString(option, sizeof(option)) == 0 && isNumeric(option) == 1) {
+		if (getString(option, sizeof(option)) == 0 && isNumeric(option) == 0) {
 			*pResult = atoi(option);
-			ret = 1;
+			ret = 0;
 		}
 
 	}
 	return ret;
 }
-
+/// @brief
+///
+/// @param string
+/// @return
 int isNumeric(char *string) {
 	int i = 0;
-	int ret = 1;
+	int ret = 0;
 	if (string != NULL && strlen(string) > 0) {
 		while (string[i] != '\0') {
 			if (string[i] < '0' || string[i] > '9') {
-				ret = 0;
+				ret = -1;
 				break;
 			}
 			i++;
@@ -52,7 +62,15 @@ int isNumeric(char *string) {
 	}
 	return ret;
 }
-
+/// @brief
+///
+/// @param pResult
+/// @param message
+/// @param errorMessage
+/// @param minimus
+/// @param maximus
+/// @param retry
+/// @return
 int utn_getNumber(int *pResult, char *message, char *errorMessage, int minimus,
 		int maximus, int retry) {
 	int ret;
@@ -60,7 +78,7 @@ int utn_getNumber(int *pResult, char *message, char *errorMessage, int minimus,
 	if (pResult != NULL && message != NULL && errorMessage != NULL) {
 		while (retry > 0) {
 			printf(message);
-			if (getInt(&num) == 1) {
+			if (getInt(&num) == 0) {
 				if (num <= maximus && num >= minimus)
 					break;
 			}
@@ -78,22 +96,28 @@ int utn_getNumber(int *pResult, char *message, char *errorMessage, int minimus,
 	return ret;
 
 }
-
+/// @brief
+///
+/// @param pResult
+/// @return
 int getFloat(float *pResult) {
 	int ret = -1;
 	char option[LEN];
 	if (pResult != NULL) {
-		if (getString(option, sizeof(option)) == 0 && isFloat(option)) {
+		if (getString(option, sizeof(option)) == 0 && isFloat(option)==0) {
 			*pResult = atof(option);
-			ret = 1;
+			ret = 0;
 		}
 	}
 	return ret;
 }
-
+/// @brief
+///
+/// @param string
+/// @return
 int isFloat(char *string) {
 	int i = 0;
-	int ret = -1;
+	int ret = 0;
 	int pointCounter = 0;
 
 	if (string != NULL && strlen(string) > 0) {
@@ -102,7 +126,7 @@ int isFloat(char *string) {
 				if (string[i] == '.' && pointCounter == 0) {
 					pointCounter++;
 				} else {
-					ret = 0;
+					ret = -1;
 					break;
 				}
 			}
@@ -110,7 +134,15 @@ int isFloat(char *string) {
 	}
 	return ret;
 }
-
+/// @brief
+///
+/// @param pResult
+/// @param message
+/// @param errorMessage
+/// @param minimus
+/// @param maximus
+/// @param retry
+/// @return
 int utn_getNumberFloat(float *pResult, char *message, char *errorMessage,
 		float minimus, float maximus, int retry) {
 	int ret;
@@ -118,7 +150,7 @@ int utn_getNumberFloat(float *pResult, char *message, char *errorMessage,
 	if (pResult != NULL && message != NULL && errorMessage != NULL) {
 		while (retry > 0) {
 			printf(message);
-			if (getFloat(&num) == 1) {
+			if (getFloat(&num) == 0) {
 				if (num <= maximus && num >= minimus)
 					break;
 			}
