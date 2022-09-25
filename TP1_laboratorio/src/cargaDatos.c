@@ -2,11 +2,15 @@
 #include <stdlib.h>
 #include "UTN_validaciones.h"
 #include "cargaDatos.h"
-/// @param pPriceLodgin
-/// @param pPriceFood
-/// @param pPriceTransport
-/// @return
-int loadCost(float *pPriceLodgin, float *pPriceFood, float *pPriceTransport) {
+
+
+/// @brief loadCosts          Funcion para cargar los costos de Mantenimiento(Hospedaje, Comida, Transporte).
+///
+/// @param pPriceLodgin       Puntero precio de Hospedaje.
+/// @param pPriceFood         Puntero precio de Comida.
+/// @param pPriceTransport    Puntero precio de Transporte.
+/// @return                   Retorno, 0 en caso de haber funcionado correctamente. Retorno, -1 en caso contrario.
+int loadCosts(float *pPriceLodgin, float *pPriceFood, float *pPriceTransport) {
 
 	float minimumPrice = 1;
 	float maximusPrice = 100000000000;
@@ -16,6 +20,7 @@ int loadCost(float *pPriceLodgin, float *pPriceFood, float *pPriceTransport) {
 	float priceLodgin = 0;
 	float priceTransport = 0;
 	int ret = -1;
+	char newOptionCosts;
 
 	if (pPriceLodgin != NULL && pPriceFood != NULL && pPriceTransport != NULL) {
 		ret = 0;
@@ -35,37 +40,69 @@ int loadCost(float *pPriceLodgin, float *pPriceFood, float *pPriceTransport) {
 								maximusPrice, retryPrice) == 0) {
 					*pPriceLodgin = priceLodgin;
 					ret = 0;
-				} else {
-					printf("\t\tYa ingreso este costo\n\n");
-				}
-				break;
-			case 2:
+				} else if (*pPriceLodgin > 0) {
 
-				if (*pPriceFood == 0
-						&& utn_getNumberFloat(&priceFood,
+					printf("\t\tYa ingreso este costo.\n\n"
+							"\t\tTenga en cuenta. Al reingresar su costo de Hospedaje,\n"
+							"\t\treemplazara el costo previamente ingresado\n\n");
+
+					if (utn_getNumberFloat(&priceLodgin,
+							"Ingrese costo de hospedaje $\n",
+							"Ingrese precio valido\n", minimumPrice,
+							maximusPrice, retryPrice) == 0) {
+
+						*pPriceLodgin = priceLodgin;
+					}
+
+					break;
+					case 2:
+
+					if (*pPriceFood == 0
+							&& utn_getNumberFloat(&priceFood,
+									"Ingrese costo de comida $\n",
+									"Ingrese precio valido\n", minimumPrice,
+									maximusPrice, retryPrice) == 0) {
+						*pPriceFood = priceFood;
+						ret = 0;
+					} else if (*pPriceFood > 0) {
+
+						printf(
+								"\t\tYa ingreso este costo.\n\n"
+										"\t\tTenga en cuenta. Al reingresar su costo de COMIDA,\n"
+										"\t\treemplazara el costo previamente ingresado\n\n");
+						if (utn_getNumberFloat(&priceFood,
 								"Ingrese costo de comida $\n",
 								"Ingrese precio valido\n", minimumPrice,
 								maximusPrice, retryPrice) == 0) {
-					*pPriceFood = priceFood;
-					ret = 0;
-				} else {
-					printf("\t\tYa ingreso este costo\n\n");
-				}
+							*pPriceFood = priceFood;
+						}
+					}
 
-				break;
-			case 3:
+					break;
+					case 3:
 
-				if (*pPriceTransport == 0
-						&& utn_getNumberFloat(&priceTransport,
+					if (*pPriceTransport == 0
+							&& utn_getNumberFloat(&priceTransport,
+									"Ingrese costo de transporte $\n",
+									"Ingrese precio valido\n", minimumPrice,
+									maximusPrice, retryPrice) == 0) {
+						*pPriceTransport = priceTransport;
+						ret = 0;
+					} else if (*pPriceTransport > 0) {
+
+						printf(
+								"\t\tYa ingreso este costo.\n\n"
+										"\t\tTenga en cuenta. Al reingresar su costo de TRANSPORTE,\n"
+										"\t\treemplazara el costo previamente ingresado\n\n");
+						if (utn_getNumberFloat(&priceTransport,
 								"Ingrese costo de transporte $\n",
 								"Ingrese precio valido\n", minimumPrice,
 								maximusPrice, retryPrice) == 0) {
-					*pPriceTransport = priceTransport;
-					ret = 0;
-				} else {
-					printf("\t\tYa ingreso este costo\n\n");
+							*pPriceTransport = priceTransport;
+						}
+					}
+					break;
 				}
-				break;
 			}
 		} else {
 			printf("\t\tREINTENTE POR FAVOR. SOLO COSTOS VALIDOS\n\n");
@@ -75,14 +112,16 @@ int loadCost(float *pPriceLodgin, float *pPriceFood, float *pPriceTransport) {
 	return ret;
 
 }
-/// @param NumberShirt
-/// @return
-int loadNumberShirt(int NumberShirt) {
 
-	int shirt = 0;
+/// @brief loadShirtNumber    Funcion para cargar numero de camiseta de jugador.
+///
+/// @param NumberShirt        Parametro numero de camiseta de jugador.
+/// @return                   Retorno, 0 en caso de haber funcionado correctamente. Retorno, -1 en caso contrario.
+int loadShirtNumber(int numberShirt) {
+
 	int ret = -1;
 
-	if (utn_getNumber(&shirt,
+	if (utn_getNumber(&numberShirt,
 			"\nIngrese numero de camiseta. Solo entre el 1 y el 99\n",
 			"\nOpcion incorrecta\n", 1, 99, 5) == 0) {
 		ret = 0;
@@ -90,12 +129,15 @@ int loadNumberShirt(int NumberShirt) {
 	}
 	return ret;
 }
-/// @param pGoalkeeperCounter
-/// @param pDefenderCounter
-/// @param pMidfielderCounter
-/// @param pStrikerCounter
-/// @return
-int loadPlayer(int *pGoalkeeperCounter, int *pDefenderCounter,
+
+/// @brief loadPlayerPosition Funcion para cargar posicion de jugador.
+///
+/// @param pGoalkeeperCounter Puntero de Contador de Arquero.
+/// @param pDefenderCounter   Puntero de Contador de Defensor.
+/// @param pMidfielderCounter Puntero de Contador de Mediocampista.
+/// @param pStrikerCounter    Puntero de Contador de Delantero.
+/// @return                   Retorno, 0 en caso de haber funcionado correctamente. Retorno, -1 en caso contrario.
+int loadPlayerPosition(int *pGoalkeeperCounter, int *pDefenderCounter,
 		int *pMidfielderCounter, int *pStrikerCounter) {
 
 	int ret = -1;
@@ -156,15 +198,19 @@ int loadPlayer(int *pGoalkeeperCounter, int *pDefenderCounter,
 	}
 	return ret;
 }
-/// @param pAfcCounter
-/// @param pCafCounter
-/// @param pConcacafCounter
-/// @param pConmebolCounter
-/// @param pUefaCounter
-/// @param pOfcCounter
-/// @return
-int loadConfederation(int *pAfcCounter, int *pCafCounter, int *pConcacafCounter,
-		int *pConmebolCounter, int *pUefaCounter, int *pOfcCounter) {
+
+/// @brief loadPlayerConfederation Funcion para cargar Confederacion de jugador
+///
+/// @param pAfcCounter       Puntero de Contador AFC.
+/// @param pCafCounter       Puntero de Contador CAF.
+/// @param pConcacafCounter  Puntero de Contador CONCACAF.
+/// @param pConmebolCounter  Puntero de Contador CONMEBOL.
+/// @param pUefaCounter      Puntero de Contador UEFA.
+/// @param pOfcCounter       Puntero de Contador OFC.
+/// @return                  Retorno, 0 en caso de haber funcionado correctamente. Retorno, -1 en caso contrario.
+int loadPlayerConfederation(int *pAfcCounter, int *pCafCounter,
+		int *pConcacafCounter, int *pConmebolCounter, int *pUefaCounter,
+		int *pOfcCounter) {
 
 	int ret = -1;
 	int league = 0;

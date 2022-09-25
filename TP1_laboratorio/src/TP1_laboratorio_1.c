@@ -43,6 +43,7 @@ int main(void) {
 	float incrementPrice = 0;
 	float incrementTotalPrice = 0;
 	int shirt = 0;
+	int flagPlayerPosition = 0;
 
 	do {
 		printf("\t\t MENU PRINCIPAL\n"
@@ -67,13 +68,9 @@ int main(void) {
 			switch (options) {
 
 			case 1:
-				if (priceLodgin == 0 || priceFood == 0 || priceTransport == 0) {
-					if (loadCost(&priceLodgin, &priceFood, &priceTransport)
-							== 0) {
-						printf("\t\tSu costo se cargo correctamente\n\n");
-					}
-				} else {
-					printf("\t\tYa realizo la carga de costos\n\n");
+
+				if (loadCosts(&priceLodgin, &priceFood, &priceTransport) == 0) {
+					printf("\t\tSu costo se cargo correctamente\n\n");
 				}
 
 				break;
@@ -81,13 +78,15 @@ int main(void) {
 
 				if (goalkeeperCounter != 2 || defenderCounter != 8
 						|| midfielderCounter != 8 || strikerCounter != 4) {
-					if (loadNumberShirt(shirt) == 0
-							&& loadPlayer(&goalkeeperCounter, &defenderCounter,
-									&midfielderCounter, &strikerCounter) == 0
-							&& loadConfederation(&afcCounter, &cafCounter,
+					if (loadShirtNumber(shirt) == 0
+							&& loadPlayerPosition(&goalkeeperCounter,
+									&defenderCounter, &midfielderCounter,
+									&strikerCounter) == 0
+							&& loadPlayerConfederation(&afcCounter, &cafCounter,
 									&concacafCounter, &conmebolCounter,
 									&uefaCounter, &ofcCounter) == 0) {
 
+						flagPlayerPosition = 1;
 						printf("\t\tSe realizo la carga de su jugador\n\n");
 
 					}
@@ -95,38 +94,24 @@ int main(void) {
 
 					printf("\t\tYa realizo la carga de jugadores\n\n");
 				}
-
-				printf(" AFC CONTADOR %d\n", afcCounter);
-				printf(" CAF CONTADOR %d\n", cafCounter);
-				printf(" CONCACAF CONTADOR %d\n", concacafCounter);
-				printf(" CONMEBOL CONTADOR %d\n", conmebolCounter);
-				printf(" UEFA CONTADOR %d\n", uefaCounter);
-				printf(" OFC CONTADOR %d\n", ofcCounter);
-
 				break;
 			case 3:
-				if (goalkeeperCounter != 0 || defenderCounter != 0
-						|| midfielderCounter != 0 || strikerCounter != 0) {
-					if (priceLodgin != 0 && priceFood != 0
-							&& priceTransport != 0
-							&& calculateAverageConfederation(afcCounter,
-									cafCounter, concacafCounter,
-									conmebolCounter, uefaCounter, ofcCounter,
-									confederationTotal, &averageAfc,
-									&averageCaf, &averageConcacaf,
-									&averageConmebol, &averageUefa, &averageOfc)
-									== 0
-							&& calculateMaintenance(priceLodgin, priceFood,
-									priceTransport, averageAfc, averageCaf,
-									averageConcacaf, averageConmebol,
-									averageUefa, averageOfc, &totalPrice,
-									&incrementPrice, &incrementTotalPrice)
-									== 0) {
 
-						printf(
-								"\t\tSE REALIZARON LOS CALCULOS CORRECTAMENTE.\n\n");
-						flagCalculations = 1;
-					}
+				if (flagPlayerPosition == 1 && priceLodgin != 0
+						&& priceFood != 0 && priceTransport != 0
+						&& calculateAverageConfederation(afcCounter, cafCounter,
+								concacafCounter, conmebolCounter, uefaCounter,
+								ofcCounter, confederationTotal, &averageAfc,
+								&averageCaf, &averageConcacaf, &averageConmebol,
+								&averageUefa, &averageOfc) == 0
+						&& calculateMaintenance(priceLodgin, priceFood,
+								priceTransport, averageAfc, averageCaf,
+								averageConcacaf, averageConmebol, averageUefa,
+								averageOfc, &totalPrice, &incrementPrice,
+								&incrementTotalPrice) == 0) {
+
+					printf("\t\tSE REALIZARON LOS CALCULOS CORRECTAMENTE.\n\n");
+					flagCalculations = 1;
 				} else {
 					printf(
 							"\t\tNo puede ingresar a esta opcion sin cargar los datos (AL MENOS UN JUGADOR, TODOS SUS COSTOS).\n\n");
@@ -134,33 +119,30 @@ int main(void) {
 				break;
 			case 4:
 
-				if (goalkeeperCounter != 0 || defenderCounter != 0
-						|| midfielderCounter != 0 || strikerCounter != 0) {
-					if (flagCalculations == 1 && priceLodgin != 0
-							&& priceFood != 0 && priceTransport != 0) {
+				if (flagCalculations == 1 && priceLodgin != 0 && priceFood != 0
+						&& priceTransport != 0) {
 
-						printf("\t\t INFORMAR TODOS LOS RESULTADOS\n"
-								"Promedio AFC %.2f\n"
-								"Promedio CAF %.2f\n"
-								"Promedio CONCACAF %.2f\n"
-								"Promedio CONMEBOL %.2f\n"
-								"Promedio UEFA %.2f\n"
-								"Promedio OFC %.2f\n", averageAfc, averageCaf,
-								averageConcacaf, averageConmebol, averageUefa,
-								averageOfc);
+					printf("\t\t INFORMAR TODOS LOS RESULTADOS\n"
+							"Promedio AFC %.2f\n"
+							"Promedio CAF %.2f\n"
+							"Promedio CONCACAF %.2f\n"
+							"Promedio CONMEBOL %.2f\n"
+							"Promedio UEFA %.2f\n"
+							"Promedio OFC %.2f\n", averageAfc, averageCaf,
+							averageConcacaf, averageConmebol, averageUefa,
+							averageOfc);
 
-						if (averageUefa > averageAfc && averageUefa > averageCaf
-								&& averageUefa > averageConcacaf
-								&& averageUefa > averageConmebol
-								&& averageUefa > averageOfc) {
-							printf(
-									"El costo de mantenimiento era $%.2f y recibio un aumento de $%.2f. Su nuevo valor es de $%.2f\n\n",
-									totalPrice, incrementPrice,
-									incrementTotalPrice);
-						} else {
-							printf("Costo de mantenimiento es $%.2f\n\n",
-									totalPrice);
-						}
+					if (averageUefa > averageAfc && averageUefa > averageCaf
+							&& averageUefa > averageConcacaf
+							&& averageUefa > averageConmebol
+							&& averageUefa > averageOfc) {
+						printf(
+								"El costo de mantenimiento era $%.2f y recibio un aumento de $%.2f. Su nuevo valor es de $%.2f\n\n",
+								totalPrice, incrementPrice,
+								incrementTotalPrice);
+					} else {
+						printf("Costo de mantenimiento es $%.2f\n\n",
+								totalPrice);
 					}
 				} else {
 					printf(

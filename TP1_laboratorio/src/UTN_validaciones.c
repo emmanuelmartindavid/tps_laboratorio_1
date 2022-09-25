@@ -3,16 +3,17 @@
 #include <string.h>
 #include "UTN_validaciones.h"
 #define LEN 1000000
-/// @brief
+
+/// @brief get String      Funcion para pedir dato por consola, a traves de cadena de caracteres.
 ///
-/// @param string
-/// @param len
-/// @return
-int getString(char *string, int len) {
+/// @param pString         Puntero de cadena de caracteres.
+/// @param len	           Limite de cadena de caracteres.
+/// @return                Retorno, 0 en caso de haber funcionado correctamente. Retorno, -1 en caso contrario.
+int getString(char *pString, int len) {
 	int ret = -1;
 	char bufferString[LEN];
 
-	if (string != NULL && string > 0) {
+	if (pString != NULL && pString > 0) {
 		fflush(stdin);
 		if (fgets(bufferString, sizeof(bufferString), stdin) != NULL) {
 			if (bufferString[strnlen(bufferString, sizeof(bufferString)) - 1]
@@ -21,17 +22,18 @@ int getString(char *string, int len) {
 						'\0';
 			}
 			if (strnlen(bufferString, sizeof(bufferString)) <= len) {
-				strncpy(string, bufferString, len);
+				strncpy(pString, bufferString, len);
 				ret = 0;
 			}
 		}
 	}
 	return ret;
 }
-/// @brief
+
+/// @brief  getInt         Funcion verifica la cadena de caracteres ingresada, convirtiendola, si es valida, a numero entero.
 ///
-/// @param pResult
-/// @return
+/// @param pResult         Puntero numero entero de la conversion realizada con ATOI.
+/// @return                Retorno, 0 en caso de haber funcionado correctamente. Retorno, -1 en caso contrario.
 int getInt(int *pResult) {
 	int ret = -1;
 	char option[LEN];
@@ -44,16 +46,17 @@ int getInt(int *pResult) {
 	}
 	return ret;
 }
-/// @brief
+
+/// @brief isNumeric       Funcion valida si la cadena de caracteres esta dentro de los parametros esperados de un numero entero.
 ///
-/// @param string
-/// @return
-int isNumeric(char *string) {
+/// @param pString         Puntero de cadena de caracteres a verificar en funcion.
+/// @return                Retorno, 0 en caso de haber funcionado correctamente. Retorno, -1 en caso contrario.
+int isNumeric(char *pString) {
 	int i = 0;
 	int ret = 0;
-	if (string != NULL && strlen(string) > 0) {
-		while (string[i] != '\0') {
-			if (string[i] < '0' || string[i] > '9') {
+	if (pString != NULL && strlen(pString) > 0) {
+		while (pString[i] != '\0') {
+			if (pString[i] < '0' || pString[i] > '9') {
 				ret = -1;
 				break;
 			}
@@ -62,15 +65,16 @@ int isNumeric(char *string) {
 	}
 	return ret;
 }
-/// @brief
+
+/// @brief utn_getNumber   Función para pedir un número entero por consola.
 ///
-/// @param pResult
-/// @param message
-/// @param errorMessage
-/// @param minimus
-/// @param maximus
-/// @param retry
-/// @return
+/// @param pResult         Puntero a direccion de la variable ingresada en el caso de ser correcta.
+/// @param message		   Puntero a cadena de caracteres con mensaje a imprimir para pedirle al usuario ingresar un numero.
+/// @param errorMessage    Puntero a cadena de caracteres con mensaje de error mientras el dato no sea un numero.
+/// @param minimus		   Valor mínimo valido.
+/// @param maximus         Valor máximo valido.
+/// @param retry           Cantidad de intentos, en caso de ingresar un dato invalido.
+/// @return                Retorno, 0 en caso de haber funcionado correctamente. Retorno, -1 en caso contrario.
 int utn_getNumber(int *pResult, char *message, char *errorMessage, int minimus,
 		int maximus, int retry) {
 	int ret;
@@ -96,34 +100,36 @@ int utn_getNumber(int *pResult, char *message, char *errorMessage, int minimus,
 	return ret;
 
 }
-/// @brief
+
+/// @brief getFloat		   Funcion verifica la cadena de caracteres ingresada, convirtiendola, si es valida, a numero flotante.
 ///
-/// @param pResult
-/// @return
+/// @param pResult         Puntero numero entero de la conversion realizada con ATOF.
+/// @return				   Retorno, 0 en caso de haber funcionado correctamente. Retorno, -1 en caso contrario.
 int getFloat(float *pResult) {
 	int ret = -1;
 	char option[LEN];
 	if (pResult != NULL) {
-		if (getString(option, sizeof(option)) == 0 && isFloat(option)==0) {
+		if (getString(option, sizeof(option)) == 0 && isFloat(option) == 0) {
 			*pResult = atof(option);
 			ret = 0;
 		}
 	}
 	return ret;
 }
-/// @brief
+
+/// @brief isFloat         Funcion valida si la cadena de caracteres esta dentro de los parametros esperados de un numero flotante.
 ///
-/// @param string
-/// @return
-int isFloat(char *string) {
+/// @param pString         Puntero a cadena de caracteres.
+/// @return                Retorno, 0 en caso de haber funcionado correctamente. Retorno, -1 en caso contrario.
+int isFloat(char *pString) {
 	int i = 0;
 	int ret = 0;
 	int pointCounter = 0;
 
-	if (string != NULL && strlen(string) > 0) {
-		for (i = 0; string[i] != '\0'; i++) {
-			if (string[i] < '0' || string[i] > '9') {
-				if (string[i] == '.' && pointCounter == 0) {
+	if (pString != NULL && strlen(pString) > 0) {
+		for (i = 0; pString[i] != '\0'; i++) {
+			if (pString[i] < '0' || pString[i] > '9') {
+				if (pString[i] == '.' && pointCounter == 0) {
 					pointCounter++;
 				} else {
 					ret = -1;
@@ -134,15 +140,16 @@ int isFloat(char *string) {
 	}
 	return ret;
 }
-/// @brief
+
+/// @brief utn_getNumber   Float Función para pedir un número flotante  por consola
 ///
-/// @param pResult
-/// @param message
-/// @param errorMessage
-/// @param minimus
-/// @param maximus
-/// @param retry
-/// @return
+/// @param pResult         Puntero a direccion de la variable ingresada en el caso de ser correcta.
+/// @param message         Puntero a cadena de caracteres con mensaje a imprimir para pedirle al usuario ingresar un numero.
+/// @param errorMessage    Puntero a cadena de caracteres con mensaje de error mientras el dato no sea un numero.
+/// @param minimus 	       Valor mínimo valido.
+/// @param maximus         Valor máximo valido.
+/// @param retry           Cantidad de intentos, en caso de ingresar un dato invalido.
+/// @return                Retorno, 0 en caso de haber funcionado correctamente. Retorno, -1 en caso contrario.
 int utn_getNumberFloat(float *pResult, char *message, char *errorMessage,
 		float minimus, float maximus, int retry) {
 	int ret;
@@ -167,4 +174,5 @@ int utn_getNumberFloat(float *pResult, char *message, char *errorMessage,
 	}
 	return ret;
 }
+
 
