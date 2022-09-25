@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "UTN_validaciones.h"
-#define LEN 1000000
+
 
 /// @brief get String      Funcion para pedir dato por consola, a traves de cadena de caracteres.
 ///
@@ -11,7 +11,7 @@
 /// @return                Retorno, 0 en caso de haber funcionado correctamente. Retorno, -1 en caso contrario.
 int getString(char *pString, int len) {
 	int ret = -1;
-	char bufferString[LEN];
+	char bufferString[4096];
 
 	if (pString != NULL && pString > 0) {
 		fflush(stdin);
@@ -36,7 +36,7 @@ int getString(char *pString, int len) {
 /// @return                Retorno, 0 en caso de haber funcionado correctamente. Retorno, -1 en caso contrario.
 int getInt(int *pResult) {
 	int ret = -1;
-	char option[LEN];
+	char option[4096];
 	if (pResult != NULL) {
 		if (getString(option, sizeof(option)) == 0 && isNumeric(option) == 0) {
 			*pResult = atoi(option);
@@ -107,7 +107,7 @@ int utn_getNumber(int *pResult, char *message, char *errorMessage, int minimus,
 /// @return				   Retorno, 0 en caso de haber funcionado correctamente. Retorno, -1 en caso contrario.
 int getFloat(float *pResult) {
 	int ret = -1;
-	char option[LEN];
+	char option[4096];
 	if (pResult != NULL) {
 		if (getString(option, sizeof(option)) == 0 && isFloat(option) == 0) {
 			*pResult = atof(option);
@@ -174,5 +174,3 @@ int utn_getNumberFloat(float *pResult, char *message, char *errorMessage,
 	}
 	return ret;
 }
-
-

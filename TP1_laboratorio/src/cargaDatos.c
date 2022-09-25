@@ -3,7 +3,6 @@
 #include "UTN_validaciones.h"
 #include "cargaDatos.h"
 
-
 /// @brief loadCosts          Funcion para cargar los costos de Mantenimiento(Hospedaje, Comida, Transporte).
 ///
 /// @param pPriceLodgin       Puntero precio de Hospedaje.
@@ -20,7 +19,7 @@ int loadCosts(float *pPriceLodgin, float *pPriceFood, float *pPriceTransport) {
 	float priceLodgin = 0;
 	float priceTransport = 0;
 	int ret = -1;
-	char newOptionCosts;
+
 
 	if (pPriceLodgin != NULL && pPriceFood != NULL && pPriceTransport != NULL) {
 		ret = 0;
@@ -43,15 +42,15 @@ int loadCosts(float *pPriceLodgin, float *pPriceFood, float *pPriceTransport) {
 				} else if (*pPriceLodgin > 0) {
 
 					printf("\t\tYa ingreso este costo.\n\n"
-							"\t\tTenga en cuenta. Al reingresar su costo de Hospedaje,\n"
-							"\t\treemplazara el costo previamente ingresado\n\n");
-
+						   "\t\tTenga en cuenta. Al reingresar su costo de Hospedaje,\n"
+						   "\t\treemplazara el costo previamente ingresado\n\n");
 					if (utn_getNumberFloat(&priceLodgin,
 							"Ingrese costo de hospedaje $\n",
 							"Ingrese precio valido\n", minimumPrice,
 							maximusPrice, retryPrice) == 0) {
 
 						*pPriceLodgin = priceLodgin;
+
 					}
 
 					break;
@@ -66,10 +65,10 @@ int loadCosts(float *pPriceLodgin, float *pPriceFood, float *pPriceTransport) {
 						ret = 0;
 					} else if (*pPriceFood > 0) {
 
-						printf(
-								"\t\tYa ingreso este costo.\n\n"
-										"\t\tTenga en cuenta. Al reingresar su costo de COMIDA,\n"
-										"\t\treemplazara el costo previamente ingresado\n\n");
+						printf("\t\tYa ingreso este costo.\n\n"
+								"\t\tTenga en cuenta. Al reingresar su costo de COMIDA,\n"
+								"\t\treemplazara el costo previamente ingresado\n\n");
+
 						if (utn_getNumberFloat(&priceFood,
 								"Ingrese costo de comida $\n",
 								"Ingrese precio valido\n", minimumPrice,
@@ -77,7 +76,6 @@ int loadCosts(float *pPriceLodgin, float *pPriceFood, float *pPriceTransport) {
 							*pPriceFood = priceFood;
 						}
 					}
-
 					break;
 					case 3:
 
@@ -90,10 +88,9 @@ int loadCosts(float *pPriceLodgin, float *pPriceFood, float *pPriceTransport) {
 						ret = 0;
 					} else if (*pPriceTransport > 0) {
 
-						printf(
-								"\t\tYa ingreso este costo.\n\n"
-										"\t\tTenga en cuenta. Al reingresar su costo de TRANSPORTE,\n"
-										"\t\treemplazara el costo previamente ingresado\n\n");
+						printf("\t\tYa ingreso este costo.\n\n"
+							   "\t\tTenga en cuenta. Al reingresar su costo de TRANSPORTE,\n"
+							   "\t\treemplazara el costo previamente ingresado\n\n");
 						if (utn_getNumberFloat(&priceTransport,
 								"Ingrese costo de transporte $\n",
 								"Ingrese precio valido\n", minimumPrice,

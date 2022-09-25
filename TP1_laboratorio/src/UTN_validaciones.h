@@ -52,5 +52,4 @@ int utn_getNumberFloat(float *pResult, char *message, char *errorMessage,
 		float minimus, float maximus, int retry);
 
 
-
 #endif /* UTN_VALIDACIONES_H_ */

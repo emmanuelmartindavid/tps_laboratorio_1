@@ -119,8 +119,7 @@ int main(void) {
 				break;
 			case 4:
 
-				if (flagCalculations == 1 && priceLodgin != 0 && priceFood != 0
-						&& priceTransport != 0) {
+				if (flagCalculations == 1 ) {
 
 					printf("\t\t INFORMAR TODOS LOS RESULTADOS\n"
 							"Promedio AFC %.2f\n"
