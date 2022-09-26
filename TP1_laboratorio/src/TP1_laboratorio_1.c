@@ -69,9 +69,7 @@ int main(void) {
 
 			case 1:
 
-				if (loadCosts(&priceLodgin, &priceFood, &priceTransport) == 0) {
-					printf("\t\tSu costo se cargo correctamente\n\n");
-				}
+				loadCosts(&priceLodgin, &priceFood, &priceTransport);
 
 				break;
 			case 2:

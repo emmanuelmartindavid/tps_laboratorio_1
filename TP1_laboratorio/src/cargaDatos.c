@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <ctype.h>
 #include "UTN_validaciones.h"
 #include "cargaDatos.h"
 
@@ -18,6 +19,7 @@ int loadCosts(float *pPriceLodgin, float *pPriceFood, float *pPriceTransport) {
 	float priceFood = 0;
 	float priceLodgin = 0;
 	float priceTransport = 0;
+	char optionNewPrice;
 	int ret = -1;
 
 
@@ -41,17 +43,30 @@ int loadCosts(float *pPriceLodgin, float *pPriceFood, float *pPriceTransport) {
 					ret = 0;
 				} else if (*pPriceLodgin > 0) {
 
-					printf("\t\tYa ingreso este costo.\n\n"
-						   "\t\tTenga en cuenta. Al reingresar su costo de Hospedaje,\n"
-						   "\t\treemplazara el costo previamente ingresado\n\n");
-					if (utn_getNumberFloat(&priceLodgin,
-							"Ingrese costo de hospedaje $\n",
-							"Ingrese precio valido\n", minimumPrice,
-							maximusPrice, retryPrice) == 0) {
+					printf(
+							"\t\tYa ingreso este costo.\n\n"
+									"\t\tTenga en cuenta. Al reingresar su costo de HOSPEDAJE,\n"
+									"\t\treemplazara el costo previamente ingresado\n\n");
+
+					fflush(stdin);
+					printf(
+							"\t\tPresione S para reingresar costo. Presione cualquier tecla para salir.\n");
+					scanf("%c", &optionNewPrice);
+
+					if (isalpha(optionNewPrice) && optionNewPrice == 's'
+							&& utn_getNumberFloat(&priceLodgin,
+									"Ingrese costo de hospedaje $\n",
+									"Ingrese precio valido\n", minimumPrice,
+									maximusPrice, retryPrice) == 0) {
 
 						*pPriceLodgin = priceLodgin;
+						printf("\t\tSu costo se cargo correctamente\n\n");
 
+					} else {
+						printf("\t\tNo reingreso costo\n\n");
 					}
+
+				}
 
 					break;
 					case 2:
@@ -65,16 +80,29 @@ int loadCosts(float *pPriceLodgin, float *pPriceFood, float *pPriceTransport) {
 						ret = 0;
 					} else if (*pPriceFood > 0) {
 
-						printf("\t\tYa ingreso este costo.\n\n"
-								"\t\tTenga en cuenta. Al reingresar su costo de COMIDA,\n"
-								"\t\treemplazara el costo previamente ingresado\n\n");
+						printf(
+								"\t\tYa ingreso este costo.\n\n"
+										"\t\tTenga en cuenta. Al reingresar su costo de COMIDA,\n"
+										"\t\treemplazara el costo previamente ingresado\n\n");
 
-						if (utn_getNumberFloat(&priceFood,
-								"Ingrese costo de comida $\n",
-								"Ingrese precio valido\n", minimumPrice,
-								maximusPrice, retryPrice) == 0) {
+						fflush(stdin);
+						printf(
+								"\t\tPresione S para reingresar costo. Presione cualquier tecla para salir.");
+						scanf("%c", &optionNewPrice);
+
+						if (isalpha(optionNewPrice) && optionNewPrice == 's'
+								&& utn_getNumberFloat(&priceFood,
+										"Ingrese costo de comida $\n",
+										"Ingrese precio valido\n", minimumPrice,
+										maximusPrice, retryPrice) == 0) {
+
 							*pPriceFood = priceFood;
+							printf("\t\tSu costo se cargo correctamente\n\n");
+
+						} else {
+							printf("\t\tNo reingreso costo\n\n");
 						}
+
 					}
 					break;
 					case 3:
@@ -87,17 +115,32 @@ int loadCosts(float *pPriceLodgin, float *pPriceFood, float *pPriceTransport) {
 						*pPriceTransport = priceTransport;
 						ret = 0;
 					} else if (*pPriceTransport > 0) {
+						{
 
-						printf("\t\tYa ingreso este costo.\n\n"
-							   "\t\tTenga en cuenta. Al reingresar su costo de TRANSPORTE,\n"
-							   "\t\treemplazara el costo previamente ingresado\n\n");
-						if (utn_getNumberFloat(&priceTransport,
-								"Ingrese costo de transporte $\n",
-								"Ingrese precio valido\n", minimumPrice,
-								maximusPrice, retryPrice) == 0) {
-							*pPriceTransport = priceTransport;
+							printf(
+									"\t\tYa ingreso este costo.\n\n"
+											"\t\tTenga en cuenta. Al reingresar su costo de TRANSPORTE,\n"
+											"\t\treemplazara el costo previamente ingresado\n\n");
+
+							fflush(stdin);
+							printf(
+									"\t\tPresione S para reingresar costo. Presione cualquier tecla para salir.");
+							scanf("%c", &optionNewPrice);
+
+							if (isalpha(optionNewPrice) && optionNewPrice == 's'
+									&& utn_getNumberFloat(&priceTransport,
+											"Ingrese costo de transporte $\n",
+											"Ingrese precio valido\n", minimumPrice,
+											maximusPrice, retryPrice) == 0) {
+
+								*pPriceTransport = priceTransport;
+								printf("\t\tSu costo se cargo correctamente\n\n");
+
+							} else {
+								printf("\t\tNo reingreso costo\n\n");
+							}
+
 						}
-					}
 					break;
 				}
 			}
