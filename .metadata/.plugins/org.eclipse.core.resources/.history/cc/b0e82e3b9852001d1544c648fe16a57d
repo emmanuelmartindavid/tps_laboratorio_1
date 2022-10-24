@@ -1,0 +1,21 @@
+/*
+ * menus.c
+ *
+ *  Created on: 23 oct. 2022
+ *      Author: cuerpos
+ */
+#include <stdio.h>
+#include <stdlib.h>
+void mainMenu(void) {
+
+	puts("\t\t\t\t\t\t\t==========================MENU-PRINCIPAL-FIFA============================"
+			"\n\t\t\t\t\t\t\t|\t\t\t\t\t\t\t\t\t|"
+			"\n\t\t\t\t\t\t\t|\t\t\t 1. ALTA DE JUGADOR.\t\t\t\t|"
+			"\n\t\t\t\t\t\t\t|\t\t\t 2. BAJA DE JUGADOR.\t\t\t\t|"
+			"\n\t\t\t\t\t\t\t|\t\t\t 3. MODIFICACION DE JUGADOR.\t\t\t|"
+			"\n\t\t\t\t\t\t\t|\t\t\t 4. INFORMES.\t\t\t\t\t|"
+			"\n\t\t\t\t\t\t\t|\t\t\t 5. SALIR.\t\t\t\t\t|"
+			"\n\t\t\t\t\t\t\t|\t\t\t\t\t\t\t\t\t|\n"
+			"\t\t\t\t\t\t\t=========================================================================\n");
+
+}

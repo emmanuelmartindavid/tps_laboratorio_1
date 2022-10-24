@@ -1,0 +1,231 @@
+/*
+ ============================================================================
+ Name        : TP2_laboratorio.c
+ Author      : 
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include "validaciones.h"
+#include "jugador.h"
+#include "informes.h"
+
+#define LEN_ARRAYPLAYERS 3000
+#define LEN_ARRAYCONFEDERATION 6
+
+int main(void) {
+
+	setbuf(stdout, NULL);
+	sConfederation arrayConfederation[LEN_ARRAYCONFEDERATION];
+	sPlayer arrayPlayer[LEN_ARRAYPLAYERS];
+
+	//int pNextId = 30;
+	int pNextIdConfederation = 100;
+	int option = 0;
+	char exit[3];
+	int rtnRegisterPlayer;
+	int rtnModifyPlayer;
+	int rtnDownPlayer;
+	int flag = 0;
+	int optionReports;
+	float totalSalary;
+	float averageSalary;
+	int playersAboveAverageSalary;
+
+	initializeArrayPlayer(arrayPlayer, LEN_ARRAYPLAYERS);
+
+//	if (hardCodePlayers(arrayPlayer, LEN_ARRAYPLAYERS, 27, &pNextId) == OK) {
+//		flagRegisterPlayer = 1;
+//
+//	}
+	hardCodeConfederations(arrayConfederation, LEN_ARRAYCONFEDERATION, 6,
+			&pNextIdConfederation);
+
+	do {
+		showMainMenu();
+		if (utn_getNumber(&option, "\t\t\t\t\t\t\t\t\t\tINGRESE OPCION.\n",
+				"Ingrese opcion valida\n", 0, 10, 3) == 0) {
+			flag = 1;
+
+			switch (option) {
+			case 1:
+				printf("\t\t\t\t\t\t\t\t\t\t\tALTA DE JUGADOR\n\n");
+				rtnRegisterPlayer = registerPlayer(arrayPlayer,
+				LEN_ARRAYPLAYERS, arrayConfederation,
+				LEN_ARRAYCONFEDERATION);
+				if (rtnRegisterPlayer == OK) {
+
+					printf(
+							"\t\t\t\t\t\t\t\t\tSU JUGADOR FUE DADO DE ALTA CORRECTAMENTE\n\n");
+
+				} else if (rtnRegisterPlayer == ERROR) {
+					printf("\t\t\t\t\t\t\t\tNO HAY ESPACIO PARA DAR ALTAS\n\n");
+				} else if (rtnRegisterPlayer == -2) {
+					printf("\t\t\t\t\t\t\t\tDATOS INVALIDOS. REINTENTE.\n");
+				}
+				break;
+			case 2:
+				printf("\t\t\t\t\t\t\t\t\t\tBAJA JUGADOR\n\n");
+				if (sortPerIdPlayers(arrayPlayer, LEN_ARRAYPLAYERS,
+						arrayConfederation,
+						LEN_ARRAYCONFEDERATION) == OK
+						&& listPlayers(arrayPlayer, LEN_ARRAYPLAYERS,
+								arrayConfederation,
+								LEN_ARRAYCONFEDERATION) == OK) {
+
+					rtnDownPlayer = downPlayer(arrayPlayer,
+					LEN_ARRAYPLAYERS);
+
+					if (rtnDownPlayer == OK) {
+						printf(
+								"\t\t\t\t\t\t\t\tSU JUGADOR FUE DADO DE BAJA CORRECTAMENTE\n");
+
+					} else if (rtnDownPlayer == ERROR) {
+						printf("\t\t\t\t\t\t\t\tBAJA DE JUGADOR CANCELADA\n");
+
+					} else if (rtnDownPlayer == -2) {
+						printf("\t\t\t\t\t\t\t\tDATOS INVALIDOS. REINTENTE.\n");
+
+					}
+
+				} else {
+
+					printf(
+							"\t\t\t\t\t\t\t\tNADA PARA DAR DE BAJA. PRIMERO DEBE DAR DE ALTA UN JUGADOR\n\n");
+
+				}
+
+				break;
+			case 3:
+				printf("\t\t\t\t\t\t\t\t\t\tMODIFICAR JUGADOR\n\n");
+
+				if (sortPerIdPlayers(arrayPlayer, LEN_ARRAYPLAYERS,
+						arrayConfederation,
+						LEN_ARRAYCONFEDERATION) &&
+						listPlayers(arrayPlayer, LEN_ARRAYPLAYERS,
+								arrayConfederation, LEN_ARRAYCONFEDERATION)==OK) {
+
+					rtnModifyPlayer = modifyPlayers(arrayPlayer,
+					LEN_ARRAYPLAYERS, arrayConfederation,
+					LEN_ARRAYCONFEDERATION);
+
+					if (rtnModifyPlayer == OK) {
+						printf("\t\t\t\t\t\t\t\t\t\tMODIFICACION EXITOSA\n");
+					} else if (rtnModifyPlayer == -2) {
+						printf("\t\t\t\t\t\t\t\tDATOS INVALIDOS. REINTENTE.\n");
+					}
+				} else {
+					printf(
+							"\t\t\t\t\t\t\t\tNADA PARA MODIFICAR. PRIMERO DEBE DAR DE ALTA UN JUGADOR\n\n");
+				}
+
+				break;
+			case 4:
+
+				printf(
+						"\t\t\t\t\t\t\tNADA PARA MOSTRAR. PRIMERO DEBE PRIMERO DEBE DAR DE ALTA AL MENOS UN JUGADOR\n");
+
+				do {
+					showReportMenu();
+					if (utn_getNumber(&optionReports,
+							"\t\t\t\t\t\tINGRESE OPCION.\n", "Opcion invalida",
+							1, 6, 3) == 0) {
+						flag = 1;
+						switch (optionReports) {
+						case 1:
+
+							if (sortPerConfederationAndPlayerName(arrayPlayer,
+							LEN_ARRAYPLAYERS, arrayConfederation,
+							LEN_ARRAYCONFEDERATION) == OK
+									&& listPlayers(arrayPlayer,
+									LEN_ARRAYPLAYERS, arrayConfederation,
+									LEN_ARRAYCONFEDERATION) == OK) {
+
+							}
+							break;
+						case 2:
+							if (listConfederationPerPlayers(arrayPlayer,
+							LEN_ARRAYPLAYERS, arrayConfederation,
+							LEN_ARRAYCONFEDERATION) == OK) {
+
+							}
+							break;
+						case 3:
+							if (sortPerIdPlayers(arrayPlayer, LEN_ARRAYPLAYERS,
+									arrayConfederation,
+									LEN_ARRAYCONFEDERATION) == OK
+									&& listPlayers(arrayPlayer,
+									LEN_ARRAYPLAYERS, arrayConfederation,
+									LEN_ARRAYCONFEDERATION) == OK
+									&& accumulateTotalSalary(arrayPlayer,
+									LEN_ARRAYPLAYERS, &totalSalary) == OK
+									&& calculateAverageTotalSalary(arrayPlayer,
+									LEN_ARRAYPLAYERS, &averageSalary) == OK
+									&& countPlayerAboveAverageSalary(
+											arrayPlayer,
+											LEN_ARRAYPLAYERS,
+											&playersAboveAverageSalary) == OK) {
+
+								printf(
+										"\n\t\t\t\t\t\tEL TOTAL DE SALARIOS ES: $%.2f.\n"
+												"\n\t\t\t\t\t\tEL PROMEDIO TOTAL DE SALARIO ES: $%.2f.\n"
+												"\n\t\t\t\t\t\t%d JUGADORES COBRAN MAS DEL SALARIO PROMEDIO.\n\n",
+										totalSalary, averageSalary,
+										playersAboveAverageSalary);
+
+							}
+
+							break;
+						case 4:
+
+							calculateMaximusHiringYearsConfederation(
+									arrayPlayer,
+									LEN_ARRAYPLAYERS);
+
+							break;
+						case 5:
+
+							break;
+						case 6:
+
+							break;
+
+						}
+					}else{
+						printf("\t\t\t\t\t\t\t\tDATOS INVALIDOS. REINTENTE.\n");
+					}
+
+				} while (optionReports!=6 || flag != 1);
+
+
+
+				printf("\t\t\t\t\t\t\tNADA PARA MOSTRAR\n");
+
+				break;
+			case 5:
+
+				utn_getDescriptionExit(exit,
+						"\t\t\t\t\t\t\tPresione si para salir. Presione no para continuar en el menu.\n",
+						"\t\t\t\t\t\t\tError. Solo si o no.\n");
+
+				break;
+
+			}
+		} else {
+			printf("\n\t\t\t\t\t\t\t\t\t\t¡¡ALGO SALIO MAL. NO ME ROMPA!!");
+			flag = 0;
+			break;
+		}
+
+	} while (stricmp(exit, "si") != 0 || flag != 1);
+
+	printf("\n\t\t\t\t\t\t\t\t\t\t¡¡HASTA LUEGO!!\n");
+
+	return EXIT_SUCCESS;
+}
+

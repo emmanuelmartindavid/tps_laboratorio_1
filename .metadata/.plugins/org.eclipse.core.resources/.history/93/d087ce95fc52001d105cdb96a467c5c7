@@ -1,0 +1,492 @@
+/*
+ * informes.c
+ *
+ *  Created on: 20 oct. 2022
+ *      Author: cuerpos
+ */
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include "informes.h"
+#include "validaciones.h"
+
+int sortPerConfederationAndPlayerName(sPlayer arrayPlayer[], int lenArrayPlayer,
+		sConfederation arrayConfederation[], int lenArrayConfederation) {
+
+	int rtn = ERROR;
+	char confederationDescription[50];
+	char confederationDescription2[50];
+
+	sPlayer auxSortPlayer;
+
+	if (arrayPlayer != NULL && lenArrayPlayer > 0 && arrayConfederation != NULL
+			&& lenArrayConfederation > 0) {
+		for (int i = 0; i < lenArrayPlayer - 1; i++) {
+			for (int j = i + 1; j < lenArrayPlayer; j++) {
+
+				if (arrayPlayer[i].isEmpty == OCCUPIED
+						&& getConfederationDescription(arrayConfederation,
+								lenArrayConfederation,
+								arrayPlayer[i].confederationId,
+								confederationDescription) == OK
+						&& getConfederationDescription(arrayConfederation,
+								lenArrayConfederation,
+								arrayPlayer[j].confederationId,
+								confederationDescription2) == OK) {
+
+					if ((stricmp(confederationDescription,
+							confederationDescription2)) > 0
+							|| (stricmp(confederationDescription,
+									confederationDescription2) == 0
+									&& (stricmp(arrayPlayer[i].name,
+											arrayPlayer[j].name)) > 0)) {
+
+						auxSortPlayer = arrayPlayer[i];
+						arrayPlayer[i] = arrayPlayer[j];
+						arrayPlayer[j] = auxSortPlayer;
+					}
+					rtn = OK;
+				}
+			}
+		}
+
+	}
+
+	return rtn;
+}
+
+int listConfederationPerPlayers(sPlayer arrayPlayer[], int lenArrayPlayer,
+		sConfederation arrayConfederation[], int lenArrayConfederation) {
+
+	int rtn = ERROR;
+	int ammount = 0;
+
+	if (arrayPlayer != NULL && lenArrayPlayer > 0 && arrayConfederation != NULL
+			&& lenArrayConfederation > 0) {
+		for (int j = 0; j < lenArrayConfederation; j++) {
+			printf(
+					"\t\t\t\t\t\t=========================================================================================================================\n");
+			printf("\n\t\t\t\t\t\t\t\t\t\t\t\tCONFEDERACION: %s\n",
+					arrayConfederation[j].confederationName);
+			printf(
+					"\t\t\t\t\t\t========================================================================================================================\n");
+			printf(
+					"\t\t\t\t\t\t|ID|         NOMBRE       |POSICION              |N° DE CAMISETA  |      SUELDO     |CONFEDERACION   |ANIOS DE CONTRATO|\n");
+			printf(
+					"\t\t\t\t\t\t---------------------------------------------------------------------------------------------------------------\n");
+			for (int i = 0; i < lenArrayPlayer; i++) {
+
+				if (arrayPlayer[i].isEmpty == OCCUPIED) {
+
+					if (arrayPlayer[i].confederationId
+							== arrayConfederation[j].idConfederation&&
+							sortPerConfederationAndPlayerName(arrayPlayer,
+									lenArrayPlayer, arrayConfederation,
+									lenArrayConfederation)==OK && listOnePlayer(arrayPlayer[i], arrayConfederation,
+									lenArrayConfederation)==OK) {
+
+						ammount++;
+					}
+
+				}
+
+			}
+			if (ammount > 0) {
+
+				rtn = OK;
+
+			}
+
+		}
+
+	}
+
+	return rtn;
+}
+
+int countPlayers(sPlayer arrayPlayer[], int lenArrayPlayer, int *pCounterPlayer) {
+
+	int returnCountPlayers = ERROR;
+
+	if (arrayPlayer != NULL && lenArrayPlayer > 0 && pCounterPlayer != NULL) {
+
+		*pCounterPlayer = 0;
+		for (int i = 0; i < lenArrayPlayer; i++) {
+
+			if (arrayPlayer[i].isEmpty == OCCUPIED) {
+
+				(*pCounterPlayer)++;
+
+				returnCountPlayers = OK;
+
+			}
+		}
+
+	}
+
+	return returnCountPlayers;
+}
+
+int accumulateTotalSalary(sPlayer arrayPlayer[], int lenArrayPlayer,
+		float *pAccumulatorSalary) {
+
+	int returnaccumulateTotalSalary = ERROR;
+
+	if (arrayPlayer != NULL && lenArrayPlayer > 0 && pAccumulatorSalary != NULL) {
+
+		*pAccumulatorSalary = 0;
+		for (int i = 0; i < lenArrayPlayer; i++) {
+
+			if (arrayPlayer[i].isEmpty == OCCUPIED) {
+
+				*pAccumulatorSalary += arrayPlayer[i].salary;
+
+				returnaccumulateTotalSalary = OK;
+
+			}
+
+		}
+
+	}
+
+	return returnaccumulateTotalSalary;
+}
+
+int calculateAverageTotalSalary(sPlayer arrayPlayer[], int lenArrayPlayer,
+		float *pAverageTotalSalary) {
+
+	int returncalculateAverageTotalSalary = ERROR;
+	int counterPlayer;
+	float accumulatorSalary;
+
+	if (arrayPlayer != NULL
+			&& lenArrayPlayer
+					> 0&& pAverageTotalSalary != NULL
+					&& countPlayers(arrayPlayer, lenArrayPlayer, &counterPlayer) == OK
+					&& accumulateTotalSalary(arrayPlayer, lenArrayPlayer, &accumulatorSalary)==OK) {
+
+		for (int i = 0; i < lenArrayPlayer; i++) {
+
+			if (arrayPlayer[i].isEmpty == OCCUPIED && counterPlayer > 0) {
+
+				*pAverageTotalSalary = (float) accumulatorSalary
+						/ counterPlayer;
+
+				returncalculateAverageTotalSalary = OK;
+
+			}
+		}
+
+	}
+
+	return returncalculateAverageTotalSalary;
+}
+
+int countPlayerAboveAverageSalary(sPlayer arrayPlayer[], int lenArrayPlayer,
+		int *pCounterPlayerAboveAverageSalary) {
+
+	float averageTotalSalary;
+
+	int returncountPlayerAboveAverageSalary = ERROR;
+
+	if (arrayPlayer != NULL
+			&& lenArrayPlayer > 0&& pCounterPlayerAboveAverageSalary != NULL
+			&& calculateAverageTotalSalary(arrayPlayer,
+					lenArrayPlayer, &averageTotalSalary) == OK) {
+
+		*pCounterPlayerAboveAverageSalary = 0;
+		for (int i = 0; i < lenArrayPlayer; i++) {
+
+			if (arrayPlayer[i].isEmpty == OCCUPIED && averageTotalSalary >= 0) {
+
+				if (arrayPlayer[i].salary > averageTotalSalary) {
+
+					(*pCounterPlayerAboveAverageSalary)++;
+
+					returncountPlayerAboveAverageSalary = OK;
+				}
+
+			}
+		}
+	}
+
+	return returncountPlayerAboveAverageSalary;
+}
+//int accumulateHiringYears(sPlayer arrayPlayer[], int lenArrayPlayer, int id,
+//		int *pAccumulatorHiringYears) {
+//
+//	int returnaccumulateHiringYears = ERROR;
+//
+//	if (arrayPlayer != NULL
+//			&& lenArrayPlayer > 0&& pAccumulatorHiringYears != NULL) {
+//
+//		for (int i = 0; i < lenArrayPlayer; i++) {
+//
+//			if (arrayPlayer[i].isEmpty == OCCUPIED
+//					&& arrayPlayer[i].confederationId == id) {
+//
+//				*pAccumulatorHiringYears += arrayPlayer[i].hiringYears;
+//
+//				returnaccumulateHiringYears = OK;
+//
+//			}
+//
+//		}
+//	}
+//
+//	return returnaccumulateHiringYears;
+//}
+
+int accumulateHiringYears(sPlayer Player, int id, int *pAccumulatorHiringYears) {
+
+	int returnaccumulateHiringYears = ERROR;
+
+	if (pAccumulatorHiringYears != NULL) {
+
+		if (Player.isEmpty == OCCUPIED && Player.confederationId == id) {
+
+			*pAccumulatorHiringYears += Player.hiringYears;
+
+			returnaccumulateHiringYears = OK;
+
+		}
+
+	}
+
+	return returnaccumulateHiringYears;
+}
+
+int acumuladorFor(sPlayer arrayPlayer[], int lenArrayPlayer) {
+
+	int rtn = ERROR;
+	int accumulatorConmebol = 0;
+	int accumulatorUefa = 0;
+	int accumulatorAfc = 0;
+	int accumulatorCaf = 0;
+	int accumulatorConcacaf = 0;
+	int accumulatorOfc = 0;
+	int maxYear = 0;
+
+	if (arrayPlayer != NULL && lenArrayPlayer > 0) {
+
+		for (int i = 0; i < lenArrayPlayer; i++) {
+
+			if (accumulateHiringYears(arrayPlayer[i],
+					arrayPlayer[i].confederationId, &maxYear)) {
+
+				accumulatorConmebol = maxYear;
+				accumulatorUefa = maxYear;
+				accumulatorAfc = maxYear;
+				accumulatorCaf = maxYear;
+				accumulatorConcacaf = maxYear;
+				accumulatorOfc = maxYear;
+				rtn = OK;
+
+			}
+
+		}
+	}
+	printf("\n\t\t\t\t\t\t\t\tCONMEBOL %d.\n\n", accumulatorConmebol);
+	printf("\n\t\t\t\t\t\t\t\tUEFA %d.\n\n", accumulatorUefa);
+	printf("\n\t\t\t\t\t\t\t\tAFC%d.\n\n", accumulatorAfc);
+	printf("\n\t\t\t\t\t\t\t\tCAF %d.\n\n", accumulatorCaf);
+	printf("\n\t\t\t\t\t\t\t\tCONCACAF %d.\n\n", accumulatorConcacaf);
+	printf("\n\t\t\t\t\t\t\t\tOFC %d.\n\n", accumulatorOfc);
+
+	printf("\n\n\n\t\t\t\t\t\t\t\tMAYORIA ANIOS %d.\n\n", maxYear);
+
+	return rtn;
+}
+//
+//int accumulateHiringYearsPerConfederation(sPlayer arrayPlayer[],
+//		int lenArrayPlayer, int *pAccumulatorHiringYearsConmebol,
+//		int *pAccumulatorHiringYearsUefa, int *pAccumulatorHiringYearsAfc,
+//		int *pAccumulatorHiringYearsCaf, int *pAccumulatorHiringYearsConcacaf,
+//		int *pAccumulatorHiringYearsOfc) {
+//
+//	int returnaccumulateHiringYearsPerConfederation = ERROR;
+//
+//	if (arrayPlayer != NULL
+//			&& lenArrayPlayer > 0&& pAccumulatorHiringYearsConmebol != NULL
+//			&& pAccumulatorHiringYearsUefa != NULL
+//			&& pAccumulatorHiringYearsAfc != NULL
+//			&& pAccumulatorHiringYearsCaf != NULL
+//			&& pAccumulatorHiringYearsConcacaf != NULL
+//			&& pAccumulatorHiringYearsOfc != NULL
+//			&& accumulateHiringYears(arrayPlayer, lenArrayPlayer, 100,
+//					pAccumulatorHiringYearsConmebol) == OK
+//			&& accumulateHiringYears(arrayPlayer, lenArrayPlayer, 101,
+//					pAccumulatorHiringYearsUefa) == OK
+//			&& accumulateHiringYears(arrayPlayer, lenArrayPlayer, 102,
+//					pAccumulatorHiringYearsAfc) == OK
+//			&& accumulateHiringYears(arrayPlayer, lenArrayPlayer, 103,
+//					pAccumulatorHiringYearsCaf) == OK
+//			&& accumulateHiringYears(arrayPlayer, lenArrayPlayer, 104,
+//					pAccumulatorHiringYearsConcacaf) == OK
+//			&& accumulateHiringYears(arrayPlayer, lenArrayPlayer, 105,
+//					pAccumulatorHiringYearsOfc) == OK) {
+//
+//		returnaccumulateHiringYearsPerConfederation = OK;
+//
+//	}
+//
+//	return returnaccumulateHiringYearsPerConfederation;
+//}
+
+//int calculateMaximusHiringYearsConfederation(sPlayer arrayPlayer[],
+//		int lenArrayPlayer) {
+//
+//	int rtn = ERROR;
+//	int accumulatorConmebol = 0;
+//	int accumulatorUefa = 0;
+//	int accumulatorAfc = 0;
+//	int accumulatorCaf = 0;
+//	int accumulatorConcacaf = 0;
+//	int accumulatorOfc = 0;
+//	int maxYear = 0;
+//
+//	if (arrayPlayer != NULL && lenArrayPlayer > 0) {
+//
+//		accumulateHiringYearsPerConfederation(arrayPlayer, lenArrayPlayer,
+//				&accumulatorConmebol, &accumulatorUefa, &accumulatorAfc,
+//				&accumulatorCaf, &accumulatorConcacaf, &accumulatorOfc);
+//
+//		if (accumulatorConmebol > maxYear) {
+//			maxYear = accumulatorConmebol;
+//
+//		}
+//		if (accumulatorUefa > maxYear) {
+//
+//			maxYear = accumulatorUefa;
+//
+//		}
+//		if (accumulatorAfc > maxYear) {
+//
+//			maxYear = accumulatorAfc;
+//
+//		}
+//		if (accumulatorCaf > maxYear) {
+//
+//			maxYear = accumulatorCaf;
+//
+//		}
+//		if (accumulatorConcacaf > maxYear) {
+//
+//			maxYear = accumulatorConcacaf;
+//
+//		}
+//		if (accumulatorOfc > maxYear) {
+//
+//			maxYear = accumulatorOfc;
+//
+//		}
+//
+//		rtn = OK;
+//
+//	}
+//	printf("\n\n\n\t\t\t\t\t\t\t\tMAYORIA ANIOS %d.\n\n", maxYear);
+//	return rtn;
+//}
+
+int reportsMenu(sPlayer arrayPlayer[], int lenArrayPlayer,
+		sConfederation arrayConfederation[], int lenArrayConfederation) {
+
+	int optionReports;
+	char exit[3];
+	int rtn;
+	float totalSalary;
+	float averageSalary;
+	int playersAboveAverageSalary;
+
+	if (arrayPlayer != NULL && lenArrayPlayer > 0 && arrayConfederation != NULL
+			&& lenArrayConfederation > 0) {
+
+		do {
+			showReportMenu();
+			if (utn_getNumber(&optionReports, "\t\t\t\t\t\tINGRESE OPCION",
+					"Opcion invalida", 1, 6, 3) == 0) {
+
+				switch (optionReports) {
+				case 1:
+
+					if (sortPerConfederationAndPlayerName(arrayPlayer,
+							lenArrayPlayer, arrayConfederation,
+							lenArrayConfederation) == OK
+							&& listPlayers(arrayPlayer, lenArrayPlayer,
+									arrayConfederation, lenArrayConfederation)
+									== OK) {
+						rtn = OK;
+					} else {
+						rtn = -2;
+					}
+					break;
+				case 2:
+					if (listConfederationPerPlayers(arrayPlayer, lenArrayPlayer,
+							arrayConfederation, lenArrayConfederation) == OK) {
+						rtn = OK;
+					} else {
+						rtn = -2;
+					}
+					break;
+				case 3:
+					if (sortPerIdPlayers(arrayPlayer, lenArrayPlayer,
+							arrayConfederation, lenArrayConfederation) == OK
+							&& listPlayers(arrayPlayer, lenArrayPlayer,
+									arrayConfederation,
+									lenArrayConfederation) == OK
+									&& accumulateTotalSalary(arrayPlayer, lenArrayPlayer,
+											&totalSalary) == OK
+									&& calculateAverageTotalSalary(arrayPlayer,
+											lenArrayPlayer, &averageSalary) == OK
+									&& countPlayerAboveAverageSalary(arrayPlayer,
+											lenArrayPlayer, &playersAboveAverageSalary)
+									== OK) {
+
+						printf(
+								"\n\t\t\t\t\t\tEL TOTAL DE SALARIOS ES: $%.2f.\n"
+										"\n\t\t\t\t\t\tEL PROMEDIO TOTAL DE SALARIO ES: $%.2f.\n"
+										"\n\t\t\t\t\t\t%d JUGADORES COBRAN MAS DEL SALARIO PROMEDIO.\n\n",
+								totalSalary, averageSalary,
+								playersAboveAverageSalary);
+						rtn = OK;
+					} else {
+						rtn = -2;
+					}
+
+					break;
+				case 4:
+
+					 acumuladorFor(arrayPlayer,  lenArrayPlayer);
+//					if (sortPerConfederationAndPlayerName(arrayPlayer,
+//							lenArrayPlayer, arrayConfederation,
+//							lenArrayConfederation) == OK
+//							&& listPlayers(arrayPlayer, lenArrayPlayer,
+//									arrayConfederation,
+//									lenArrayConfederation) == OK
+//									&& calculateMaximusHiringYearsConfederation(arrayPlayer,
+//											lenArrayPlayer) == OK) {
+//						rtn = OK;
+//					}
+
+					break;
+				case 5:
+
+					break;
+				case 6:
+
+					utn_getDescriptionExit(exit,
+							"\t\t\t\t\t\t\tPresione si para salir. Presione no para continuar en el menu de informes.\n",
+							"\t\t\t\t\t\t\tError. Solo si o no.\n");
+					break;
+
+				}
+			} else {
+				rtn = ERROR;
+			}
+
+		} while (stricmp(exit, "si") != 0 && rtn != ERROR && rtn != -2);
+	}
+
+	return rtn;
+}
+
