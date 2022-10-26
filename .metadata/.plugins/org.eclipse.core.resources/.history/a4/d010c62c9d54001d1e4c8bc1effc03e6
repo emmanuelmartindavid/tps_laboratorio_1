@@ -1,0 +1,33 @@
+/*
+ * informes.h
+ *
+ *  Created on: 20 oct. 2022
+ *      Author: cuerpos
+ */
+
+#ifndef INFORMES_H_
+#define INFORMES_H_
+#include "jugador.h"
+
+int sortPerConfederationAndPlayerName(sPlayer arrayPlayer[], int lenArrayPlayer,
+		sConfederation arrayConfederation[], int lenArrayConfederation);
+int listConfederationPerPlayers(sPlayer arrayPlayer[], int lenArrayPlayer,
+		sConfederation arrayConfederation[], int lenArrayConfederation);
+
+int countPlayers(sPlayer arrayPlayer[], int lenArrayPlayer, int *pCounterPlayer);
+int accumulateTotalSalary(sPlayer arrayPlayer[], int lenArrayPlayer,
+		float *pAcumulatorSalary);
+int calculateAverageTotalSalary(sPlayer arrayPlayer[], int lenArrayPlayer,
+		float *pAverageTotalSalary);
+int countPlayerAboveAverageSalary(sPlayer arrayPlayer[], int lenArrayPlayer,
+		int *pCounterPlayerAboveAverageSalary);
+
+int accumulateHiringYearsByConfederation(sPlayer arrayPlayer[],
+		int lenArrayPlayer, sConfederation arrayConfederation[],
+		int lenArrayConfederation, int confederationArrayAcumulator[]);
+
+int calculateMaximusHiringYearsConfederation(sPlayer arrayPlayer[],
+		int lenArrayPlayer, sConfederation arrayConfederation[],
+		int lenArrayConfederation);
+
+#endif /* INFORMES_H_ */

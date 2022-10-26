@@ -32,8 +32,7 @@ int isAlphabetic(char *pString, int len);
 /// @param message		    Puntero a cadena de caracteres con mensaje a imprimir para usuario.
 /// @param errorMessage     Puntero a cadena de caracteres con mensaje de error.
 /// @return                 Retorno, 0 en caso de haber funcionado correctamente. Retorno, -1 en caso contrario.
-int utn_getAlphabeticDescription(char *pResult, char *message,
-		char *ErrorMessage, int retry, int len);
+int utn_getAlphabeticDescription(char *pResult, char *message, char *ErrorMessage, int retry, int len);
 /// @brief getInt           Funcion verifica la cadena de caracteres ingresada, convirtiendola, si es valida, a numero entero.
 ///
 /// @param pResult          Puntero numero entero de la conversion realizada con ATOI.
@@ -43,7 +42,7 @@ int getInt(int *pResult);
 ///
 /// @param pString          Puntero de cadena de caracteres a verificar en funcion.
 /// @return                 Retorno, 0 en caso de haber funcionado correctamente. Retorno, -1 en caso contrario.
-int isInt(char *pString);
+int isInt(char *pString, int len);
 /// @brief utn_getNumber    Función para pedir un número entero por consola.
 ///
 /// @param pResult          Puntero a direccion de la variable ingresada en el caso de ser correcta.
@@ -52,8 +51,7 @@ int isInt(char *pString);
 /// @param minimus		    Valor mínimo valido.
 /// @param maximus          Valor máximo valido.
 /// @return                 Retorno, 0 en caso de haber funcionado correctamente. Retorno, -1 en caso contrario.
-int utn_getNumber(int *pResult, char *message, char *errorMessage, int minimus,
-		int maximus, int retry);
+int utn_getNumber(int *pResult, char *message, char *errorMessage, int minimus, int maximus, int retry);
 /// @brief getFloat		    Funcion verifica la cadena de caracteres ingresada, convirtiendola, si es valida, a numero flotante.
 ///
 /// @param pResult          Puntero numero entero de la conversion realizada con ATOF.
@@ -72,16 +70,13 @@ int isFloat(char *pString);
 /// @param minimus 	            Valor mínimo valido.
 /// @param maximus              Valor máximo valido.
 /// @return                     Retorno, 0 en caso de haber funcionado correctamente. Retorno, -1 en caso contrario.
-int utn_getNumberFloat(float *pResult, char *message, char *errorMessage,
-		float minimus, float maximus, int retry);
+int utn_getNumberFloat(float *pResult, char *message, char *errorMessage, float minimus, float maximus, int retry);
 /// @brief 						Funcion para validar las salidas de menus. SOLO siendo validos si(SI) o no(NO)
 ///
 /// @param pString				Puntero a direccion de la cadena de  caracteres ingresada en el caso de ser correcta.
 /// @param message				Puntero a cadena de caracteres con mensaje a imprimir para usuario.
 /// @param errorMessage			Puntero a cadena de caracteres con mensaje de error.
 /// @return						 Retorno, 0 en caso de haber funcionado correctamente. Retorno, -1 en caso contrario.
-//int utn_getDescriptionExit(char *pString, char *message, char *errorMessage);
-int utn_getDescriptionExit(char *pResult, char *message,
-		char *ErrorMessage, int retry) ;
+int utn_getDescriptionExit(char *pResult, char *message, char *ErrorMessage, int retry);
 
 #endif /* VALIDACIONES_H_ */

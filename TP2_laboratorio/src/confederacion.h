@@ -8,7 +8,8 @@
 #ifndef CONFEDERACION_H_
 #define CONFEDERACION_H_
 
-typedef struct {
+typedef struct
+{
 
 	int idConfederation;
 	char confederationName[50];
@@ -18,12 +19,10 @@ typedef struct {
 
 } sConfederation;
 
-int getIdConfederation(sConfederation arrayConfederation[],
-		int lenArrayConfederation);
+int getIdConfederation(sConfederation arrayConfederation[], int lenArrayConfederation);
 
 void listOneConfederation(sConfederation OneConfederation);
-int listConfederation(sConfederation arrayConfederation[],
-		int lenArrayConfederation) ;
+int listConfederation(sConfederation arrayConfederation[], int lenArrayConfederation);
 /// @brief getDescriptionType  Funcion para obtener la descripcion de tipo de vehiculo, segun ID tipo elegido por usuario.
 ///
 /// @param arrayType           ARRAY de tipos de vehiculo harcodeado.
@@ -31,11 +30,7 @@ int listConfederation(sConfederation arrayConfederation[],
 /// @param idType			   ID tipo de vehiculo elegido por usuario a comparar.
 /// @param pDescription		   Puntero a cadena de texto, con descripcion de tipo de vehiculo, dependiendo del ID de tipo de vehiculo elegido por usuario.
 /// @return					   Retorno, OK(1) en caso de haber funcionado correctamente. Retorno, ERROR(-1) en caso contrario.
-int getConfederationDescription(sConfederation arrayConfederation[],
-		int lenArrayConfederation, int idConfederation,
-		char *pCofederationDescription);
-int hardCodeConfederations(sConfederation arrayConfederation[],
-		int lenArrayConfederation, int ammount,int *pNextId);
-
+int getConfederationDescription(sConfederation arrayConfederation[], int lenArrayConfederation, int idConfederation, char *pCofederationDescription);
+int hardCodeConfederations(sConfederation arrayConfederation[], int lenArrayConfederation, int ammount, int *pNextId);
 
 #endif /* CONFEDERACION_H_ */

@@ -9,39 +9,27 @@
 #define INFORMES_H_
 #include "jugador.h"
 
-int sortPerConfederationAndPlayerName(sPlayer arrayPlayer[], int lenArrayPlayer,
-		sConfederation arrayConfederation[], int lenArrayConfederation);
-int listConfederationPerPlayers(sPlayer arrayPlayer[], int lenArrayPlayer,
-		sConfederation arrayConfederation[], int lenArrayConfederation);
+int sortPerConfederationAndPlayerName(sPlayer arrayPlayer[], int lenArrayPlayer, sConfederation arrayConfederation[], int lenArrayConfederation);
+
+int listConfederationPerPlayers(sPlayer arrayPlayer[], int lenArrayPlayer, sConfederation arrayConfederation[], int lenArrayConfederation);
 
 int countPlayers(sPlayer arrayPlayer[], int lenArrayPlayer, int *pCounterPlayer);
-int accumulateTotalSalary(sPlayer arrayPlayer[], int lenArrayPlayer,
-		float *pAcumulatorSalary);
-int calculateAverageTotalSalary(sPlayer arrayPlayer[], int lenArrayPlayer,
-		float *pAverageTotalSalary);
-int countPlayerAboveAverageSalary(sPlayer arrayPlayer[], int lenArrayPlayer,
-		int *pCounterPlayerAboveAverageSalary);
 
-//int accumulateHiringYears(sPlayer arrayPlayer[], int lenArrayPlayer, int id,
-//		int *pAccumulatorHiringYears) ;
-int accumulateHiringYearsByConfederationId(sPlayer arrayPlayer[],
-		int lenArrayPlayer, int id, int *pAccumulatorHiringYears) ;
-//int accumulateHiringYears(sPlayer Player, int id, int *pAccumulatorHiringYears);
-//int acumuladorFor(sPlayer arrayPlayer[], int lenArrayPlayer,
-//		sConfederation arrayConfederation[], int lenArrayConfederation);
+int accumulateTotalSalary(sPlayer arrayPlayer[], int lenArrayPlayer, float *pAcumulatorSalary);
 
-int accumulateHiringYearsPerConfederation(sPlayer arrayPlayer[],
-		int lenArrayPlayer, int *pAccumulatorConmebol,
-		int *pAccumulatorUefa, int *pAccumulatorAfc, int *pAccumulatorCaf,
-		int *pAccumulatorConcacaf,
-		int *pAccumulatorOfc);
-//int accumulateHiringYearsPerConfederation(sPlayer arrayPlayer[],
-//		int lenArrayPlayer, int *pAccumulatorHiringYearsConmebol,
-//		int *pAccumulatorHiringYearsUefa, int *pAccumulatorHiringYearsAfc,
-//		int *pAccumulatorHiringYearsCaf, int *pAccumulatorHiringYearsConcacaf,
-//		int *pAccumulatorHiringYearsOfc);
-//int calculateMaximusHiringYearsConfederation(sPlayer arrayPlayer[],
-//		int lenArrayPlayer) ;
-int calculateMaximusHiringYearsConfederation(sPlayer arrayPlayer[],
-		int lenArrayPlayer);
+int calculateAverageTotalSalary(sPlayer arrayPlayer[], int lenArrayPlayer, float *pAverageTotalSalary);
+
+int countPlayerAboveAverageSalary(sPlayer arrayPlayer[], int lenArrayPlayer, int *pCounterPlayerAboveAverageSalary);
+
+int accumulateHiringYearsByConfederation(sPlayer arrayPlayer[], int lenArrayPlayer, sConfederation arrayConfederation[], int lenArrayConfederation, int arrayAccumulatorHiringYears[]);
+
+int calculateMaximusHiringYearsConfederation(sPlayer arrayPlayer[], int lenArrayPlayer, sConfederation arrayConfederation[], int lenArrayConfederation, int *pMaximusHiringYears, int arrayAccumulatorHiringYears[]);
+
+int accumulatePlayersPerConfederation(sPlayer arrayPlayer[], int lenArrayPlayer, sConfederation arrayConfederation[], int lenArrayConfederation, int arrayAccumulatorPlayerPerConfederation[]);
+
+int calculatePorcentagePlayersPerConfederation(sPlayer arrayPlayer[], int lenArrayPlayer, sConfederation arrayConfederation[], int lenArrayConfederation, float porcentagePlayersPerConfederation[], int arrayAccumulatorPlayerPerConfederation[]);
+
+int calculateMaximusPlayersPerRegion(sPlayer arrayPlayer[], int lenArrayPlayer, sConfederation arrayConfederation[], int lenArrayConfederation, int arrayAccumulatorPlayerPerConfederation[], int *pMaximusPlayersPerConfederation);
+
+int showMaximusPlayersPerRegion(sPlayer arrayPlayer[], int lenArrayPlayer, sConfederation arrayConfederation[], int lenArrayConfederation, int arrayAccumulatorPlayerPerConfederation[]);
 #endif /* INFORMES_H_ */

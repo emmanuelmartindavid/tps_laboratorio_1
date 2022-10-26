@@ -88453,3 +88453,472 @@ gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\
 Info: Internal Builder is used for build
 gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP2_laboratorio.o" "..\\src\\TP2_laboratorio.c" 
 gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+22:02:24 **** Rebuild of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\informes.o" "..\\src\\informes.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP2_laboratorio.o" "..\\src\\TP2_laboratorio.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\jugador.o" "..\\src\\jugador.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\validaciones.o" "..\\src\\validaciones.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menus.o" "..\\src\\menus.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\confederacion.o" "..\\src\\confederacion.c" 
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+Info: Nothing to build for TP2_laboratorio
+22:16:25 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\informes.o" "..\\src\\informes.c" 
+..\src\informes.c: In function 'calculateMaximusHiringYearsConfederation':
+..\src\informes.c:275:6: warning: unused variable 'maxYear' [-Wunused-variable]
+  275 |  int maxYear = 0;
+      |      ^~~~~~~
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+16:08:57 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP2_laboratorio.o" "..\\src\\TP2_laboratorio.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\informes.o" "..\\src\\informes.c" 
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+Info: Nothing to build for TP2_laboratorio
+16:23:24 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\informes.o" "..\\src\\informes.c" 
+..\src\informes.c: In function 'calculateMaximusHiringYearsConfederation':
+..\src\informes.c:304:6: warning: passing argument 5 of 'accumulateHiringYearsByConfederation' from incompatible pointer type [-Wincompatible-pointer-types]
+  304 |      &accumulatorHiringYears);
+      |      ^~~~~~~~~~~~~~~~~~~~~~~
+      |      |
+      |      int (*)[(sizetype)(lenArrayConfederation)]
+..\src\informes.c:268:34: note: expected 'int *' but argument is of type 'int (*)[(sizetype)(lenArrayConfederation)]'
+  268 |   int lenArrayConfederation, int confederationArrayAcumulator[]) {
+      |                              ~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+16:23:43 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\informes.o" "..\\src\\informes.c" 
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+Info: Nothing to build for TP2_laboratorio
+Info: Nothing to build for TP2_laboratorio
+16:42:36 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP2_laboratorio.o" "..\\src\\TP2_laboratorio.c" 
+..\src\TP2_laboratorio.c: In function 'main':
+..\src\TP2_laboratorio.c:189:56: warning: passing argument 6 of 'calculateMaximusHiringYearsConfederation' from incompatible pointer type [-Wincompatible-pointer-types]
+  189 |           LEN_ARRAYCONFEDERATION, &maximusHiringYears, arrayConfederation);
+      |                                                        ^~~~~~~~~~~~~~~~~~
+      |                                                        |
+      |                                                        sConfederation * {aka struct <anonymous> *}
+In file included from ..\src\TP2_laboratorio.c:16:
+..\src\informes.h:31:61: note: expected 'int **' but argument is of type 'sConfederation *' {aka 'struct <anonymous> *'}
+   31 |   int lenArrayConfederation, int *pMaximusHiringYears, int *pAccumulatorHiringYears[]);
+      |                                                        ~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\informes.o" "..\\src\\informes.c" 
+..\src\informes.c: In function 'calculateMaximusHiringYearsConfederation':
+..\src\informes.c:258:44: warning: comparison between pointer and integer
+  258 |    if (i == 0 || accumulatorHiringYears[i] > pMaximusHiringYears) {
+      |                                            ^
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: cannot open output file TP2_laboratorio.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+16:42:56 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\informes.o" "..\\src\\informes.c" 
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: cannot open output file TP2_laboratorio.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+16:43:05 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\informes.o" "..\\src\\informes.c" 
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+Info: Nothing to build for TP2_laboratorio
+16:44:30 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\informes.o" "..\\src\\informes.c" 
+..\src\informes.c: In function 'calculateMaximusHiringYearsConfederation':
+..\src\informes.c:255:5: warning: passing argument 5 of 'accumulateHiringYearsByConfederation' from incompatible pointer type [-Wincompatible-pointer-types]
+  255 |     pAccumulatorHiringYears);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~
+      |     |
+      |     int **
+..\src\informes.c:217:34: note: expected 'int *' but argument is of type 'int **'
+  217 |   int lenArrayConfederation, int confederationArrayAcumulator[]) {
+      |                              ~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\src\informes.c:258:45: warning: comparison between pointer and integer
+  258 |    if (i == 0 || pAccumulatorHiringYears[i] > *pMaximusHiringYears) {
+      |                                             ^
+..\src\informes.c:260:26: warning: assignment to 'int' from 'int *' makes integer from pointer without a cast [-Wint-conversion]
+  260 |     *pMaximusHiringYears = pAccumulatorHiringYears[i];
+      |                          ^
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+16:44:35 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\informes.o" "..\\src\\informes.c" 
+..\src\informes.c:244:5: error: conflicting types for 'calculateMaximusHiringYearsConfederation'
+  244 | int calculateMaximusHiringYearsConfederation(sPlayer arrayPlayer[],
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from ..\src\informes.c:10:
+..\src\informes.h:29:5: note: previous declaration of 'calculateMaximusHiringYearsConfederation' was here
+   29 | int calculateMaximusHiringYearsConfederation(sPlayer arrayPlayer[],
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+16:44:46 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP2_laboratorio.o" "..\\src\\TP2_laboratorio.c" 
+..\src\TP2_laboratorio.c: In function 'main':
+..\src\TP2_laboratorio.c:189:56: warning: passing argument 6 of 'calculateMaximusHiringYearsConfederation' from incompatible pointer type [-Wincompatible-pointer-types]
+  189 |           LEN_ARRAYCONFEDERATION, &maximusHiringYears, arrayConfederation);
+      |                                                        ^~~~~~~~~~~~~~~~~~
+      |                                                        |
+      |                                                        sConfederation * {aka struct <anonymous> *}
+In file included from ..\src\TP2_laboratorio.c:16:
+..\src\informes.h:31:60: note: expected 'int *' but argument is of type 'sConfederation *' {aka 'struct <anonymous> *'}
+   31 |   int lenArrayConfederation, int *pMaximusHiringYears, int pAccumulatorHiringYears[]);
+      |                                                        ~~~~^~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\informes.o" "..\\src\\informes.c" 
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+16:45:45 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP2_laboratorio.o" "..\\src\\TP2_laboratorio.c" 
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+Info: Nothing to build for TP2_laboratorio
+16:47:38 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP2_laboratorio.o" "..\\src\\TP2_laboratorio.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\informes.o" "..\\src\\informes.c" 
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+16:49:12 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP2_laboratorio.o" "..\\src\\TP2_laboratorio.c" 
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+16:52:34 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP2_laboratorio.o" "..\\src\\TP2_laboratorio.c" 
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+Info: Nothing to build for TP2_laboratorio
+17:22:21 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\informes.o" "..\\src\\informes.c" 
+..\src\informes.c: In function 'accumulatePlayersPerConfederation':
+..\src\informes.c:282:4: error: 'confederationArrayAcumulator' undeclared (first use in this function); did you mean 'confederationArray'?
+  282 |    confederationArrayAcumulator[i] = 0;
+      |    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |    confederationArray
+..\src\informes.c:282:4: note: each undeclared identifier is reported only once for each function it appears in
+17:22:30 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\informes.o" "..\\src\\informes.c" 
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+Info: Nothing to build for TP2_laboratorio
+Info: Nothing to build for TP2_laboratorio
+17:24:13 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP2_laboratorio.o" "..\\src\\TP2_laboratorio.c" 
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+Info: Nothing to build for TP2_laboratorio
+Info: Nothing to build for TP2_laboratorio
+17:25:44 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP2_laboratorio.o" "..\\src\\TP2_laboratorio.c" 
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+20:20:51 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\informes.o" "..\\src\\informes.c" 
+..\src\informes.c: In function 'accumulatePlayersPerConfederation':
+..\src\informes.c:282:4: error: 'confederationArrayAcumulator' undeclared (first use in this function); did you mean 'confederationArray'?
+  282 |    confederationArrayAcumulator[i] = 0;
+      |    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |    confederationArray
+..\src\informes.c:282:4: note: each undeclared identifier is reported only once for each function it appears in
+20:22:58 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\informes.o" "..\\src\\informes.c" 
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+20:29:29 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP2_laboratorio.o" "..\\src\\TP2_laboratorio.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\informes.o" "..\\src\\informes.c" 
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+20:30:30 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\informes.o" "..\\src\\informes.c" 
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+20:54:20 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP2_laboratorio.o" "..\\src\\TP2_laboratorio.c" 
+..\src\TP2_laboratorio.c: In function 'main':
+..\src\TP2_laboratorio.c:232:18: warning: format '%d' expects argument of type 'int', but argument 3 has type 'double' [-Wformat=]
+  232 |           printf("\n\t\t\t\t\t\tLA CONFEDERACION %s."
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+......
+  235 |             percentagePerConfederation);
+      |             ~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |             |
+      |             double
+..\src\TP2_laboratorio.c:233:55: note: format string is defined here
+  233 |               "\n\t\t\t\t\t\tCUENTA CON PORCETANJE %%%d de Jugadores\n",
+      |                                                      ~^
+      |                                                       |
+      |                                                       int
+      |                                                      %f
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\informes.o" "..\\src\\informes.c" 
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: cannot open output file TP2_laboratorio.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+20:54:36 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP2_laboratorio.o" "..\\src\\TP2_laboratorio.c" 
+..\src\TP2_laboratorio.c: In function 'main':
+..\src\TP2_laboratorio.c:232:18: warning: format '%d' expects argument of type 'int', but argument 3 has type 'double' [-Wformat=]
+  232 |           printf("\n\t\t\t\t\t\tLA CONFEDERACION %s."
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+......
+  235 |             percentagePerConfederation);
+      |             ~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |             |
+      |             double
+..\src\TP2_laboratorio.c:233:56: note: format string is defined here
+  233 |               "\n\t\t\t\t\t\tCUENTA CON PORCETANJE %% %d de Jugadores\n",
+      |                                                       ~^
+      |                                                        |
+      |                                                        int
+      |                                                       %f
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+20:54:44 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP2_laboratorio.o" "..\\src\\TP2_laboratorio.c" 
+..\src\TP2_laboratorio.c: In function 'main':
+..\src\TP2_laboratorio.c:232:18: warning: format '%d' expects argument of type 'int', but argument 3 has type 'double' [-Wformat=]
+  232 |           printf("\n\t\t\t\t\t\tLA CONFEDERACION %s."
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+......
+  235 |             percentagePerConfederation);
+      |             ~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |             |
+      |             double
+..\src\TP2_laboratorio.c:233:54: note: format string is defined here
+  233 |               "\n\t\t\t\t\t\tCUENTA CON PORCETANJE  %d de Jugadores\n",
+      |                                                     ~^
+      |                                                      |
+      |                                                      int
+      |                                                     %f
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+20:55:04 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP2_laboratorio.o" "..\\src\\TP2_laboratorio.c" 
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+Info: Nothing to build for TP2_laboratorio
+21:01:01 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP2_laboratorio.o" "..\\src\\TP2_laboratorio.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\informes.o" "..\\src\\informes.c" 
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+Info: Nothing to build for TP2_laboratorio
+21:03:16 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\informes.o" "..\\src\\informes.c" 
+..\src\informes.c: In function 'calculatePorcentagePlayersPerConfederation':
+..\src\informes.c:318:15: warning: format '%d' expects argument of type 'int', but argument 2 has type 'double' [-Wformat=]
+  318 |    printf("\n%d %d %d\n", porcentagePlayersPerConfederation[i],arrayAccumulatorPlayerPerConfederation[i], counterPlayer);
+      |              ~^           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |               |                                            |
+      |               int                                          double
+      |              %f
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+21:03:31 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\informes.o" "..\\src\\informes.c" 
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+21:04:16 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\informes.o" "..\\src\\informes.c" 
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+21:05:18 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\informes.o" "..\\src\\informes.c" 
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+Info: Nothing to build for TP2_laboratorio
+21:06:43 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\informes.o" "..\\src\\informes.c" 
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+Info: Nothing to build for TP2_laboratorio
+21:07:56 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP2_laboratorio.o" "..\\src\\TP2_laboratorio.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\informes.o" "..\\src\\informes.c" 
+..\src\informes.c: In function 'calculatePorcentagePlayersPerConfederation':
+..\src\informes.c:317:6: error: incompatible types when assigning to type 'float *' from type 'float'
+  317 |      (float)arrayAccumulatorPlayerPerConfederation[i] / counterPlayer
+      |      ^
+21:07:58 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\informes.o" "..\\src\\informes.c" 
+..\src\informes.c: In function 'calculatePorcentagePlayersPerConfederation':
+..\src\informes.c:317:6: error: incompatible types when assigning to type 'float *' from type 'float'
+  317 |      (float)arrayAccumulatorPlayerPerConfederation[i] / counterPlayer
+      |      ^
+21:08:13 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\informes.o" "..\\src\\informes.c" 
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+Info: Nothing to build for TP2_laboratorio
+21:09:10 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP2_laboratorio.o" "..\\src\\TP2_laboratorio.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\informes.o" "..\\src\\informes.c" 
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+21:13:02 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\informes.o" "..\\src\\informes.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP2_laboratorio.o" "..\\src\\TP2_laboratorio.c" 
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+21:14:12 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP2_laboratorio.o" "..\\src\\TP2_laboratorio.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\informes.o" "..\\src\\informes.c" 
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+Info: Nothing to build for TP2_laboratorio
+21:27:24 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\informes.o" "..\\src\\informes.c" 
+..\src\informes.c: In function 'calculateMaximusPlayersPerRegion':
+..\src\informes.c:343:10: error: 'arrayAccumulatorHiringYears' undeclared (first use in this function)
+  343 |       || arrayAccumulatorHiringYears[i]
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\src\informes.c:343:10: note: each undeclared identifier is reported only once for each function it appears in
+..\src\informes.c:344:12: error: 'pMaximusHiringYears' undeclared (first use in this function)
+  344 |         > *pMaximusHiringYears) {
+      |            ^~~~~~~~~~~~~~~~~~~
+21:27:37 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\jugador.o" "..\\src\\jugador.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\informes.o" "..\\src\\informes.c" 
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+21:28:50 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\jugador.o" "..\\src\\jugador.c" 
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+21:29:10 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\jugador.o" "..\\src\\jugador.c" 
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+Info: Nothing to build for TP2_laboratorio
+21:29:34 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\jugador.o" "..\\src\\jugador.c" 
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+21:29:48 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\jugador.o" "..\\src\\jugador.c" 
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+21:30:00 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\jugador.o" "..\\src\\jugador.c" 
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+Info: Nothing to build for TP2_laboratorio
+21:42:47 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\validaciones.o" "..\\src\\validaciones.c" 
+..\src\validaciones.c: In function 'getInt':
+..\src\validaciones.c:126:68: error: too many arguments to function 'isInt'
+  126 |   if (pResult != NULL && getString(option, sizeof(option)) == 0 && isInt(option, sizeof(option)) == 0) {
+      |                                                                    ^~~~~
+In file included from ..\src\validaciones.c:10:
+..\src\validaciones.h:46:5: note: declared here
+   46 | int isInt(char *pString);
+      |     ^~~~~
+..\src\validaciones.c: At top level:
+..\src\validaciones.c:144:5: error: conflicting types for 'isInt'
+  144 | int isInt(char *pString, int len) {
+      |     ^~~~~
+In file included from ..\src\validaciones.c:10:
+..\src\validaciones.h:46:5: note: previous declaration of 'isInt' was here
+   46 | int isInt(char *pString);
+      |     ^~~~~
+21:43:29 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\informes.o" "..\\src\\informes.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\validaciones.o" "..\\src\\validaciones.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP2_laboratorio.o" "..\\src\\TP2_laboratorio.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\confederacion.o" "..\\src\\confederacion.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\jugador.o" "..\\src\\jugador.c" 
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+Info: Nothing to build for TP2_laboratorio
+Info: Nothing to build for TP2_laboratorio
+21:51:15 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP2_laboratorio.o" "..\\src\\TP2_laboratorio.c" 
+..\src\TP2_laboratorio.c: In function 'main':
+..\src\TP2_laboratorio.c:257:12: warning: format '%d' expects argument of type 'int', but argument 3 has type 'double' [-Wformat=]
+  257 |            "\n\t\t\t\t\t\tLA REGION %s."
+      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+......
+  260 |            percentagePerConfederation[i]);
+      |            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                                      |
+      |                                      double
+..\src\TP2_laboratorio.c:258:41: note: format string is defined here
+  258 |              "\n\t\t\t\t\t\tCUENTA CON %d JUGADORES\n",
+      |                                        ~^
+      |                                         |
+      |                                         int
+      |                                        %f
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\informes.o" "..\\src\\informes.c" 
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+21:51:35 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP2_laboratorio.o" "..\\src\\TP2_laboratorio.c" 
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+Info: Nothing to build for TP2_laboratorio
+21:52:48 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP2_laboratorio.o" "..\\src\\TP2_laboratorio.c" 
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+21:53:04 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP2_laboratorio.o" "..\\src\\TP2_laboratorio.c" 
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+Info: Nothing to build for TP2_laboratorio
+22:25:34 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP2_laboratorio.o" "..\\src\\TP2_laboratorio.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\informes.o" "..\\src\\informes.c" 
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: cannot open output file TP2_laboratorio.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+22:42:12 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\validaciones.o" "..\\src\\validaciones.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP2_laboratorio.o" "..\\src\\TP2_laboratorio.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\jugador.o" "..\\src\\jugador.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menus.o" "..\\src\\menus.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\confederacion.o" "..\\src\\confederacion.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\informes.o" "..\\src\\informes.c" 
+..\src\informes.c: In function 'showMaximusPlayersPerRegion':
+..\src\informes.c:351:41: error: incompatible type for argument 1 of 'listConfederation'
+  351 |     listConfederation(arrayConfederation[i], lenArrayConfederation);
+      |                       ~~~~~~~~~~~~~~~~~~^~~
+      |                                         |
+      |                                         sConfederation {aka struct <anonymous>}
+In file included from ..\src\jugador.h:7,
+                 from ..\src\informes.h:10,
+                 from ..\src\informes.c:10:
+..\src\confederacion.h:25:38: note: expected 'sConfederation *' {aka 'struct <anonymous> *'} but argument is of type 'sConfederation' {aka 'struct <anonymous>'}
+   25 | int listConfederation(sConfederation arrayConfederation[], int lenArrayConfederation);
+      |                       ~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~
+22:43:07 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\informes.o" "..\\src\\informes.c" 
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+Info: Nothing to build for TP2_laboratorio
+22:44:16 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\informes.o" "..\\src\\informes.c" 
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: cannot open output file TP2_laboratorio.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+22:44:18 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+Info: Nothing to build for TP2_laboratorio
+22:44:57 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP2_laboratorio.o" "..\\src\\TP2_laboratorio.c" 
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+Info: Nothing to build for TP2_laboratorio
