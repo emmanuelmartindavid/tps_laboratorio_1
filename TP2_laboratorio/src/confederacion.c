@@ -91,25 +91,26 @@ int loadDataConfederation(sConfederation *pConfederation, int *pIdConfederation)
 
 	sConfederation auxConfederation;
 	int returnloadDataConfederation;
-
-	if (utn_getAlphabeticDescription(auxConfederation.confederationName, "Ingrese nombre de confederacion.\n", "Dato invalido. Reintente.\n", 3, 50) == -1
-
-	|| utn_getAlphabeticDescription(auxConfederation.region, "Ingrese region de confederacion.\n", "Dato invalido. Reintente", 3, 50) == -1
-
-	|| utn_getNumber(&auxConfederation.creationYear, "Ingrese el anio de creacion de confederacion (1900-2022).\n", "Dato invalido. Reintente.\n", 1900, 2022, 3) == -1)
+	if (pConfederation != NULL && pIdConfederation != NULL)
 	{
+		if (utn_getAlphabeticDescription(auxConfederation.confederationName, "Ingrese nombre de confederacion.\n", "Dato invalido. Reintente.\n", 3, 50) == -1
 
-		auxConfederation.idConfederation = *pIdConfederation;
-		auxConfederation.isEmpty = OCCUPIED;
-		(*pIdConfederation)++;
-		*pConfederation = auxConfederation;
-		returnloadDataConfederation = OK;
-	}
-	else
-	{
-		returnloadDataConfederation = ERROR;
-	}
+		|| utn_getAlphabeticDescription(auxConfederation.region, "Ingrese region de confederacion.\n", "Dato invalido. Reintente", 3, 50) == -1
 
+		|| utn_getNumber(&auxConfederation.creationYear, "Ingrese el anio de creacion de confederacion (1900-2022).\n", "Dato invalido. Reintente.\n", 1900, 2022, 3) == -1)
+		{
+
+			auxConfederation.idConfederation = *pIdConfederation;
+			auxConfederation.isEmpty = OCCUPIED;
+			(*pIdConfederation)++;
+			*pConfederation = auxConfederation;
+			returnloadDataConfederation = OK;
+		}
+		else
+		{
+			returnloadDataConfederation = ERROR;
+		}
+	}
 	return returnloadDataConfederation;
 }
 /// @brief registerConfederation			Da de alta una confederacion.
@@ -127,7 +128,7 @@ int registerConfederation(sConfederation arrayConfederation[], int *pIdConfedera
 
 	sConfederation auxConfederation;
 
-	if (arrayConfederation != NULL && lenArrayConfederation > 0)
+	if (arrayConfederation != NULL && pIdConfederation != NULL && lenArrayConfederation > 0)
 	{
 
 		index = getFreeIndexArrayConfederation(arrayConfederation, lenArrayConfederation);
@@ -173,7 +174,7 @@ int downConfederation(sConfederation arrayConfederation[], int lenArrayConfedera
 
 	if (arrayConfederation != NULL && lenArrayConfederation > 0)
 	{
-
+		listConfederation(arrayConfederation, lenArrayConfederation);
 		do
 		{
 			utn_getNumber(&idConfederationAux, "Ingrese el ID de confederacion a dar de baja.\n", "Dato invalido. Reintente.\n", 1, 1000, 3);
@@ -277,7 +278,7 @@ int modifyOneConfederation(sConfederation *pConfederation)
 		{
 			returnmodifyOneConfederation = ERROR;
 		}
-	} while (auxOptionModify != 7 && returnmodifyOneConfederation != ERROR);
+	} while (auxOptionModify != 4 && returnmodifyOneConfederation != ERROR);
 
 	return returnmodifyOneConfederation;
 }
@@ -295,6 +296,7 @@ int modifyConfederations(sConfederation arrayConfederation[], int lenArrayConfed
 
 	if (arrayConfederation != NULL && lenArrayConfederation > 0)
 	{
+		listConfederation(arrayConfederation, lenArrayConfederation);
 		do
 		{
 			utn_getNumber(&idPlayer, "Ingrese el ID de confederacion a modificar.\n", "Dato invalido. Reintente.\n", 1, 1000, 3);
@@ -337,7 +339,6 @@ void listConfederation(sConfederation arrayConfederation[], int lenArrayConfeder
 	int i = 0;
 	int ammount = 0;
 
-
 	if (arrayConfederation != NULL && lenArrayConfederation > 0)
 	{
 
@@ -348,9 +349,14 @@ void listConfederation(sConfederation arrayConfederation[], int lenArrayConfeder
 		for (i = 0; i < lenArrayConfederation; i++)
 		{
 
-			listOneConfederation(arrayConfederation[i]);
+			if (arrayConfederation[i].isEmpty == OCCUPIED)
+			{
 
-			ammount++;
+				listOneConfederation(arrayConfederation[i]);
+
+				ammount++;
+
+			}
 
 		}
 		if (ammount > 0)
@@ -360,7 +366,6 @@ void listConfederation(sConfederation arrayConfederation[], int lenArrayConfeder
 		}
 
 	}
-
 }
 /// @brief getConfederationDescription 				 Funcion para obtener la descripcion de tipo de vehiculo, segun ID tipo elegido por usuario.
 ///

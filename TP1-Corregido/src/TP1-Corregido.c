@@ -50,39 +50,30 @@ int main(void)
 					case 1:
 						if (utn_getNumberFloat(&priceLodgin, "Ingrese costo de hospedaje. Desde $1000\n", "Ingrese precio valido\n", 1000, 10000000, 3) == 0)
 						{
-
 							printf("CARGA CORRECTA.\n");
-
 						}
 						else
 						{
-
 							printf("DATO INVALIDO. REINTENTE. \n");
 						}
 						break;
 					case 2:
 						if (utn_getNumberFloat(&priceFood, "Ingrese costo de comida. Desde $1000\n", "Ingrese precio valido\n", 1000, 10000000, 3) == 0)
 						{
-
 							printf("CARGA CORRECTA.\n");
-
 						}
 						else
 						{
-
 							printf("DATO INVALIDO. REINTENTE. \n");
 						}
 						break;
 					case 3:
 						if (utn_getNumberFloat(&priceTransport, "Ingrese costo de transporte. Desde $1000\n", "Ingrese precio valido\n", 1000, 10000000, 3) == 0)
 						{
-
 							printf("CARGA CORRECTA.\n");
-
 						}
 						else
 						{
-
 							printf("DATO INVALIDO. REINTENTE. \n");
 						}
 						break;
@@ -91,7 +82,6 @@ int main(void)
 				}
 				else
 				{
-
 					printf("DATO INVALIDO. REINTENTE. \n");
 				}
 				break;
@@ -108,9 +98,7 @@ int main(void)
 						case 1:
 							if (countPlayersOrConfederation(&goalkeeperCounter, 2) == SUCCESS)
 							{
-
 								printf("CARGA CORRECTA.\n");
-
 							}
 							else
 							{
@@ -120,9 +108,7 @@ int main(void)
 						case 2:
 							if (countPlayersOrConfederation(&defenderCounter, 8) == SUCCESS)
 							{
-
 								printf("CARGA CORRECTA.\n");
-
 							}
 							else
 							{
@@ -132,9 +118,7 @@ int main(void)
 						case 3:
 							if (countPlayersOrConfederation(&midfielderCounter, 8) == SUCCESS)
 							{
-
 								printf("CARGA CORRECTA.\n");
-
 							}
 							else
 							{
@@ -144,9 +128,7 @@ int main(void)
 						case 4:
 							if (countPlayersOrConfederation(&strikerCounter, 4) == SUCCESS)
 							{
-
 								printf("CARGA CORRECTA.\n");
-
 							}
 							else
 							{
@@ -157,18 +139,13 @@ int main(void)
 					}
 					else
 					{
-
 						printf("DATO INVALIDO. REINTENTE. \n");
-
 					}
 				}
 				else
 				{
-
 					printf("\t\tYa realizo la carga de jugadores\n\n");
 				}
-
-
 				break;
 			case 3:
 
@@ -182,7 +159,6 @@ int main(void)
 		}
 		else
 		{
-
 			printf("\t\tAlgo salió mal.\n\n");
 			break;
 		}
@@ -196,18 +172,18 @@ void menu(float priceLodgin, float priceFood, float priceTransport, int goalkeep
 {
 
 	printf("\t\t MENU PRINCIPAL\n"
-			"1. Carga de los costos de Mantenimiento\n"
-			" Costo de Hospedaje -> $%.2f\n"
-			" Costo de Comida -> $%.2f\n"
-			" Costo de Transoporte -> $%.2f\n\n"
-			"2. Carga de Jugadores\n"
-			" Arqueros -> %d\n"
-			" Defensores -> %d\n"
-			" Mediocampistas -> %d\n"
-			" Delanteros -> %d\n\n"
-			"3. Realizar todos los calculos\n\n"
-			"4. Informar resultados\n\n"
-			"5. Salir", priceLodgin, priceFood, priceTransport, goalkeeperCounter, defenderCounter, midfielderCounter, strikerCounter);
+					"1. Carga de los costos de Mantenimiento\n"
+					" Costo de Hospedaje -> $%.2f\n"
+					" Costo de Comida -> $%.2f\n"
+					" Costo de Transoporte -> $%.2f\n\n"
+					"2. Carga de Jugadores\n"
+					" Arqueros -> %d\n"
+					" Defensores -> %d\n"
+					" Mediocampistas -> %d\n"
+					" Delanteros -> %d\n\n"
+					"3. Realizar todos los calculos\n\n"
+					"4. Informar resultados\n\n"
+					"5. Salir", priceLodgin, priceFood, priceTransport, goalkeeperCounter, defenderCounter, midfielderCounter, strikerCounter);
 
 }
 
@@ -215,8 +191,8 @@ void menuCost(float priceLodgin, float priceFood, float priceTransport)
 {
 
 	printf("1. Ingresar costo hospedaje -> $%.2f\n"
-			"2. Ingresar costo de comida -> $%.2f\n"
-			"3. Ingresar costo de transporte-> $%.2f\n", priceLodgin, priceFood, priceTransport);
+					"2. Ingresar costo de comida -> $%.2f\n"
+					"3. Ingresar costo de transporte-> $%.2f\n", priceLodgin, priceFood, priceTransport);
 
 }
 
@@ -224,9 +200,9 @@ void menuPlayers(int goalkeeperCounter, int defenderCounter, int midfielderCount
 {
 
 	printf("1. Arquero -> %d\n"
-			"2. Defensor -> %d\n"
-			"3. Mediocampista -> %d\n"
-			"4. Delantero -> %d\n\n", goalkeeperCounter, defenderCounter, midfielderCounter, strikerCounter);
+					"2. Defensor -> %d\n"
+					"3. Mediocampista -> %d\n"
+					"4. Delantero -> %d\n\n", goalkeeperCounter, defenderCounter, midfielderCounter, strikerCounter);
 
 }
 

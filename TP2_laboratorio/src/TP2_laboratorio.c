@@ -11,7 +11,6 @@
 #include <stdlib.h>
 #include <string.h>
 #include "validaciones.h"
-#include "jugador.h"
 #include "informes.h"
 #define LEN_ARRAYPLAYERS 3000
 #define LEN_ARRAYCONFEDERATION 6
@@ -39,7 +38,8 @@ int main(void)
 
 	initializeArrayConfederation(arrayConfederation, LEN_ARRAYCONFEDERATION);
 
-	hardCodePlayers(arrayPlayer, LEN_ARRAYPLAYERS, 24, &idPlayer);
+	//DESCOMENTAR EN CASO DE QUERER USAR HARCODEO DE JUGADORES.
+	//hardCodePlayers(arrayPlayer, LEN_ARRAYPLAYERS, 24, &idPlayer);
 
 	hardCodeConfederations(arrayConfederation, LEN_ARRAYCONFEDERATION, 6, &idConfederation);
 
@@ -149,7 +149,7 @@ int main(void)
 								{
 
 									printf("\n\t\t\t\t\t\tEL TOTAL DE SALARIOS ES: $%.2f.\n"
-													"\n\t\t\t\t\t\tEL PROMEDIO TOTAL DE SALARIO ES: $%.2f.\n", totalSalary, averageSalary);
+											"\n\t\t\t\t\t\tEL PROMEDIO TOTAL DE SALARIO ES: $%.2f.\n", totalSalary, averageSalary);
 									listPlayerAboveAverageSalary(arrayPlayer, LEN_ARRAYPLAYERS, arrayConfederation, LEN_ARRAYCONFEDERATION);
 								}
 								break;
@@ -183,7 +183,7 @@ int main(void)
 
 			case 5:
 
-			utn_getDescriptionExit(exit, "\t\t\t\t\t\t\tPresione si para salir. Presione no para continuar en el menu.\n", "\t\t\t\t\t\t\tError. Solo si o no.\n", 3);
+				utn_getDescriptionExit(exit, "\t\t\t\t\t\t\tPresione si para salir. Presione no para continuar en el menu.\n", "\t\t\t\t\t\t\tError. Solo si o no.\n", 3);
 				break;
 			}
 		}

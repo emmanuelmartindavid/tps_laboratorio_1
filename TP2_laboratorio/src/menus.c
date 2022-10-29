@@ -49,7 +49,7 @@ void showModifyConfederationMenu(void)
 					"\n\t\t\t\t\t\t\t|\t\t\t 1. NOMBRE:\t\t\t\t\t|"
 					"\n\t\t\t\t\t\t\t|\t\t\t 2. REGION:\t\t\t\t\t|"
 					"\n\t\t\t\t\t\t\t|\t\t\t 3. ANIO DE CREACION:\t\t\t\t|"
-					"\n\t\t\t\t\t\t\t|\t\t\t 7. SALIR.\t\t\t\t\t|"
+					"\n\t\t\t\t\t\t\t|\t\t\t 4. SALIR.\t\t\t\t\t|"
 					"\n\t\t\t\t\t\t\t|\t\t\t\t\t\t\t\t\t|\n"
 					"\t\t\t\t\t\t\t=========================================================================\n");
 

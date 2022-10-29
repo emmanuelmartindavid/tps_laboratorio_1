@@ -17,7 +17,7 @@
 /// @return                Retorno, 0 en caso de haber funcionado correctamente. Retorno, -1 en caso contrario.
 int getString(char *pString, int len)
 {
-	int retorno = -1;
+	int returnGetString = -1;
 	char bufferString[LEN];
 
 	if (pString != NULL && pString > 0)
@@ -32,11 +32,11 @@ int getString(char *pString, int len)
 			if (strnlen(bufferString, sizeof(bufferString)) <= LEN)
 			{
 				strcpy(pString, bufferString);
-				retorno = 0;
+				returnGetString = 0;
 			}
 		}
 	}
-	return retorno;
+	return returnGetString;
 }
 
 /// @brief  getAlfaNumeric  Funcion verifica la cadena de caracteres ingresada, devolviendola asi por puntero cadena si es correcta.
@@ -46,7 +46,7 @@ int getString(char *pString, int len)
 /// @return                 Retorno, 0 en caso de haber funcionado correctamente. Retorno, -1 en caso contrario.
 int getalphabetic(char *pString, int len)
 {
-	int ret = -1;
+	int returnGetalphabetic = -1;
 	char option[len];
 	if (pString != NULL)
 	{
@@ -56,14 +56,14 @@ int getalphabetic(char *pString, int len)
 			{
 				strcpy(pString, option);
 
-				ret = 0;
+				returnGetalphabetic = 0;
 
 			}
 
 		}
 
 	}
-	return ret;
+	return returnGetalphabetic;
 }
 /// @brief  islfaNumeric  	Funcion valida si la cadena de caracteres esta dentro de los parametros esperados de una cadena caracteres alfanumerica.
 ///
@@ -73,7 +73,7 @@ int getalphabetic(char *pString, int len)
 int isAlphabetic(char *pString, int len)
 {
 
-	int ret = 0;
+	int returnIsAlphabetic = 0;
 	int lenght;
 	if (pString != NULL)
 	{
@@ -82,13 +82,13 @@ int isAlphabetic(char *pString, int len)
 		{
 			if ((pString[i] < 97 || pString[i] > 122) && (pString[i] < 65 || pString[i] > 90) && (pString[i] != ' '))
 			{
-				ret = -1;
+				returnIsAlphabetic = -1;
 				break;
 			}
 		}
 
 	}
-	return ret;
+	return returnIsAlphabetic;
 }
 /// @brief utn_getAlfaNumeric    Función para pedir una descripcion alfanumerica por consola.
 ///
@@ -99,7 +99,7 @@ int isAlphabetic(char *pString, int len)
 
 int utn_getAlphabeticDescription(char *pResult, char *message, char *ErrorMessage, int retry, int len)
 {
-	int ret;
+	int returnUtn_getAlphabeticDescription;
 	char bufferString[len];
 	while (retry > 0)
 	{
@@ -107,7 +107,7 @@ int utn_getAlphabeticDescription(char *pResult, char *message, char *ErrorMessag
 		if (getalphabetic(bufferString, sizeof(bufferString)) == 0 && strnlen(bufferString, sizeof(bufferString)) < len)
 		{
 
-			ret = 0;
+			returnUtn_getAlphabeticDescription = 0;
 			break;
 		}
 		fflush(stdin);
@@ -116,15 +116,15 @@ int utn_getAlphabeticDescription(char *pResult, char *message, char *ErrorMessag
 	}
 	if (retry == 0)
 	{
-		ret = -1;
+		returnUtn_getAlphabeticDescription = -1;
 	}
 	else
 	{
-		ret = 0;
+		returnUtn_getAlphabeticDescription = 0;
 		strcpy(pResult, bufferString);
 
 	}
-	return ret;
+	return returnUtn_getAlphabeticDescription;
 }
 /// @brief getInt           Funcion verifica la cadena de caracteres ingresada, convirtiendola, si es valida, a numero entero.
 ///
@@ -132,7 +132,7 @@ int utn_getAlphabeticDescription(char *pResult, char *message, char *ErrorMessag
 /// @return                 Retorno, 0 en caso de haber funcionado correctamente. Retorno, -1 en caso contrario.
 int getInt(int *pResult)
 {
-	int ret = -1;
+	int returnGetInt = -1;
 	char option[LEN];
 
 	if (pResult != NULL && getString(option, sizeof(option)) == 0 && isInt(option, sizeof(option)) == 0)
@@ -141,10 +141,10 @@ int getInt(int *pResult)
 
 		//(short)*pResult = atoi(option);
 
-		ret = 0;
+		returnGetInt = 0;
 	}
 
-	return ret;
+	return returnGetInt;
 }
 
 /// @brief isInt        Funcion valida si la cadena de caracteres esta dentro de los parametros esperados de un numero entero.
@@ -154,20 +154,20 @@ int getInt(int *pResult)
 int isInt(char *pString, int len)
 {
 	int i = 0;
-	int ret = 0;
+	int returnIsInt = 0;
 	if (pString != NULL && len > 0)
 	{
 		while (i < len && pString[i] != '\0')
 		{
 			if (pString[i] < '0' || pString[i] > '9')
 			{
-				ret = -1;
+				returnIsInt = -1;
 				break;
 			}
 			i++;
 		}
 	}
-	return ret;
+	return returnIsInt;
 }
 
 /// @brief utn_getNumber    Función para pedir un número entero por consola.
@@ -181,7 +181,7 @@ int isInt(char *pString, int len)
 
 int utn_getNumber(int *pResult, char *message, char *errorMessage, int minimus, int maximus, int retry)
 {
-	int ret;
+	int returnUtn_getNumber;
 	int num = 0;
 	if (pResult != NULL && message != NULL && errorMessage != NULL)
 	{
@@ -199,15 +199,15 @@ int utn_getNumber(int *pResult, char *message, char *errorMessage, int minimus, 
 		}
 		if (retry == 0)
 		{
-			ret = -1;
+			returnUtn_getNumber = -1;
 		}
 		else
 		{
-			ret = 0;
+			returnUtn_getNumber = 0;
 			*pResult = num;
 		}
 	}
-	return ret;
+	return returnUtn_getNumber;
 
 }
 
@@ -217,17 +217,17 @@ int utn_getNumber(int *pResult, char *message, char *errorMessage, int minimus, 
 /// @return				    Retorno, 0 en caso de haber funcionado correctamente. Retorno, -1 en caso contrario.
 int getFloat(float *pResult)
 {
-	int ret = -1;
+	int returnGetFloat = -1;
 	char option[LEN];
 	if (pResult != NULL)
 	{
 		if (getString(option, sizeof(option)) == 0 && isFloat(option) == 0)
 		{
 			*pResult = atof(option);
-			ret = 0;
+			returnGetFloat = 0;
 		}
 	}
-	return ret;
+	return returnGetFloat;
 }
 /// @brief isFloat          Funcion valida si la cadena de caracteres esta dentro de los parametros esperados de un numero flotante.
 ///
@@ -236,7 +236,7 @@ int getFloat(float *pResult)
 int isFloat(char *pString)
 {
 	int i = 0;
-	int ret = 0;
+	int returnIsFloat = 0;
 	int pointCounter = 0;
 
 	if (pString != NULL && strlen(pString) > 0)
@@ -251,13 +251,13 @@ int isFloat(char *pString)
 				}
 				else
 				{
-					ret = -1;
+					returnIsFloat = -1;
 					break;
 				}
 			}
 		}
 	}
-	return ret;
+	return returnIsFloat;
 }
 /// @brief utn_getNumberFloat   Función para pedir un número flotante  por consola
 ///
@@ -269,7 +269,7 @@ int isFloat(char *pString)
 /// @return                     Retorno, 0 en caso de haber funcionado correctamente. Retorno, -1 en caso contrario.
 int utn_getNumberFloat(float *pResult, char *message, char *errorMessage, float minimus, float maximus, int retry)
 {
-	int ret;
+	int returnUtn_getNumberFloat;
 	float num = 0;
 	if (pResult != NULL && message != NULL && errorMessage != NULL)
 	{
@@ -287,15 +287,15 @@ int utn_getNumberFloat(float *pResult, char *message, char *errorMessage, float 
 		}
 		if (retry == 0)
 		{
-			ret = -1;
+			returnUtn_getNumberFloat = -1;
 		}
 		else
 		{
-			ret = 0;
+			returnUtn_getNumberFloat = 0;
 			*pResult = num;
 		}
 	}
-	return ret;
+	return returnUtn_getNumberFloat;
 }
 /// @brief
 ///
@@ -306,7 +306,7 @@ int utn_getNumberFloat(float *pResult, char *message, char *errorMessage, float 
 /// @return
 int utn_getDescriptionExit(char *pResult, char *message, char *ErrorMessage, int retry)
 {
-	int ret;
+	int returnUtn_getDescriptionExit;
 	char bufferString[3];
 	while (retry > 0)
 	{
@@ -314,7 +314,7 @@ int utn_getDescriptionExit(char *pResult, char *message, char *ErrorMessage, int
 		if (getalphabetic(bufferString, sizeof(bufferString)) == 0 && (strnlen(bufferString, sizeof(bufferString)) < 3 && (stricmp(bufferString, "si") == 0 || stricmp(bufferString, "no") == 0)))
 		{
 
-			ret = 0;
+			returnUtn_getDescriptionExit = 0;
 			break;
 		}
 		fflush(stdin);
@@ -323,15 +323,15 @@ int utn_getDescriptionExit(char *pResult, char *message, char *ErrorMessage, int
 	}
 	if (retry == 0)
 	{
-		ret = -1;
+		returnUtn_getDescriptionExit = -1;
 	}
 	else
 	{
-		ret = 0;
+		returnUtn_getDescriptionExit = 0;
 		strcpy(pResult, bufferString);
 
 	}
-	return ret;
+	return returnUtn_getDescriptionExit;
 }
 /// @brief getshort           Funcion verifica la cadena de caracteres ingresada, convirtiendola, si es valida, a numero short.
 ///
@@ -339,7 +339,7 @@ int utn_getDescriptionExit(char *pResult, char *message, char *ErrorMessage, int
 /// @return                 Retorno, 0 en caso de haber funcionado correctamente. Retorno, -1 en caso contrario.
 int getshort(short *pResult)
 {
-	int ret = -1;
+	int returnGetshort = -1;
 	char option[LEN];
 
 	if (pResult != NULL && getString(option, sizeof(option)) == 0 && isInt(option, sizeof(option)) == 0)
@@ -347,10 +347,10 @@ int getshort(short *pResult)
 
 		*pResult = atoi(option);
 
-		ret = 0;
+		returnGetshort = 0;
 	}
 
-	return ret;
+	return returnGetshort;
 }
 /// @brief utn_getNumberShort    Función para pedir un número entero por consola.
 ///
@@ -362,7 +362,7 @@ int getshort(short *pResult)
 /// @return                 Retorno, 0 en caso de haber funcionado correctamente. Retorno, -1 en caso contrario.
 int utn_getNumberShort(short *pResult, char *message, char *errorMessage, int minimus, int maximus, int retry)
 {
-	int ret;
+	int returnUtn_getNumberShort;
 	short num = 0;
 	if (pResult != NULL && message != NULL && errorMessage != NULL)
 	{
@@ -380,14 +380,14 @@ int utn_getNumberShort(short *pResult, char *message, char *errorMessage, int mi
 		}
 		if (retry == 0)
 		{
-			ret = -1;
+			returnUtn_getNumberShort = -1;
 		}
 		else
 		{
-			ret = 0;
+			returnUtn_getNumberShort = 0;
 			*pResult = num;
 		}
 	}
-	return ret;
+	return returnUtn_getNumberShort;
 
 }

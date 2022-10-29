@@ -84,8 +84,7 @@ int calculateMaximusHiringYearsConfederation(sPlayer arrayPlayer[], int lenArray
 /// @param arrayConfederation 						 Array de confederaciones.
 /// @param lenArrayConfederation 			 		 Tamanio de  Array de jugadores.
 /// @param arrayAccumulatorHiringYears				 Array de enteros para acumular anios de contrato.
-/// @return											 Retorno, OK(1) en caso de haber funcionado correctamente. Retorno, ERROR(-1) en caso contrario.
-int listMaximusHiringYearsConfederation(sPlayer arrayPlayer[], int lenArrayPlayer, sConfederation arrayConfederation[], int lenArrayConfederation, int arrayAccumulatorHiringYears[]);
+void listMaximusHiringYearsConfederation(sPlayer arrayPlayer[], int lenArrayPlayer, sConfederation arrayConfederation[], int lenArrayConfederation, int arrayAccumulatorHiringYears[]);
 /// @brief accumulatePlayersPerConfederation		Acumula  jugadores dados de alta por confederacion.
 ///
 /// @param arrayPlayer              	      		 Array de jugadores.
