@@ -68,14 +68,14 @@ int listPlayers(sPlayer arrayPlayer[], int lenArrayPlayer, sConfederation arrayC
 ///
 /// @return								 Retorno auxiliar de sPlayer(variable de estructura de jugador) con los datos cargados por el usuario.
 //sPlayer loadDataPlayer(int *pFlagAuxData) ;
-sPlayer loadDataPlayer(void);
+int loadDataPlayer(sPlayer *pPlayer, int *pIdPlayer, sConfederation arrayConfederation[], int lenArrayConfederation);
 /// @brief registerPlayer				 Funcion para dar de alta un jugador.
 ///
 /// @param arrayPlayer					 ARRAY de jugadores.
 /// @param lenArrayPlayer				 Tamanio de ARRAY de jugadores.
 /// @param arrayConfederation			 ARRAY de confederaciones harcodeado.
 /// @return								 Retorno, OK(1) en caso de haber funcionado correctamente. Retorno, ERROR(-1) en caso contrario.
-int registerPlayer(sPlayer arrayPlayer[], int lenArrayPlayer, sConfederation arrayConfederation[], int lenArrayConfederation);
+int registerPlayer(sPlayer arrayPlayer[], int lenArrayPlayer, int *idPlayer, sConfederation arrayConfederation[], int lenArrayConfederation);
 /// @brief downPlayer					 Funcion para dar de baja un jugador dado de alta, atraves de ID.
 ///
 /// @param arrayPlayer					 ARRAY de jugadores.
@@ -91,7 +91,7 @@ int downPlayer(sPlayer arrayPlayer[], int lenArrayPlayer);
 //int modifyOnePlayer(sPlayer player, sConfederation arrayConfederation[],
 //		int lenArrayConfederation, sPlayer *auxModify );
 
-sPlayer modifyOnePlayer(sPlayer player, sConfederation arrayConfederation[], int lenArrayConfederation);
+int modifyOnePlayer(sPlayer *player, sConfederation arrayConfederation[], int lenArrayConfederation);
 /// @brief modifyPlayers				 Funcion para dar de modificar jugadores dado de alta, atraves de ID.
 ///
 /// @param arrayPlayer					 ARRAY de jugadores.

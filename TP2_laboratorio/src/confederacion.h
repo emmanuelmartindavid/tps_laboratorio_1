@@ -15,12 +15,17 @@ typedef struct
 	char confederationName[50];
 	char region[50];
 	int creationYear;
-	short isEmpety;
+	short isEmpty;
 
 } sConfederation;
 
-int getIdConfederation(sConfederation arrayConfederation[], int lenArrayConfederation);
-
+void initializeArrayConfederation(sConfederation arrayConfederation[], int lenArrayConfederation);
+int getFreeIndexArrayConfederation(sConfederation arrayConfederation[], int lenArrayConfederation);
+int findByIdArrayConfederation(sConfederation arrayConfederation[], int idConfederation, int lenArrayConfederation);
+int loadDataConfederation(sConfederation *pConfederation, int *pIdConfederation);
+int registerConfederation(sConfederation arrayConfederation[], int *pIdConfederation, int lenArrayConfederation);
+int modifyOneConfederation(sConfederation *pConfederation);
+int modifyConfederations(sConfederation arrayConfederation[], int lenArrayConfederation);
 void listOneConfederation(sConfederation OneConfederation);
 int listConfederation(sConfederation arrayConfederation[], int lenArrayConfederation);
 /// @brief getDescriptionType  Funcion para obtener la descripcion de tipo de vehiculo, segun ID tipo elegido por usuario.

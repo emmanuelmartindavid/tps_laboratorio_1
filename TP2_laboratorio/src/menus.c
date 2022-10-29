@@ -6,6 +6,8 @@
  */
 #include <stdio.h>
 #include <stdlib.h>
+/// @brief
+///
 void showMainMenu(void)
 {
 
@@ -20,7 +22,8 @@ void showMainMenu(void)
 			"\t\t\t\t\t\t\t=========================================================================\n");
 
 }
-
+/// @brief
+///
 void showModifyPlayerMenu(void)
 {
 
@@ -36,7 +39,24 @@ void showModifyPlayerMenu(void)
 			"\n\t\t\t\t\t\t\t|\t\t\t\t\t\t\t\t\t|\n"
 			"\t\t\t\t\t\t\t=========================================================================\n");
 }
+/// @brief
+///
+void showModifyConfederationMenu(void){
 
+	printf("\t\t\t\t\t\t\t=========================MENU MODIFICACION==============================="
+				"\n\t\t\t\t\t\t\t|\t\t\t\t\t\t\t\t\t|"
+				"\n\t\t\t\t\t\t\t|\t\t\t 1. NOMBRE:\t\t\t\t\t|"
+				"\n\t\t\t\t\t\t\t|\t\t\t 2. REGION:\t\t\t\t\t|"
+				"\n\t\t\t\t\t\t\t|\t\t\t 3. ANIO DE CREACION:\t\t\t\t|"
+				"\n\t\t\t\t\t\t\t|\t\t\t 7. SALIR.\t\t\t\t\t|"
+				"\n\t\t\t\t\t\t\t|\t\t\t\t\t\t\t\t\t|\n"
+				"\t\t\t\t\t\t\t=========================================================================\n");
+
+
+
+}
+/// @brief
+///
 void showReportMenu(void)
 {
 
@@ -49,7 +69,8 @@ void showReportMenu(void)
 			"\n\t\t\t\t\t\t|\t     Y CUANTOS JUGADORES COBRAN MAS DEL SALARIO PROMEDIO.\t\t|"
 			"\n\t\t\t\t\t\t|\t 4. CONFEDERACION CON MAYOR CANTIDAD DE ANIOS DE CONTRATO TOTAL.\t|"
 			"\n\t\t\t\t\t\t|\t 5. PORCENTAJE DE JUGADORES POR CADA CONFEDERACION.\t\t\t|"
-			"\n\t\t\t\t\t\t|\t 6. SALIR:\t\t\t\t\t\t\t\t|"
+			"\n\t\t\t\t\t\t|\t 6. REGION CON MAS JUGADORES Y LISTADO DE LOS MISMOS.\t\t\t|"
+			"\n\t\t\t\t\t\t|\t 7. SALIR:\t\t\t\t\t\t\t\t|"
 			"\n\t\t\t\t\t\t|\t\t\t\t\t\t\t\t\t\t|\n"
 			"\t\t\t\t\t\t=================================================================================\n");
 }

@@ -88922,3 +88922,694 @@ Info: Internal Builder is used for build
 gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP2_laboratorio.o" "..\\src\\TP2_laboratorio.c" 
 gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
 Info: Nothing to build for TP2_laboratorio
+15:19:43 **** Rebuild of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\jugador.o" "..\\src\\jugador.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\confederacion.o" "..\\src\\confederacion.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\informes.o" "..\\src\\informes.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menus.o" "..\\src\\menus.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP2_laboratorio.o" "..\\src\\TP2_laboratorio.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\validaciones.o" "..\\src\\validaciones.c" 
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+Info: Nothing to build for TP2_laboratorio
+15:22:33 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\informes.o" "..\\src\\informes.c" 
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+Info: Nothing to build for TP2_laboratorio
+15:23:07 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\informes.o" "..\\src\\informes.c" 
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+Info: Nothing to build for TP2_laboratorio
+Info: Nothing to build for TP2_laboratorio
+15:26:29 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\informes.o" "..\\src\\informes.c" 
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+Info: Nothing to build for TP2_laboratorio
+15:39:14 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menus.o" "..\\src\\menus.c" 
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+15:40:17 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menus.o" "..\\src\\menus.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\informes.o" "..\\src\\informes.c" 
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+Info: Nothing to build for TP2_laboratorio
+15:42:51 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\informes.o" "..\\src\\informes.c" 
+..\src\informes.c: In function 'showMaximusPlayersPerRegion':
+..\src\informes.c:371:41: warning: format '%s' expects a matching 'char *' argument [-Wformat=]
+  371 |   printf("\t\t\t\t\t\tLA CONFEDERACION %s DE REGION %s CUENTA CON MAYOR CANTIDAD DE JUGADORES\n\n");
+      |                                        ~^
+      |                                         |
+      |                                         char *
+..\src\informes.c:371:54: warning: format '%s' expects a matching 'char *' argument [-Wformat=]
+  371 |   printf("\t\t\t\t\t\tLA CONFEDERACION %s DE REGION %s CUENTA CON MAYOR CANTIDAD DE JUGADORES\n\n");
+      |                                                     ~^
+      |                                                      |
+      |                                                      char *
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+15:43:46 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\informes.o" "..\\src\\informes.c" 
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+Info: Nothing to build for TP2_laboratorio
+16:19:19 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\informes.o" "..\\src\\informes.c" 
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+16:20:01 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\informes.o" "..\\src\\informes.c" 
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+Info: Nothing to build for TP2_laboratorio
+16:32:35 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP2_laboratorio.o" "..\\src\\TP2_laboratorio.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\jugador.o" "..\\src\\jugador.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\informes.o" "..\\src\\informes.c" 
+..\src\informes.c: In function 'showPercentagePlayersPerConfederation':
+..\src\informes.c:340:29: warning: passing argument 5 of 'calculatePercentagePlayersPerConfederation' from incompatible pointer type [-Wincompatible-pointer-types]
+  340 |      lenArrayConfederation, &percentagePerConfederation, arrayAccumulatorPlayerPerConfederation);
+      |                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                             |
+      |                             float (*)[(sizetype)(lenArrayConfederation)]
+..\src\informes.c:310:161: note: expected 'float *' but argument is of type 'float (*)[(sizetype)(lenArrayConfederation)]'
+  310 | int calculatePercentagePlayersPerConfederation(sPlayer arrayPlayer[], int lenArrayPlayer, sConfederation arrayConfederation[], int lenArrayConfederation, float porcentagePlayersPerConfederation[], int arrayAccumulatorPlayerPerConfederation[])
+      |                                                                                                                                                           ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+16:32:48 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\informes.o" "..\\src\\informes.c" 
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+Info: Nothing to build for TP2_laboratorio
+16:34:49 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP2_laboratorio.o" "..\\src\\TP2_laboratorio.c" 
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+16:35:05 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP2_laboratorio.o" "..\\src\\TP2_laboratorio.c" 
+..\src\TP2_laboratorio.c: In function 'main':
+..\src\TP2_laboratorio.c:27:6: warning: unused variable 'pNextId' [-Wunused-variable]
+   27 |  int pNextId = 30;
+      |      ^~~~~~~
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+Info: Nothing to build for TP2_laboratorio
+16:36:26 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\jugador.o" "..\\src\\jugador.c" 
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: cannot open output file TP2_laboratorio.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+16:36:29 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+Info: Nothing to build for TP2_laboratorio
+16:44:46 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP2_laboratorio.o" "..\\src\\TP2_laboratorio.c" 
+..\src\TP2_laboratorio.c: In function 'main':
+..\src\TP2_laboratorio.c:27:6: warning: unused variable 'pNextId' [-Wunused-variable]
+   27 |  int pNextId = 30;
+      |      ^~~~~~~
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\informes.o" "..\\src\\informes.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\confederacion.o" "..\\src\\confederacion.c" 
+..\src\confederacion.c:69:12: warning: 'getId' defined but not used [-Wunused-function]
+   69 | static int getId(void)
+      |            ^~~~~
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: src\jugador.o: in function `initializeArrayPlayer':
+C:\Users\cuerpos\OneDrive\Desktop\TPS_Laboratorio_1\tps_laboratorio_1\TP2_laboratorio\Debug/../src/jugador.c:14: multiple definition of `initializeArrayPlayer'; src\confederacion.o:C:\Users\cuerpos\OneDrive\Desktop\TPS_Laboratorio_1\tps_laboratorio_1\TP2_laboratorio\Debug/../src/confederacion.c:13: first defined here
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: src\jugador.o: in function `getFreeIndexArrayPlayer':
+C:\Users\cuerpos\OneDrive\Desktop\TPS_Laboratorio_1\tps_laboratorio_1\TP2_laboratorio\Debug/../src/jugador.c:34: multiple definition of `getFreeIndexArrayPlayer'; src\confederacion.o:C:\Users\cuerpos\OneDrive\Desktop\TPS_Laboratorio_1\tps_laboratorio_1\TP2_laboratorio\Debug/../src/confederacion.c:28: first defined here
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: src\jugador.o: in function `findByIdArrayPlayer':
+C:\Users\cuerpos\OneDrive\Desktop\TPS_Laboratorio_1\tps_laboratorio_1\TP2_laboratorio\Debug/../src/jugador.c:59: multiple definition of `findByIdArrayPlayer'; src\confederacion.o:C:\Users\cuerpos\OneDrive\Desktop\TPS_Laboratorio_1\tps_laboratorio_1\TP2_laboratorio\Debug/../src/confederacion.c:47: first defined here
+collect2.exe: error: ld returned 1 exit status
+16:45:01 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\confederacion.o" "..\\src\\confederacion.c" 
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+Info: Nothing to build for TP2_laboratorio
+16:50:13 **** Rebuild of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\validaciones.o" "..\\src\\validaciones.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\jugador.o" "..\\src\\jugador.c" 
+..\src\jugador.c: In function 'loadDataPlayer':
+..\src\jugador.c:195:9: error: incompatible types when returning type 'sPlayer' {aka 'struct <anonymous>'} but 'int' was expected
+  195 |  return auxPlayer;
+      |         ^~~~~~~~~
+..\src\jugador.c:164:6: warning: variable 'returnloadDataPlayer' set but not used [-Wunused-but-set-variable]
+  164 |  int returnloadDataPlayer;
+      |      ^~~~~~~~~~~~~~~~~~~~
+..\src\jugador.c: In function 'modifyOnePlayer':
+..\src\jugador.c:357:62: warning: passing argument 1 of 'getIdConfederation' from incompatible pointer type [-Wincompatible-pointer-types]
+  357 |      auxModifyOnePlayer.confederationId = getIdConfederation(arrayConfederation, lenArrayConfederation);
+      |                                                              ^~~~~~~~~~~~~~~~~~
+      |                                                              |
+      |                                                              sConfederation * {aka struct <anonymous> *}
+In file included from ..\src\jugador.h:7,
+                 from ..\src\jugador.c:10:
+..\src\confederacion.h:22:29: note: expected 'int *' but argument is of type 'sConfederation *' {aka 'struct <anonymous> *'}
+   22 | int getIdConfederation(int *idConfederation, sConfederation arrayConfederation[], int lenArrayConfederation);
+      |                        ~~~~~^~~~~~~~~~~~~~~
+..\src\jugador.c:357:82: warning: passing argument 2 of 'getIdConfederation' makes pointer from integer without a cast [-Wint-conversion]
+  357 |      auxModifyOnePlayer.confederationId = getIdConfederation(arrayConfederation, lenArrayConfederation);
+      |                                                                                  ^~~~~~~~~~~~~~~~~~~~~
+      |                                                                                  |
+      |                                                                                  int
+In file included from ..\src\jugador.h:7,
+                 from ..\src\jugador.c:10:
+..\src\confederacion.h:22:61: note: expected 'sConfederation *' {aka 'struct <anonymous> *'} but argument is of type 'int'
+   22 | int getIdConfederation(int *idConfederation, sConfederation arrayConfederation[], int lenArrayConfederation);
+      |                                              ~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~
+..\src\jugador.c:357:43: error: too few arguments to function 'getIdConfederation'
+  357 |      auxModifyOnePlayer.confederationId = getIdConfederation(arrayConfederation, lenArrayConfederation);
+      |                                           ^~~~~~~~~~~~~~~~~~
+In file included from ..\src\jugador.h:7,
+                 from ..\src\jugador.c:10:
+..\src\confederacion.h:22:5: note: declared here
+   22 | int getIdConfederation(int *idConfederation, sConfederation arrayConfederation[], int lenArrayConfederation);
+      |     ^~~~~~~~~~~~~~~~~~
+..\src\jugador.c: In function 'loadDataPlayer':
+..\src\jugador.c:196:1: warning: control reaches end of non-void function [-Wreturn-type]
+  196 | }
+      | ^
+16:50:34 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\jugador.o" "..\\src\\jugador.c" 
+..\src\jugador.c: In function 'modifyOnePlayer':
+..\src\jugador.c:357:62: warning: passing argument 1 of 'getIdConfederation' from incompatible pointer type [-Wincompatible-pointer-types]
+  357 |      auxModifyOnePlayer.confederationId = getIdConfederation(arrayConfederation, lenArrayConfederation);
+      |                                                              ^~~~~~~~~~~~~~~~~~
+      |                                                              |
+      |                                                              sConfederation * {aka struct <anonymous> *}
+In file included from ..\src\jugador.h:7,
+                 from ..\src\jugador.c:10:
+..\src\confederacion.h:22:29: note: expected 'int *' but argument is of type 'sConfederation *' {aka 'struct <anonymous> *'}
+   22 | int getIdConfederation(int *idConfederation, sConfederation arrayConfederation[], int lenArrayConfederation);
+      |                        ~~~~~^~~~~~~~~~~~~~~
+..\src\jugador.c:357:82: warning: passing argument 2 of 'getIdConfederation' makes pointer from integer without a cast [-Wint-conversion]
+  357 |      auxModifyOnePlayer.confederationId = getIdConfederation(arrayConfederation, lenArrayConfederation);
+      |                                                                                  ^~~~~~~~~~~~~~~~~~~~~
+      |                                                                                  |
+      |                                                                                  int
+In file included from ..\src\jugador.h:7,
+                 from ..\src\jugador.c:10:
+..\src\confederacion.h:22:61: note: expected 'sConfederation *' {aka 'struct <anonymous> *'} but argument is of type 'int'
+   22 | int getIdConfederation(int *idConfederation, sConfederation arrayConfederation[], int lenArrayConfederation);
+      |                                              ~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~
+..\src\jugador.c:357:43: error: too few arguments to function 'getIdConfederation'
+  357 |      auxModifyOnePlayer.confederationId = getIdConfederation(arrayConfederation, lenArrayConfederation);
+      |                                           ^~~~~~~~~~~~~~~~~~
+In file included from ..\src\jugador.h:7,
+                 from ..\src\jugador.c:10:
+..\src\confederacion.h:22:5: note: declared here
+   22 | int getIdConfederation(int *idConfederation, sConfederation arrayConfederation[], int lenArrayConfederation);
+      |     ^~~~~~~~~~~~~~~~~~
+16:52:08 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\jugador.o" "..\\src\\jugador.c" 
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+Info: Nothing to build for TP2_laboratorio
+16:52:45 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\jugador.o" "..\\src\\jugador.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\confederacion.o" "..\\src\\confederacion.c" 
+..\src\confederacion.c: In function 'loadDataConfederation':
+..\src\confederacion.c:82:6: warning: unused variable 'auxHiringYears' [-Wunused-variable]
+   82 |  int auxHiringYears;
+      |      ^~~~~~~~~~~~~~
+..\src\confederacion.c:81:6: warning: unused variable 'auxShirt' [-Wunused-variable]
+   81 |  int auxShirt;
+      |      ^~~~~~~~
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+Info: Nothing to build for TP2_laboratorio
+16:54:32 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\jugador.o" "..\\src\\jugador.c" 
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+16:55:44 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\jugador.o" "..\\src\\jugador.c" 
+..\src\jugador.c: In function 'getPositionPlayer':
+..\src\jugador.c:536:9: warning: 'rtn' is used uninitialized in this function [-Wuninitialized]
+  536 |  return rtn;
+      |         ^~~
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+16:56:13 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\jugador.o" "..\\src\\jugador.c" 
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+Info: Nothing to build for TP2_laboratorio
+16:57:10 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\confederacion.o" "..\\src\\confederacion.c" 
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+Info: Nothing to build for TP2_laboratorio
+16:57:46 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\confederacion.o" "..\\src\\confederacion.c" 
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+16:59:10 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\confederacion.o" "..\\src\\confederacion.c" 
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+17:03:54 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\confederacion.o" "..\\src\\confederacion.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP2_laboratorio.o" "..\\src\\TP2_laboratorio.c" 
+..\src\TP2_laboratorio.c: In function 'main':
+..\src\TP2_laboratorio.c:27:6: warning: unused variable 'pNextId' [-Wunused-variable]
+   27 |  int pNextId = 30;
+      |      ^~~~~~~
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+Info: Nothing to build for TP2_laboratorio
+17:05:08 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\confederacion.o" "..\\src\\confederacion.c" 
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+17:06:06 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\confederacion.o" "..\\src\\confederacion.c" 
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+17:06:48 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\confederacion.o" "..\\src\\confederacion.c" 
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+17:09:11 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\jugador.o" "..\\src\\jugador.c" 
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+17:30:27 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\jugador.o" "..\\src\\jugador.c" 
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+Info: Nothing to build for TP2_laboratorio
+17:34:28 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP2_laboratorio.o" "..\\src\\TP2_laboratorio.c" 
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+Info: Nothing to build for TP2_laboratorio
+18:16:44 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP2_laboratorio.o" "..\\src\\TP2_laboratorio.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\informes.o" "..\\src\\informes.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\confederacion.o" "..\\src\\confederacion.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\jugador.o" "..\\src\\jugador.c" 
+..\src\jugador.c: In function 'downPlayer':
+..\src\jugador.c:246:6: warning: variable 'returnIdAux' set but not used [-Wunused-but-set-variable]
+  246 |  int returnIdAux;
+      |      ^~~~~~~~~~~
+..\src\jugador.c: In function 'modifyOnePlayer':
+..\src\jugador.c:305:14: warning: passing argument 1 of 'strcpy' makes pointer from integer without a cast [-Wint-conversion]
+  305 |       strcpy(*player->name, auxModifyOnePlayer.name);
+      |              ^~~~~~~~~~~~~
+      |              |
+      |              char
+In file included from ..\src\jugador.c:9:
+c:\mingw\include\string.h:79:40: note: expected 'char *' but argument is of type 'char'
+   79 | _CRTIMP __cdecl __MINGW_NOTHROW  char *strcpy (char *, const char *);
+      |                                        ^~~~~~
+..\src\jugador.c:320:14: warning: passing argument 1 of 'strcpy' makes pointer from integer without a cast [-Wint-conversion]
+  320 |       strcpy(*player->position, auxModifyOnePlayer.position);
+      |              ^~~~~~~~~~~~~~~~~
+      |              |
+      |              char
+In file included from ..\src\jugador.c:9:
+c:\mingw\include\string.h:79:40: note: expected 'char *' but argument is of type 'char'
+   79 | _CRTIMP __cdecl __MINGW_NOTHROW  char *strcpy (char *, const char *);
+      |                                        ^~~~~~
+..\src\jugador.c:334:7: error: invalid type argument of unary '*' (have 'int')
+  334 |       *player->shirtNumber = auxModifyShirt;
+      |       ^~~~~~~~~~~~~~~~~~~~
+..\src\jugador.c:347:7: error: invalid type argument of unary '*' (have 'int')
+  347 |       *player->confederationId = auxModifyOnePlayer.confederationId;
+      |       ^~~~~~~~~~~~~~~~~~~~~~~~
+..\src\jugador.c:360:7: error: invalid type argument of unary '*' (have 'float')
+  360 |       *player->salary = auxModifyOnePlayer.salary;
+      |       ^~~~~~~~~~~~~~~
+..\src\jugador.c:372:7: error: invalid type argument of unary '*' (have 'int')
+  372 |       *player->hiringYears = auxModifyHiringYears;
+      |       ^~~~~~~~~~~~~~~~~~~~
+..\src\jugador.c: In function 'modifyPlayers':
+..\src\jugador.c:412:6: warning: unused variable 'returnIdAux' [-Wunused-variable]
+  412 |  int returnIdAux;
+      |      ^~~~~~~~~~~
+18:17:57 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\jugador.o" "..\\src\\jugador.c" 
+..\src\jugador.c: In function 'downPlayer':
+..\src\jugador.c:246:6: warning: variable 'returnIdAux' set but not used [-Wunused-but-set-variable]
+  246 |  int returnIdAux;
+      |      ^~~~~~~~~~~
+..\src\jugador.c: In function 'modifyPlayers':
+..\src\jugador.c:412:6: warning: unused variable 'returnIdAux' [-Wunused-variable]
+  412 |  int returnIdAux;
+      |      ^~~~~~~~~~~
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+Info: Nothing to build for TP2_laboratorio
+18:19:28 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\jugador.o" "..\\src\\jugador.c" 
+..\src\jugador.c: In function 'downPlayer':
+..\src\jugador.c:246:6: warning: variable 'returnIdAux' set but not used [-Wunused-but-set-variable]
+  246 |  int returnIdAux;
+      |      ^~~~~~~~~~~
+..\src\jugador.c: In function 'modifyPlayers':
+..\src\jugador.c:412:6: warning: unused variable 'returnIdAux' [-Wunused-variable]
+  412 |  int returnIdAux;
+      |      ^~~~~~~~~~~
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+18:20:23 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\jugador.o" "..\\src\\jugador.c" 
+..\src\jugador.c: In function 'downPlayer':
+..\src\jugador.c:246:6: warning: variable 'returnIdAux' set but not used [-Wunused-but-set-variable]
+  246 |  int returnIdAux;
+      |      ^~~~~~~~~~~
+..\src\jugador.c: In function 'modifyPlayers':
+..\src\jugador.c:412:6: warning: unused variable 'returnIdAux' [-Wunused-variable]
+  412 |  int returnIdAux;
+      |      ^~~~~~~~~~~
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+Info: Nothing to build for TP2_laboratorio
+18:21:46 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP2_laboratorio.o" "..\\src\\TP2_laboratorio.c" 
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+18:23:16 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\jugador.o" "..\\src\\jugador.c" 
+..\src\jugador.c: In function 'downPlayer':
+..\src\jugador.c:246:6: warning: variable 'returnIdAux' set but not used [-Wunused-but-set-variable]
+  246 |  int returnIdAux;
+      |      ^~~~~~~~~~~
+..\src\jugador.c: In function 'modifyPlayers':
+..\src\jugador.c:413:10: warning: unused variable 'auxPlayer' [-Wunused-variable]
+  413 |  sPlayer auxPlayer;
+      |          ^~~~~~~~~
+..\src\jugador.c:412:6: warning: unused variable 'returnIdAux' [-Wunused-variable]
+  412 |  int returnIdAux;
+      |      ^~~~~~~~~~~
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+Info: Nothing to build for TP2_laboratorio
+18:24:17 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\jugador.o" "..\\src\\jugador.c" 
+..\src\jugador.c: In function 'downPlayer':
+..\src\jugador.c:246:6: warning: variable 'returnIdAux' set but not used [-Wunused-but-set-variable]
+  246 |  int returnIdAux;
+      |      ^~~~~~~~~~~
+..\src\jugador.c: In function 'modifyPlayers':
+..\src\jugador.c:413:10: warning: unused variable 'auxPlayer' [-Wunused-variable]
+  413 |  sPlayer auxPlayer;
+      |          ^~~~~~~~~
+..\src\jugador.c:412:6: warning: unused variable 'returnIdAux' [-Wunused-variable]
+  412 |  int returnIdAux;
+      |      ^~~~~~~~~~~
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+18:25:38 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\jugador.o" "..\\src\\jugador.c" 
+..\src\jugador.c: In function 'downPlayer':
+..\src\jugador.c:246:6: warning: variable 'returnIdAux' set but not used [-Wunused-but-set-variable]
+  246 |  int returnIdAux;
+      |      ^~~~~~~~~~~
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+18:43:33 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\jugador.o" "..\\src\\jugador.c" 
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+18:44:04 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\jugador.o" "..\\src\\jugador.c" 
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+18:47:39 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP2_laboratorio.o" "..\\src\\TP2_laboratorio.c" 
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+Info: Nothing to build for TP2_laboratorio
+Info: Nothing to build for TP2_laboratorio
+19:41:11 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP2_laboratorio.o" "..\\src\\TP2_laboratorio.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\informes.o" "..\\src\\informes.c" 
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+Info: Nothing to build for TP2_laboratorio
+20:17:38 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\jugador.o" "..\\src\\jugador.c" 
+..\src\jugador.c:150:5: error: conflicting types for 'loadDataPlayer'
+  150 | int loadDataPlayer(sPlayer *pPlayer, int *pIdPlayer, sConfederation arrayConfederation[], int lenArrayConfederation)
+      |     ^~~~~~~~~~~~~~
+In file included from ..\src\jugador.c:10:
+..\src\jugador.h:71:5: note: previous declaration of 'loadDataPlayer' was here
+   71 | int loadDataPlayer(sPlayer *arrayPlayer, int lenArrayPlayer, int *pIdPlayer, sConfederation arrayConfederation[], int lenArrayConfederation);
+      |     ^~~~~~~~~~~~~~
+..\src\jugador.c: In function 'registerPlayer':
+..\src\jugador.c:222:36: warning: passing argument 2 of 'loadDataPlayer' makes pointer from integer without a cast [-Wint-conversion]
+  222 |    if (loadDataPlayer(&auxPlayers, lenArrayPlayer, pIdPlayer, arrayConfederation, lenArrayConfederation) == OK)
+      |                                    ^~~~~~~~~~~~~~
+      |                                    |
+      |                                    int
+..\src\jugador.c:150:43: note: expected 'int *' but argument is of type 'int'
+  150 | int loadDataPlayer(sPlayer *pPlayer, int *pIdPlayer, sConfederation arrayConfederation[], int lenArrayConfederation)
+      |                                      ~~~~~^~~~~~~~~
+..\src\jugador.c:222:52: warning: passing argument 3 of 'loadDataPlayer' from incompatible pointer type [-Wincompatible-pointer-types]
+  222 |    if (loadDataPlayer(&auxPlayers, lenArrayPlayer, pIdPlayer, arrayConfederation, lenArrayConfederation) == OK)
+      |                                                    ^~~~~~~~~
+      |                                                    |
+      |                                                    int *
+..\src\jugador.c:150:69: note: expected 'sConfederation *' {aka 'struct <anonymous> *'} but argument is of type 'int *'
+  150 | int loadDataPlayer(sPlayer *pPlayer, int *pIdPlayer, sConfederation arrayConfederation[], int lenArrayConfederation)
+      |                                                      ~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~
+..\src\jugador.c:222:63: warning: passing argument 4 of 'loadDataPlayer' makes integer from pointer without a cast [-Wint-conversion]
+  222 |    if (loadDataPlayer(&auxPlayers, lenArrayPlayer, pIdPlayer, arrayConfederation, lenArrayConfederation) == OK)
+      |                                                               ^~~~~~~~~~~~~~~~~~
+      |                                                               |
+      |                                                               sConfederation * {aka struct <anonymous> *}
+..\src\jugador.c:150:95: note: expected 'int' but argument is of type 'sConfederation *' {aka 'struct <anonymous> *'}
+  150 | int loadDataPlayer(sPlayer *pPlayer, int *pIdPlayer, sConfederation arrayConfederation[], int lenArrayConfederation)
+      |                                                                                           ~~~~^~~~~~~~~~~~~~~~~~~~~
+..\src\jugador.c:222:8: error: too many arguments to function 'loadDataPlayer'
+  222 |    if (loadDataPlayer(&auxPlayers, lenArrayPlayer, pIdPlayer, arrayConfederation, lenArrayConfederation) == OK)
+      |        ^~~~~~~~~~~~~~
+..\src\jugador.c:150:5: note: declared here
+  150 | int loadDataPlayer(sPlayer *pPlayer, int *pIdPlayer, sConfederation arrayConfederation[], int lenArrayConfederation)
+      |     ^~~~~~~~~~~~~~
+..\src\jugador.c: In function 'modifyOnePlayer':
+..\src\jugador.c:355:10: warning: implicit declaration of function 'getIdConfederation'; did you mean 'listConfederation'? [-Wimplicit-function-declaration]
+  355 |      if (getIdConfederation(&auxModifyOnePlayer.confederationId, arrayConfederation, lenArrayConfederation) == OK)
+      |          ^~~~~~~~~~~~~~~~~~
+      |          listConfederation
+20:18:33 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\confederacion.o" "..\\src\\confederacion.c" 
+..\src\confederacion.c: In function 'loadDataConfederation':
+..\src\confederacion.c:97:9: error: incompatible types when returning type 'sConfederation' {aka 'struct <anonymous>'} but 'int' was expected
+   97 |  return auxConfederation;
+      |         ^~~~~~~~~~~~~~~~
+..\src\confederacion.c:77:6: warning: unused variable 'auxHiringYears' [-Wunused-variable]
+   77 |  int auxHiringYears;
+      |      ^~~~~~~~~~~~~~
+..\src\confederacion.c:76:6: warning: unused variable 'auxShirt' [-Wunused-variable]
+   76 |  int auxShirt;
+      |      ^~~~~~~~
+..\src\confederacion.c:75:6: warning: variable 'returnloadDataConfederation' set but not used [-Wunused-but-set-variable]
+   75 |  int returnloadDataConfederation;
+      |      ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\src\confederacion.c:98:1: warning: control reaches end of non-void function [-Wreturn-type]
+   98 | }
+      | ^
+20:18:55 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP2_laboratorio.o" "..\\src\\TP2_laboratorio.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\informes.o" "..\\src\\informes.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\jugador.o" "..\\src\\jugador.c" 
+..\src\jugador.c: In function 'registerPlayer':
+..\src\jugador.c:222:36: warning: passing argument 2 of 'loadDataPlayer' makes pointer from integer without a cast [-Wint-conversion]
+  222 |    if (loadDataPlayer(&auxPlayers, lenArrayPlayer, pIdPlayer, arrayConfederation, lenArrayConfederation) == OK)
+      |                                    ^~~~~~~~~~~~~~
+      |                                    |
+      |                                    int
+..\src\jugador.c:150:43: note: expected 'int *' but argument is of type 'int'
+  150 | int loadDataPlayer(sPlayer *pPlayer, int *pIdPlayer, sConfederation arrayConfederation[], int lenArrayConfederation)
+      |                                      ~~~~~^~~~~~~~~
+..\src\jugador.c:222:52: warning: passing argument 3 of 'loadDataPlayer' from incompatible pointer type [-Wincompatible-pointer-types]
+  222 |    if (loadDataPlayer(&auxPlayers, lenArrayPlayer, pIdPlayer, arrayConfederation, lenArrayConfederation) == OK)
+      |                                                    ^~~~~~~~~
+      |                                                    |
+      |                                                    int *
+..\src\jugador.c:150:69: note: expected 'sConfederation *' {aka 'struct <anonymous> *'} but argument is of type 'int *'
+  150 | int loadDataPlayer(sPlayer *pPlayer, int *pIdPlayer, sConfederation arrayConfederation[], int lenArrayConfederation)
+      |                                                      ~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~
+..\src\jugador.c:222:63: warning: passing argument 4 of 'loadDataPlayer' makes integer from pointer without a cast [-Wint-conversion]
+  222 |    if (loadDataPlayer(&auxPlayers, lenArrayPlayer, pIdPlayer, arrayConfederation, lenArrayConfederation) == OK)
+      |                                                               ^~~~~~~~~~~~~~~~~~
+      |                                                               |
+      |                                                               sConfederation * {aka struct <anonymous> *}
+..\src\jugador.c:150:95: note: expected 'int' but argument is of type 'sConfederation *' {aka 'struct <anonymous> *'}
+  150 | int loadDataPlayer(sPlayer *pPlayer, int *pIdPlayer, sConfederation arrayConfederation[], int lenArrayConfederation)
+      |                                                                                           ~~~~^~~~~~~~~~~~~~~~~~~~~
+..\src\jugador.c:222:8: error: too many arguments to function 'loadDataPlayer'
+  222 |    if (loadDataPlayer(&auxPlayers, lenArrayPlayer, pIdPlayer, arrayConfederation, lenArrayConfederation) == OK)
+      |        ^~~~~~~~~~~~~~
+..\src\jugador.c:150:5: note: declared here
+  150 | int loadDataPlayer(sPlayer *pPlayer, int *pIdPlayer, sConfederation arrayConfederation[], int lenArrayConfederation)
+      |     ^~~~~~~~~~~~~~
+..\src\jugador.c: In function 'modifyOnePlayer':
+..\src\jugador.c:355:10: warning: implicit declaration of function 'getIdConfederation'; did you mean 'listConfederation'? [-Wimplicit-function-declaration]
+  355 |      if (getIdConfederation(&auxModifyOnePlayer.confederationId, arrayConfederation, lenArrayConfederation) == OK)
+      |          ^~~~~~~~~~~~~~~~~~
+      |          listConfederation
+20:19:21 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\confederacion.o" "..\\src\\confederacion.c" 
+..\src\confederacion.c: In function 'loadDataConfederation':
+..\src\confederacion.c:77:6: warning: unused variable 'auxHiringYears' [-Wunused-variable]
+   77 |  int auxHiringYears;
+      |      ^~~~~~~~~~~~~~
+..\src\confederacion.c:76:6: warning: unused variable 'auxShirt' [-Wunused-variable]
+   76 |  int auxShirt;
+      |      ^~~~~~~~
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\jugador.o" "..\\src\\jugador.c" 
+..\src\jugador.c: In function 'modifyOnePlayer':
+..\src\jugador.c:355:10: warning: implicit declaration of function 'getIdConfederation'; did you mean 'listConfederation'? [-Wimplicit-function-declaration]
+  355 |      if (getIdConfederation(&auxModifyOnePlayer.confederationId, arrayConfederation, lenArrayConfederation) == OK)
+      |          ^~~~~~~~~~~~~~~~~~
+      |          listConfederation
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: src\jugador.o: in function `modifyOnePlayer':
+C:\Users\cuerpos\OneDrive\Desktop\TPS_Laboratorio_1\tps_laboratorio_1\TP2_laboratorio\Debug/../src/jugador.c:355: undefined reference to `getIdConfederation'
+collect2.exe: error: ld returned 1 exit status
+20:21:47 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\confederacion.o" "..\\src\\confederacion.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\jugador.o" "..\\src\\jugador.c" 
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+Info: Nothing to build for TP2_laboratorio
+20:55:07 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\jugador.o" "..\\src\\jugador.c" 
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+21:08:13 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\jugador.o" "..\\src\\jugador.c" 
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+21:11:01 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\jugador.o" "..\\src\\jugador.c" 
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+21:14:37 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\jugador.o" "..\\src\\jugador.c" 
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+21:15:17 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\jugador.o" "..\\src\\jugador.c" 
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+21:15:52 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\jugador.o" "..\\src\\jugador.c" 
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+21:16:20 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\jugador.o" "..\\src\\jugador.c" 
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+Info: Nothing to build for TP2_laboratorio
+21:16:45 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\jugador.o" "..\\src\\jugador.c" 
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+21:21:03 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\jugador.o" "..\\src\\jugador.c" 
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+21:21:33 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\jugador.o" "..\\src\\jugador.c" 
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+21:21:54 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\jugador.o" "..\\src\\jugador.c" 
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+Info: Nothing to build for TP2_laboratorio
+21:23:44 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\informes.o" "..\\src\\informes.c" 
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+21:24:44 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\informes.o" "..\\src\\informes.c" 
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+21:38:38 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\jugador.o" "..\\src\\jugador.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\confederacion.o" "..\\src\\confederacion.c" 
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+21:56:14 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\informes.o" "..\\src\\informes.c" 
+In file included from ..\src\informes.h:10,
+                 from ..\src\informes.c:10:
+..\src\jugador.h:102:5: error: conflicting types for 'modifyPlayers'
+  102 | int modifyPlayers(sPlayer arrayPlayer[], int lenArrayPlayer, sConfederation arrayConfederation[], int lenArrayConfederation);
+      |     ^~~~~~~~~~~~~
+In file included from ..\src\jugador.h:7,
+                 from ..\src\informes.h:10,
+                 from ..\src\informes.c:10:
+..\src\confederacion.h:28:5: note: previous declaration of 'modifyPlayers' was here
+   28 | int modifyPlayers(sConfederation arrayConfederation[], int lenArrayConfederation);
+      |     ^~~~~~~~~~~~~
+21:56:56 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\jugador.o" "..\\src\\jugador.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menus.o" "..\\src\\menus.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP2_laboratorio.o" "..\\src\\TP2_laboratorio.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\confederacion.o" "..\\src\\confederacion.c" 
+..\src\confederacion.c: In function 'modifyOneConfederation':
+..\src\confederacion.c:212:7: warning: unused variable 'playerPosition' [-Wunused-variable]
+  212 |  char playerPosition[50];
+      |       ^~~~~~~~~~~~~~
+..\src\confederacion.c: In function 'modifyConfederations':
+..\src\confederacion.c:303:7: error: too many arguments to function 'modifyOneConfederation'
+  303 |   if (modifyOneConfederation(&arrayConfederation[index], lenArrayConfederation) == OK)
+      |       ^~~~~~~~~~~~~~~~~~~~~~
+..\src\confederacion.c:206:5: note: declared here
+  206 | int modifyOneConfederation(sConfederation *pConfederation)
+      |     ^~~~~~~~~~~~~~~~~~~~~~
+21:57:28 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\confederacion.o" "..\\src\\confederacion.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\informes.o" "..\\src\\informes.c" 
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+21:59:10 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\confederacion.o" "..\\src\\confederacion.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP2_laboratorio.o" "..\\src\\TP2_laboratorio.c" 
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+22:10:43 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\informes.o" "..\\src\\informes.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP2_laboratorio.o" "..\\src\\TP2_laboratorio.c" 
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+22:21:38 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP2_laboratorio.o" "..\\src\\TP2_laboratorio.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\confederacion.o" "..\\src\\confederacion.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\informes.o" "..\\src\\informes.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menus.o" "..\\src\\menus.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\validaciones.o" "..\\src\\validaciones.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\jugador.o" "..\\src\\jugador.c" 
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+Info: Nothing to build for TP2_laboratorio
+Info: Nothing to build for TP2_laboratorio
+22:26:15 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\informes.o" "..\\src\\informes.c" 
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 

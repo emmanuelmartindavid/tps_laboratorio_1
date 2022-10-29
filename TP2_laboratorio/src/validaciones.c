@@ -297,34 +297,13 @@ int utn_getNumberFloat(float *pResult, char *message, char *errorMessage, float 
 	}
 	return ret;
 }
-/// @brief 						Funcion para validar las salidas de menus. SOLO siendo validos si(SI) o no(NO)
+/// @brief
 ///
-/// @param pResult				Puntero a direccion de la cadena de  caracteres ingresada en el caso de ser correcta.
-/// @param message				Puntero a cadena de caracteres con mensaje a imprimir para usuario.
-/// @param ErrorMessage			Puntero a cadena de caracteres con mensaje de error.
-/// @return						 Retorno, 0 en caso de haber funcionado correctamente. Retorno, -1 en caso contrario.
-//int utn_getDescriptionExit(char *pString, char *message, char *errorMessage) {
-//
-//	int ret = -1;
-//	char bufferString[3];
-//	if (pString != NULL && message != NULL && errorMessage != NULL) {
-//		printf(message);
-//		fflush(stdin);
-//		while (getalphabetic(bufferString, sizeof(bufferString)) == -1
-//				|| (strnlen(bufferString, sizeof(bufferString)) > 3
-//						|| ((stricmp(bufferString, "si")) != 0
-//								&& (stricmp(bufferString, "no")) != 0))) {
-//			printf(errorMessage);
-//			ret = -1;
-//		}
-//		fflush(stdin);
-//		strncpy(pString, bufferString, 3);
-//		ret = 0;
-//	}
-//
-//	return ret;
-//
-//}
+/// @param pResult
+/// @param message
+/// @param ErrorMessage
+/// @param retry
+/// @return
 int utn_getDescriptionExit(char *pResult, char *message, char *ErrorMessage, int retry)
 {
 	int ret;
