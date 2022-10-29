@@ -1,10 +1,12 @@
 /*
- * informes.h
- *
- *  Created on: 20 oct. 2022
- *      Author: cuerpos
+ ============================================================================
+ Name        : TP2_laboratorio.c
+ Author      :   EMMANUEL MARTIN. 1-E
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
  */
-
 #ifndef INFORMES_H_
 #define INFORMES_H_
 #include "jugador.h"
@@ -44,13 +46,23 @@ int accumulateTotalSalary(sPlayer arrayPlayer[], int lenArrayPlayer, float *pAcu
 /// @param pAverageTotalSalary						 Puntero a flotante.
 /// @return                           				 Retorno, OK(1) en caso de haber funcionado correctamente. Retorno, ERROR(-1) en caso contrario.
 int calculateAverageTotalSalary(sPlayer arrayPlayer[], int lenArrayPlayer, float *pAverageTotalSalary);
-/// @brief countPlayerAboveAverageSalary			Cuenta jugdores que ganan más del promedio de salarios de jugadores dados de alta.
+/// @brief countPlayerAboveAverageSalary			 Cuenta jugdores que ganan más del promedio de salarios de jugadores dados de alta.
 ///
 /// @param arrayPlayer              	      		 Array de jugadores.
 /// @param lenArrayPlayer					 	     Tamanio Array de jugadores.
 /// @param pCounterPlayerAboveAverageSalary		     Puntero a entero.
 /// @return                   						 Retorno, OK(1) en caso de haber funcionado correctamente. Retorno, ERROR(-1) en caso contrario.
 int countPlayerAboveAverageSalary(sPlayer arrayPlayer[], int lenArrayPlayer, int *pCounterPlayerAboveAverageSalary);
+/// @brief listTotalSalary 							 Lista total de salarios.
+///
+/// @param arrayPlayer              	      		 Array de jugadores.
+/// @param lenArrayPlayer					 	     Tamanio Array de jugadores.
+void listTotalSalary(sPlayer arrayPlayer[], int lenArrayPlayer);
+/// @brief listAverageTotalSalary					 Lista promedio total de salarios.
+///
+/// @param arrayPlayer              	      		 Array de jugadores.
+/// @param lenArrayPlayer					 	     Tamanio Array de jugadores.
+void listAverageTotalSalary(sPlayer arrayPlayer[], int lenArrayPlayer);
 /// @brief listPlayerAboveAverageSalary		    	 Informa y lista jugadores ganan más del promedio de salarios de jugadores dados de alta.
 ///
 /// @param arrayPlayer              	      		 Array de jugadores.

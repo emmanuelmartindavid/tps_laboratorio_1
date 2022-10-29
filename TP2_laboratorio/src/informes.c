@@ -1,8 +1,11 @@
 /*
- * informes.c
- *
- *  Created on: 20 oct. 2022
- *      Author: cuerpos
+ ============================================================================
+ Name        : TP2_laboratorio.c
+ Author      :   EMMANUEL MARTIN. 1-E
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
  */
 #include <stdio.h>
 #include <stdlib.h>
@@ -32,9 +35,7 @@ int sortPerConfederationAndPlayerName(sPlayer arrayPlayer[], int lenArrayPlayer,
 			for (int j = i + 1; j < lenArrayPlayer; j++)
 			{
 
-				if (arrayPlayer[i].isEmpty == OCCUPIED
-					&& getConfederationDescription(arrayConfederation, lenArrayConfederation, arrayPlayer[i].confederationId, confederationName) == OK
-					&& getConfederationDescription(arrayConfederation, lenArrayConfederation, arrayPlayer[j].confederationId, confederationName2) == OK)
+				if (arrayPlayer[i].isEmpty == OCCUPIED && getConfederationDescription(arrayConfederation, lenArrayConfederation, arrayPlayer[i].confederationId, confederationName) == OK && getConfederationDescription(arrayConfederation, lenArrayConfederation, arrayPlayer[j].confederationId, confederationName2) == OK)
 				{
 
 					if ((stricmp(confederationName, confederationName2)) > 0 || (stricmp(confederationName, confederationName2) == 0 && (stricmp(arrayPlayer[i].name, arrayPlayer[j].name)) > 0))
@@ -234,6 +235,39 @@ int countPlayerAboveAverageSalary(sPlayer arrayPlayer[], int lenArrayPlayer, int
 
 	return returncountPlayerAboveAverageSalary;
 }
+/// @brief listTotalSalary 							 Lista total de salarios.
+///
+/// @param arrayPlayer              	      		 Array de jugadores.
+/// @param lenArrayPlayer					 	     Tamanio Array de jugadores.
+void listTotalSalary(sPlayer arrayPlayer[], int lenArrayPlayer)
+{
+
+	float totalSalary;
+	if (arrayPlayer != NULL && lenArrayPlayer > 0 && accumulateTotalSalary(arrayPlayer, lenArrayPlayer, &totalSalary) == OK)
+
+	{
+
+		printf("\n\t\t\t\t\t\tEL TOTAL DE SALARIOS ES: $%.2f.\n", totalSalary);
+	}
+
+}
+/// @brief listAverageTotalSalary					 Lista promedio total de salarios.
+///
+/// @param arrayPlayer              	      		 Array de jugadores.
+/// @param lenArrayPlayer					 	     Tamanio Array de jugadores.
+void listAverageTotalSalary(sPlayer arrayPlayer[], int lenArrayPlayer)
+{
+
+	float averageSalary;
+	if (arrayPlayer != NULL && lenArrayPlayer > 0 && calculateAverageTotalSalary(arrayPlayer, lenArrayPlayer, &averageSalary) == OK)
+
+	{
+
+		printf("\n\t\t\t\t\t\tEL PROMEDIO TOTAL DE SALARIO ES: $%.2f.\n", averageSalary);
+	}
+
+}
+
 /// @brief listPlayerAboveAverageSalary		    	 Informa y lista jugadores ganan más del promedio de salarios de jugadores dados de alta.
 ///
 /// @param arrayPlayer              	      		 Array de jugadores.
@@ -311,13 +345,7 @@ int accumulateHiringYearsByConfederation(sPlayer arrayPlayer[], int lenArrayPlay
 int calculateMaximusHiringYearsConfederation(sPlayer arrayPlayer[], int lenArrayPlayer, sConfederation arrayConfederation[], int lenArrayConfederation, int *pMaximusHiringYears, int arrayAccumulatorHiringYears[])
 {
 	int returnCalculateMaximusHiringYearsConfederation = ERROR;
-	if (arrayPlayer != NULL
-	&& lenArrayPlayer > 0
-	&& arrayConfederation != NULL
-	&& lenArrayConfederation > 0
-	&& pMaximusHiringYears != NULL
-	&& arrayAccumulatorHiringYears != NULL
-	&& accumulateHiringYearsByConfederation(arrayPlayer, lenArrayPlayer, arrayConfederation, lenArrayConfederation, arrayAccumulatorHiringYears) == OK)
+	if (arrayPlayer != NULL && lenArrayPlayer > 0 && arrayConfederation != NULL && lenArrayConfederation > 0 && pMaximusHiringYears != NULL && arrayAccumulatorHiringYears != NULL && accumulateHiringYearsByConfederation(arrayPlayer, lenArrayPlayer, arrayConfederation, lenArrayConfederation, arrayAccumulatorHiringYears) == OK)
 	{
 		*pMaximusHiringYears = 0;
 
@@ -430,14 +458,7 @@ int calculatePercentagePlayersPerConfederation(sPlayer arrayPlayer[], int lenArr
 	int returncalculatePercentagePlayersPerConfederation = ERROR;
 	int counterPlayer;
 
-	if (arrayPlayer != NULL
-	&& lenArrayPlayer > 0
-	&& arrayConfederation != NULL
-	&& lenArrayConfederation > 0
-	&& porcentagePlayersPerConfederation != NULL
-	&& arrayAccumulatorPlayerPerConfederation != NULL
-	&& accumulatePlayersPerConfederation(arrayPlayer, lenArrayPlayer, arrayConfederation, lenArrayConfederation, arrayAccumulatorPlayerPerConfederation) == OK
-	&& countPlayers(arrayPlayer, lenArrayPlayer, &counterPlayer) == OK)
+	if (arrayPlayer != NULL && lenArrayPlayer > 0 && arrayConfederation != NULL && lenArrayConfederation > 0 && porcentagePlayersPerConfederation != NULL && arrayAccumulatorPlayerPerConfederation != NULL && accumulatePlayersPerConfederation(arrayPlayer, lenArrayPlayer, arrayConfederation, lenArrayConfederation, arrayAccumulatorPlayerPerConfederation) == OK && countPlayers(arrayPlayer, lenArrayPlayer, &counterPlayer) == OK)
 	{
 
 		for (int i = 0; i < lenArrayConfederation; i++)
@@ -466,12 +487,7 @@ void listPercentagePlayersPerConfederation(sPlayer arrayPlayer[], int lenArrayPl
 {
 
 	float percentagePerConfederation[lenArrayConfederation];
-	if (arrayPlayer != NULL
-	&& lenArrayPlayer > 0
-	&& arrayConfederation != NULL
-	&& lenArrayConfederation > 0
-	&& arrayAccumulatorPlayerPerConfederation != NULL
-	&& calculatePercentagePlayersPerConfederation(arrayPlayer, lenArrayPlayer, arrayConfederation, lenArrayConfederation, percentagePerConfederation, arrayAccumulatorPlayerPerConfederation)==OK)
+	if (arrayPlayer != NULL && lenArrayPlayer > 0 && arrayConfederation != NULL && lenArrayConfederation > 0 && arrayAccumulatorPlayerPerConfederation != NULL && calculatePercentagePlayersPerConfederation(arrayPlayer, lenArrayPlayer, arrayConfederation, lenArrayConfederation, percentagePerConfederation, arrayAccumulatorPlayerPerConfederation)==OK)
 	{
 		for (int i = 0; i < lenArrayConfederation; i++)
 		{
@@ -511,12 +527,7 @@ void listPercentagePlayersPerConfederation(sPlayer arrayPlayer[], int lenArrayPl
 int calculateMaximusPlayersPerRegion(sPlayer arrayPlayer[], int lenArrayPlayer, sConfederation arrayConfederation[], int lenArrayConfederation, int arrayAccumulatorPlayerPerConfederation[], int *pMaximusPlayersPerConfederation)
 {
 
-	if (arrayPlayer != NULL
-	&& lenArrayPlayer > 0
-	&& arrayConfederation != NULL
-	&& lenArrayConfederation > 0
-	&& arrayAccumulatorPlayerPerConfederation != NULL
-	&& accumulatePlayersPerConfederation(arrayPlayer, lenArrayPlayer, arrayConfederation, lenArrayConfederation, arrayAccumulatorPlayerPerConfederation) == OK)
+	if (arrayPlayer != NULL && lenArrayPlayer > 0 && arrayConfederation != NULL && lenArrayConfederation > 0 && arrayAccumulatorPlayerPerConfederation != NULL && accumulatePlayersPerConfederation(arrayPlayer, lenArrayPlayer, arrayConfederation, lenArrayConfederation, arrayAccumulatorPlayerPerConfederation) == OK)
 	{
 
 		for (int i = 0; i < lenArrayConfederation; i++)
@@ -545,14 +556,10 @@ void listMaximusPlayersPerRegion(sPlayer arrayPlayer[], int lenArrayPlayer, sCon
 {
 	int maximusPlayersPerConfederation;
 
-	if (arrayPlayer != NULL
-	&& lenArrayPlayer > 0
-	&& arrayConfederation != NULL
-	&& lenArrayConfederation > 0
-	&& arrayAccumulatorPlayerPerConfederation != NULL)
+	if (arrayPlayer != NULL && lenArrayPlayer > 0 && arrayConfederation != NULL && lenArrayConfederation > 0 && arrayAccumulatorPlayerPerConfederation != NULL)
 	{
-		if(calculateMaximusPlayersPerRegion(arrayPlayer, lenArrayPlayer, arrayConfederation, lenArrayConfederation, arrayAccumulatorPlayerPerConfederation, &maximusPlayersPerConfederation)==OK)
-		printf("\t\t\t\t\t\t=========================================================================================================================================\n");
+		if (calculateMaximusPlayersPerRegion(arrayPlayer, lenArrayPlayer, arrayConfederation, lenArrayConfederation, arrayAccumulatorPlayerPerConfederation, &maximusPlayersPerConfederation) == OK)
+			printf("\t\t\t\t\t\t=========================================================================================================================================\n");
 
 		for (int i = 0; i < lenArrayConfederation; i++)
 		{

@@ -1,15 +1,17 @@
 /*
- * validaciones.c
- *
- *  Created on: 14 oct. 2022
- *      Author: cuerpos
+ ============================================================================
+ Name        : TP2_laboratorio.c
+ Author      :   EMMANUEL MARTIN. 1-E
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
  */
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include "validaciones.h"
 #define LEN 4096
-
 /// @brief get String      Funcion para pedir dato por consola, a traves de cadena de caracteres.
 ///
 /// @param pString         Puntero de cadena de caracteres.
@@ -38,7 +40,6 @@ int getString(char *pString, int len)
 	}
 	return returnGetString;
 }
-
 /// @brief  getAlfaNumeric  Funcion verifica la cadena de caracteres ingresada, devolviendola asi por puntero cadena si es correcta.
 ///
 /// @param pResult   	    Puntero a cadena de caracteres.
@@ -95,8 +96,8 @@ int isAlphabetic(char *pString, int len)
 /// @param pResult          Puntero a direccion de la cadena de  caracteres ingresada en el caso de ser correcta.
 /// @param message		    Puntero a cadena de caracteres con mensaje a imprimir para usuario.
 /// @param errorMessage     Puntero a cadena de caracteres con mensaje de error.
+/// @param retry				entero, cantidad de reintentos.
 /// @return                 Retorno, 0 en caso de haber funcionado correctamente. Retorno, -1 en caso contrario.
-
 int utn_getAlphabeticDescription(char *pResult, char *message, char *ErrorMessage, int retry, int len)
 {
 	int returnUtn_getAlphabeticDescription;
@@ -139,14 +140,11 @@ int getInt(int *pResult)
 	{
 		*pResult = atoi(option);
 
-		//(short)*pResult = atoi(option);
-
 		returnGetInt = 0;
 	}
 
 	return returnGetInt;
 }
-
 /// @brief isInt        Funcion valida si la cadena de caracteres esta dentro de los parametros esperados de un numero entero.
 ///
 /// @param pString          Puntero de cadena de caracteres a verificar en funcion.
@@ -169,7 +167,6 @@ int isInt(char *pString, int len)
 	}
 	return returnIsInt;
 }
-
 /// @brief utn_getNumber    Función para pedir un número entero por consola.
 ///
 /// @param pResult          Puntero a direccion de la variable ingresada en el caso de ser correcta.
@@ -177,8 +174,8 @@ int isInt(char *pString, int len)
 /// @param errorMessage     Puntero a cadena de caracteres con mensaje de error mientras el dato no sea un numero.
 /// @param minimus		    Valor mínimo valido.
 /// @param maximus          Valor máximo valido.
+/// @param retry			entero, cantidad de reintentos.
 /// @return                 Retorno, 0 en caso de haber funcionado correctamente. Retorno, -1 en caso contrario.
-
 int utn_getNumber(int *pResult, char *message, char *errorMessage, int minimus, int maximus, int retry)
 {
 	int returnUtn_getNumber;
@@ -210,7 +207,6 @@ int utn_getNumber(int *pResult, char *message, char *errorMessage, int minimus, 
 	return returnUtn_getNumber;
 
 }
-
 /// @brief getFloat		    Funcion verifica la cadena de caracteres ingresada, convirtiendola, si es valida, a numero flotante.
 ///
 /// @param pResult          Puntero numero entero de la conversion realizada con ATOF.
@@ -266,6 +262,7 @@ int isFloat(char *pString)
 /// @param errorMessage         Puntero a cadena de caracteres con mensaje de error mientras el dato no sea un numero.
 /// @param minimus 	            Valor mínimo valido.
 /// @param maximus              Valor máximo valido.
+/// @param retry				entero, cantidad de reintentos.
 /// @return                     Retorno, 0 en caso de haber funcionado correctamente. Retorno, -1 en caso contrario.
 int utn_getNumberFloat(float *pResult, char *message, char *errorMessage, float minimus, float maximus, int retry)
 {
@@ -297,13 +294,13 @@ int utn_getNumberFloat(float *pResult, char *message, char *errorMessage, float 
 	}
 	return returnUtn_getNumberFloat;
 }
-/// @brief
+/// @brief 						Funcion para validar las salidas de menus. SOLO siendo validos si(SI) o no(NO)
 ///
-/// @param pResult
-/// @param message
-/// @param ErrorMessage
-/// @param retry
-/// @return
+/// @param pString				Puntero a direccion de la cadena de  caracteres ingresada en el caso de ser correcta.
+/// @param message				Puntero a cadena de caracteres con mensaje a imprimir para usuario.
+/// @param errorMessage			Puntero a cadena de caracteres con mensaje de error.
+/// @param retry				entero, cantidad de reintentos.
+/// @return						 Retorno, 0 en caso de haber funcionado correctamente. Retorno, -1 en caso contrario.
 int utn_getDescriptionExit(char *pResult, char *message, char *ErrorMessage, int retry)
 {
 	int returnUtn_getDescriptionExit;

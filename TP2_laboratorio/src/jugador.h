@@ -1,10 +1,12 @@
 /*
- * jugador.h
- *
- *  Created on: 13 oct. 2022
- *      Author: cuerpos
+ ============================================================================
+ Name        : TP2_laboratorio.c
+ Author      :   EMMANUEL MARTIN. 1-E
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
  */
-
 #ifndef JUGADOR_H_
 #define JUGADOR_H_
 #include "confederacion.h"

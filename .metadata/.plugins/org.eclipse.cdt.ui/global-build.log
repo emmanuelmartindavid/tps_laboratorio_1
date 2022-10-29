@@ -708,3 +708,86 @@ gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP2_laboratorio.o" "..\\src\\TP
 gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\confederacion.o" "..\\src\\confederacion.c" 
 gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\jugador.o" "..\\src\\jugador.c" 
 gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+19:08:40 **** Rebuild of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\validaciones.o" "..\\src\\validaciones.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menus.o" "..\\src\\menus.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP2_laboratorio.o" "..\\src\\TP2_laboratorio.c" 
+..\src\TP2_laboratorio.c: In function 'main':
+..\src\TP2_laboratorio.c:32:8: warning: unused variable 'averageSalary' [-Wunused-variable]
+   32 |  float averageSalary;
+      |        ^~~~~~~~~~~~~
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\confederacion.o" "..\\src\\confederacion.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\informes.o" "..\\src\\informes.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\jugador.o" "..\\src\\jugador.c" 
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+Info: Nothing to build for TP2_laboratorio
+19:12:06 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\informes.o" "..\\src\\informes.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP2_laboratorio.o" "..\\src\\TP2_laboratorio.c" 
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+Info: Nothing to build for TP2_laboratorio
+19:27:39 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP2_laboratorio.o" "..\\src\\TP2_laboratorio.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\validaciones.o" "..\\src\\validaciones.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\informes.o" "..\\src\\informes.c" 
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+Info: Nothing to build for TP2_laboratorio
+19:27:52 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP2_laboratorio.o" "..\\src\\TP2_laboratorio.c" 
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: cannot open output file TP2_laboratorio.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+19:27:55 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+Info: Nothing to build for TP2_laboratorio
+Info: Nothing to build for TP2_laboratorio
+Info: Nothing to build for TP2_laboratorio
+Info: Nothing to build for TP2_laboratorio
+19:32:46 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\validaciones.o" "..\\src\\validaciones.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\confederacion.o" "..\\src\\confederacion.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP2_laboratorio.o" "..\\src\\TP2_laboratorio.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menus.o" "..\\src\\menus.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\jugador.o" "..\\src\\jugador.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\informes.o" "..\\src\\informes.c" 
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: cannot open output file TP2_laboratorio.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+19:32:50 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+Info: Nothing to build for TP2_laboratorio
+19:33:50 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP2_laboratorio.o" "..\\src\\TP2_laboratorio.c" 
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+Info: Nothing to build for TP2_laboratorio
+Info: Nothing to build for TP2_laboratorio
+Info: Nothing to build for TP2_laboratorio
+19:34:14 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP2_laboratorio.o" "..\\src\\TP2_laboratorio.c" 
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+19:35:25 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP2_laboratorio.o" "..\\src\\TP2_laboratorio.c" 
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+Info: Nothing to build for TP2_laboratorio
+19:36:32 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP2_laboratorio.o" "..\\src\\TP2_laboratorio.c" 
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
+19:56:12 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\validaciones.o" "..\\src\\validaciones.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP2_laboratorio.o" "..\\src\\TP2_laboratorio.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\informes.o" "..\\src\\informes.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\confederacion.o" "..\\src\\confederacion.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\jugador.o" "..\\src\\jugador.c" 
+gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 

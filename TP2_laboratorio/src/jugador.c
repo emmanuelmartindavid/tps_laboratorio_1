@@ -1,8 +1,11 @@
 /*
- * jugador.c
- *
- *  Created on: 13 oct. 2022
- *      Author: cuerpos
+ ============================================================================
+ Name        : TP2_laboratorio.c
+ Author      :   EMMANUEL MARTIN. 1-E
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
  */
 #include <stdio.h>
 #include <stdlib.h>
@@ -63,7 +66,7 @@ int findByIdArrayPlayer(sPlayer arrayPlayer[], int idPlayer, int lenArrayPlayer)
 	int returnfindByIdArrayPlayer = ERROR;
 	int i;
 
-	if (arrayPlayer != NULL  && lenArrayPlayer > 0)
+	if (arrayPlayer != NULL && lenArrayPlayer > 0)
 	{
 
 		for (i = 0; i < lenArrayPlayer; i++)
@@ -166,9 +169,11 @@ int loadDataPlayer(sPlayer *pPlayer, int *pIdPlayer, sConfederation arrayConfede
 	if (pPlayer != NULL && pIdPlayer != NULL && arrayConfederation != NULL && lenArrayConfederation > 0)
 	{
 
-		if (utn_getAlphabeticDescription(auxPlayer.name, "Ingrese su nombre y apellido.\n", "Dato invalido. Reintente.\n", 3, 50) == 0 && getPositionPlayer(playerPosition) == OK
-						&& utn_getNumberFloat(&auxPlayer.salary, "Ingrese su salario. desde ($10000 hasta $9999999)", "Dato invalido. Reintente.\n", 10000, 9999999, 3) == 0 && utn_getNumberShort(&auxPlayer.shirtNumber, "Ingrese su numero de camiseta. Solo entre 1 y 99.\n", "Dato invalido. Reintente", 1, 99, 3) == 0
-						&& utn_getNumberShort(&auxPlayer.hiringYears, "Ingrese los anios de contrato. Desde 1 a 10 maximo.", "Dato invalido. Reintente.\n", 1, 10, 3) == 0)
+		if (utn_getAlphabeticDescription(auxPlayer.name, "Ingrese su nombre y apellido.\n", "Dato invalido. Reintente.\n", 3, 50) == 0
+			&& getPositionPlayer(playerPosition) == OK
+			&& utn_getNumberFloat(&auxPlayer.salary, "Ingrese su salario. desde ($10000 hasta $9999999)", "Dato invalido. Reintente.\n", 10000, 9999999, 3) == 0
+			&& utn_getNumberShort(&auxPlayer.shirtNumber, "Ingrese su numero de camiseta. Solo entre 1 y 99.\n", "Dato invalido. Reintente", 1, 99, 3) == 0
+			&& utn_getNumberShort(&auxPlayer.hiringYears, "Ingrese los anios de contrato. Desde 1 a 10 maximo.", "Dato invalido. Reintente.\n", 1, 10, 3) == 0)
 		{
 			listConfederation(arrayConfederation, lenArrayConfederation);
 
@@ -494,7 +499,7 @@ int sortPerIdPlayers(sPlayer arrayPlayer[], int lenArrayPlayer, sConfederation a
 int getPositionPlayer(char *pPosition)
 {
 
-	int rtn;
+	int returnGetPositionPlayer;
 	int option;
 
 	if (pPosition != NULL)
@@ -510,19 +515,19 @@ int getPositionPlayer(char *pPosition)
 			{
 			case 1:
 				strcpy(pPosition, "Arquero");
-				rtn = OK;
+				returnGetPositionPlayer = OK;
 				break;
 			case 2:
 				strcpy(pPosition, "Defensor");
-				rtn = OK;
+				returnGetPositionPlayer = OK;
 				break;
 			case 3:
 				strcpy(pPosition, "Mediocampista");
-				rtn = OK;
+				returnGetPositionPlayer = OK;
 				break;
 			case 4:
 				strcpy(pPosition, "Delantero");
-				rtn = OK;
+				returnGetPositionPlayer = OK;
 				break;
 
 			}
@@ -531,11 +536,11 @@ int getPositionPlayer(char *pPosition)
 		else
 		{
 
-			rtn = ERROR;
+			returnGetPositionPlayer = ERROR;
 		}
 	}
 
-	return rtn;
+	return returnGetPositionPlayer;
 }
 /// @brief validateRegisterOrDownPlayer	 Valida a traves de flag la entrada a las opciones de menu dependiendo si hay jugadores dados de alta.
 ///
@@ -578,7 +583,7 @@ void validateRegisterOrDownPlayer(sPlayer arrayPlayer[], int lenArrayPlayer, int
 int hardCodePlayers(sPlayer arrayPlayer[], int lenArrayPlayer, int ammount, int *pNextId)
 {
 
-	int rtn = ERROR;
+	int returnHardCodePlayers = ERROR;
 
 	if (arrayPlayer != NULL && lenArrayPlayer > 0 && pNextId != NULL)
 	{
@@ -619,10 +624,10 @@ int hardCodePlayers(sPlayer arrayPlayer[], int lenArrayPlayer, int ammount, int 
 				arrayPlayer[i].idPlayer = *pNextId;
 				(*pNextId)++;
 			}
-			rtn = OK;
+			returnHardCodePlayers = OK;
 		}
 	}
-	return rtn;
+	return returnHardCodePlayers;
 
 }
 

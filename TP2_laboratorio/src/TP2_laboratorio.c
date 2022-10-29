@@ -1,7 +1,7 @@
 /*
  ============================================================================
  Name        : TP2_laboratorio.c
- Author      : 
+ Author      :   EMMANUEL MARTIN. 1-E
  Version     :
  Copyright   : Your copyright notice
  Description : Hello World in C, Ansi-style
@@ -29,8 +29,6 @@ int main(void)
 	int returnMainMenu;
 	int returnReportMenu;
 	int optionReports;
-	float totalSalary;
-	float averageSalary;
 	int flagRegisterOrDownPlayer;
 	int arrayAccumulatorPlayers[LEN_ARRAYCONFEDERATION];
 
@@ -80,20 +78,16 @@ int main(void)
 					if (downPlayer(arrayPlayer, LEN_ARRAYPLAYERS) == OK)
 					{
 						printf("\t\t\t\t\t\t\t\tSU JUGADOR FUE DADO DE BAJA CORRECTAMENTE\n");
-
 					}
 					else
 					{
 						printf("\t\t\t\t\t\t\t\tBAJA DE JUGADOR CANCELADA\n");
-
 					}
 
 				}
 				else
 				{
-
 					printf("\t\t\t\t\t\t\t\tNADA PARA DAR DE BAJA. PRIMERO DEBE DAR DE ALTA UN JUGADOR\n\n");
-
 				}
 
 				break;
@@ -135,23 +129,16 @@ int main(void)
 							switch (optionReports)
 							{
 							case 1:
-
 								sortPerConfederationAndPlayerName(arrayPlayer, LEN_ARRAYPLAYERS, arrayConfederation, LEN_ARRAYCONFEDERATION);
 								listPlayers(arrayPlayer, LEN_ARRAYPLAYERS, arrayConfederation, LEN_ARRAYCONFEDERATION);
-
 								break;
 							case 2:
 								listConfederationPerPlayers(arrayPlayer, LEN_ARRAYPLAYERS, arrayConfederation, LEN_ARRAYCONFEDERATION);
-
 								break;
 							case 3:
-								if (accumulateTotalSalary(arrayPlayer, LEN_ARRAYPLAYERS, &totalSalary) == OK && calculateAverageTotalSalary(arrayPlayer, LEN_ARRAYPLAYERS, &averageSalary) == OK)
-								{
-
-									printf("\n\t\t\t\t\t\tEL TOTAL DE SALARIOS ES: $%.2f.\n"
-											"\n\t\t\t\t\t\tEL PROMEDIO TOTAL DE SALARIO ES: $%.2f.\n", totalSalary, averageSalary);
-									listPlayerAboveAverageSalary(arrayPlayer, LEN_ARRAYPLAYERS, arrayConfederation, LEN_ARRAYCONFEDERATION);
-								}
+								listTotalSalary(arrayPlayer, LEN_ARRAYPLAYERS);
+								listAverageTotalSalary(arrayPlayer, LEN_ARRAYPLAYERS);
+								listPlayerAboveAverageSalary(arrayPlayer, LEN_ARRAYPLAYERS, arrayConfederation, LEN_ARRAYCONFEDERATION);
 								break;
 							case 4:
 								listMaximusHiringYearsConfederation(arrayPlayer, LEN_ARRAYPLAYERS, arrayConfederation, LEN_ARRAYCONFEDERATION, arrayAccumulatorPlayers);

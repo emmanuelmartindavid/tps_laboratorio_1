@@ -1,13 +1,14 @@
 /*
- * validaciones.h
- *
- *  Created on: 14 oct. 2022
- *      Author: cuerpos
+ ============================================================================
+ Name        : TP2_laboratorio.c
+ Author      :   EMMANUEL MARTIN. 1-E
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
  */
-
 #ifndef VALIDACIONES_H_
 #define VALIDACIONES_H_
-
 /// @brief get String      Funcion para pedir dato por consola, a traves de cadena de caracteres.
 ///
 /// @param pString         Puntero de cadena de caracteres.

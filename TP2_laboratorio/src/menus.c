@@ -1,8 +1,11 @@
 /*
- * menus.c
- *
- *  Created on: 23 oct. 2022
- *      Author: cuerpos
+ ============================================================================
+ Name        : TP2_laboratorio.c
+ Author      :   EMMANUEL MARTIN. 1-E
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
  */
 #include <stdio.h>
 #include <stdlib.h>
