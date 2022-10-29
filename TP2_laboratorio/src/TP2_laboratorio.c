@@ -23,21 +23,16 @@ int main(void)
 	sConfederation arrayConfederation[LEN_ARRAYCONFEDERATION];
 	sPlayer arrayPlayer[LEN_ARRAYPLAYERS];
 	int idPlayer = 1;
-	int pNextIdConfederation = 100;
+	int idConfederation = 100;
 	int option = 0;
 	char exit[3];
 	int returnRegisterPlayer;
-	int returnDownPlayer;
-	int returnModifyPlayer;
-	int returnsortPlayers;
-	int returnListPlayers;
 	int returnMainMenu;
 	int returnReportMenu;
-	int returnExit;
 	int optionReports;
 	float totalSalary;
 	float averageSalary;
-	int playersAboveAverageSalary;
+	int flagRegisterOrDownPlayer;
 	int arrayAccumulatorPlayers[LEN_ARRAYCONFEDERATION];
 
 	initializeArrayPlayer(arrayPlayer, LEN_ARRAYPLAYERS);
@@ -46,7 +41,7 @@ int main(void)
 
 	hardCodePlayers(arrayPlayer, LEN_ARRAYPLAYERS, 24, &idPlayer);
 
-	hardCodeConfederations(arrayConfederation, LEN_ARRAYCONFEDERATION, 6, &pNextIdConfederation);
+	hardCodeConfederations(arrayConfederation, LEN_ARRAYCONFEDERATION, 6, &idConfederation);
 
 	do
 	{
@@ -76,27 +71,20 @@ int main(void)
 				break;
 			case 2:
 				printf("\t\t\t\t\t\t\t\t\t\tBAJA JUGADOR\n\n");
-				returnsortPlayers = sortPerIdPlayers(arrayPlayer, LEN_ARRAYPLAYERS, arrayConfederation, LEN_ARRAYCONFEDERATION);
-				returnListPlayers = listPlayers(arrayPlayer, LEN_ARRAYPLAYERS, arrayConfederation, LEN_ARRAYCONFEDERATION);
-				if (returnListPlayers == OK && returnsortPlayers == OK)
+				validateRegisterOrDownPlayer(arrayPlayer, LEN_ARRAYPLAYERS, &flagRegisterOrDownPlayer);
+				if (flagRegisterOrDownPlayer == OK)
 				{
+					sortPerIdPlayers(arrayPlayer, LEN_ARRAYPLAYERS, arrayConfederation, LEN_ARRAYCONFEDERATION);
+					listPlayers(arrayPlayer, LEN_ARRAYPLAYERS, arrayConfederation, LEN_ARRAYCONFEDERATION);
 
-					returnDownPlayer = downPlayer(arrayPlayer,
-					LEN_ARRAYPLAYERS);
-
-					if (returnDownPlayer == OK)
+					if (downPlayer(arrayPlayer, LEN_ARRAYPLAYERS) == OK)
 					{
 						printf("\t\t\t\t\t\t\t\tSU JUGADOR FUE DADO DE BAJA CORRECTAMENTE\n");
 
 					}
-					else if (returnDownPlayer == ERROR)
+					else
 					{
 						printf("\t\t\t\t\t\t\t\tBAJA DE JUGADOR CANCELADA\n");
-
-					}
-					else if (returnDownPlayer == -2)
-					{
-						printf("\t\t\t\t\t\t\t\tDATOS INVALIDOS. REINTENTE.\n");
 
 					}
 
@@ -111,18 +99,17 @@ int main(void)
 				break;
 			case 3:
 				printf("\t\t\t\t\t\t\t\t\t\tMODIFICAR JUGADOR\n\n");
-				returnsortPlayers = sortPerIdPlayers(arrayPlayer, LEN_ARRAYPLAYERS, arrayConfederation, LEN_ARRAYCONFEDERATION);
-				returnListPlayers = listPlayers(arrayPlayer, LEN_ARRAYPLAYERS, arrayConfederation, LEN_ARRAYCONFEDERATION);
-				if (returnListPlayers == OK && returnsortPlayers == OK)
+				validateRegisterOrDownPlayer(arrayPlayer, LEN_ARRAYPLAYERS, &flagRegisterOrDownPlayer);
+				if (flagRegisterOrDownPlayer == OK)
 				{
+					sortPerIdPlayers(arrayPlayer, LEN_ARRAYPLAYERS, arrayConfederation, LEN_ARRAYCONFEDERATION);
+					listPlayers(arrayPlayer, LEN_ARRAYPLAYERS, arrayConfederation, LEN_ARRAYCONFEDERATION);
 
-					returnModifyPlayer = modifyPlayers(arrayPlayer, LEN_ARRAYPLAYERS, arrayConfederation, LEN_ARRAYCONFEDERATION);
-
-					if (returnModifyPlayer == OK)
+					if (modifyPlayers(arrayPlayer, LEN_ARRAYPLAYERS, arrayConfederation, LEN_ARRAYCONFEDERATION) == OK)
 					{
 						printf("\t\t\t\t\t\t\t\t\t\tMODIFICACION EXITOSA\n");
 					}
-					else if (returnModifyPlayer == -2)
+					else
 					{
 						printf("\t\t\t\t\t\t\t\tDATOS INVALIDOS. REINTENTE.\n");
 					}
@@ -134,8 +121,8 @@ int main(void)
 
 				break;
 			case 4:
-
-				if (returnRegisterPlayer == OK)
+				validateRegisterOrDownPlayer(arrayPlayer, LEN_ARRAYPLAYERS, &flagRegisterOrDownPlayer);
+				if (flagRegisterOrDownPlayer == OK)
 				{
 					do
 					{
@@ -158,22 +145,22 @@ int main(void)
 
 								break;
 							case 3:
-								if (accumulateTotalSalary(arrayPlayer, LEN_ARRAYPLAYERS, &totalSalary) == OK && calculateAverageTotalSalary(arrayPlayer, LEN_ARRAYPLAYERS, &averageSalary) == OK && countPlayerAboveAverageSalary(arrayPlayer, LEN_ARRAYPLAYERS, &playersAboveAverageSalary) == OK)
+								if (accumulateTotalSalary(arrayPlayer, LEN_ARRAYPLAYERS, &totalSalary) == OK && calculateAverageTotalSalary(arrayPlayer, LEN_ARRAYPLAYERS, &averageSalary) == OK)
 								{
 
 									printf("\n\t\t\t\t\t\tEL TOTAL DE SALARIOS ES: $%.2f.\n"
-										   "\n\t\t\t\t\t\tEL PROMEDIO TOTAL DE SALARIO ES: $%.2f.\n"
-										   "\n\t\t\t\t\t\t%d JUGADORES COBRAN MAS DEL SALARIO PROMEDIO.\n\n", totalSalary, averageSalary, playersAboveAverageSalary);
+													"\n\t\t\t\t\t\tEL PROMEDIO TOTAL DE SALARIO ES: $%.2f.\n", totalSalary, averageSalary);
+									listPlayerAboveAverageSalary(arrayPlayer, LEN_ARRAYPLAYERS, arrayConfederation, LEN_ARRAYCONFEDERATION);
 								}
 								break;
 							case 4:
-								showMaximusHiringYearsConfederation(arrayPlayer, LEN_ARRAYPLAYERS, arrayConfederation, LEN_ARRAYCONFEDERATION, arrayAccumulatorPlayers);
+								listMaximusHiringYearsConfederation(arrayPlayer, LEN_ARRAYPLAYERS, arrayConfederation, LEN_ARRAYCONFEDERATION, arrayAccumulatorPlayers);
 								break;
 							case 5:
-								showPercentagePlayersPerConfederation(arrayPlayer, LEN_ARRAYPLAYERS, arrayConfederation, LEN_ARRAYCONFEDERATION, arrayAccumulatorPlayers);
+								listPercentagePlayersPerConfederation(arrayPlayer, LEN_ARRAYPLAYERS, arrayConfederation, LEN_ARRAYCONFEDERATION, arrayAccumulatorPlayers);
 								break;
 							case 6:
-								showMaximusPlayersPerRegion(arrayPlayer, LEN_ARRAYPLAYERS, arrayConfederation, LEN_ARRAYCONFEDERATION, arrayAccumulatorPlayers);
+								listMaximusPlayersPerRegion(arrayPlayer, LEN_ARRAYPLAYERS, arrayConfederation, LEN_ARRAYCONFEDERATION, arrayAccumulatorPlayers);
 								break;
 
 							}
@@ -196,16 +183,16 @@ int main(void)
 
 			case 5:
 
-				returnExit = utn_getDescriptionExit(exit, "\t\t\t\t\t\t\tPresione si para salir. Presione no para continuar en el menu.\n", "\t\t\t\t\t\t\tError. Solo si o no.\n", 3);
+			utn_getDescriptionExit(exit, "\t\t\t\t\t\t\tPresione si para salir. Presione no para continuar en el menu.\n", "\t\t\t\t\t\t\tError. Solo si o no.\n", 3);
 				break;
 			}
 		}
-		else if (returnMainMenu == -1 || returnExit == -1)
+		else if (returnMainMenu == -1)
 		{
 			printf("\n\t\t\t\t\t\t\t\t¡¡ALGO SALIO MAL. INGRESE LOS DATOS DE FORMA CORRECTA!!");
 			break;
 		}
-	} while (stricmp(exit, "si") != 0 || returnExit != 0);
+	} while (stricmp(exit, "si") != 0);
 
 	printf("\n\t\t\t\t\t\t\t\t\t\t¡¡HASTA LUEGO!!\n");
 

@@ -1,0 +1,89 @@
+/*
+ * confederacion.h
+ *
+ *  Created on: 14 oct. 2022
+ *      Author: cuerpos
+ */
+#ifndef CONFEDERACION_H_
+#define CONFEDERACION_H_
+
+typedef struct
+{
+
+	int idConfederation;
+	char confederationName[50];
+	char region[50];
+	int creationYear;
+	short isEmpty;
+
+} sConfederation;
+/// @brief initializeArrayConfederation
+///
+/// @param arrayConfederation			         ARRAY de confederaciones.
+/// @param lenArrayConfederation				         Tamanio de ARRAY de confederaciones.
+void initializeArrayConfederation(sConfederation arrayConfederation[], int lenArrayConfederation);
+/// @brief getFreeIndexArrayConfederation
+///
+/// @param arrayConfederation			         ARRAY de confederaciones.
+/// @param lenArrayConfederation				         Tamanio de ARRAY de confederaciones.
+/// @return
+int getFreeIndexArrayConfederation(sConfederation arrayConfederation[], int lenArrayConfederation);
+/// @brief findByIdArrayConfederation
+///
+/// @param arrayConfederation
+/// @param idConfederation
+/// @param lenArrayConfederation
+/// @return
+int findByIdArrayConfederation(sConfederation arrayConfederation[], int idConfederation, int lenArrayConfederation);\
+/// @brief loadDataConfederation
+///
+/// @param pConfederation
+/// @param pIdConfederation
+/// @return
+int loadDataConfederation(sConfederation *pConfederation, int *pIdConfederation);
+/// @brief registerConfederation
+///
+/// @param arrayConfederation			         ARRAY de confederaciones.
+/// @param pIdConfederation
+/// @param lenArrayConfederation				         Tamanio de ARRAY de confederaciones.
+/// @return
+int registerConfederation(sConfederation arrayConfederation[], int *pIdConfederation, int lenArrayConfederation);
+/// @brief modifyOneConfederation
+///
+/// @param pConfederation
+/// @return
+int modifyOneConfederation(sConfederation *pConfederation);
+/// @brief modifyConfederations
+///
+/// @param arrayConfederation			         ARRAY de confederaciones.
+/// @param lenArrayConfederation				         Tamanio de ARRAY de confederaciones.
+/// @return
+int modifyConfederations(sConfederation arrayConfederation[], int lenArrayConfederation);
+/// @brief listOneConfederation
+///
+/// @param OneConfederation
+void listOneConfederation(sConfederation OneConfederation);
+/// @brief listConfederation
+///
+/// @param arrayConfederation			         ARRAY de confederaciones.
+/// @param lenArrayConfederation				         Tamanio de ARRAY de confederaciones.
+/// @return
+void listConfederation(sConfederation arrayConfederation[], int lenArrayConfederation);
+/// @brief getDescriptionType  Funcion para obtener la descripcion de tipo de vehiculo, segun ID tipo elegido por usuario.
+///
+/// @param arrayConfederation			         ARRAY de confederaciones.
+/// @param lenArrayConfederation				         Tamanio de ARRAY de confederaciones.
+/// @param idType			   ID de confederacion elegido por usuario a comparar.
+/// @param pDescription		   Puntero a cadena de texto, con nombre de confederacion.
+/// @return					   Retorno, OK(1) en caso de haber funcionado correctamente. Retorno, ERROR(-1) en caso contrario.
+int getConfederationDescription(sConfederation arrayConfederation[], int lenArrayConfederation, int idConfederation, char *pCofederationDescription);
+/// @brief hardCodeConfederations
+///
+/// @param arrayConfederation			         ARRAY de confederaciones.
+/// @param lenArrayConfederation				         Tamanio de ARRAY de confederaciones.
+/// @param ammount								Entero, cantidad.
+/// @param pNextId					 Puntero a entero autoincremental a traves de contador.
+/// @return
+int hardCodeConfederations(sConfederation arrayConfederation[], int lenArrayConfederation, int ammount, int *pNextId);
+
+#endif /* CONFEDERACION_H_ */

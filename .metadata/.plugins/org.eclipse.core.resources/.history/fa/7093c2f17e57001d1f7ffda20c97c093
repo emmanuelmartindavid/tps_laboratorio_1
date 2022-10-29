@@ -1,0 +1,134 @@
+/*
+ * informes.h
+ *
+ *  Created on: 20 oct. 2022
+ *      Author: cuerpos
+ */
+
+#ifndef INFORMES_H_
+#define INFORMES_H_
+#include "jugador.h"
+/// @brief sortPerConfederationAndPlayerName        Ordena por doble criterio, nombre de confederacion y nombre de jugadores.
+///
+/// @param arrayPlayer              	      		 Array de jugadores.
+/// @param lenArrayPlayer					 	     Tamanio Array de jugadores.
+/// @param arrayConfederation 						 Array de confederaciones.
+/// @param lenArrayConfederation 			 		 Tamanio de  Array de jugadores.
+/// @return											Retorno, OK(1) en caso de haber funcionado correctamente. Retorno, ERROR(-1) en caso contrario.
+int sortPerConfederationAndPlayerName(sPlayer arrayPlayer[], int lenArrayPlayer, sConfederation arrayConfederation[], int lenArrayConfederation);
+/// @brief listConfederationPerPlayers				Lista confederaciones con sus jugadores por separado.
+///
+/// @param arrayPlayer              	      		 Array de jugadores.
+/// @param lenArrayPlayer					 	     Tamanio Array de jugadores.
+/// @param arrayConfederation 						 Array de confederaciones.
+/// @param lenArrayConfederation 			 		 Tamanio de  Array de jugadores.
+void listConfederationPerPlayers(sPlayer arrayPlayer[], int lenArrayPlayer, sConfederation arrayConfederation[], int lenArrayConfederation);
+/// @brief countPlayers								 Cuenta jugadores dados de alta.
+///
+/// @param arrayPlayer              	      		 Array de jugadores.
+/// @param lenArrayPlayer					 	     Tamanio Array de jugadores.
+/// @param pCounterPlayer
+/// @return  										Retorno, OK(1) en caso de haber funcionado correctamente. Retorno, ERROR(-1) en caso contrario.
+int countPlayers(sPlayer arrayPlayer[], int lenArrayPlayer, int *pCounterPlayer);
+/// @brief accumulateTotalSalary					   Acumula salario de jugadores dados de alta.
+///
+/// @param arrayPlayer              	      		   Array de jugadores.
+/// @param lenArrayPlayer					 	       Tamanio Array de jugadores.
+/// @param pAcumulatorSalary
+/// @return                                            Retorno, OK(1) en caso de haber funcionado correctamente. Retorno, ERROR(-1) en caso contrario.
+int accumulateTotalSalary(sPlayer arrayPlayer[], int lenArrayPlayer, float *pAcumulatorSalary);
+/// @brief calculateAverageTotalSalary				Calcula promedio de salarios de jugadores dados de alta.
+///
+/// @param arrayPlayer              	      		 Array de jugadores.
+/// @param lenArrayPlayer					 	     Tamanio Array de jugadores.
+/// @param pAverageTotalSalary
+/// @return                           				 Retorno, OK(1) en caso de haber funcionado correctamente. Retorno, ERROR(-1) en caso contrario.
+int calculateAverageTotalSalary(sPlayer arrayPlayer[], int lenArrayPlayer, float *pAverageTotalSalary);
+/// @brief countPlayerAboveAverageSalary			Cuenta jugdores que ganan más del promedio de salarios de jugadores dados de alta.
+///
+/// @param arrayPlayer              	      		 Array de jugadores.
+/// @param lenArrayPlayer					 	     Tamanio Array de jugadores.
+/// @param pCounterPlayerAboveAverageSalary
+/// @return                   						 Retorno, OK(1) en caso de haber funcionado correctamente. Retorno, ERROR(-1) en caso contrario.
+int countPlayerAboveAverageSalary(sPlayer arrayPlayer[], int lenArrayPlayer, int *pCounterPlayerAboveAverageSalary);
+/// @brief showMPlayerAboveAverageSalary		   	 Informa y lista jugadores ganan más del promedio de salarios de jugadores dados de alta.
+///
+/// @param arrayPlayer              	      		 Array de jugadores.
+/// @param lenArrayPlayer					 	     Tamanio Array de jugadores.
+/// @param arrayConfederation 						 Array de confederaciones.
+/// @param lenArrayConfederation 			 		 Tamanio de  Array de jugadores.
+void ListPlayerAboveAverageSalary(sPlayer arrayPlayer[], int lenArrayPlayer, sConfederation arrayConfederation[], int lenArrayConfederation);
+/// @brief accumulateHiringYearsByConfederation		Acumula anios de transporte de jugadores dados de alta por confederacion.
+///
+/// @param arrayPlayer              	      		 Array de jugadores.
+/// @param lenArrayPlayer					 	     Tamanio Array de jugadores.
+/// @param arrayConfederation 						 Array de confederaciones.
+/// @param lenArrayConfederation 			 		 Tamanio de  Array de jugadores.
+/// @param arrayAccumulatorHiringYears				 Array de enteros para acumular anios de contrato.
+/// @return                                    		 Retorno, OK(1) en caso de haber funcionado correctamente. Retorno, ERROR(-1) en caso contrario.
+int accumulateHiringYearsByConfederation(sPlayer arrayPlayer[], int lenArrayPlayer, sConfederation arrayConfederation[], int lenArrayConfederation, int arrayAccumulatorHiringYears[]);
+/// @brief  calculateMaximusHiringYearsConfederation
+///
+/// @param arrayPlayer              	      		 Array de jugadores.
+/// @param lenArrayPlayer					 	     Tamanio Array de jugadores.
+/// @param arrayConfederation 						 Array de confederaciones.
+/// @param lenArrayConfederation 			 		 Tamanio de  Array de jugadores.
+/// @param pMaximusHiringYears
+/// @param arrayAccumulatorHiringYears				 Array de enteros para acumular anios de contrato.
+/// @return											 Retorno, OK(1) en caso de haber funcionado correctamente. Retorno, ERROR(-1) en caso contrario.
+int calculateMaximusHiringYearsConfederation(sPlayer arrayPlayer[], int lenArrayPlayer, sConfederation arrayConfederation[], int lenArrayConfederation, int *pMaximusHiringYears, int arrayAccumulatorHiringYears[]);
+/// @brief showMaximusHiringYearsConfederation
+///
+/// @param arrayPlayer              	      		 Array de jugadores.
+/// @param lenArrayPlayer					 	     Tamanio Array de jugadores.
+/// @param arrayConfederation 						 Array de confederaciones.
+/// @param lenArrayConfederation 			 		 Tamanio de  Array de jugadores.
+/// @param arrayAccumulatorHiringYears				 Array de enteros para acumular anios de contrato.
+/// @return											 Retorno, OK(1) en caso de haber funcionado correctamente. Retorno, ERROR(-1) en caso contrario.
+int listMaximusHiringYearsConfederation(sPlayer arrayPlayer[], int lenArrayPlayer, sConfederation arrayConfederation[], int lenArrayConfederation, int arrayAccumulatorHiringYears[]);
+/// @brief accumulatePlayersPerConfederation
+///
+/// @param arrayPlayer              	      		 Array de jugadores.
+/// @param lenArrayPlayer					 	     Tamanio Array de jugadores.
+/// @param arrayConfederation 						 Array de confederaciones.
+/// @param lenArrayConfederation 			 		 Tamanio de  Array de jugadores.
+/// @param arrayAccumulatorPlayerPerConfederation
+/// @return											 Retorno, OK(1) en caso de haber funcionado correctamente. Retorno, ERROR(-1) en caso contrario.
+int accumulatePlayersPerConfederation(sPlayer arrayPlayer[], int lenArrayPlayer, sConfederation arrayConfederation[], int lenArrayConfederation, int arrayAccumulatorPlayerPerConfederation[]);
+/// @brief  calculatePercentagePlayersPerConfederation
+///
+/// @param arrayPlayer              	      		 Array de jugadores.
+/// @param lenArrayPlayer					 	     Tamanio Array de jugadores.
+/// @param arrayConfederation 						 Array de confederaciones.
+/// @param lenArrayConfederation 			 		 Tamanio de  Array de jugadores.
+/// @param porcentagePlayersPerConfederation
+/// @param arrayAccumulatorPlayerPerConfederation
+/// @return											 Retorno, OK(1) en caso de haber funcionado correctamente. Retorno, ERROR(-1) en caso contrario.
+int calculatePercentagePlayersPerConfederation(sPlayer arrayPlayer[], int lenArrayPlayer, sConfederation arrayConfederation[], int lenArrayConfederation, float porcentagePlayersPerConfederation[], int arrayAccumulatorPlayerPerConfederation[]);
+/// @brief showPercentagePlayersPerConfederation
+///
+/// @param arrayPlayer              	      		 Array de jugadores.
+/// @param lenArrayPlayer					 	     Tamanio Array de jugadores.
+/// @param arrayConfederation 						 Array de confederaciones.
+/// @param lenArrayConfederation 			 		 Tamanio de  Array de jugadores.
+/// @param arrayAccumulatorPlayerPerConfederation
+void listPercentagePlayersPerConfederation(sPlayer arrayPlayer[], int lenArrayPlayer, sConfederation arrayConfederation[], int lenArrayConfederation, int arrayAccumulatorPlayerPerConfederation[]);
+/// @brief calculateMaximusPlayersPerRegion
+///
+/// @param arrayPlayer              	      		 Array de jugadores.
+/// @param lenArrayPlayer					 	     Tamanio Array de jugadores.
+/// @param arrayConfederation 						 Array de confederaciones.
+/// @param lenArrayConfederation 			 		 Tamanio de  Array de jugadores.
+/// @param arrayAccumulatorPlayerPerConfederation
+/// @param pMaximusPlayersPerConfederation
+/// @return											 Retorno, OK(1) en caso de haber funcionado correctamente. Retorno, ERROR(-1) en caso contrario.
+int calculateMaximusPlayersPerRegion(sPlayer arrayPlayer[], int lenArrayPlayer, sConfederation arrayConfederation[], int lenArrayConfederation, int arrayAccumulatorPlayerPerConfederation[], int *pMaximusPlayersPerConfederation);
+/// @brief showMaximusPlayersPerRegion
+///
+/// @param arrayPlayer              	      		 Array de jugadores.
+/// @param lenArrayPlayer					 	     Tamanio Array de jugadores.
+/// @param arrayConfederation 						 Array de confederaciones.
+/// @param lenArrayConfederation 			 		 Tamanio de  Array de jugadores.
+/// @param arrayAccumulatorPlayerPerConfederation
+void listMaximusPlayersPerRegion(sPlayer arrayPlayer[], int lenArrayPlayer, sConfederation arrayConfederation[], int lenArrayConfederation, int arrayAccumulatorPlayerPerConfederation[]);
+#endif /* INFORMES_H_ */

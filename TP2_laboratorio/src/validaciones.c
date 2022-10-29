@@ -333,3 +333,61 @@ int utn_getDescriptionExit(char *pResult, char *message, char *ErrorMessage, int
 	}
 	return ret;
 }
+/// @brief getshort           Funcion verifica la cadena de caracteres ingresada, convirtiendola, si es valida, a numero short.
+///
+/// @param pResult          Puntero numero entero de la conversion realizada con ATOI.
+/// @return                 Retorno, 0 en caso de haber funcionado correctamente. Retorno, -1 en caso contrario.
+int getshort(short *pResult)
+{
+	int ret = -1;
+	char option[LEN];
+
+	if (pResult != NULL && getString(option, sizeof(option)) == 0 && isInt(option, sizeof(option)) == 0)
+	{
+
+		*pResult = atoi(option);
+
+		ret = 0;
+	}
+
+	return ret;
+}
+/// @brief utn_getNumberShort    Función para pedir un número entero por consola.
+///
+/// @param pResult          Puntero a direccion de la variable ingresada en el caso de ser correcta.
+/// @param message		    Puntero a cadena de caracteres con mensaje a imprimir para pedirle al usuario ingresar un numero.
+/// @param errorMessage     Puntero a cadena de caracteres con mensaje de error mientras el dato no sea un numero.
+/// @param minimus		    Valor mínimo valido.
+/// @param maximus          Valor máximo valido.
+/// @return                 Retorno, 0 en caso de haber funcionado correctamente. Retorno, -1 en caso contrario.
+int utn_getNumberShort(short *pResult, char *message, char *errorMessage, int minimus, int maximus, int retry)
+{
+	int ret;
+	short num = 0;
+	if (pResult != NULL && message != NULL && errorMessage != NULL)
+	{
+		while (retry > 0)
+		{
+			printf(message);
+			if (getshort(&num) == 0)
+			{
+				if (num <= maximus && num >= minimus)
+					break;
+			}
+			fflush(stdin);
+			retry--;
+			printf(errorMessage);
+		}
+		if (retry == 0)
+		{
+			ret = -1;
+		}
+		else
+		{
+			ret = 0;
+			*pResult = num;
+		}
+	}
+	return ret;
+
+}

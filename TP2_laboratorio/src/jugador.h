@@ -4,17 +4,16 @@
  *  Created on: 13 oct. 2022
  *      Author: cuerpos
  */
+
+#ifndef JUGADOR_H_
+#define JUGADOR_H_
 #include "confederacion.h"
 #include "menus.h"
-
 #define OCCUPIED 1
 #define FREE 0
 #define DOWN -1
 #define OK 1
 #define ERROR -1
-
-#ifndef JUGADOR_H_
-#define JUGADOR_H_
 
 typedef struct
 {
@@ -48,50 +47,50 @@ int getFreeIndexArrayPlayer(sPlayer arrayPlayer[], int lenArrayPlayer);
 /// @param lenArrayPlayer				 Tamanio de ARRAY de jugadores.
 /// @return								 Retorna la posicion del ARRAY buscado a traves del ID ingresado por usuario.
 int findByIdArrayPlayer(sPlayer arrayPlayer[], int idPlayer, int lenArrayPlayer);
-
 /// @brief listOnePlayer			   	 Funcion para listar un jugador dado de alta.
 ///
 /// @param player				         Un jugadores de estructura sPlayer, dado de alta.
-/// @param arrayConfederation			         ARRAY de confederaciones harcodeado.
-/// @param lenArrayConfederation				         Tamanio de ARRAY de confederaciones harcodeado.
-//void listOnePlayer(sPlayer player, sConfederation arrayConfederation[], int lenArrayConfederation);
+/// @param arrayConfederation			         ARRAY de confederaciones.
+/// @param lenArrayConfederation				         Tamanio de ARRAY de confederaciones.
 int listOnePlayer(sPlayer player, sConfederation arrayConfederation[], int lenArrayConfederation);
 /// @brief listPlayeres			         Funcion lista ARRAY de jugadores dados de alta.
 ///
 /// @param arrayPlayer			         ARRAY de jugadores dado de alta.
 /// @param lenArrayPlayer					         Tamanio de ARRAY de jugadores.
-/// @param arrayConfederation			         ARRAY de confederaciones harcodeado.
-/// @param lenArrayConfederation				         Tamanio de ARRAY de confederaciones harcodeado.
+/// @param arrayConfederation			         ARRAY de confederaciones.
+/// @param lenArrayConfederation				         Tamanio de ARRAY de confederaciones.
 /// @return						         Retorno, OK(1) en caso de haber funcionado correctamente. Retorno, ERROR(-1) en caso contrario.
 int listPlayers(sPlayer arrayPlayer[], int lenArrayPlayer, sConfederation arrayConfederation[], int lenArrayConfederation);
-/// @brief loadDataPlayer				 Funcion de tipo sPlayer(variable de estructura de jugador) para realizar la carga de datos de jugador.
+/// @brief loadDataPlayer					Carga datos de jugador a dar de alta.
 ///
-/// @return								 Retorno auxiliar de sPlayer(variable de estructura de jugador) con los datos cargados por el usuario.
-//sPlayer loadDataPlayer(int *pFlagAuxData) ;
+/// @param pPlayer								Puntero a un jugador de struct.
+/// @param pIdPlayer						 Puntero a entero autoincremental a traves de contador.
+/// @param arrayConfederation			         ARRAY de confederaciones.
+/// @param lenArrayConfederation				 Tamanio de ARRAY de confederaciones.
+/// @return								  	Retorno, OK(1) en caso de haber funcionado correctamente. Retorno, ERROR(-1) en caso contrario.
 int loadDataPlayer(sPlayer *pPlayer, int *pIdPlayer, sConfederation arrayConfederation[], int lenArrayConfederation);
-/// @brief registerPlayer				 Funcion para dar de alta un jugador.
+/// @brief registerPlayer				 Da de alta un jugador.
 ///
 /// @param arrayPlayer					 ARRAY de jugadores.
 /// @param lenArrayPlayer				 Tamanio de ARRAY de jugadores.
-/// @param arrayConfederation			 ARRAY de confederaciones harcodeado.
+/// @param pIdPlayer					 Puntero a entero.
+/// @param arrayConfederation			 ARRAY de confederaciones.
+/// @param lenArrayConfederation		 Tamanio de ARRAY de confederaciones.
 /// @return								 Retorno, OK(1) en caso de haber funcionado correctamente. Retorno, ERROR(-1) en caso contrario.
-int registerPlayer(sPlayer arrayPlayer[], int lenArrayPlayer, int *idPlayer, sConfederation arrayConfederation[], int lenArrayConfederation);
+int registerPlayer(sPlayer arrayPlayer[], int lenArrayPlayer, int *pIdPlayer, sConfederation arrayConfederation[], int lenArrayConfederation);
 /// @brief downPlayer					 Funcion para dar de baja un jugador dado de alta, atraves de ID.
 ///
 /// @param arrayPlayer					 ARRAY de jugadores.
 /// @param lenArrayPlayer				 Tamanio de ARRAY de jugadores.
-/// @param arrayConfederation			 ARRAY de confederaciones harcodeado.
-/// @param lenArrayConfederation		 Tamanio de ARRAY de confederaciones harcodeado.
 /// @return								 Retorno, OK(1) en caso de haber funcionado correctamente. Retorno, ERROR(-1) en caso contrario.
 int downPlayer(sPlayer arrayPlayer[], int lenArrayPlayer);
-/// @brief modifyOnePlayer	    		 Funcion de tipo sPlayer(variable de estructura de jugador) para realiza la carga de datos de jugador a modificar.
+/// @brief modifyOnePlayer				Modifica un jugador.
 ///
-/// @param vehicle						 Un jugador de estructura sPlayer dado de alta a ser modificado.
-/// @return								 Retorno auxiliar de sPlayer(variable de estructura de jugador) con los datos modificados por el usuario.
-//int modifyOnePlayer(sPlayer player, sConfederation arrayConfederation[],
-//		int lenArrayConfederation, sPlayer *auxModify );
-
-int modifyOnePlayer(sPlayer *player, sConfederation arrayConfederation[], int lenArrayConfederation);
+/// @param pPlayer						Puntero a un jugador de struct.
+/// @param arrayConfederation			 ARRAY de confederaciones.
+/// @param lenArrayConfederation		 Tamanio de ARRAY de confederaciones.
+/// @return								 Retorno, OK(1) en caso de haber funcionado correctamente. Retorno, ERROR(-1) en caso contrario.
+int modifyOnePlayer(sPlayer *pPlayer, sConfederation arrayConfederation[], int lenArrayConfederation);
 /// @brief modifyPlayers				 Funcion para dar de modificar jugadores dado de alta, atraves de ID.
 ///
 /// @param arrayPlayer					 ARRAY de jugadores.
@@ -100,17 +99,32 @@ int modifyOnePlayer(sPlayer *player, sConfederation arrayConfederation[], int le
 /// @param lenArrayConfederation		 Tamanio de ARRAY de confederaciones harcodeado.
 /// @return								 Retorno, OK(1) en caso de haber funcionado correctamente. Retorno, ERROR(-1) en caso contrario.
 int modifyPlayers(sPlayer arrayPlayer[], int lenArrayPlayer, sConfederation arrayConfederation[], int lenArrayConfederation);
-
+/// @brief sortPerIdPlayers				Ordena jugadores por ID.
+///
+/// @param arrayPlayer					 ARRAY de jugadores.
+/// @param lenArrayPlayer				 Tamanio de ARRAY de jugadores.
+/// @param arrayConfederation			 ARRAY de confederaciones harcodeado.
+/// @param lenArrayConfederation		 Tamanio de ARRAY de confederaciones harcodeado.
+/// @return								Retorno, OK(1) en caso de haber funcionado correctamente. Retorno, ERROR(-1) en caso contrario.
 int sortPerIdPlayers(sPlayer arrayPlayer[], int lenArrayPlayer, sConfederation arrayConfederation[], int lenArrayConfederation);
-
+/// @brief getPositionPlayer			Obtiene la posicion de jugador elegida por usuario.
+///
+/// @param pPosition					puntero a cadena char.
+/// @return								Retorno, OK(1) en caso de haber funcionado correctamente. Retorno, ERROR(-1) en caso contrario.
 int getPositionPlayer(char *pPosition);
-
+/// @brief validateRegisterOrDownPlayer	 Valida a traves de flag la entrada a las opciones de menu dependiendo si hay jugadores dados de alta.
+///
+/// @param arrayPlayer					 ARRAY de jugadores.
+/// @param lenArrayPlayer				 Tamanio de ARRAY de jugadores.
+/// @param pFlag						 Puntero a entero.
+void validateRegisterOrDownPlayer(sPlayer arrayPlayer[], int lenArrayPlayer, int *pFlag);
 /// @brief hardCodePlayers				 Funcion para harcodear jugadores de prueba de programa.
 ///
 /// @param arrayPlayer			         ARRAY de jugadores.
 /// @param lenArrayPlayer				 Tamanio de ARRAY de jugadores.
 /// @param pNextId						 Puntero a entero autoincremental a traves de contador.
+/// @param ammount						 Entero, cantidad.
 /// @return								 Retorno, OK(1) en caso de haber funcionado correctamente. Retorno, ERROR(-1) en caso contrario.
-int hardCodePlayers(sPlayer arrayPlayer[], int len, int ammount, int *pNextId);
+int hardCodePlayers(sPlayer arrayPlayer[], int lenArrayPlayer, int ammount, int *pNextId);
 
 #endif /* JUGADOR_H_ */

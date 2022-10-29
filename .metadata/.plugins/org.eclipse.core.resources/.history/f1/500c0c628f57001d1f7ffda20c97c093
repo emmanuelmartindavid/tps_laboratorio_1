@@ -1,0 +1,89 @@
+/*
+ * confederacion.h
+ *
+ *  Created on: 14 oct. 2022
+ *      Author: cuerpos
+ */
+#ifndef CONFEDERACION_H_
+#define CONFEDERACION_H_
+
+typedef struct
+{
+
+	int idConfederation;
+	char confederationName[50];
+	char region[50];
+	int creationYear;
+	short isEmpty;
+
+} sConfederation;
+/// @brief
+///
+/// @param arrayConfederation
+/// @param lenArrayConfederation
+void initializeArrayConfederation(sConfederation arrayConfederation[], int lenArrayConfederation);
+/// @brief
+///
+/// @param arrayConfederation
+/// @param lenArrayConfederation
+/// @return
+int getFreeIndexArrayConfederation(sConfederation arrayConfederation[], int lenArrayConfederation);
+/// @brief
+///
+/// @param arrayConfederation
+/// @param idConfederation
+/// @param lenArrayConfederation
+/// @return
+int findByIdArrayConfederation(sConfederation arrayConfederation[], int idConfederation, int lenArrayConfederation);\
+/// @brief
+///
+/// @param pConfederation
+/// @param pIdConfederation
+/// @return
+int loadDataConfederation(sConfederation *pConfederation, int *pIdConfederation);
+/// @brief
+///
+/// @param arrayConfederation
+/// @param pIdConfederation
+/// @param lenArrayConfederation
+/// @return
+int registerConfederation(sConfederation arrayConfederation[], int *pIdConfederation, int lenArrayConfederation);
+/// @brief
+///
+/// @param pConfederation
+/// @return
+int modifyOneConfederation(sConfederation *pConfederation);
+/// @brief
+///
+/// @param arrayConfederation
+/// @param lenArrayConfederation
+/// @return
+int modifyConfederations(sConfederation arrayConfederation[], int lenArrayConfederation);
+/// @brief
+///
+/// @param OneConfederation
+void listOneConfederation(sConfederation OneConfederation);
+/// @brief
+///
+/// @param arrayConfederation
+/// @param lenArrayConfederation
+/// @return
+void listConfederation(sConfederation arrayConfederation[], int lenArrayConfederation);
+/// @brief getDescriptionType  Funcion para obtener la descripcion de tipo de vehiculo, segun ID tipo elegido por usuario.
+///
+/// @param arrayType           ARRAY de tipos de vehiculo harcodeado.
+/// @param lenType			   Tamanio de ARRAY de tipos de vehiculo harcodeado.
+/// @param idType			   ID tipo de vehiculo elegido por usuario a comparar.
+/// @param pDescription		   Puntero a cadena de texto, con descripcion de tipo de vehiculo, dependiendo del ID de tipo de vehiculo elegido por usuario.
+/// @return					   Retorno, OK(1) en caso de haber funcionado correctamente. Retorno, ERROR(-1) en caso contrario.
+int getConfederationDescription(sConfederation arrayConfederation[], int lenArrayConfederation, int idConfederation, char *pCofederationDescription);
+/// @brief
+///
+/// @param arrayConfederation
+/// @param lenArrayConfederation
+/// @param ammount
+/// @param pNextId
+/// @return
+int hardCodeConfederations(sConfederation arrayConfederation[], int lenArrayConfederation, int ammount, int *pNextId);
+
+#endif /* CONFEDERACION_H_ */

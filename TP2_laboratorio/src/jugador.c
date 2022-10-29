@@ -9,7 +9,10 @@
 #include <string.h>
 #include "jugador.h"
 #include "validaciones.h"
-
+/// @brief initializeArrayPlayer  		 Funcion inicializa en 0 el array de jugadores.
+///
+/// @param arrayPlayer					 Array de jugadores a dar de alta.
+/// @param lenArrayPlayer				 Tamanio de ARRAY de jugadores.
 void initializeArrayPlayer(sPlayer arrayPlayer[], int lenArrayPlayer)
 {
 
@@ -25,11 +28,11 @@ void initializeArrayPlayer(sPlayer arrayPlayer[], int lenArrayPlayer)
 	}
 
 }
-/// @brief getFreeIndex			Funcion obtiene posicion de ARRAY de vehiculos libre a dar de alta.
+/// @brief getFreeIndexArrayPlayer		 Funcion obtiene posicion de ARRAY de jugadores libre a dar de alta.
 ///
-/// @param arrayVehicle			Array de vehiculos a dar de alta.
-/// @param len					Tamanio de ARRAY de vehiculos.
-/// @return						Retorna la posicion del ARRAY de vehiculos libre a dar de alta.
+/// @param arrayPlayer					 Array de jugadores a dar de alta.
+/// @param lenArrayPlayer				 Tamanio de ARRAY de jugadores.
+/// @return							     Retorna la posicion del ARRAY de jugadores libre a dar de alta.
 int getFreeIndexArrayPlayer(sPlayer arrayPlayer[], int lenArrayPlayer)
 {
 
@@ -49,12 +52,12 @@ int getFreeIndexArrayPlayer(sPlayer arrayPlayer[], int lenArrayPlayer)
 	}
 	return returngetFreeIndexArrayPlayer;
 }
-/// @brief findById				Funcion obtiene posicion de ARRAY a traves de ID ingresado por parametro.
+/// @brief findByIdArrayPlayer			 Funcion obtiene posicion de ARRAY a traves de ID ingresado por parametro.
 ///
-/// @param arrayVehicle			Array de vehiculos.
-/// @param idVehicle			ID ingresado por usuario a ser localizado en su posicion del ARRAY.
-/// @param len					Tamanio de ARRAY de vehiculos.
-/// @return						Retorna la posicion del ARRAY buescado a traves del ID ingresado por usuario.
+/// @param arrayPlayer					 Array de jugadores.
+/// @param idVehicle			   	 	 ID ingresado por usuario a ser localizado en su posicion del ARRAY.
+/// @param lenArrayPlayer				 Tamanio de ARRAY de jugadores.
+/// @return								 Retorna la posicion del ARRAY buscado a traves del ID ingresado por usuario.
 int findByIdArrayPlayer(sPlayer arrayPlayer[], int idPlayer, int lenArrayPlayer)
 {
 	int returnfindByIdArrayPlayer = ERROR;
@@ -78,11 +81,11 @@ int findByIdArrayPlayer(sPlayer arrayPlayer[], int idPlayer, int lenArrayPlayer)
 
 	return returnfindByIdArrayPlayer;
 }
-/// @brief listOneVehicle		Funcion para listar un vehiculo.
+/// @brief listOnePlayer			   	 Funcion para listar un jugador dado de alta.
 ///
-/// @param vehicle				Un vehiculo de estructura sVehicle, dado de alta.
-/// @param arrayType			ARRAY de tipos de vehiculos harcodeado.
-/// @param lenType				Tamanio de ARRAY de tipo harcodeado.
+/// @param player				         Un jugadores de estructura sPlayer, dado de alta.
+/// @param arrayConfederation			         ARRAY de confederaciones.
+/// @param lenArrayConfederation				         Tamanio de ARRAY de confederaciones.
 int listOnePlayer(sPlayer player, sConfederation arrayConfederation[], int lenArrayConfederation)
 {
 	int returnlistOnePlayer = ERROR;
@@ -96,18 +99,17 @@ int listOnePlayer(sPlayer player, sConfederation arrayConfederation[], int lenAr
 		printf("\t\t\t\t\t\t| %-8d| %-25s| %-18s| %-15hu| $%-14.2f| %-25s| %-15hu |\n", player.idPlayer, player.name, player.position, player.shirtNumber, player.salary, confederationDescription, player.hiringYears);
 		returnlistOnePlayer = OK;
 
-
 	}
 
 	return returnlistOnePlayer;
 }
-/// @brief listVehicles			Funcion lista ARRAY de vehiculos dados de alta.
+/// @brief listPlayeres			         Funcion lista ARRAY de jugadores dados de alta.
 ///
-/// @param arrayVehicle			ARRAY de vehiculos dado de alta.
-/// @param len					Tamanio de ARRAY de vehiculos.
-/// @param arrayType			ARRAY de tipos de vehiculos harcodeado.
-/// @param lenType				Tamanio de ARRAY de tipos de vehiculo harcodeado.
-/// @return						Retorno, OK(1) en caso de haber funcionado correctamente. Retorno, ERROR(-1) en caso contrario.
+/// @param arrayPlayer			         ARRAY de jugadores dado de alta.
+/// @param lenArrayPlayer					         Tamanio de ARRAY de jugadores.
+/// @param arrayConfederation			         ARRAY de confederaciones.
+/// @param lenArrayConfederation			Tamanio de ARRAY de confederaciones.
+/// @return						         Retorno, OK(1) en caso de haber funcionado correctamente. Retorno, ERROR(-1) en caso contrario.
 int listPlayers(sPlayer arrayPlayer[], int lenArrayPlayer, sConfederation arrayConfederation[], int lenArrayConfederation)
 {
 
@@ -146,28 +148,27 @@ int listPlayers(sPlayer arrayPlayer[], int lenArrayPlayer, sConfederation arrayC
 
 	return returnlistPlayers;
 }
-/// @brief loadDataPlayer
+/// @brief loadDataPlayer					Carga datos de jugador a dar de alta.
 ///
-/// @param pPlayer
-/// @param pIdPlayer
-/// @param arrayConfederation
-/// @param lenArrayConfederation
-/// @return   Retorno, OK(1) en caso de haber funcionado correctamente. Retorno, ERROR(-1) en caso contrario.
+/// @param pPlayer								Puntero a un jugador de struct.
+/// @param pIdPlayer							Puntero a entero.
+/// @param arrayConfederation			         ARRAY de confederaciones.
+/// @param lenArrayConfederation				 Tamanio de ARRAY de confederaciones.
+/// @return								  	Retorno, OK(1) en caso de haber funcionado correctamente. Retorno, ERROR(-1) en caso contrario.
 int loadDataPlayer(sPlayer *pPlayer, int *pIdPlayer, sConfederation arrayConfederation[], int lenArrayConfederation)
 {
 
 	sPlayer auxPlayer;
 	int returnloadDataPlayer;
-	int auxShirt;
-	int auxHiringYears;
+
 	int auxIdConfederation;
 	char playerPosition[50];
 	if (pPlayer != NULL && pIdPlayer != NULL && arrayConfederation != NULL && lenArrayConfederation > 0)
 	{
 
 		if (utn_getAlphabeticDescription(auxPlayer.name, "Ingrese su nombre y apellido.\n", "Dato invalido. Reintente.\n", 3, 50) == 0 && getPositionPlayer(playerPosition) == OK
-						&& utn_getNumberFloat(&auxPlayer.salary, "Ingrese su salario. desde ($10000 hasta $9999999)", "Dato invalido. Reintente.\n", 10000, 9999999, 3) == 0 && utn_getNumber(&auxShirt, "Ingrese su numero de camiseta. Solo entre 1 y 99.\n", "Dato invalido. Reintente", 1, 99, 3) == 0
-						&& utn_getNumber(&auxHiringYears, "Ingrese los anios de contrato. Desde 1 a 10 maximo.", "Dato invalido. Reintente.\n", 1, 10, 3) == 0)
+						&& utn_getNumberFloat(&auxPlayer.salary, "Ingrese su salario. desde ($10000 hasta $9999999)", "Dato invalido. Reintente.\n", 10000, 9999999, 3) == 0 && utn_getNumberShort(&auxPlayer.shirtNumber, "Ingrese su numero de camiseta. Solo entre 1 y 99.\n", "Dato invalido. Reintente", 1, 99, 3) == 0
+						&& utn_getNumberShort(&auxPlayer.hiringYears, "Ingrese los anios de contrato. Desde 1 a 10 maximo.", "Dato invalido. Reintente.\n", 1, 10, 3) == 0)
 		{
 			listConfederation(arrayConfederation, lenArrayConfederation);
 
@@ -180,8 +181,6 @@ int loadDataPlayer(sPlayer *pPlayer, int *pIdPlayer, sConfederation arrayConfede
 			auxPlayer.confederationId = auxIdConfederation;
 			auxPlayer.idPlayer = *pIdPlayer;
 			strcpy(auxPlayer.position, playerPosition);
-			auxPlayer.shirtNumber = auxShirt;
-			auxPlayer.hiringYears = auxHiringYears;
 			auxPlayer.isEmpty = OCCUPIED;
 			(*pIdPlayer)++;
 			*pPlayer = auxPlayer;
@@ -198,13 +197,14 @@ int loadDataPlayer(sPlayer *pPlayer, int *pIdPlayer, sConfederation arrayConfede
 
 	return returnloadDataPlayer;
 }
-
-/// @brief registerVehicle		Funcion para dar de alta un vehiculo.
+/// @brief registerPlayer				 Da de alta un jugador.
 ///
-/// @param arrayVehicle			ARRAY de vehiculos.
-/// @param len					Tamanio de ARRAY de vehiculos.
-/// @param arrayType			ARRAY de tipos de vehiculo harcodeado.
-/// @return						Retorno, OK(1) en caso de haber funcionado correctamente. Retorno, ERROR(-1) en caso contrario.
+/// @param arrayPlayer					 ARRAY de jugadores.
+/// @param lenArrayPlayer				 Tamanio de ARRAY de jugadores.
+/// @param pIdPlayer					 Puntero a entero.
+/// @param arrayConfederation			 ARRAY de confederaciones.
+/// @param lenArrayConfederation		 Tamanio de ARRAY de confederaciones.
+/// @return								 Retorno, OK(1) en caso de haber funcionado correctamente. Retorno, ERROR(-1) en caso contrario.
 int registerPlayer(sPlayer arrayPlayer[], int lenArrayPlayer, int *pIdPlayer, sConfederation arrayConfederation[], int lenArrayConfederation)
 {
 
@@ -243,7 +243,6 @@ int registerPlayer(sPlayer arrayPlayer[], int lenArrayPlayer, int *pIdPlayer, sC
 
 	return returnregisterPlayer;
 }
-
 /// @brief downVehicle			Funcion para dar de baja un vehiculo dado de alta, atraves de ID.
 ///
 /// @param arrayVehicle			ARRAY de vehiculos.
@@ -286,27 +285,27 @@ int downPlayer(sPlayer arrayPlayer[], int lenArrayPlayer)
 
 	return returndownPlayer;
 }
-/// @brief modifyOneVehicle	    Funcion de tipo sVehicle(estructura de vehiculo) para realiza la carga de datos de vehiculo a modificar.
+/// @brief modifyOnePlayer				Modifica un jugador.
 ///
-/// @param vehicle				Un vehiculo de estructura sVehicle dado de alta a ser modificado.
-/// @return						Retorno auxiliar de sVehicle(estructura de vehiculo) con los datos modificados por el usuario.
-int modifyOnePlayer(sPlayer *player, sConfederation arrayConfederation[], int lenArrayConfederation)
+/// @param pPlayer						Puntero a un jugador de struct.
+/// @param arrayConfederation			 ARRAY de confederaciones.
+/// @param lenArrayConfederation		 Tamanio de ARRAY de confederaciones.
+/// @return								 Retorno, OK(1) en caso de haber funcionado correctamente. Retorno, ERROR(-1) en caso contrario.
+int modifyOnePlayer(sPlayer *pPlayer, sConfederation arrayConfederation[], int lenArrayConfederation)
 {
 
 	int returnmodifyOnePlayer;
 	sPlayer auxModifyOnePlayer;
 	int auxOptionModify;
-	int auxModifyShirt;
-	int auxModifyHiringYears;
 	char playerPosition[50];
 
 	do
 	{
 
-		if (player != NULL && arrayConfederation != NULL && lenArrayConfederation > 0)
+		if (pPlayer != NULL && arrayConfederation != NULL && lenArrayConfederation > 0)
 		{
 			showModifyPlayerMenu();
-			if (utn_getNumber(&auxOptionModify, "\t\t\t\t\t\t\tINGRESE OPCION", "Ingrese opcion valida\n", 1, 7, 3) == 0)
+			if (utn_getNumber(&auxOptionModify, "\t\t\t\t\t\t\tINGRESE OPCION.\n", "Ingrese opcion valida\n", 1, 7, 3) == 0)
 			{
 
 				switch (auxOptionModify)
@@ -315,7 +314,7 @@ int modifyOnePlayer(sPlayer *player, sConfederation arrayConfederation[], int le
 				case 1:
 					if (utn_getAlphabeticDescription(auxModifyOnePlayer.name, "Ingrese su nombre y apellido.\n", "Dato invalido. Reintente.\n", 3, 50) == 0)
 					{
-						strcpy(player->name, auxModifyOnePlayer.name);
+						strcpy(pPlayer->name, auxModifyOnePlayer.name);
 
 						returnmodifyOnePlayer = OK;
 
@@ -330,7 +329,7 @@ int modifyOnePlayer(sPlayer *player, sConfederation arrayConfederation[], int le
 					if (getPositionPlayer(playerPosition) == OK)
 					{
 						strcpy(auxModifyOnePlayer.position, playerPosition);
-						strcpy(player->position, auxModifyOnePlayer.position);
+						strcpy(pPlayer->position, auxModifyOnePlayer.position);
 						returnmodifyOnePlayer = OK;
 					}
 					else
@@ -341,10 +340,10 @@ int modifyOnePlayer(sPlayer *player, sConfederation arrayConfederation[], int le
 					}
 					break;
 				case 3:
-					if (utn_getNumber(&auxModifyShirt, "Ingrese su numero de camiseta. Solo entre 1 y 99.\n", "Dato invalido. Reintente", 1, 99, 3) == 0)
+					if (utn_getNumberShort(&auxModifyOnePlayer.shirtNumber, "Ingrese su numero de camiseta. Solo entre 1 y 99.\n", "Dato invalido. Reintente", 1, 99, 3) == 0)
 					{
 
-						player->shirtNumber = auxModifyShirt;
+						pPlayer->shirtNumber = auxModifyOnePlayer.shirtNumber;
 						returnmodifyOnePlayer = OK;
 					}
 					else
@@ -362,16 +361,15 @@ int modifyOnePlayer(sPlayer *player, sConfederation arrayConfederation[], int le
 
 					} while (findByIdArrayConfederation(arrayConfederation, auxModifyOnePlayer.confederationId, lenArrayConfederation) == ERROR);
 
-					player->confederationId = auxModifyOnePlayer.confederationId;
+					pPlayer->confederationId = auxModifyOnePlayer.confederationId;
 
 					returnmodifyOnePlayer = OK;
-
 
 					break;
 				case 5:
 					if (utn_getNumberFloat(&auxModifyOnePlayer.salary, "Ingrese su salario. desde ($10000)", "Dato invalido. Reintente.\n", 10000, 9999999, 3) == 0)
 					{
-						player->salary = auxModifyOnePlayer.salary;
+						pPlayer->salary = auxModifyOnePlayer.salary;
 						returnmodifyOnePlayer = OK;
 					}
 					else
@@ -381,9 +379,9 @@ int modifyOnePlayer(sPlayer *player, sConfederation arrayConfederation[], int le
 					}
 					break;
 				case 6:
-					if (utn_getNumber(&auxModifyHiringYears, "Ingrese los anios de contrato. Desde 1 a 10 maximo.", "Dato invalido. Reintente.\n", 1, 10, 3) == 0)
+					if (utn_getNumberShort(&auxModifyOnePlayer.hiringYears, "Ingrese los anios de contrato. Desde 1 a 10 maximo.", "Dato invalido. Reintente.\n", 1, 10, 3) == 0)
 					{
-						player->hiringYears = auxModifyHiringYears;
+						pPlayer->hiringYears = auxModifyOnePlayer.hiringYears;
 						returnmodifyOnePlayer = OK;
 					}
 					else
@@ -442,14 +440,20 @@ int modifyPlayers(sPlayer arrayPlayer[], int lenArrayPlayer, sConfederation arra
 		}
 		else
 		{
-			returnmodifyPlayers = -2;
+			returnmodifyPlayers = ERROR;
 		}
 
 	}
 
 	return returnmodifyPlayers;
 }
-
+/// @brief sortPerIdPlayers				Ordena jugadores por ID.
+///
+/// @param arrayPlayer					 ARRAY de jugadores.
+/// @param lenArrayPlayer				 Tamanio de ARRAY de jugadores.
+/// @param arrayConfederation			 ARRAY de confederaciones harcodeado.
+/// @param lenArrayConfederation		 Tamanio de ARRAY de confederaciones harcodeado.
+/// @return								Retorno, OK(1) en caso de haber funcionado correctamente. Retorno, ERROR(-1) en caso contrario.
 int sortPerIdPlayers(sPlayer arrayPlayer[], int lenArrayPlayer, sConfederation arrayConfederation[], int lenArrayConfederation)
 {
 
@@ -483,7 +487,10 @@ int sortPerIdPlayers(sPlayer arrayPlayer[], int lenArrayPlayer, sConfederation a
 
 	return rtn;
 }
-
+/// @brief getPositionPlayer			Obtiene la posicion de jugador elegida por usuario.
+///
+/// @param pPosition					puntero a cadena char.
+/// @return								Retorno, OK(1) en caso de haber funcionado correctamente. Retorno, ERROR(-1) en caso contrario.
 int getPositionPlayer(char *pPosition)
 {
 
@@ -530,8 +537,45 @@ int getPositionPlayer(char *pPosition)
 
 	return rtn;
 }
+/// @brief validateRegisterOrDownPlayer	 Valida a traves de flag la entrada a las opciones de menu dependiendo si hay jugadores dados de alta.
+///
+/// @param arrayPlayer					 ARRAY de jugadores.
+/// @param lenArrayPlayer				 Tamanio de ARRAY de jugadores.
+/// @param pFlag						 Puntero a entero.
+void validateRegisterOrDownPlayer(sPlayer arrayPlayer[], int lenArrayPlayer, int *pFlag)
+{
 
-int hardCodePlayers(sPlayer arrayPlayer[], int len, int ammount, int *pNextId)
+	if (arrayPlayer != NULL && lenArrayPlayer > 0 && pFlag != NULL)
+	{
+		*pFlag = FREE;
+		for (int i = 0; i < lenArrayPlayer; i++)
+		{
+
+			if (arrayPlayer[i].isEmpty == OCCUPIED)
+			{
+
+				*pFlag = OK;
+				break;
+
+			}
+			else
+			{
+
+				*pFlag = FREE;
+
+			}
+
+		}
+	}
+
+}
+/// @brief hardCodePlayers				 Funcion para harcodear jugadores de prueba de programa.
+///
+/// @param arrayPlayer			         ARRAY de jugadores.
+/// @param lenArrayPlayer				 Tamanio de ARRAY de jugadores.
+/// @param pNextId						 Puntero a entero autoincremental a traves de contador.
+/// @return								 Retorno, OK(1) en caso de haber funcionado correctamente. Retorno, ERROR(-1) en caso contrario.
+int hardCodePlayers(sPlayer arrayPlayer[], int lenArrayPlayer, int ammount, int *pNextId)
 {
 
 	int rtn = ERROR;
@@ -565,7 +609,7 @@ int hardCodePlayers(sPlayer arrayPlayer[], int len, int ammount, int *pNextId)
 	{ 0, "Alexia Putellas", "Mediocampista", 10, 101, 400000, 4, 1 }
 
 	};
-	if (arrayPlayer != NULL && pNextId != NULL && len > 0 && len <= 3000 && ammount <= len)
+	if (arrayPlayer != NULL && pNextId != NULL && lenArrayPlayer > 0 && lenArrayPlayer <= 3000 && ammount <= lenArrayPlayer)
 	{
 		for (int i = 0; i < ammount; i++)
 		{

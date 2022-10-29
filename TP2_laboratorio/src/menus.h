@@ -7,16 +7,16 @@
 
 #ifndef MENUS_H_
 #define MENUS_H_
-/// @brief
+/// @brief  Muestra menu principal.
 ///
 void showMainMenu(void);
-/// @brief
+/// @brief		Muestra menu modificacion.
 ///
 void showModifyPlayerMenu(void);
-/// @brief
+/// @brief		Muestra menu modificacion confederacion.
 ///
 void showModifyConfederationMenu(void);
-/// @brief
+/// @brief		Muestra menu de informes.
 ///
 void showReportMenu(void);
 

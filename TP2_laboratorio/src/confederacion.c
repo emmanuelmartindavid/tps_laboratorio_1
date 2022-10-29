@@ -9,10 +9,10 @@
 #include <string.h>
 #include "jugador.h"
 #include "validaciones.h"
-/// @brief
+/// @brief initializeArrayConfederation     Funcion inicializa en 0 el array de confederaciones.
 ///
-/// @param arrayConfederation
-/// @param lenArrayConfederation
+/// @param arrayConfederation			         ARRAY de confederaciones.
+/// @param lenArrayConfederation				         Tamanio de ARRAY de confederaciones.
 void initializeArrayConfederation(sConfederation arrayConfederation[], int lenArrayConfederation)
 {
 
@@ -28,11 +28,11 @@ void initializeArrayConfederation(sConfederation arrayConfederation[], int lenAr
 	}
 
 }
-/// @brief
+/// @brief getFreeIndexArrayConfederation		Funcion obtiene posicion de ARRAY de confederaciones libre a dar de alta.
 ///
-/// @param arrayConfederation
-/// @param lenArrayConfederation
-/// @return
+/// @param arrayConfederation			         ARRAY de confederaciones.
+/// @param lenArrayConfederation				         Tamanio de ARRAY de confederaciones.
+/// @return									 Retorna la posicion del ARRAY de jugadores libre a dar de alta.
 int getFreeIndexArrayConfederation(sConfederation arrayConfederation[], int lenArrayConfederation)
 {
 
@@ -52,12 +52,12 @@ int getFreeIndexArrayConfederation(sConfederation arrayConfederation[], int lenA
 	}
 	return returngetFreeIndexArrayConfederation;
 }
-/// @brief
+/// @brief findByIdArrayConfederation				 Funcion obtiene posicion de ARRAY a traves de ID ingresado por parametro.
 ///
-/// @param arrayConfederation
-/// @param idConfederation
-/// @param lenArrayConfederation
-/// @return
+/// @param arrayConfederation				         ARRAY de confederaciones.
+/// @param idConfederation							ID ingresado por usuario a ser localizado en su posicion del ARRAY.
+/// @param lenArrayConfederation				         Tamanio de ARRAY de confederaciones.
+/// @return								 Retorna la posicion del ARRAY buscado a traves del ID ingresado por usuario.
 int findByIdArrayConfederation(sConfederation arrayConfederation[], int idConfederation, int lenArrayConfederation)
 {
 	int returnfindByIdArrayConfederation = ERROR;
@@ -81,11 +81,11 @@ int findByIdArrayConfederation(sConfederation arrayConfederation[], int idConfed
 
 	return returnfindByIdArrayConfederation;
 }
-/// @brief
+/// @brief loadDataConfederation		Carga datos de confederacion a dar de alta.
 ///
-/// @param pConfederation
-/// @param pIdConfederation
-/// @return
+/// @param pConfederation			Puntero a una confederacion de struct.
+/// @param pIdConfederation			Puntero a entero autoincremental a traves de contador.
+/// @return							  Retorno, OK(1) en caso de haber funcionado correctamente. Retorno, ERROR(-1) en caso contrario.
 int loadDataConfederation(sConfederation *pConfederation, int *pIdConfederation)
 {
 
@@ -112,12 +112,12 @@ int loadDataConfederation(sConfederation *pConfederation, int *pIdConfederation)
 
 	return returnloadDataConfederation;
 }
-/// @brief
+/// @brief registerConfederation			Da de alta una confederacion.
 ///
-/// @param arrayConfederation
-/// @param pIdConfederation
-/// @param lenArrayConfederation
-/// @return
+/// @param arrayConfederation			         ARRAY de confederaciones.
+/// @param pIdConfederation						Puntero a entero autoincremental a traves de contador.
+/// @param lenArrayConfederation				         Tamanio de ARRAY de confederaciones.
+/// @return								  Retorno, OK(1) en caso de haber funcionado correctamente. Retorno, ERROR(-1) en caso contrario.
 int registerConfederation(sConfederation arrayConfederation[], int *pIdConfederation, int lenArrayConfederation)
 {
 
@@ -159,11 +159,11 @@ int registerConfederation(sConfederation arrayConfederation[], int *pIdConfedera
 
 	return returnregisterConfederation;
 }
-/// @brief
+/// @brief downConfederation					Da de baja confederacion.
 ///
-/// @param arrayConfederation
-/// @param lenArrayConfederation
-/// @return
+/// @param arrayConfederation			         ARRAY de confederaciones.
+/// @param lenArrayConfederation				         Tamanio de ARRAY de confederaciones.
+/// @return								 Retorno, OK(1) en caso de haber funcionado correctamente. Retorno, ERROR(-1) en caso contrario.
 int downConfederation(sConfederation arrayConfederation[], int lenArrayConfederation)
 {
 	int returndownConfederation = ERROR;
@@ -199,10 +199,10 @@ int downConfederation(sConfederation arrayConfederation[], int lenArrayConfedera
 
 	return returndownConfederation;
 }
-/// @brief
+/// @brief modifyOneConfederation			Modifica un jugador.
 ///
-/// @param pConfederation
-/// @return
+/// @param pConfederation				Puntero a una confederacion de struct.
+/// @return						  Retorno, OK(1) en caso de haber funcionado correctamente. Retorno, ERROR(-1) en caso contrario.
 int modifyOneConfederation(sConfederation *pConfederation)
 {
 
@@ -281,11 +281,11 @@ int modifyOneConfederation(sConfederation *pConfederation)
 
 	return returnmodifyOneConfederation;
 }
-/// @brief
+/// @brief modifyConfederations					 Funcion para dar de modificar confederaciones dado de alta, atraves de ID.
 ///
-/// @param arrayConfederation
-/// @param lenArrayConfederation
-/// @return
+/// @param arrayConfederation			         ARRAY de confederaciones.
+/// @param lenArrayConfederation				         Tamanio de ARRAY de confederaciones.
+/// @return							  Retorno, OK(1) en caso de haber funcionado correctamente. Retorno, ERROR(-1) en caso contrario.
 int modifyConfederations(sConfederation arrayConfederation[], int lenArrayConfederation)
 {
 
@@ -318,27 +318,25 @@ int modifyConfederations(sConfederation arrayConfederation[], int lenArrayConfed
 
 	return returnmodifyPlayers;
 }
-
-/// @brief
+/// @brief listOneConfederation				Lista una confedracion.
 ///
-/// @param OneConfederation
+/// @param OneConfederation			 Una confederacion de estructura sConfederation, dado de alta.
 void listOneConfederation(sConfederation OneConfederation)
 {
 
 	printf("\t\t\t\t\t\t|%d|  %-20s|  %-25s| %-10d| \n", OneConfederation.idConfederation, OneConfederation.confederationName, OneConfederation.region, OneConfederation.creationYear);
 
 }
-/// @brief
+/// @brief listConfederation			Lista confederaciones
 ///
-/// @param arrayConfederation
-/// @param lenArrayConfederation
-/// @return
-int listConfederation(sConfederation arrayConfederation[], int lenArrayConfederation)
+/// @param arrayConfederation			         ARRAY de confederaciones.
+/// @param lenArrayConfederation				         Tamanio de ARRAY de confederaciones.
+void listConfederation(sConfederation arrayConfederation[], int lenArrayConfederation)
 {
 
 	int i = 0;
 	int ammount = 0;
-	int rtn = ERROR;
+
 
 	if (arrayConfederation != NULL && lenArrayConfederation > 0)
 	{
@@ -357,23 +355,20 @@ int listConfederation(sConfederation arrayConfederation[], int lenArrayConfedera
 		}
 		if (ammount > 0)
 		{
-			rtn = OK;
 
 			printf("\t\t\t\t\t\t===================================================================\n");
 		}
 
 	}
 
-	return rtn;
 }
-
-/// @brief getDescriptionType  Funcion para obtener la descripcion de tipo de vehiculo, segun ID tipo elegido por usuario.
+/// @brief getConfederationDescription 				 Funcion para obtener la descripcion de tipo de vehiculo, segun ID tipo elegido por usuario.
 ///
-/// @param arrayType           ARRAY de tipos de vehiculo harcodeado.
-/// @param lenType			   Tamanio de ARRAY de tipos de vehiculo harcodeado.
-/// @param idType			   ID tipo de vehiculo elegido por usuario a comparar.
-/// @param pDescription		   Puntero a cadena de texto, con descripcion de tipo de vehiculo, dependiendo del ID de tipo de vehiculo elegido por usuario.
-/// @return					   Retorno, OK(1) en caso de haber funcionado correctamente. Retorno, ERROR(-1) en caso contrario.
+/// @param arrayConfederation			         ARRAY de confederaciones.
+/// @param lenArrayConfederation				         Tamanio de ARRAY de confederaciones.
+/// @param idConfederation			  			 ID de confederacion elegido por usuario a comparar.
+/// @param pCofederationDescription		  		 Puntero a cadena de texto, con nombre de confederacion.
+/// @return					  				 Retorno, OK(1) en caso de haber funcionado correctamente. Retorno, ERROR(-1) en caso contrario.
 int getConfederationDescription(sConfederation arrayConfederation[], int lenArrayConfederation, int idConfederation, char *pCofederationDescription)
 {
 	int rtn = ERROR;
@@ -399,9 +394,13 @@ int getConfederationDescription(sConfederation arrayConfederation[], int lenArra
 
 	return rtn;
 }
-/// @brief hardCode			   Funcion de harcodeo de ID tipo de vehiculo, descripcion tipo de vehiculo.
+/// @brief hardCodeConfederations			 Funcion para harcodear confederaciones.
 ///
-/// @param arrayType		   ARRAY de tipos de vehiculo a harcodear.
+/// @param arrayConfederation			         ARRAY de confederaciones.
+/// @param lenArrayConfederation				         Tamanio de ARRAY de confederaciones.
+/// @param ammount								Entero, cantidad.
+/// @param pNextId					 Puntero a entero autoincremental a traves de contador.
+/// @return							   Retorno, OK(1) en caso de haber funcionado correctamente. Retorno, ERROR(-1) en caso contrario.
 int hardCodeConfederations(sConfederation arrayConfederation[], int lenArrayConfederation, int ammount, int *pNextId)
 {
 
