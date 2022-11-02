@@ -7,6 +7,7 @@
 		<item key="WizardProjectsImportPage.STORE_CLOSE_CREATED_PROJECTS_ID" value="false"/>
 		<item key="WizardProjectsImportPage.STORE_HIDE_CONFLICTING_PROJECTS_ID" value="false"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="C:\Users\cuerpos\OneDrive\Desktop\TPS_Laboratorio_1\tps_laboratorio_1\tp3_windows"/>
 			<item value="C:\Users\cuerpos\OneDrive\Desktop\TPS_Laboratorio_1\tps_laboratorio_1\TP1_laboratorio"/>
 		</list>
 		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
@@ -19,6 +20,9 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="C:\Users\cuerpos\OneDrive\Desktop\TPS_Laboratorio_1\tps_laboratorio_1\TP3_laboratorio"/>
+			<item value="C:\Users\cuerpos\OneDrive\Desktop\tp3_windows"/>
+			<item value="C:\Users\cuerpos\OneDrive\Desktop\PRIMERPARCIAL-LABO1\Emmanuel_Martin_parciales_1-E_Laboratorio-1\modelo-tp-3"/>
 			<item value="C:\Users\cuerpos\OneDrive\Desktop\TPS_Laboratorio_1\tps_laboratorio_1\PRIMER-PARCIAL-LABO-1"/>
 		</list>
 	</section>

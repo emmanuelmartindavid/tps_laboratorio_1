@@ -37,7 +37,7 @@ int main(void)
 	initializeArrayConfederation(arrayConfederation, LEN_ARRAYCONFEDERATION);
 
 	//DESCOMENTAR EN CASO DE QUERER USAR HARCODEO DE JUGADORES.
-	//hardCodePlayers(arrayPlayer, LEN_ARRAYPLAYERS, 24, &idPlayer);
+	hardCodePlayers(arrayPlayer, LEN_ARRAYPLAYERS, 24, &idPlayer);
 
 	hardCodeConfederations(arrayConfederation, LEN_ARRAYCONFEDERATION, 6, &idConfederation);
 

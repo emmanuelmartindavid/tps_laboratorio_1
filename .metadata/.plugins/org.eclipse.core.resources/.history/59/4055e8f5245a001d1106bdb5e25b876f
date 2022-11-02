@@ -1,0 +1,301 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include "jugador.h"
+sPlayer* newPlayer()
+{				//Pide memoria dinC!mica e inicializa los datos
+	sPlayer *newPlayer = NULL;
+	newPlayer = (sPlayer*) malloc(sizeof(sPlayer));
+
+	if (newPlayer != NULL)
+	{
+		newPlayer->id = 0;
+		strcpy(newPlayer->fullName, " ");
+		newPlayer->age = 0;
+		strcpy(newPlayer->position, " ");
+		strcpy(newPlayer->nationality, " ");
+		newPlayer->idNationalTeam = 0;
+		newPlayer->isEmpty = 0;
+
+	}
+
+	return newPlayer;
+
+}
+
+sPlayer* newPlayerParameters(char *idStr, char *fullNameStr, char *ageStr, char *positionStr, char *nationalityStr, char *idNationalTeamStr)
+{
+	//Antes de cargar deben validarse los datos
+	sPlayer *newPlayer = newPlayer();
+
+	if (newPlayer != NULL)
+	{
+		if (!(setIdPlayer(newPlayer, idStr) && playerSetHiringYears(newPlayer, hiringYears) && playerSetName(newPlayer, pName) && playerSetPostion(newPlayer, pPosition) && playerSetSalary(newPlayer, salary) && playerSetShirtNumber(newPlayer, shirtNumber) && playerSetConfederationId(newPlayer, confederationId)))
+		{
+			free(newPlayer);
+			newPlayer = NULL;	//INDICA FUNCION NO ANDUVO BIEN.
+		}
+	}
+
+	return newPlayer;
+
+}
+
+int setIdPlayer(sPlayer *this, int id)
+{
+
+	int returnSetIdPlayer = ERROR;
+
+	if (this != NULL && id > 0)
+	{
+		this->id = id;
+		returnSetIdPlayer = SUCCESS;
+	}
+
+	return returnSetIdPlayer;
+}
+
+int getIdPlayer(sPlayer *this, int *id)
+{
+
+	int returnGetIdPlayer = ERROR;
+
+	if (this != NULL && id != NULL)
+	{
+		*id = this->id;
+		returnGetIdPlayer = SUCCESS;
+	}
+
+	return returnGetIdPlayer;
+}
+
+
+
+
+int setFullNamePlayer(sPlayer *this, char *fullName)
+{
+
+	int returnSetName = ERROR;
+
+	if (this != NULL && fullName != NULL)
+	{
+		strcpy(this->fullName, fullName);
+		returnSetName = SUCCESS;
+	}
+
+	return returnSetName;
+}
+
+
+int getFullNamePlayer(sPlayer *this, char *fullName)
+{
+
+	int returnGetName = ERROR;
+
+	if (this != NULL && fullName != NULL)
+	{
+		strcpy(fullName, this->fullName);
+		returnGetName = SUCCESS;
+	}
+
+	return returnGetName;
+}
+
+
+
+int setAgePlayer(sPlayer *this, int age)
+{
+	int returnSetHiringYears = ERROR;
+
+	if (this != NULL && age > 0)
+	{
+		this->age = age;
+		returnSetHiringYears = SUCCESS;
+	}
+
+	return returnSetHiringYears;
+}
+
+
+
+int getAgePlayer(sPlayer *this, int *age)
+{
+	int returnGetHiringYears = ERROR;
+
+	if (this != NULL && age != NULL)
+	{
+		*age = this->age;
+		returnGetHiringYears = SUCCESS;
+	}
+
+	return returnGetHiringYears;
+}
+
+
+int setPositionPlayer(sPlayer *this, char *position)
+{
+
+	int returnSetPostion = ERROR;
+
+	if (this != NULL && position != NULL)
+	{
+		strcpy(this->position, position);
+		returnSetPostion = SUCCESS;
+	}
+
+	return returnSetPostion;
+}
+
+
+int getPositionPlayer(sPlayer *this, char *position)
+{
+
+	int returnGetPostion = ERROR;
+
+	if (this != NULL && position != NULL)
+	{
+		strcpy(position, this->position);
+		returnGetPostion = SUCCESS;
+	}
+
+	return returnGetPostion;
+}
+
+
+
+int setNationalityPlayer(sPlayer *this, char *nationality)
+{
+
+	int returnSetPostion = ERROR;
+
+	if (this != NULL && nationality != NULL)
+	{
+		strcpy(this->nationality, nationality);
+		returnSetPostion = SUCCESS;
+	}
+
+	return returnSetPostion;
+}
+
+
+int getNationalityPlayer(sPlayer *this, char *nationality)
+{
+
+	int returnGetPostion = ERROR;
+
+	if (this != NULL && nationality != NULL)
+	{
+		strcpy(nationality, this->nationality);
+		returnGetPostion = SUCCESS;
+	}
+
+	return returnGetPostion;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+int playerSetSalary(sPlayer *this, float salary)
+{
+	int returnSetSalary = ERROR;
+
+	if (this != NULL && salary > 0)
+	{
+		this->salary = salary;
+		returnSetSalary = SUCCESS;
+	}
+
+	return returnSetSalary;
+}
+
+int playerSetShirtNumber(sPlayer *this, short shirtNumber)
+{
+	int returnSetShirtNumber = ERROR;
+
+	if (this != NULL && shirtNumber > 0)
+	{
+		this->shirtNumber = shirtNumber;
+		returnSetShirtNumber = SUCCESS;
+	}
+
+	return returnSetShirtNumber;
+}
+
+int playerSetConfederationId(sPlayer *this, int confederationId)
+{
+	int returnSetConfederationId = ERROR;
+
+	if (this != NULL && confederationId > 0)
+	{
+		this->confederationId = confederationId;
+		returnSetConfederationId = SUCCESS;
+	}
+
+	return returnSetConfederationId;
+}
+
+/////GETTERS////
+/////GETTERS////
+
+
+int playerGetSalary(sPlayer *this, float *pSalary)
+{
+	int returnGetSalary = ERROR;
+
+	if (this != NULL && pSalary != NULL)
+	{
+		*pSalary = this->salary;
+		returnGetSalary = SUCCESS;
+	}
+
+	return returnGetSalary;
+}
+
+int playerGetShirtNumber(sPlayer *this, short *pShirtNumber)
+{
+	int returnGetShirtNumber = ERROR;
+
+	if (this != NULL && pShirtNumber != NULL)
+	{
+		*pShirtNumber = this->shirtNumber;
+		returnGetShirtNumber = SUCCESS;
+	}
+
+	return returnGetShirtNumber;
+}
+
+int playerGetConfederationId(sPlayer *this, int *pConfederationId)
+{
+	int returnGetConfederationId = ERROR;
+
+	if (this != NULL && pConfederationId != NULL)
+	{
+		*pConfederationId = this->confederationId;
+		returnGetConfederationId = SUCCESS;
+	}
+
+	return returnGetConfederationId;
+}
+

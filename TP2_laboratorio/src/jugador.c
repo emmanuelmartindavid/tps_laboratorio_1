@@ -84,11 +84,11 @@ int findByIdArrayPlayer(sPlayer arrayPlayer[], int idPlayer, int lenArrayPlayer)
 
 	return returnfindByIdArrayPlayer;
 }
-/// @brief listOnePlayer			   	 Funcion para listar un jugador dado de alta.
+/// @brief listOnePlayer			   			  Funcion para listar un jugador dado de alta.
 ///
-/// @param player				         Un jugadores de estructura sPlayer, dado de alta.
-/// @param arrayConfederation			         ARRAY de confederaciones.
-/// @param lenArrayConfederation				         Tamanio de ARRAY de confederaciones.
+/// @param player				       			  Un jugadores de estructura sPlayer, dado de alta.
+/// @param arrayConfederation			          ARRAY de confederaciones.
+/// @param lenArrayConfederation				  Tamanio de ARRAY de confederaciones.
 int listOnePlayer(sPlayer player, sConfederation arrayConfederation[], int lenArrayConfederation)
 {
 	int returnlistOnePlayer = ERROR;
@@ -106,13 +106,13 @@ int listOnePlayer(sPlayer player, sConfederation arrayConfederation[], int lenAr
 
 	return returnlistOnePlayer;
 }
-/// @brief listPlayeres			         Funcion lista ARRAY de jugadores dados de alta.
+/// @brief listPlayeres			        			 Funcion lista ARRAY de jugadores dados de alta.
 ///
-/// @param arrayPlayer			         ARRAY de jugadores dado de alta.
+/// @param arrayPlayer			      			     ARRAY de jugadores dado de alta.
 /// @param lenArrayPlayer					         Tamanio de ARRAY de jugadores.
-/// @param arrayConfederation			         ARRAY de confederaciones.
-/// @param lenArrayConfederation			Tamanio de ARRAY de confederaciones.
-/// @return						         Retorno, OK(1) en caso de haber funcionado correctamente. Retorno, ERROR(-1) en caso contrario.
+/// @param arrayConfederation			        	 ARRAY de confederaciones.
+/// @param lenArrayConfederation					 Tamanio de ARRAY de confederaciones.
+/// @return						           			 Retorno, OK(1) en caso de haber funcionado correctamente. Retorno, ERROR(-1) en caso contrario.
 int listPlayers(sPlayer arrayPlayer[], int lenArrayPlayer, sConfederation arrayConfederation[], int lenArrayConfederation)
 {
 
@@ -151,13 +151,13 @@ int listPlayers(sPlayer arrayPlayer[], int lenArrayPlayer, sConfederation arrayC
 
 	return returnlistPlayers;
 }
-/// @brief loadDataPlayer					Carga datos de jugador a dar de alta.
+/// @brief loadDataPlayer						Carga datos de jugador a dar de alta.
 ///
 /// @param pPlayer								Puntero a un jugador de struct.
 /// @param pIdPlayer							Puntero a entero.
-/// @param arrayConfederation			         ARRAY de confederaciones.
-/// @param lenArrayConfederation				 Tamanio de ARRAY de confederaciones.
-/// @return								  	Retorno, OK(1) en caso de haber funcionado correctamente. Retorno, ERROR(-1) en caso contrario.
+/// @param arrayConfederation			        ARRAY de confederaciones.
+/// @param lenArrayConfederation			    Tamanio de ARRAY de confederaciones.
+/// @return								  		Retorno, OK(1) en caso de haber funcionado correctamente. Retorno, ERROR(-1) en caso contrario.
 int loadDataPlayer(sPlayer *pPlayer, int *pIdPlayer, sConfederation arrayConfederation[], int lenArrayConfederation)
 {
 

@@ -1,0 +1,84 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include "LinkedList.h"
+#include "Jugador.h"
+#include "Seleccion.h"
+
+/** \brief Parsea los datos de los jugadores desde el archivo jugadores.csv (modo texto).
+ *
+ * \param path char*
+ * \param pArrayListJugador LinkedList*
+ * \return int
+ */
+int parser_JugadorFromText(FILE *pFile, LinkedList *pArrayListJugador)
+{
+
+	int retorno = ERROR;
+	char auxId[2000];
+	char auxNombreCopleto[2000];
+	char auxPosition[2000];
+	char auxSalary[2000];
+	char auxShirtNumber[2000];
+	char auxConfederationId[2000];
+
+
+	Jugador *pPlayer;
+	int retornoVariable;
+
+	if (pFile != NULL && pArrayListJugador != NULL)
+	{
+		//fscanf lee el archivo.
+		fscanf(pFile, "%[^,],%[^,],%[^,],%[^,],%[^\n]", auxIdPlayer, auxName, auxPosition, auxsueldo); //LECTURA FANTASMA
+		do
+		{
+			retornoVariable = fscanf(pArchivo, "%[^,],%[^,],%[^,],%[^,],%[^\n]", auxlegajo, auxnombre, auxsexo, auxsueldo);
+			if (retornoVariable == 4)
+			{
+
+
+				pEmpleado = newEmpleadoParam(auxLegajoInt, auxnombre, auxsexo, auxSueldoFlo);
+
+				if (pEmpleado != NULL)
+				{
+
+					//ACA LLAMO A LA FUNCION QUE ASIGNA MI PUNTERO EMPLEADO, AL ARRAY DE PUNTEROS EMPLEADOS.
+				}
+				retorno = SUCCESS;
+			}
+			else
+			{
+
+				retorno = ERROR;
+				break; //si no leyo 4 variables break. se rompe
+			}
+
+		} while (!feof(pFile));
+	}
+
+	return retorno;
+}
+
+/** \brief Parsea los datos de los jugadores desde el archivo binario.
+ *
+ * \param path char*
+ * \param pArrayListJugador LinkedList*
+ * \return int
+ *
+ */
+int parser_JugadorFromBinary(FILE *pFile, LinkedList *pArrayListJugador)
+{
+	return 1;
+}
+
+/** \brief Parsea los datos de los selecciones desde el archivo selecciones.csv (modo texto).
+ *
+ * \param path char*
+ * \param pArrayListSeleccion LinkedList*
+ * \return int
+ *
+ */
+int parser_SeleccionFromText(FILE *pFile, LinkedList *pArrayListSeleccion)
+{
+	return 1;
+}
+

@@ -1,0 +1,77 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#define ERROR -1
+#define SUCCESS 1
+Seleccion* selec_new()
+{
+
+	Seleccion *nuevaSeleccion = NULL;
+	nuevaSeleccion = (Seleccion*) malloc(sizeof(Seleccion));
+
+	if (nuevaSeleccion != NULL)
+	{
+		nuevaSeleccion->id = 0;
+		strcpy(nuevaSeleccion->pais, " ");
+		strcpy(nuevaSeleccion->confederacion, " ");
+		nuevaSeleccion->convocados = 0;
+		nuevaSeleccion->isEmpty = 0;
+
+	}
+
+	return nuevaSeleccion;
+
+}
+
+Seleccion* selec_newParametros(char* idStr,char* paisStr,char* confederacionStr, char* convocadosStr)
+{
+	//Antes de cargar deben validarse los datos
+	Seleccion *nuevaSeleccion = selec_new();
+
+	if (nuevaSeleccion != NULL)
+	{
+		if (!(jug_setId(nuevaSeleccion, atoi(idStr))))
+		{
+			selec_delete(nuevaSeleccion);
+			nuevaSeleccion = NULL;	//INDICA FUNCION NO ANDUVO BIEN.
+		}
+	}
+
+	return nuevaSeleccion;
+
+}
+
+void selec_delete(Seleccion* this)
+{
+
+	free(this);
+
+}
+
+int selec_setConvocados(Seleccion* this,int convocados)
+{
+
+	int retorno = ERROR;
+
+	if (this != NULL)
+	{
+		this->id = convocados;
+		retorno = SUCCESS;
+	}
+
+	return retorno;
+}
+
+int selec_getConvocados(Seleccion* this,int* convocados)
+{
+
+	int retorno = ERROR;
+
+	if (this != NULL && convocados != NULL)
+	{
+		*convocados = this->convocados;
+		retorno = SUCCESS;
+	}
+
+	return retorno;
+}
