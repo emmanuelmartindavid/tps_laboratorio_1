@@ -13,8 +13,7 @@ typedef struct
 	char position[30];
 	char nationality[30];
 	int idNationalTeam;
-	int isEmpty;
-}sPlayer;
+} sPlayer;
 
 sPlayer* newPlayer();
 sPlayer* newPlayerParameters(char *idStr, char *fullNameStr, char *ageStr, char *positionStr, char *nationalityStr, char *idNationalTeamStr);
@@ -39,7 +38,17 @@ int getNationalityPlayer(sPlayer *this, char *nationality);
 int setIdNationalTeamPlayer(sPlayer *this, int idNationalTeam);
 int getIdNationalTeamPLayer(sPlayer *this, int *idNationalTeam);
 
-int setIsEmptyPlayer(sPlayer *this, int isEmpty);
-int getIsEmptyPlayer(sPlayer *this, int *isEmpty);
+int editFullNamePlayer(sPlayer *this);
+int editAgePlayer(sPlayer *this);
+int editPositionPlayer(sPlayer *this);
+int editNationalityPlayer(sPlayer *this);
+
+int comparePlayersByNationality(void *pPlayerOne, void *pPlayerTwo);
+int comparePlayersByAge(void *pPlayerOne, void *pPlayerTwo);
+int comparePlayersByName(void *pPlayerOne, void *pPlayerTwo);
+
+void showPlayerData();
+void showPlayerDataNationalTeam();
+void showLine();
 
 #endif // jug_H_INCLUDED

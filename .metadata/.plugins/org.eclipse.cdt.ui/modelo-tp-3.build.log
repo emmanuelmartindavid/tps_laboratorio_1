@@ -1,0 +1,14 @@
+17:03:48 **** Rebuild of configuration Debug for project modelo-tp-3 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\modelo-tp-3.o" "..\\src\\modelo-tp-3.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\jugadores.o" "..\\src\\jugadores.c" 
+..\src\jugadores.c: In function 'newPlayerParam':
+..\src\jugadores.c:35:23: error: called object 'newPlayer' is not a function or function pointer
+   35 |  sPlayer *newPlayer = newPlayer();
+      |                       ^~~~~~~~~
+..\src\jugadores.c:35:11: note: declared here
+   35 |  sPlayer *newPlayer = newPlayer();
+      |           ^~~~~~~~~
+
+17:03:48 Build Failed. 1 errors, 0 warnings. (took 284ms)
+

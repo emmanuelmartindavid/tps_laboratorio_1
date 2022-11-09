@@ -4,9 +4,12 @@
 
 
 
-int parser_JugadorFromText(FILE* pFile , LinkedList* pArrayListJugador);
-int parser_JugadorFromBinary(FILE* pFile , LinkedList* pArrayListJugador);
-int parser_SeleccionFromText(FILE* pFile , LinkedList* pArrayListSeleccion);
+int parserPlayerFromText(FILE *pFile, LinkedList *pArrayListPlayer);
+int parserPlayerFromBinary(FILE* pFile , LinkedList* pArrayListPlayer);
+int parserNationalTeamFromText(FILE *pFile, LinkedList *pArrayListNationalTeam);
+
+
+int parserIdPlayerFromText(FILE *pFile, int *pIdPlayer);
 
 
 #endif /* PARSER_H_ */

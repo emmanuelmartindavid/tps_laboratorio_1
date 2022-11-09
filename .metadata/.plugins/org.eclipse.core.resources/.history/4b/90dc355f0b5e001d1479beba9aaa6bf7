@@ -1,0 +1,121 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include "LinkedList.h"
+#include "Controller.h"
+#include "Jugador.h"
+#include "validaciones.h"
+#include "menus.h"
+
+int main()
+{
+	setbuf(stdout, NULL);
+	int option = 0;
+	int flagLoadPlayerFromTextAndBinary = 0;
+	int returnRemovePlayer;
+	LinkedList *listPLayers = ll_newLinkedList();
+	LinkedList *listNationalTeam = ll_newLinkedList();
+
+	do
+	{
+		showMainMenu();
+		if (utn_getNumber(&option, "Ingrese opcion.\n", "Error. Reintente.\n", 1, 10, 3) == 0)
+		{
+			switch (option)
+			{
+			case 1:
+				if (flagLoadPlayerFromTextAndBinary == 0)
+				{
+					if (controllerLoadPlayerFromText("jugadores.csv", listPLayers) == SUCCESS
+						&& controllerLoadNationalTeamFromText("selecciones.csv", listNationalTeam) == SUCCESS)
+					{
+						flagLoadPlayerFromTextAndBinary = 1;
+						printf("Archivo de texto cargado correctamente.\n");
+
+					}
+					else
+					{
+						printf("Error al cargar el archivo.\n");
+					}
+				}
+				else
+				{
+					printf("Ya realizo la carga de jugadores.\n");
+				}
+				break;
+			case 2:
+				if (controllerAddPlayer(listPLayers) == SUCCESS)
+				{
+
+					printf("Alta exitosa.\n");
+				}
+				else
+				{
+					printf("DATOS INVALIDOS. REINTENTE\n");
+				}
+				break;
+			case 3:
+				if (controllerEditPlayer(listPLayers) == SUCCESS)
+				{
+					printf("Jugador modificado exitosamente.\n");
+
+				}
+				else
+				{
+					printf("ERROR. REINTENTE\n");
+				}
+
+				break;
+			case 4:
+				returnRemovePlayer =controllerRemovePlayer(listPLayers);
+				if (returnRemovePlayer == SUCCESS)
+				{
+					printf("Jugador dado de baja exitosamente.\n");
+
+				}
+				else if(returnRemovePlayer == ERROR)
+				{
+					printf("ERROR. REINTENTE\n");
+				}
+				else
+				{
+					printf("BAJA CANCELADA.\n");
+				}
+				break;
+			case 5:
+				//controllerListPlayers(listPLayers);
+				controllerListOnePlayerNationalTeam(listPLayers, listNationalTeam, 3);
+				controllerListPlayersNationalTeam(listPLayers, listNationalTeam);
+				break;
+			case 10:
+				if(controllerSavePlayersTextMode("jugadores.csv", listPLayers)==SUCCESS)
+				{
+					printf("JUGADOR");
+
+				}
+				else
+				{
+					printf("ERROR. JUGADOR\n");
+				}
+				if(controllerSaveNationalTeamTextMode("selecciones.csv", listNationalTeam)==SUCCESS)
+				{
+
+					printf("SELECCION");
+				}
+				else
+				{
+					printf("ERROR. SELECCION\n");
+				}
+				break;
+			}
+
+		}
+		else
+		{
+			printf("ALGO SALIO MAL.\n");
+			break;
+		}
+	} while (option != 10);
+
+	return 0;
+}
+

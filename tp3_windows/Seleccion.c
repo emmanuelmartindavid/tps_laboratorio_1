@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "Seleccion.h"
 #define ERROR -1
 #define SUCCESS 1
 sNationalTeam* newNationalTeam()
@@ -15,7 +16,6 @@ sNationalTeam* newNationalTeam()
 		strcpy(newNationalTeam->country, " ");
 		strcpy(newNationalTeam->confederation, " ");
 		newNationalTeam->calledUp = 0;
-		newNationalTeam->isEmpty = 0;
 
 	}
 
@@ -23,17 +23,26 @@ sNationalTeam* newNationalTeam()
 
 }
 
-sNationalTeam* selec_newParametros(char* idStr,char* paisStr,char* confederacionStr, char* convocadosStr)
+sNationalTeam* newNationalTeamParameters(char *idStr, char *countryStr, char *confederationStr, char *calledUpStr)
 {
-	//Antes de cargar deben validarse los datos
+
 	sNationalTeam *auxNewNationalTeam = newNationalTeam();
 
-	if (auxNewNationalTeam != NULL)
+	if (idStr != NULL && countryStr != NULL && confederationStr != NULL && calledUpStr != NULL && auxNewNationalTeam != NULL)
 	{
-		if (!(jug_setId(auxNewNationalTeam, atoi(idStr))))
+		if (setCalledUpNationalTeam(auxNewNationalTeam, atoi(calledUpStr)) == SUCCESS)
 		{
-			selec_delete(auxNewNationalTeam);
-			auxNewNationalTeam = NULL;	//INDICA FUNCION NO ANDUVO BIEN.
+
+			auxNewNationalTeam->id = atoi(idStr);
+			strcpy(auxNewNationalTeam->country, countryStr);
+			strcpy(auxNewNationalTeam->confederation, confederationStr);
+
+		}
+		else
+		{
+
+			deleteNatioanalTeam(auxNewNationalTeam);
+			auxNewNationalTeam = NULL;
 		}
 	}
 
@@ -41,28 +50,64 @@ sNationalTeam* selec_newParametros(char* idStr,char* paisStr,char* confederacion
 
 }
 
-void deleteNatioanalTeam(sNationalTeam* this)
+void deleteNatioanalTeam(sNationalTeam *this)
 {
 
 	free(this);
 
 }
 
-int setcalledUpNationalTeam(sNationalTeam* this,int calledUp)
+int getIdNationalTeam(sNationalTeam *this, int *id)
 {
-
 	int retorno = ERROR;
 
-	if (this != NULL)
+	if (this != NULL && id != NULL)
 	{
-		this->id = calledUp;
+		*id = this->id;
+		retorno = SUCCESS;
+	}
+	return retorno;
+}
+int getCountryNationalTeam(sNationalTeam *this, char *country)
+{
+	int retorno = ERROR;
+
+	if (this != NULL && country != NULL)
+	{
+		strcpy(country, this->country);
+		retorno = SUCCESS;
+	}
+
+	return retorno;
+}
+int getConfederationNationalTeam(sNationalTeam *this, char *confederation)
+{
+	int retorno = ERROR;
+
+	if (this != NULL && confederation != NULL)
+	{
+		strcpy(confederation, this->confederation);
 		retorno = SUCCESS;
 	}
 
 	return retorno;
 }
 
-int getcalledUpNationalTeam(sNationalTeam* this,int* calledUp)
+int setCalledUpNationalTeam(sNationalTeam *this, int calledUp)
+{
+
+	int retorno = ERROR;
+
+	if (this != NULL && calledUp >= 0 && calledUp <= 22)
+	{
+		this->calledUp = calledUp;
+		retorno = SUCCESS;
+	}
+
+	return retorno;
+}
+
+int getCalledUpNationalTeam(sNationalTeam *this, int *calledUp)
 {
 
 	int retorno = ERROR;
@@ -74,4 +119,19 @@ int getcalledUpNationalTeam(sNationalTeam* this,int* calledUp)
 	}
 
 	return retorno;
+}
+
+int compareNationalTeamByConfederation(void *nationaTeamOne, void *nationalTeamTwo)
+{
+	int returnCompareNationalTeamByConfederation = ERROR;
+	char confederationNationalTeamOne[30];
+	char confederationNationalTeamtwo[30];
+
+	if (nationaTeamOne != NULL && nationalTeamTwo != NULL)
+	{
+		getConfederationNationalTeam(nationaTeamOne, confederationNationalTeamOne);
+		getConfederationNationalTeam(nationalTeamTwo, confederationNationalTeamtwo);
+		returnCompareNationalTeamByConfederation = stricmp(confederationNationalTeamOne, confederationNationalTeamtwo);
+	}
+	return returnCompareNationalTeamByConfederation;
 }

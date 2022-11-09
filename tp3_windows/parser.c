@@ -10,9 +10,9 @@
  * \param pArrayListJugador LinkedList*
  * \return int
  */
-int parserPlayerFromText(FILE *pFile, LinkedList *pArrayListJugador)
+int parserPlayerFromText(FILE *pFile, LinkedList *pArrayListPlayer)
 {
-	int returnparserPlayerFromText = ERROR;
+	int returnParserPlayerFromText;
 	char auxId[2000];
 	char auxFullName[2000];
 	char auxAge[2000];
@@ -22,37 +22,39 @@ int parserPlayerFromText(FILE *pFile, LinkedList *pArrayListJugador)
 	sPlayer *pPlayer;
 	int returnFscanf;
 
-	if (pFile != NULL && pArrayListJugador != NULL)
+	if (pFile != NULL && pArrayListPlayer != NULL)
 	{
 
-		fscanf(pFile, "%[^,],%[^,],%[^,],%[^,],%[^,],%[^\n]", auxId, auxFullName, auxAge, auxPosition, auxNationality, auxIdNationalTeam); //LECTURA FANTASMA
+		fscanf(pFile, "%[^,],%[^,],%[^,],%[^,],%[^,],%[^\n]\n", auxId, auxFullName, auxAge, auxPosition, auxNationality, auxIdNationalTeam); //LECTURA FANTASMA
 		do
 		{
-			returnFscanf = fscanf(pFile, "%[^,],%[^,],%[^,],%[^,],%[^,],%[^\n]", auxId, auxFullName, auxAge, auxPosition, auxNationality, auxIdNationalTeam);
+			returnFscanf = fscanf(pFile, "%[^,],%[^,],%[^,],%[^,],%[^,],%[^\n]\n", auxId, auxFullName, auxAge, auxPosition, auxNationality, auxIdNationalTeam);
 			if (returnFscanf == 6)
 			{
 
 				pPlayer = newPlayerParameters(auxId, auxFullName, auxAge, auxPosition, auxNationality, auxIdNationalTeam);
 
-				if (pPlayer != NULL && ll_add(pArrayListJugador, pPlayer))
+				if (pPlayer != NULL)
 				{
 
+					if (ll_add(pArrayListPlayer, pPlayer) == 0)
+					{
+						returnParserPlayerFromText = SUCCESS;
 
-					//ACA LLAMO A LA FUNCION QUE ASIGNA MI PUNTERO EMPLEADO, AL ARRAY DE PUNTEROS EMPLEADOS.
+					}
 				}
-				returnparserPlayerFromText = SUCCESS;
+
 			}
 			else
 			{
-
-				returnparserPlayerFromText = ERROR;
-				break; //si no leyo 4 variables break. se rompe
+				returnParserPlayerFromText = ERROR;
+				break;
 			}
 
 		} while (!feof(pFile));
 	}
 
-	return returnparserPlayerFromText;
+	return returnParserPlayerFromText;
 }
 
 /** \brief Parsea los datos de los jugadores desde el archivo binario.
@@ -62,9 +64,44 @@ int parserPlayerFromText(FILE *pFile, LinkedList *pArrayListJugador)
  * \return int
  *
  */
-int parser_JugadorFromBinary(FILE *pFile, LinkedList *pArrayListJugador)
+int parserPlayerFromBinary(FILE *pFile, LinkedList *pArrayListPlayer)
 {
-	return 1;
+	int returnParserPlayerFromBinary;
+	int auxId;
+	char auxFullName[2000];
+	int auxAge;
+	char auxPosition[2000];
+	char auxNationality[2000];
+	int auxIdNationalTeam;
+	sPlayer *pPlayer;
+	int returnFread;
+	if (pFile != NULL && pArrayListPlayer != NULL)
+	{
+		do
+		{
+			returnFread = fread(&pPlayer, sizeof(sPlayer), 1, pFile);
+			if (returnFread == 1)
+			{
+				if (getIdPlayer(pPlayer, &auxId) == SUCCESS
+				&& getFullNamePlayer(pPlayer, auxFullName) == SUCCESS
+				&& getAgePlayer(pPlayer, &auxAge)
+				&& getPositionPlayer(pPlayer, auxPosition)== SUCCESS
+				&& getNationalityPlayer(pPlayer, auxNationality)==SUCCESS
+				&& getIdNationalTeamPLayer(pPlayer, &auxIdNationalTeam)== SUCCESS)
+				{
+					ll_add(pArrayListPlayer, pPlayer);
+					returnParserPlayerFromBinary = SUCCESS;
+				}
+			}
+			else
+			{
+				returnParserPlayerFromBinary = ERROR;
+				break;
+			}
+
+		} while (!feof(pFile));
+	}
+	return returnParserPlayerFromBinary;
 }
 
 /** \brief Parsea los datos de los selecciones desde el archivo selecciones.csv (modo texto).
@@ -74,8 +111,71 @@ int parser_JugadorFromBinary(FILE *pFile, LinkedList *pArrayListJugador)
  * \return int
  *
  */
-int parser_SeleccionFromText(FILE *pFile, LinkedList *pArrayListSeleccion)
+int parserNationalTeamFromText(FILE *pFile, LinkedList *pArrayListNationalTeam)
 {
-	return 1;
+	int returnParserNationalTeamFromText;
+	char auxId[2000];
+	char auxCountry[2000];
+	char auxConfederation[2000];
+	char auxCalledUp[2000];
+	sNationalTeam *pNationalTeam;
+	int returnFscanf;
+
+	if (pFile != NULL && pArrayListNationalTeam != NULL)
+	{
+
+		fscanf(pFile, "%[^,],%[^,],%[^,],%[^\n]\n", auxId, auxCountry, auxConfederation, auxCalledUp);
+		do
+		{
+			returnFscanf = fscanf(pFile, "%[^,],%[^,],%[^,],%[^\n]\n", auxId, auxCountry, auxConfederation, auxCalledUp);
+			if (returnFscanf == 4)
+			{
+
+				pNationalTeam = newNationalTeamParameters(auxId, auxCountry, auxConfederation, auxCalledUp);
+
+				if (pNationalTeam != NULL)
+				{
+
+					if (ll_add(pArrayListNationalTeam, pNationalTeam) == 0)
+					{
+						returnParserNationalTeamFromText = SUCCESS;
+					}
+
+				}
+
+			}
+			else
+			{
+				returnParserNationalTeamFromText = ERROR;
+				break;
+			}
+
+		} while (!feof(pFile));
+	}
+
+	return returnParserNationalTeamFromText;
+
+}
+
+int parserIdPlayerFromText(FILE *pFile, int *pIdPlayer)
+{
+	int returnparserIdPlayerFromText = ERROR;
+	int returnFscanf;
+	char auxId[1000];
+
+	if (pFile != NULL && pIdPlayer != NULL)
+	{
+
+		returnFscanf = fscanf(pFile, "%[^\n]\n", auxId);
+		if (returnFscanf == 1)
+		{
+			*pIdPlayer = atoi(auxId);
+
+			returnparserIdPlayerFromText = SUCCESS;
+		}
+
+	}
+
+	return returnparserIdPlayerFromText;
 }
 

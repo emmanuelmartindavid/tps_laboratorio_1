@@ -1,0 +1,26 @@
+/*
+ * menus.c
+ *
+ *  Created on: 4 nov. 2022
+ *      Author: cuerpos
+ */
+#include <stdio.h>
+#include <stdlib.h>
+#include "menus.h"
+
+void showPositionMenu()
+{
+
+	printf("1. PORTERO\n"
+					"2. DEFENSOR CENTRAL\n"
+					"3. LATERAL IZQUIERDO\n"
+					"4. LATERAL DERECHO\n"
+					"5. PIVOTE\n"
+					"6. MEDIOCENTRO\n"
+					"7. MEDIOCENTRO OFENSIVO\n"
+					"8. EXTREMO IZQUIERDO\n"
+					"9. EXTREMO DERECHO\n"
+					"10. MEDIAPUNTA\n"
+					"11. DELANTERO CENTRAL\n");
+
+}
