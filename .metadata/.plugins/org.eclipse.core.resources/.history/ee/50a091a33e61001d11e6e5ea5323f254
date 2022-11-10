@@ -196,7 +196,6 @@ int main()
 						break;
 					case 2:
 						controllerSavePlayerByConfederationBinaryMode("CAF.bin", listPLayers, listNationalTeam, "CAF");
-
 						break;
 					case 3:
 						controllerSavePlayerByConfederationBinaryMode("CONCACAF.bin", listPLayers, listNationalTeam, "CONCACAF");

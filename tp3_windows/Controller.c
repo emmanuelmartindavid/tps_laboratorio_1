@@ -639,19 +639,13 @@ int controllerListNationalTeams(LinkedList *pArrayListNationalTeam)
 {
 	int returncontrollerListNationalTeams = ERROR;
 	int lenListNationalTeam;
-	int auxId;
-	char auxCountry[30];
-	char auxConfederation[30];
-	int auxCalledUp;
 	sNationalTeam *pNationalTeam = NULL;
 
 	if (pArrayListNationalTeam != NULL && ll_isEmpty(pArrayListNationalTeam) == 0)
 	{
 		lenListNationalTeam = ll_len(pArrayListNationalTeam);
 
-		printf("\t\t\t\t\t\t=========================================================================\n");
-		printf("\t\t\t\t\t\t|  ID |        PAIS              |       CONFEDERACION      |CONVOCADOS |\n");
-		printf("\t\t\t\t\t\t=========================================================================\n");
+		showNationalTeamData();
 
 		for (int i = 0; i < lenListNationalTeam; i++)
 		{
@@ -659,15 +653,15 @@ int controllerListNationalTeams(LinkedList *pArrayListNationalTeam)
 
 			if (pNationalTeam != NULL)
 			{
-				if (getIdNationalTeam(pNationalTeam, &auxId) == SUCCESS && getCountryNationalTeam(pNationalTeam, auxCountry) == SUCCESS && getConfederationNationalTeam(pNationalTeam, auxConfederation) == SUCCESS && getCalledUpNationalTeam(pNationalTeam, &auxCalledUp) == SUCCESS)
-				{
 
-					printf("\t\t\t\t\t\t|%-5d| %-25s| %-25s| %-10d|\n", auxId, auxCountry, auxConfederation, auxCalledUp);
+				if (listOneNationalTeam(pNationalTeam) == SUCCESS)
+				{
+					returncontrollerListNationalTeams = SUCCESS;
 				}
 			}
 		}
-		printf("\t\t\t\t\t\t=========================================================================\n");
-		returncontrollerListNationalTeams = SUCCESS;
+		showLineNT();
+
 	}
 	return returncontrollerListNationalTeams;
 }
@@ -816,7 +810,8 @@ int controllerSavePlayerByConfederationBinaryMode(char *path, LinkedList *pArray
 			{
 				if (strcmp(auxConfederation, confederationRegister) == 0)
 				{
-					pFile = fopen(path, "wb");
+
+					pFile = fopen(path, "a+b");
 
 					if (pFile != NULL)
 					{

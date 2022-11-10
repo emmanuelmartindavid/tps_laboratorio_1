@@ -17,6 +17,7 @@ int main()
 	char exit[3];
 	LinkedList *listPLayers = ll_newLinkedList();
 	LinkedList *listNationalTeam = ll_newLinkedList();
+
 	do
 	{
 		showMainMenu();
@@ -31,6 +32,7 @@ int main()
 					{
 						flagLoadPlayerFromTextAndBinary = 1;
 						printf("Archivo de texto cargado correctamente.\n");
+
 					}
 					else
 					{
@@ -96,7 +98,7 @@ int main()
 						switch (option)
 						{
 						case 1:
-							controllerListPlayersNationalTeam(listPLayers, listNationalTeam, 2);
+							controllerListPlayers(listPLayers);
 							break;
 						case 2:
 							controllerListNationalTeams(listNationalTeam);
@@ -196,7 +198,6 @@ int main()
 						break;
 					case 2:
 						controllerSavePlayerByConfederationBinaryMode("CAF.bin", listPLayers, listNationalTeam, "CAF");
-
 						break;
 					case 3:
 						controllerSavePlayerByConfederationBinaryMode("CONCACAF.bin", listPLayers, listNationalTeam, "CONCACAF");
@@ -234,6 +235,6 @@ int main()
 	ll_deleteLinkedList(listPLayers);
 	ll_deleteLinkedList(listNationalTeam);
 
-	return EXIT_SUCCESS;
+	return 0;
 }
 

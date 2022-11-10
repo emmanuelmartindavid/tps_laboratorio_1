@@ -423,6 +423,7 @@ int utn_getNumberShort(short *pResult, char *message, char *errorMessage, int mi
 
 int utn_getPositionPlayer(char *pPosition)
 {
+
 	int returnUtn_getPositionPlayer;
 	int option;
 	char auxPosition[12][30] =
@@ -440,13 +441,17 @@ int utn_getPositionPlayer(char *pPosition)
 					strcpy(pPosition, auxPosition[i]);
 					returnUtn_getPositionPlayer = 0;
 				}
+
 			}
+
 		}
 		else
 		{
+
 			returnUtn_getPositionPlayer = -1;
 		}
 	}
+
 	return returnUtn_getPositionPlayer;
 }
 

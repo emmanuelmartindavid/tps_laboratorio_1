@@ -121,24 +121,29 @@ int getCalledUpNationalTeam(sNationalTeam *this, int *calledUp)
 	return retorno;
 }
 
+
 int listOneNationalTeam(sNationalTeam *this)
 {
-	int returnListOneNationalTeam = ERROR;
+	int returncontrollerListOnePlayer = ERROR;
 	int auxId;
-	char auxCountry[30];
-	char auxConfederation[30];
-	int auxCalledUp;
+	char auxFullName[100];
+	int auxAge;
+	char auxPosition[30];
+	char auxNationality[30];
 
 	if (this != NULL)
 	{
-		if (getIdNationalTeam(this, &auxId) == SUCCESS && getCountryNationalTeam(this, auxCountry) == SUCCESS && getConfederationNationalTeam(this, auxConfederation) == SUCCESS && getCalledUpNationalTeam(this, &auxCalledUp) == SUCCESS)
+		if ( getIdPlayer(this, &auxId) == SUCCESS
+			&& getFullNamePlayer(this, auxFullName)== SUCCESS
+			&& getAgePlayer(this, &auxAge) == SUCCESS
+			&& getPositionPlayer(this, auxPosition) == SUCCESS
+			&& getNationalityPlayer(this, auxNationality)== SUCCESS)
 		{
-
-			printf("\t\t\t\t\t\t|%-5d| %-25s| %-25s| %-10d|\n", auxId, auxCountry, auxConfederation, auxCalledUp);
-			returnListOneNationalTeam=SUCCESS;
+			printf("\t\t\t\t\t\t|%-5d| %-35s| %-5d| %-25s| %-24s|\n", auxId, auxFullName, auxAge, auxPosition, auxNationality);
+			returncontrollerListOnePlayer = SUCCESS;
 		}
 	}
-	return returnListOneNationalTeam;
+	return returncontrollerListOnePlayer;
 }
 
 int compareNationalTeamByConfederation(void *nationaTeamOne, void *nationalTeamTwo)

@@ -48,7 +48,7 @@ int getalphabetic(char *pString, int len)
 {
 	int returnGetalphabetic = -1;
 	char option[len];
-	if (pString != NULL && getString(option, sizeof(option)) == 0 && isAlphabetic(option, sizeof(option)) == 0 && isSpace(option) == 0 && normalizerString(option) == 0 && strnlen(option, sizeof(option)) <= len)
+	if (pString != NULL && getString(option, sizeof(option)) == 0 && isAlphabetic(option, sizeof(option)) == 0 && isSpace(option) == 0 && normalizerString(option)==0 && strnlen(option, sizeof(option)) <= len)
 	{
 
 		strncpy(pString, option, len);
@@ -58,6 +58,7 @@ int getalphabetic(char *pString, int len)
 	}
 	return returnGetalphabetic;
 }
+
 /// @brief  islfaNumeric  	Funcion valida si la cadena de caracteres esta dentro de los parametros esperados de una cadena caracteres alfanumerica.
 ///
 /// @param pResult   	    Puntero de cadena de caracteres.
@@ -104,10 +105,12 @@ int isSpace(char *pString)
 
 int normalizerString(char *pString)
 {
+
 	int returnNormalizerString = -1;
 	int lenght;
 	if (pString != NULL)
 	{
+		printf("ENTRE AL IF\n");
 		strlwr(pString);
 		pString[0] = toupper(pString[0]);
 		lenght = strlen(pString);
@@ -118,9 +121,11 @@ int normalizerString(char *pString)
 				pString[i + 1] = toupper(pString[i + 1]);
 
 			}
+
 		}
 		returnNormalizerString = 0;
 	}
+
 	return returnNormalizerString;
 }
 /// @brief utn_getAlfaNumeric    Función para pedir una descripcion alfanumerica por consola.
@@ -423,6 +428,7 @@ int utn_getNumberShort(short *pResult, char *message, char *errorMessage, int mi
 
 int utn_getPositionPlayer(char *pPosition)
 {
+
 	int returnUtn_getPositionPlayer;
 	int option;
 	char auxPosition[12][30] =
@@ -440,13 +446,17 @@ int utn_getPositionPlayer(char *pPosition)
 					strcpy(pPosition, auxPosition[i]);
 					returnUtn_getPositionPlayer = 0;
 				}
+
 			}
+
 		}
 		else
 		{
+
 			returnUtn_getPositionPlayer = -1;
 		}
 	}
+
 	return returnUtn_getPositionPlayer;
 }
 

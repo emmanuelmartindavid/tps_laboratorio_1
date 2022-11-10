@@ -121,26 +121,6 @@ int getCalledUpNationalTeam(sNationalTeam *this, int *calledUp)
 	return retorno;
 }
 
-int listOneNationalTeam(sNationalTeam *this)
-{
-	int returnListOneNationalTeam = ERROR;
-	int auxId;
-	char auxCountry[30];
-	char auxConfederation[30];
-	int auxCalledUp;
-
-	if (this != NULL)
-	{
-		if (getIdNationalTeam(this, &auxId) == SUCCESS && getCountryNationalTeam(this, auxCountry) == SUCCESS && getConfederationNationalTeam(this, auxConfederation) == SUCCESS && getCalledUpNationalTeam(this, &auxCalledUp) == SUCCESS)
-		{
-
-			printf("\t\t\t\t\t\t|%-5d| %-25s| %-25s| %-10d|\n", auxId, auxCountry, auxConfederation, auxCalledUp);
-			returnListOneNationalTeam=SUCCESS;
-		}
-	}
-	return returnListOneNationalTeam;
-}
-
 int compareNationalTeamByConfederation(void *nationaTeamOne, void *nationalTeamTwo)
 {
 	int returnCompareNationalTeamByConfederation = ERROR;
@@ -154,17 +134,4 @@ int compareNationalTeamByConfederation(void *nationaTeamOne, void *nationalTeamT
 		returnCompareNationalTeamByConfederation = stricmp(confederationNationalTeamOne, confederationNationalTeamtwo);
 	}
 	return returnCompareNationalTeamByConfederation;
-}
-
-void showNationalTeamData()
-{
-	printf("\t\t\t\t\t\t=========================================================================\n");
-	printf("\t\t\t\t\t\t|  ID |        PAIS              |       CONFEDERACION      |CONVOCADOS |\n");
-	printf("\t\t\t\t\t\t=========================================================================\n");
-}
-
-void showLineNT()
-{
-	printf("\t\t\t\t\t\t=========================================================================\n");
-
 }

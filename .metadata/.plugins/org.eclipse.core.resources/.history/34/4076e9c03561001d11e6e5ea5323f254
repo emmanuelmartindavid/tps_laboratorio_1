@@ -25,10 +25,6 @@ int getCalledUpNationalTeam(sNationalTeam* this,int* calledUp);
 
 int compareNationalTeamByConfederation(void *nationaTeamOne, void *nationalTeamTwo);
 
-int listOneNationalTeam(sNationalTeam *this);
-void showNationalTeamData();
-void showLineNT();
-
 
 
 #endif // selec_H_INCLUDED

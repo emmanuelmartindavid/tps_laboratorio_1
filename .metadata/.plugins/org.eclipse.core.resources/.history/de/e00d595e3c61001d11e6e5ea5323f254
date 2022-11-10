@@ -27,7 +27,6 @@ int getalphabetic(char *pString, int len);
 int isAlphabetic(char *pString, int len);
 
 int isSpace(char *pString);
-int normalizerString(char *pString);
 /// @brief utn_getAlfaNumeric    Función para pedir una descripcion alfanumerica por consola.
 ///
 /// @param pString          Puntero a direccion de la cadena de  caracteres ingresada en el caso de ser correcta.
