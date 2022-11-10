@@ -20,7 +20,8 @@ void showMainMenu()
 					"\n\t\t\t\t\t\t\t|\t\t\t 5. LISTADOS.\t\t\t\t\t|"
 					"\n\t\t\t\t\t\t\t|\t\t\t 6. CONVOCAR JUGADORES.\t\t\t\t|"
 					"\n\t\t\t\t\t\t\t|\t\t\t 7. ORDENAR Y LISTAR.\t\t\t\t|"
-					"\n\t\t\t\t\t\t\t|\t\t\t 8. GENERAR ARCHIVO BINARIO.\t\t\t|"
+					"\n\t\t\t\t\t\t\t|\t\t\t 8. GENERAR ARCHIVO BINARIO,\t\t\t|"
+					"\n\t\t\t\t\t\t\t|\t\t\t    POR CONFEDERACION ELEGIDA.\t\t\t|"
 					"\n\t\t\t\t\t\t\t|\t\t\t 9. CARGAR ARCHIVO BINARIO.\t\t\t|"
 					"\n\t\t\t\t\t\t\t|\t\t\t 10. GUARDAR ARCHIVOS .CSV.\t\t\t|"
 					"\n\t\t\t\t\t\t\t|\t\t\t 11. SALIR.\t\t\t\t\t|"
@@ -124,3 +125,17 @@ void showSortPlayerMenu()
 
 }
 
+void showSortConfederationMenu()
+{
+
+	printf("\t\t\t\t\t\t\t==============================CONFEDERACIONES============================"
+					"\n\t\t\t\t\t\t\t|\t\t\t\t\t\t\t\t\t|"
+					"\n\t\t\t\t\t\t\t|\t\t\t\t 1. AFC.\t\t\t\t|"
+					"\n\t\t\t\t\t\t\t|\t\t\t\t 2. CAF.\t\t\t\t|"
+					"\n\t\t\t\t\t\t\t|\t\t\t\t 3. CONCACAF.\t\t\t\t|\t\t"
+					"\n\t\t\t\t\t\t\t|\t\t\t\t 4. CONMEBOL.\t\t\t\t|"
+					"\n\t\t\t\t\t\t\t|\t\t\t\t 5. UEFA.\t\t\t\t|"
+					"\n\t\t\t\t\t\t\t|\t\t\t\t\t\t\t\t\t|\n"
+		   "\t\t\t\t\t\t\t=========================================================================\n");
+
+}

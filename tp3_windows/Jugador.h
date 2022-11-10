@@ -38,6 +38,9 @@ int getNationalityPlayer(sPlayer *this, char *nationality);
 int setIdNationalTeamPlayer(sPlayer *this, int idNationalTeam);
 int getIdNationalTeamPLayer(sPlayer *this, int *idNationalTeam);
 
+
+int listOnePlayer(sPlayer *this);
+
 int editFullNamePlayer(sPlayer *this);
 int editAgePlayer(sPlayer *this);
 int editPositionPlayer(sPlayer *this);

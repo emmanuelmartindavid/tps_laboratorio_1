@@ -217,6 +217,36 @@ int getIdNationalTeamPLayer(sPlayer *this, int *idNationalTeam)
 	return returnGetShirtNumber;
 }
 
+int listOnePlayer(sPlayer *this)
+{
+	int returncontrollerListOnePlayer = ERROR;
+	int auxId;
+	char auxFullName[100];
+	int auxAge;
+	char auxPosition[30];
+	char auxNationality[30];
+
+	if (this != NULL)
+	{
+		if ( getIdPlayer(this, &auxId) == SUCCESS
+			&& getFullNamePlayer(this, auxFullName)== SUCCESS
+			&& getAgePlayer(this, &auxAge) == SUCCESS
+			&& getPositionPlayer(this, auxPosition) == SUCCESS
+			&& getNationalityPlayer(this, auxNationality)== SUCCESS)
+		{
+			printf("\t\t\t\t\t\t|%-5d| %-35s| %-5d| %-25s| %-24s|\n", auxId, auxFullName, auxAge, auxPosition, auxNationality);
+			returncontrollerListOnePlayer = SUCCESS;
+		}
+	}
+	return returncontrollerListOnePlayer;
+}
+
+
+
+
+
+
+
 int editFullNamePlayer(sPlayer *this)
 {
 	int returnModifyFullNamePlayer;
@@ -376,3 +406,5 @@ void showLine()
 	printf("\t\t\t\t\t\t========================================================================================================\n");
 
 }
+
+

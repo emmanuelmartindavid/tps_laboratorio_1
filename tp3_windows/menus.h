@@ -15,4 +15,5 @@ void showListMenuPlayers();
 void showCallPlayersMenu();
 void showSortMenu();
 void showSortPlayerMenu();
+void showSortConfederationMenu();
 #endif /* MENUS_H_ */

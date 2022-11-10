@@ -15,7 +15,6 @@ int controllerEditPlayer(LinkedList *pArrayListPlayer);
 
 int controllerRemovePlayer(LinkedList *pArrayListPlayer, LinkedList *pArrayListNationalTeam);
 
-int controllerListOnePlayer(LinkedList *pArrayListPlayer, int indexPlayer);
 
 int controllerListPlayers(LinkedList *pArrayListPlayer);
 
@@ -44,9 +43,15 @@ int controllerSortNationalTeam(LinkedList *pArrayListNationalTeam);
 
 int controllerSaveNationalTeamTextMode(char *path, LinkedList *pArrayListNationalTeam);
 
-int controllerLoadIdplayerTextMode(char *path, int *pIdPlayer);
+
 int controllerGetIncrementalIdPlayer();
+
+int controllerLoadIdplayerTextMode(char *path, int *pIdPlayer);
+
 int controllerSaveIdplayerTextMode(char *path);
+
+int controllerSavePlayerByConfederationBinaryMode(char *path, LinkedList *pArrayListPlayer, LinkedList *pArrayListNationalTeam, char *confederationRegister);
 
 int controllerGetCountry(LinkedList *pArrayListNationalTeam, int idNationalTeamPLayer, char *pCountry);
 
+int controllerGetConfederation(LinkedList *pArrayListNationalTeam, int idNationalTeam, char *confederation);

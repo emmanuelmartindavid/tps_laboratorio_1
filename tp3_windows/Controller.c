@@ -116,28 +116,24 @@ int controllerLoadPlayerFromBinary(char *path, LinkedList *pArrayListPlayer)
 int controllerAddPlayer(LinkedList *pArrayListPlayer)
 {
 	int returnControllerAddPlayer = ERROR;
-	int auxIdPlayer;
-	char auxFullName[100];
-	int auxAge;
-	char auxPosition[30];
-	char auxNationality[30];
 	int auxIdNationalTeam = 0;
+	int auxIdplayer;
+	sPlayer *pPlayer = NULL;
 
 	if (pArrayListPlayer != NULL)
 	{
-		if (utn_getAlphabeticDescription(auxFullName, "Ingrese su nombre.\n", "Error. Reintente.\n", 3, 100, 1) == 0 && utn_getNumber(&auxAge, "Ingrese su edad. Rangos entre 18 a 40 anios.\n", "Error. Reintente.\n", 18, 40, 3) == 0 && utn_getPositionPlayer(auxPosition) == 0
-						&& utn_getNationalityPlayer(auxNationality) == 0)
+		auxIdplayer = controllerGetIncrementalIdPlayer(pPlayer);
+		pPlayer = newPlayer();
+		if (pPlayer != NULL && setIdPlayer(pPlayer, auxIdplayer) && editFullNamePlayer(pPlayer) == SUCCESS && editAgePlayer(pPlayer) == SUCCESS && editPositionPlayer(pPlayer) == SUCCESS && editNationalityPlayer(pPlayer) == SUCCESS && setIdNationalTeamPlayer(pPlayer, auxIdNationalTeam) == SUCCESS)
 		{
-			auxIdPlayer = controllerGetIncrementalIdPlayer();
-			sPlayer *pPlayer = newPlayer();
-			if (pPlayer != NULL && !(setIdPlayer(pPlayer, auxIdPlayer) && setFullNamePlayer(pPlayer, auxFullName) && setAgePlayer(pPlayer, auxAge) && setPositionPlayer(pPlayer, auxPosition) && setNationalityPlayer(pPlayer, auxNationality) && setIdNationalTeamPlayer(pPlayer, auxIdNationalTeam)))
-			{
-				deletePlayer(pPlayer);
-			}
-			else if (ll_add(pArrayListPlayer, pPlayer) == 0)
+			if (ll_add(pArrayListPlayer, pPlayer) == 0)
 			{
 				returnControllerAddPlayer = SUCCESS;
 			}
+		}
+		else
+		{
+			deletePlayer(pPlayer);
 		}
 	}
 	return returnControllerAddPlayer;
@@ -164,42 +160,29 @@ int controllerEditPlayer(LinkedList *pArrayListPlayer)
 		if (indexListPlayer != ERROR)
 		{
 			pPlayer = (sPlayer*) ll_get(pArrayListPlayer, indexListPlayer);
-
 			if (pPlayer != NULL)
 			{
 				do
 				{
-					showPlayerData();
-					controllerListOnePlayer(pArrayListPlayer, indexListPlayer);
-					showLine();
 					showEditPlayerMenu();
+					showPlayerData();
+					listOnePlayer(pPlayer);
+					showLine();
 					if (utn_getNumber(&optionEditMenu, "Ingrese opcion.\n", "Error. Reintente.\n", 1, 7, 3) == 0)
 					{
 						switch (optionEditMenu)
 						{
 						case 1:
-							if (editFullNamePlayer(pPlayer) == SUCCESS)
-							{
-								returncontrollerEditPlayer = SUCCESS;
-							}
+							editFullNamePlayer(pPlayer);
 							break;
 						case 2:
-							if (editAgePlayer(pPlayer) == SUCCESS)
-							{
-								returncontrollerEditPlayer = SUCCESS;
-							}
+							editAgePlayer(pPlayer);
 							break;
 						case 3:
-							if (editPositionPlayer(pPlayer) == SUCCESS)
-							{
-								returncontrollerEditPlayer = SUCCESS;
-							}
+							editPositionPlayer(pPlayer);
 							break;
 						case 4:
-							if (editNationalityPlayer(pPlayer) == SUCCESS)
-							{
-								returncontrollerEditPlayer = SUCCESS;
-							}
+							editNationalityPlayer(pPlayer);
 							break;
 						}
 					}
@@ -238,65 +221,43 @@ int controllerRemovePlayer(LinkedList *pArrayListPlayer, LinkedList *pArrayListN
 	if (pArrayListPlayer != NULL && pArrayListNationalTeam != NULL && controllerListPlayers(pArrayListPlayer) == SUCCESS && utn_getNumber(&auxId, "Ingrese ID de jugador a dar de baja.\n", "Error. Reintente.\n", 1, 500, 3) == 0)
 	{
 		indexListPlayer = controllerFindPlayerById(pArrayListPlayer, auxId);
-		if (indexListPlayer != ERROR)
+		if (indexListPlayer != -1)
 		{
 			pPlayer = (sPlayer*) ll_get(pArrayListPlayer, indexListPlayer);
-
 			if (pPlayer != NULL)
 			{
 				getIdNationalTeamPLayer(pPlayer, &idNationalTeamPlayer);
 				indexListNationalTeam = controllerFindNationalTeamById(pArrayListNationalTeam, idNationalTeamPlayer);
 				pNationalTeam = ll_get(pArrayListNationalTeam, indexListNationalTeam);
-				if (indexListNationalTeam != ERROR && pNationalTeam != NULL)
+				showPlayerData();
+				listOnePlayer(pPlayer);
+				showLine();
+				if (utn_getDescriptionExit(confirmation, "Se dara de baja. Ingrese si para continuar, no para cancelar baja.\n", "Error. Reintente.\n", 3) == 0)
 				{
-					showPlayerData();
-					controllerListOnePlayer(pArrayListPlayer, indexListPlayer);
-					showLine();
-					if (utn_getDescriptionExit(confirmation, "Se dara de baja. Ingrese si para continuar, no para cancelar baja.\n", "Error. Reintente.\n", 3) == 0)
+					if (stricmp(confirmation, "si") == 0)
 					{
-						if (stricmp(confirmation, "si") == 0)
+						if (indexListNationalTeam != ERROR && pNationalTeam != NULL)
 						{
-							getCalledUpNationalTeam(pNationalTeam, &calledUp);
-							calledUp--;
-							setCalledUpNationalTeam(pNationalTeam, calledUp);
-							ll_remove(pArrayListPlayer, indexListPlayer);
-							deletePlayer(pPlayer);
-							returncontrollerRemovePlayer = SUCCESS;
+							if (idNationalTeamPlayer > 0)
+							{
+								getCalledUpNationalTeam(pNationalTeam, &calledUp);
+								calledUp--;
+								setCalledUpNationalTeam(pNationalTeam, calledUp);
+							}
 						}
-						else
-						{
-							returncontrollerRemovePlayer = -2;
-						}
+						ll_remove(pArrayListPlayer, indexListPlayer);
+						deletePlayer(pPlayer);
+						returncontrollerRemovePlayer = SUCCESS;
+					}
+					else
+					{
+						returncontrollerRemovePlayer = -2;
 					}
 				}
 			}
 		}
 	}
-
 	return returncontrollerRemovePlayer;
-}
-
-int controllerListOnePlayer(LinkedList *pArrayListPlayer, int indexPlayer)
-{
-	int returncontrollerListOnePlayer = ERROR;
-	sPlayer *pPlayer = NULL;
-	int auxId;
-	char auxFullName[100];
-	int auxAge;
-	char auxPosition[30];
-	char auxNationality[30];
-
-	if (pArrayListPlayer != NULL && indexPlayer >= 0 && indexPlayer < ll_len(pArrayListPlayer))
-	{
-		pPlayer = (sPlayer*) ll_get(pArrayListPlayer, indexPlayer);
-		if (pPlayer != NULL && getIdPlayer(pPlayer, &auxId) && getFullNamePlayer(pPlayer, auxFullName) && getAgePlayer(pPlayer, &auxAge) && getPositionPlayer(pPlayer, auxPosition) && getNationalityPlayer(pPlayer, auxNationality))
-		{
-			printf("\t\t\t\t\t\t|%-5d| %-35s| %-5d| %-25s| %-24s|\n", auxId, auxFullName, auxAge, auxPosition, auxNationality);
-			returncontrollerListOnePlayer = SUCCESS;
-		}
-
-	}
-	return returncontrollerListOnePlayer;
 }
 
 /** \brief Listar jugadores
@@ -308,9 +269,9 @@ int controllerListOnePlayer(LinkedList *pArrayListPlayer, int indexPlayer)
  */
 int controllerListPlayers(LinkedList *pArrayListPlayer)
 {
-
 	int returncontrollerListPlayer = ERROR;
 	int lenListPlayers;
+	sPlayer *pPlayer = NULL;
 
 	if (pArrayListPlayer != NULL && ll_isEmpty(pArrayListPlayer) == 0)
 	{
@@ -318,7 +279,8 @@ int controllerListPlayers(LinkedList *pArrayListPlayer)
 		showPlayerData();
 		for (int i = 0; i < lenListPlayers; i++)
 		{
-			if (controllerListOnePlayer(pArrayListPlayer, i) == SUCCESS)
+			pPlayer = (sPlayer*) ll_get(pArrayListPlayer, i);
+			if (listOnePlayer(pPlayer) == SUCCESS)
 			{
 				returncontrollerListPlayer = SUCCESS;
 			}
@@ -396,7 +358,7 @@ int controllerCallUpPlayers(LinkedList *pArrayListPlayer, LinkedList *pArrayList
 		{
 			indexListPlayer = controllerFindPlayerById(pArrayListPlayer, idPlayer);
 
-			pPlayer = ll_get(pArrayListPlayer, indexListPlayer);
+			pPlayer = (sPlayer*) ll_get(pArrayListPlayer, indexListPlayer);
 
 			if (pPlayer != NULL)
 			{
@@ -412,7 +374,7 @@ int controllerCallUpPlayers(LinkedList *pArrayListPlayer, LinkedList *pArrayList
 
 						if (indexListNationalTeam != ERROR)
 						{
-							pNationalTeam = ll_get(pArrayListNationalTeam, indexListNationalTeam);
+							pNationalTeam = (sNationalTeam*) ll_get(pArrayListNationalTeam, indexListNationalTeam);
 
 							if (pNationalTeam != NULL)
 							{
@@ -450,7 +412,7 @@ int controllerCallOffPlayers(LinkedList *pArrayListPlayer, LinkedList *pArrayLis
 		{
 			indexListPlayer = controllerFindPlayerById(pArrayListPlayer, idPlayer);
 
-			pPlayer = ll_get(pArrayListPlayer, indexListPlayer);
+			pPlayer = (sPlayer*) ll_get(pArrayListPlayer, indexListPlayer);
 
 			if (pPlayer != NULL)
 			{
@@ -461,7 +423,7 @@ int controllerCallOffPlayers(LinkedList *pArrayListPlayer, LinkedList *pArrayLis
 
 					if (indexListNationalTeam != ERROR)
 					{
-						pNationalTeam = ll_get(pArrayListNationalTeam, indexListNationalTeam);
+						pNationalTeam = (sNationalTeam*) ll_get(pArrayListNationalTeam, indexListNationalTeam);
 						if (pNationalTeam != NULL)
 						{
 							setIdNationalTeamPlayer(pPlayer, 0);
@@ -804,7 +766,10 @@ int controllerGetIncrementalIdPlayer()
 		controllerLoadIdplayerTextMode("IdJugadoresAutoincremental.csv", &idAutoincremental);
 	}
 	flag = 1;
-	returnControllerGetIncrementalIdPlayer = idAutoincremental++;
+	idAutoincremental++;
+
+	returnControllerGetIncrementalIdPlayer = idAutoincremental;
+
 	return returnControllerGetIncrementalIdPlayer;
 }
 
@@ -814,10 +779,11 @@ int controllerSaveIdplayerTextMode(char *path)
 	int idIncremented;
 	FILE *pFile = NULL;
 
-	pFile = fopen(path, "w");
+	pFile = fopen(path, "r+");
 	if (pFile != NULL)
 	{
 		idIncremented = controllerGetIncrementalIdPlayer();
+		idIncremented = idIncremented - 1;
 		fprintf(pFile, "%d\n", idIncremented);
 		returnControllerSaveIdplayerTextMode = SUCCESS;
 	}
@@ -826,10 +792,49 @@ int controllerSaveIdplayerTextMode(char *path)
 	return returnControllerSaveIdplayerTextMode;
 }
 
+int controllerSavePlayerByConfederationBinaryMode(char *path, LinkedList *pArrayListPlayer, LinkedList *pArrayListNationalTeam, char *confederationRegister)
+{
+	int returnControllerSavePlayerByConfederationBinaryMode = ERROR;
+	int lenListPlayer;
+	int auxIdPlayer;
+	char auxConfederation[30];
+	sPlayer *pPlayer = NULL;
+	FILE *pFile = NULL;
+
+	if (pArrayListPlayer != NULL && pArrayListNationalTeam != NULL && confederationRegister != NULL)
+	{
+
+		lenListPlayer = ll_len(pArrayListPlayer);
+
+		for (int i = 0; i < lenListPlayer; i++)
+		{
+			pPlayer = (sPlayer*) ll_get(pArrayListPlayer, i);
+
+			getIdNationalTeamPLayer(pPlayer, &auxIdPlayer);
+
+			if (auxIdPlayer > 0 && controllerGetConfederation(pArrayListNationalTeam, auxIdPlayer, auxConfederation) == SUCCESS)
+			{
+				if (strcmp(auxConfederation, confederationRegister) == 0)
+				{
+					pFile = fopen(path, "wb");
+
+					if (pFile != NULL)
+					{
+						fwrite(pPlayer, sizeof(sPlayer), 1, pFile);
+						returnControllerSavePlayerByConfederationBinaryMode = SUCCESS;
+					}
+					fclose(pFile);
+				}
+			}
+		}
+	}
+	return returnControllerSavePlayerByConfederationBinaryMode;
+}
+
 int controllerGetCountry(LinkedList *pArrayListNationalTeam, int idNationalTeamPLayer, char *pCountry)
 {
 	int returnControllerGetCountry = ERROR;
-	int len;
+	int lenListNationalTeam;
 	int i;
 	int id;
 	char country[30];
@@ -837,8 +842,8 @@ int controllerGetCountry(LinkedList *pArrayListNationalTeam, int idNationalTeamP
 
 	if (pArrayListNationalTeam != NULL && pCountry != NULL)
 	{
-		len = ll_len(pArrayListNationalTeam);
-		for (i = 0; i < len; i++)
+		lenListNationalTeam = ll_len(pArrayListNationalTeam);
+		for (i = 0; i < lenListNationalTeam; i++)
 		{
 			pNationalTeam = (sNationalTeam*) ll_get(pArrayListNationalTeam, i);
 			getIdNationalTeam(pNationalTeam, &id);
@@ -855,4 +860,35 @@ int controllerGetCountry(LinkedList *pArrayListNationalTeam, int idNationalTeamP
 		}
 	}
 	return returnControllerGetCountry;
+}
+
+int controllerGetConfederation(LinkedList *pArrayListNationalTeam, int idNationalTeam, char *confederation)
+{
+	int returnControllerGetConfederation = ERROR;
+	int lenListNationalTeam;
+	int auxIdNationalTeam;
+	char auxConfederation[30];
+	sNationalTeam *pNationalTeam = NULL;
+
+	if (pArrayListNationalTeam != NULL && confederation != NULL && idNationalTeam > 0)
+	{
+		lenListNationalTeam = ll_len(pArrayListNationalTeam);
+
+		for (int i = 0; i < lenListNationalTeam; i++)
+		{
+			pNationalTeam = (sNationalTeam*) ll_get(pArrayListNationalTeam, i);
+
+			if (pNationalTeam != NULL)
+			{
+				getIdNationalTeam(pNationalTeam, &auxIdNationalTeam);
+
+				if (auxIdNationalTeam == idNationalTeam && getConfederationNationalTeam(pNationalTeam, auxConfederation) == SUCCESS)
+				{
+					strcpy(confederation, auxConfederation);
+					returnControllerGetConfederation = SUCCESS;
+				}
+			}
+		}
+	}
+	return returnControllerGetConfederation;
 }

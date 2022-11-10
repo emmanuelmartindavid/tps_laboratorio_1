@@ -181,15 +181,38 @@ int main()
 				} while (option != 3);
 				break;
 			case 8:
-				if (controllerSavePlayersBinarytMode("jugadores.bin", listPLayers) == SUCCESS)
+				showSortConfederationMenu();
+				if (utn_getNumber(&option, "Ingrese opcion.\n", "Error. Reintente.\n", 1, 5, 3) == 0)
 				{
-					printf("Archivo binario generado correctamente.\n");
+					switch (option)
+					{
+					case 1:
+						if(controllerSavePlayerByConfederationBinaryMode("AFC.bin",listPLayers, listNationalTeam, "AFC")==SUCCESS)
+						{
+							printf("Archivo binario generado correctamente.\n");
+						}
+						else
+						{
+							printf("Error al generar el archivo.\n");
+						}
+						break;
+					case 2:
+						controllerSavePlayerByConfederationBinaryMode("CAF.bin", listPLayers, listNationalTeam, "CAF");
+						break;
+					case 3:
+						controllerSavePlayerByConfederationBinaryMode("CONCACAF.bin", listPLayers, listNationalTeam, "CONCACAF");
+						break;
+					case 4:
+						controllerSavePlayerByConfederationBinaryMode("CONMEBOL.bin",listPLayers, listNationalTeam, "CONMEBOL");
+						break;
+					case 5:
+						controllerSavePlayerByConfederationBinaryMode("UEFA.bin",listPLayers, listNationalTeam, "UEFA");
+						break;
+					}
 				}
 				break;
 			case 10:
-				if (controllerSaveIdplayerTextMode("IdJugadoresAutoincremental.csv") == SUCCESS
-					&& controllerSavePlayersTextMode("jugadores.csv", listPLayers) == SUCCESS
-					&& controllerSaveNationalTeamTextMode("selecciones.csv", listNationalTeam) == SUCCESS)
+				if (controllerSaveIdplayerTextMode("IdJugadoresAutoincremental.csv") == SUCCESS && controllerSavePlayersTextMode("jugadores.csv", listPLayers) == SUCCESS && controllerSaveNationalTeamTextMode("selecciones.csv", listNationalTeam) == SUCCESS)
 				{
 					printf("Archivo de texto guardado correctamente.\n");
 				}
