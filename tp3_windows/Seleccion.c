@@ -32,29 +32,23 @@ sNationalTeam* newNationalTeamParameters(char *idStr, char *countryStr, char *co
 	{
 		if (setCalledUpNationalTeam(auxNewNationalTeam, atoi(calledUpStr)) == SUCCESS)
 		{
-
 			auxNewNationalTeam->id = atoi(idStr);
 			strcpy(auxNewNationalTeam->country, countryStr);
 			strcpy(auxNewNationalTeam->confederation, confederationStr);
-
 		}
 		else
 		{
-
 			deleteNatioanalTeam(auxNewNationalTeam);
 			auxNewNationalTeam = NULL;
 		}
 	}
-
 	return auxNewNationalTeam;
 
 }
 
 void deleteNatioanalTeam(sNationalTeam *this)
 {
-
 	free(this);
-
 }
 
 int getIdNationalTeam(sNationalTeam *this, int *id)
@@ -77,7 +71,6 @@ int getCountryNationalTeam(sNationalTeam *this, char *country)
 		strcpy(country, this->country);
 		retorno = SUCCESS;
 	}
-
 	return retorno;
 }
 int getConfederationNationalTeam(sNationalTeam *this, char *confederation)
@@ -89,7 +82,6 @@ int getConfederationNationalTeam(sNationalTeam *this, char *confederation)
 		strcpy(confederation, this->confederation);
 		retorno = SUCCESS;
 	}
-
 	return retorno;
 }
 

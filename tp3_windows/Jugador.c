@@ -30,12 +30,7 @@ sPlayer* newPlayerParameters(char *idStr, char *fullNameStr, char *ageStr, char 
 
 	if (idStr != NULL && fullNameStr != NULL && ageStr != NULL && positionStr != NULL && nationalityStr != NULL && idNationalTeamStr != NULL && auxNewPlayer != NULL)
 	{
-		if (!(setIdPlayer(auxNewPlayer, atoi(idStr))
-			&& setFullNamePlayer(auxNewPlayer, fullNameStr)
-			&& setAgePlayer(auxNewPlayer, atoi(ageStr))
-			&& setPositionPlayer(auxNewPlayer, positionStr)
-			&& setNationalityPlayer(auxNewPlayer, nationalityStr)
-			&& setIdNationalTeamPlayer(auxNewPlayer, atoi(idNationalTeamStr))))
+		if (!(setIdPlayer(auxNewPlayer, atoi(idStr)) && setFullNamePlayer(auxNewPlayer, fullNameStr) && setAgePlayer(auxNewPlayer, atoi(ageStr)) && setPositionPlayer(auxNewPlayer, positionStr) && setNationalityPlayer(auxNewPlayer, nationalityStr) && setIdNationalTeamPlayer(auxNewPlayer, atoi(idNationalTeamStr))))
 		{
 			deletePlayer(auxNewPlayer);
 			auxNewPlayer = NULL;
@@ -77,7 +72,6 @@ int getIdPlayer(sPlayer *this, int *id)
 		*id = this->id;
 		returnGetIdPlayer = SUCCESS;
 	}
-
 	return returnGetIdPlayer;
 }
 
@@ -105,34 +99,32 @@ int getFullNamePlayer(sPlayer *this, char *fullName)
 		strcpy(fullName, this->fullName);
 		returnGetName = SUCCESS;
 	}
-
 	return returnGetName;
 }
 
 int setAgePlayer(sPlayer *this, int age)
 {
-	int returnSetHiringYears = ERROR;
+	int returnSetAgePlayer = ERROR;
 
 	if (this != NULL && age > 0)
 	{
 		this->age = age;
-		returnSetHiringYears = SUCCESS;
+		returnSetAgePlayer = SUCCESS;
 	}
 
-	return returnSetHiringYears;
+	return returnSetAgePlayer;
 }
 
 int getAgePlayer(sPlayer *this, int *age)
 {
-	int returnGetHiringYears = ERROR;
+	int returnGetAgePlayer = ERROR;
 
 	if (this != NULL && age != NULL)
 	{
 		*age = this->age;
-		returnGetHiringYears = SUCCESS;
+		returnGetAgePlayer = SUCCESS;
 	}
-
-	return returnGetHiringYears;
+	return returnGetAgePlayer;
 }
 
 int setPositionPlayer(sPlayer *this, char *position)
@@ -180,15 +172,15 @@ int setNationalityPlayer(sPlayer *this, char *nationality)
 int getNationalityPlayer(sPlayer *this, char *nationality)
 {
 
-	int returnGetPostion = ERROR;
+	int returnGetNationalityPlayer = ERROR;
 
 	if (this != NULL && nationality != NULL)
 	{
 		strcpy(nationality, this->nationality);
-		returnGetPostion = SUCCESS;
+		returnGetNationalityPlayer = SUCCESS;
 	}
 
-	return returnGetPostion;
+	return returnGetNationalityPlayer;
 }
 
 int setIdNationalTeamPlayer(sPlayer *this, int idNationalTeam)
@@ -206,15 +198,15 @@ int setIdNationalTeamPlayer(sPlayer *this, int idNationalTeam)
 
 int getIdNationalTeamPLayer(sPlayer *this, int *idNationalTeam)
 {
-	int returnGetShirtNumber = ERROR;
+	int returnGetIdNationalTeamPLayer = ERROR;
 
 	if (this != NULL && idNationalTeam != NULL)
 	{
 		*idNationalTeam = this->idNationalTeam;
-		returnGetShirtNumber = SUCCESS;
+		returnGetIdNationalTeamPLayer = SUCCESS;
 	}
 
-	return returnGetShirtNumber;
+	return returnGetIdNationalTeamPLayer;
 }
 
 int listOnePlayer(sPlayer *this)
@@ -228,11 +220,7 @@ int listOnePlayer(sPlayer *this)
 
 	if (this != NULL)
 	{
-		if ( getIdPlayer(this, &auxId) == SUCCESS
-			&& getFullNamePlayer(this, auxFullName)== SUCCESS
-			&& getAgePlayer(this, &auxAge) == SUCCESS
-			&& getPositionPlayer(this, auxPosition) == SUCCESS
-			&& getNationalityPlayer(this, auxNationality)== SUCCESS)
+		if (getIdPlayer(this, &auxId) == SUCCESS && getFullNamePlayer(this, auxFullName) == SUCCESS && getAgePlayer(this, &auxAge) == SUCCESS && getPositionPlayer(this, auxPosition) == SUCCESS && getNationalityPlayer(this, auxNationality) == SUCCESS)
 		{
 			printf("\t\t\t\t\t\t|%-5d| %-35s| %-5d| %-25s| %-24s|\n", auxId, auxFullName, auxAge, auxPosition, auxNationality);
 			returncontrollerListOnePlayer = SUCCESS;
@@ -240,12 +228,6 @@ int listOnePlayer(sPlayer *this)
 	}
 	return returncontrollerListOnePlayer;
 }
-
-
-
-
-
-
 
 int editFullNamePlayer(sPlayer *this)
 {
@@ -349,7 +331,7 @@ int comparePlayersByNationality(void *pPlayerOne, void *pPlayerTwo)
 
 int comparePlayersByAge(void *pPlayerOne, void *pPlayerTwo)
 {
-	int returncomparePlayersByAge = ERROR;
+	int returncomparePlayersByAge = 0;
 	int agePlayerOne;
 	int agePlayerTwo;
 
@@ -364,7 +346,11 @@ int comparePlayersByAge(void *pPlayerOne, void *pPlayerTwo)
 		}
 		else
 		{
-			returncomparePlayersByAge = 0;
+			if (agePlayerOne < agePlayerTwo)
+			{
+				returncomparePlayersByAge = -1;
+			}
+
 		}
 	}
 	return returncomparePlayersByAge;
@@ -398,13 +384,12 @@ void showPlayerData()
 void showPlayerDataNationalTeam()
 {
 	printf("\t\t\t\t\t\t=================================================================================================================================\n");
-			printf("\t\t\t\t\t\t|  ID |               NOMBRE               | EDAD |        POSICION          |   NACIONALIDAD          |   SELECCION            |\n");
-			printf("\t\t\t\t\t\t=================================================================================================================================\n");
+	printf("\t\t\t\t\t\t|  ID |               NOMBRE               | EDAD |        POSICION          |   NACIONALIDAD          |   SELECCION            |\n");
+	printf("\t\t\t\t\t\t=================================================================================================================================\n");
 }
 void showLine()
 {
 	printf("\t\t\t\t\t\t========================================================================================================\n");
 
 }
-
 

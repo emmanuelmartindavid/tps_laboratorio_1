@@ -58,7 +58,7 @@ void showNatiolatityMenu()
 void showEditPlayerMenu()
 {
 
-	printf("\t\t\t\t\t\t\t=========================MENU-EDITAR==============================="
+	printf("\t\t\t\t\t\t\t=========================MENU-EDITAR-JUGADOR=============================="
 					"\n\t\t\t\t\t\t\t|\t\t\t\t\t\t\t\t\t|"
 					"\n\t\t\t\t\t\t\t|\t\t\t 1. NOMBRE:\t\t\t\t\t|"
 					"\n\t\t\t\t\t\t\t|\t\t\t 2. EDAD:\t\t\t\t\t|"
@@ -66,7 +66,7 @@ void showEditPlayerMenu()
 					"\n\t\t\t\t\t\t\t|\t\t\t 4. NACIONALIDAD:\t\t\t\t|"
 					"\n\t\t\t\t\t\t\t|\t\t\t 5. SALIR.\t\t\t\t\t|"
 					"\n\t\t\t\t\t\t\t|\t\t\t\t\t\t\t\t\t|\n"
-					"\t\t\t\t\t\t\t=========================================================================\n");
+		   "\t\t\t\t\t\t\t=========================================================================\n");
 
 }
 

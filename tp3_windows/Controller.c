@@ -152,6 +152,7 @@ int controllerEditPlayer(LinkedList *pArrayListPlayer)
 	int auxId;
 	int indexListPlayer;
 	int optionEditMenu;
+	int flagEditPlayer = 3;
 	sPlayer *pPlayer = NULL;
 
 	if (pArrayListPlayer != NULL && ll_isEmpty(pArrayListPlayer) == 0 && controllerListPlayers(pArrayListPlayer) == SUCCESS && utn_getNumber(&auxId, "Ingrese ID de jugador a modificar.\n", "Error. Reintente.\n", 1, 500, 3) == 0)
@@ -173,16 +174,44 @@ int controllerEditPlayer(LinkedList *pArrayListPlayer)
 						switch (optionEditMenu)
 						{
 						case 1:
-							editFullNamePlayer(pPlayer);
+							if (editFullNamePlayer(pPlayer) == SUCCESS)
+							{
+								flagEditPlayer = SUCCESS;
+							}
+							else
+							{
+								flagEditPlayer = 3;
+							}
 							break;
 						case 2:
-							editAgePlayer(pPlayer);
+							if (editAgePlayer(pPlayer) == SUCCESS)
+							{
+								flagEditPlayer = SUCCESS;
+							}
+							else
+							{
+								flagEditPlayer = 3;
+							}
 							break;
 						case 3:
-							editPositionPlayer(pPlayer);
+							if (editPositionPlayer(pPlayer) == SUCCESS)
+							{
+								flagEditPlayer = SUCCESS;
+							}
+							else
+							{
+								flagEditPlayer = 3;
+							}
 							break;
 						case 4:
-							editNationalityPlayer(pPlayer);
+							if (editNationalityPlayer(pPlayer) == SUCCESS)
+							{
+								flagEditPlayer = SUCCESS;
+							}
+							else
+							{
+								flagEditPlayer = 3;
+							}
 							break;
 						}
 					}
@@ -194,7 +223,7 @@ int controllerEditPlayer(LinkedList *pArrayListPlayer)
 				} while (optionEditMenu != 5);
 			}
 		}
-		returncontrollerEditPlayer = SUCCESS;
+		returncontrollerEditPlayer = flagEditPlayer;
 	}
 	return returncontrollerEditPlayer;
 }
@@ -493,7 +522,6 @@ int controllerSortPlayers(LinkedList *pArrayListPlayer)
 				break;
 			}
 		} while (option != 4);
-
 	}
 	return returnControllerSortPlayers;
 }
@@ -653,7 +681,6 @@ int controllerListNationalTeams(LinkedList *pArrayListNationalTeam)
 
 			if (pNationalTeam != NULL)
 			{
-
 				if (listOneNationalTeam(pNationalTeam) == SUCCESS)
 				{
 					returncontrollerListNationalTeams = SUCCESS;
@@ -661,7 +688,6 @@ int controllerListNationalTeams(LinkedList *pArrayListNationalTeam)
 			}
 		}
 		showLineNT();
-
 	}
 	return returncontrollerListNationalTeams;
 }
@@ -786,44 +812,74 @@ int controllerSaveIdplayerTextMode(char *path)
 	return returnControllerSaveIdplayerTextMode;
 }
 
-int controllerSavePlayerByConfederationBinaryMode(char *path, LinkedList *pArrayListPlayer, LinkedList *pArrayListNationalTeam, char *confederationRegister)
+int controllerSavePlayersByConfederationBinaryMode(char *path, LinkedList *pArrayListPlayer, LinkedList *pArrayListNationalTeam, char *confederationRegister)
 {
-	int returnControllerSavePlayerByConfederationBinaryMode = ERROR;
+	int returnControllerGetPlayersByConfederation = ERROR;
 	int lenListPlayer;
 	int auxIdPlayer;
 	char auxConfederation[30];
 	sPlayer *pPlayer = NULL;
-	FILE *pFile = NULL;
-
+	LinkedList *pArrayListPlayerAux = ll_clone(pArrayListPlayer);
+	LinkedList *pArrayListPlayerAuxNew = ll_newLinkedList();
 	if (pArrayListPlayer != NULL && pArrayListNationalTeam != NULL && confederationRegister != NULL)
 	{
-
-		lenListPlayer = ll_len(pArrayListPlayer);
+		lenListPlayer = ll_len(pArrayListPlayerAux);
 
 		for (int i = 0; i < lenListPlayer; i++)
 		{
-			pPlayer = (sPlayer*) ll_get(pArrayListPlayer, i);
+			pPlayer = (sPlayer*) ll_get(pArrayListPlayerAux, i);
 
 			getIdNationalTeamPLayer(pPlayer, &auxIdPlayer);
 
 			if (auxIdPlayer > 0 && controllerGetConfederation(pArrayListNationalTeam, auxIdPlayer, auxConfederation) == SUCCESS)
 			{
-				if (strcmp(auxConfederation, confederationRegister) == 0)
+				if (stricmp(auxConfederation, confederationRegister) == 0)
 				{
-
-					pFile = fopen(path, "a+b");
-
-					if (pFile != NULL)
-					{
-						fwrite(pPlayer, sizeof(sPlayer), 1, pFile);
-						returnControllerSavePlayerByConfederationBinaryMode = SUCCESS;
-					}
-					fclose(pFile);
+					ll_add(pArrayListPlayerAuxNew, pPlayer);
+					controllerSavePlayersBinarytMode(path, pArrayListPlayerAuxNew);
+					returnControllerGetPlayersByConfederation = SUCCESS;
 				}
 			}
 		}
 	}
-	return returnControllerSavePlayerByConfederationBinaryMode;
+	return returnControllerGetPlayersByConfederation;
+}
+
+int controllerLoadPlayersByConfederationFromBinary(char *path, LinkedList *pArrayListPlayer, LinkedList *pArrayListNationalTeam, char *confederationRegister)
+{
+	int returnControllerGetPlayersByConfederation = ERROR;
+	int lenListPlayer;
+	int auxIdPlayer;
+	char auxConfederation[30];
+	LinkedList *pArrayListPlayerAux = ll_clone(pArrayListPlayer);
+	LinkedList *pArrayListPlayerAuxNew = ll_newLinkedList();
+	sPlayer *pPlayer;
+
+	if (pArrayListPlayer != NULL && pArrayListNationalTeam != NULL && confederationRegister != NULL)
+	{
+		if (controllerLoadPlayerFromBinary(path, pArrayListPlayerAux) == SUCCESS)
+		{
+			lenListPlayer = ll_len(pArrayListPlayerAux);
+
+			for (int i = 0; i < lenListPlayer; i++)
+			{
+				pPlayer = (sPlayer*) ll_get(pArrayListPlayerAux, i);
+
+				getIdNationalTeamPLayer(pPlayer, &auxIdPlayer);
+
+				if (auxIdPlayer > 0 && controllerGetConfederation(pArrayListNationalTeam, auxIdPlayer, auxConfederation) == SUCCESS)
+				{
+					if (stricmp(auxConfederation, confederationRegister) == 0)
+					{
+						ll_add(pArrayListPlayerAuxNew, pPlayer);
+					}
+				}
+			}
+			controllerListPlayersNationalTeam(pArrayListPlayerAuxNew, pArrayListNationalTeam, 1);
+		}
+		returnControllerGetPlayersByConfederation = SUCCESS;
+	}
+	return returnControllerGetPlayersByConfederation;
 }
 
 int controllerGetCountry(LinkedList *pArrayListNationalTeam, int idNationalTeamPLayer, char *pCountry)
@@ -887,3 +943,4 @@ int controllerGetConfederation(LinkedList *pArrayListNationalTeam, int idNationa
 	}
 	return returnControllerGetConfederation;
 }
+

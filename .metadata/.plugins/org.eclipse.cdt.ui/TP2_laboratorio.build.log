@@ -1,7 +1,1 @@
-21:50:18 **** Incremental Build of configuration Debug for project TP2_laboratorio ****
-Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP2_laboratorio.o" "..\\src\\TP2_laboratorio.c" 
-gcc -o TP2_laboratorio.exe "src\\TP2_laboratorio.o" "src\\confederacion.o" "src\\informes.o" "src\\jugador.o" "src\\menus.o" "src\\validaciones.o" 
-
-21:50:19 Build Finished. 0 errors, 0 warnings. (took 1s.389ms)
-
+Info: Nothing to build for TP2_laboratorio
