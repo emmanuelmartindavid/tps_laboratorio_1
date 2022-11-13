@@ -94,7 +94,15 @@ int getshort(short *pResult);
 /// @param maximus          Valor máximo valido.
 /// @return                 Retorno, 0 en caso de haber funcionado correctamente. Retorno, -1 en caso contrario.
 int utn_getNumberShort(short *pResult, char *message, char *errorMessage, int minimus, int maximus, int retry);
+/// @brief utn_getPositionPlayer 				OBTIENE POSICION DE JUGADOR ELEGIDA.
+///
+/// @param pPosition							PUNTERO STRING.
+/// @return										RETORNO 0 EN CASO CORRECTO. -1 EN CASO CONTRARIO.
 int utn_getPositionPlayer(char *pPosition);
+/// @brief utn_getNationalityPlayer			OBTIENE NACIONALIDAD DE JUGADOR ELEGIDA.
+///
+/// @param pPosition						PUNTERO STRING.
+/// @return									RETORNO 0 EN CASO CORRECTO. -1 EN CASO CONTRARIO.
 int utn_getNationalityPlayer(char *pPosition);
 
 

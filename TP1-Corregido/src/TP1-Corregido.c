@@ -15,7 +15,7 @@
 
 void menu(float priceLodgin, float priceFood, float priceTransport, int goalkeeperCounter, int defenderCounter, int midfielderCounter, int strikerCounter);
 void menuCost(float priceLodgin, float priceFood, float priceTransport);
-void menuPlayers(int goalkeeperCounter, int defenderCounter, int midfielderCounter, int strikerCounter);
+int menuPlayers(int goalkeeperCounter, int defenderCounter, int midfielderCounter, int strikerCounter);
 int countPlayersOrConfederation(int *pCounter, int max);
 int main(void)
 {
@@ -30,6 +30,7 @@ int main(void)
 	int defenderCounter = 0;
 	int midfielderCounter = 0;
 	int strikerCounter = 0;
+	int shirtNumber;
 
 	do
 	{
@@ -77,7 +78,6 @@ int main(void)
 							printf("DATO INVALIDO. REINTENTE. \n");
 						}
 						break;
-
 					}
 				}
 				else
@@ -88,10 +88,14 @@ int main(void)
 			case 2:
 				if (goalkeeperCounter != 2 || defenderCounter != 8 || midfielderCounter != 8 || strikerCounter != 4)
 				{
-					menuPlayers(goalkeeperCounter, defenderCounter, midfielderCounter, strikerCounter);
-					if (utn_getNumber(&optionPlayers, "\nIngrese opcion\n", "\nOpcion incorrecta\n ", 1, 5, 3) == 0)
+					if (utn_getNumber(&shirtNumber, "\nIngrese numero de camiseta. Solo entre el 1 y el 99\n", "\nOpcion incorrecta\n", 1, 99, 3) != 0)
 					{
+						printf("DATO INVALIDO. REINTENTE. \n");
 
+					}
+					else if (menuPlayers(goalkeeperCounter, defenderCounter, midfielderCounter, strikerCounter)==0
+							&& utn_getNumber(&optionPlayers, "\nIngrese opcion\n", "\nOpcion incorrecta\n ", 1, 5, 3) == 0)
+					{
 						switch (optionPlayers)
 						{
 
@@ -141,10 +145,11 @@ int main(void)
 					{
 						printf("DATO INVALIDO. REINTENTE. \n");
 					}
+
 				}
 				else
 				{
-					printf("\t\tYa realizo la carga de jugadores\n\n");
+					printf("\t\t\t\t\t\t\t\t\tYA REALIZO LA CARGA DE JUGADORES\n\n");
 				}
 				break;
 			case 3:
@@ -171,40 +176,51 @@ int main(void)
 void menu(float priceLodgin, float priceFood, float priceTransport, int goalkeeperCounter, int defenderCounter, int midfielderCounter, int strikerCounter)
 {
 
-	printf("\t\t MENU PRINCIPAL\n"
-					"1. Carga de los costos de Mantenimiento\n"
-					" Costo de Hospedaje -> $%.2f\n"
-					" Costo de Comida -> $%.2f\n"
-					" Costo de Transoporte -> $%.2f\n\n"
-					"2. Carga de Jugadores\n"
-					" Arqueros -> %d\n"
-					" Defensores -> %d\n"
-					" Mediocampistas -> %d\n"
-					" Delanteros -> %d\n\n"
-					"3. Realizar todos los calculos\n\n"
-					"4. Informar resultados\n\n"
-					"5. Salir", priceLodgin, priceFood, priceTransport, goalkeeperCounter, defenderCounter, midfielderCounter, strikerCounter);
-
+	printf("\t\t\t\t\t\t\t=============================MENU-PRINCIPAL=============================="
+					"\n\t\t\t\t\t\t\t|\t\t\t\t\t\t\t\t\t|"
+					"\n\t\t\t\t\t\t\t|\t\t\t 1. CARGA DE COSTOS DE MANTENIMIENTO.\t\t|"
+					"\n\t\t\t\t\t\t\t|\t\t  COSTO DE HOSPEDAJE -> $%.2f.\t\t\t\t|"
+					"\n\t\t\t\t\t\t\t|\t\t  COSTO DE COMIDA -> $%.2f.\t\t\t\t|"
+					"\n\t\t\t\t\t\t\t|\t\t  COSTO DE TRANSPORTE -> $%.2f.\t\t\t\t|"
+					"\n\t\t\t\t\t\t\t|\t\t\t 2. CARGA DE JUGADORES.\t\t\t\t|"
+					"\n\t\t\t\t\t\t\t|\t\t  ARQUEROS -> %d.\t\t\t\t\t|"
+					"\n\t\t\t\t\t\t\t|\t\t  DEFENSORES -> %d.\t\t\t\t\t|"
+					"\n\t\t\t\t\t\t\t|\t\t  MEDIOCAMPISTAS -> %d.\t\t\t\t\t|"
+					"\n\t\t\t\t\t\t\t|\t\t  DELANTEROS -> %d.\t\t\t\t\t|"
+					"\n\t\t\t\t\t\t\t|\t\t\t 3. REALIZAR TODOS LOS CALCULOS\t\t\t|"
+					"\n\t\t\t\t\t\t\t|\t\t\t 4. INFORMAR RESULTADOS.\t\t\t|"
+					"\n\t\t\t\t\t\t\t|\t\t\t 5. SALIR.\t\t\t\t\t|"
+					"\n\t\t\t\t\t\t\t|\t\t\t\t\t\t\t\t\t|\n"
+					"\t\t\t\t\t\t\t=========================================================================\n", priceLodgin, priceFood, priceTransport, goalkeeperCounter, defenderCounter, midfielderCounter, strikerCounter);
 }
 
 void menuCost(float priceLodgin, float priceFood, float priceTransport)
 {
 
-	printf("1. Ingresar costo hospedaje -> $%.2f\n"
-					"2. Ingresar costo de comida -> $%.2f\n"
-					"3. Ingresar costo de transporte-> $%.2f\n", priceLodgin, priceFood, priceTransport);
+	printf("\t\t\t\t\t\t\t========================================================================="
+					"\n\t\t\t\t\t\t\t|\t\t1. INGRESAR COSTO DE HOSPEDAJE -> $%.2f.\t\t|"
+					"\n\t\t\t\t\t\t\t|\t\t2. INGRESAR COSTO DE COMIDA -> $%.2f.\t\t\t|"
+					"\n\t\t\t\t\t\t\t|\t\t3. INGRESAR COSTO DE TRANSPORTE -> $%.2f.\t\t|"
+					"\n\t\t\t\t\t\t\t=========================================================================\n", priceLodgin, priceFood, priceTransport);
 
 }
 
-void menuPlayers(int goalkeeperCounter, int defenderCounter, int midfielderCounter, int strikerCounter)
+int menuPlayers(int goalkeeperCounter, int defenderCounter, int midfielderCounter, int strikerCounter)
 {
 
-	printf("1. Arquero -> %d\n"
-					"2. Defensor -> %d\n"
-					"3. Mediocampista -> %d\n"
-					"4. Delantero -> %d\n\n", goalkeeperCounter, defenderCounter, midfielderCounter, strikerCounter);
+	int returnMenuPlayers=0;
+	if(goalkeeperCounter >= 0 && defenderCounter >= 0 && midfielderCounter >= 0 && strikerCounter >=0)
+	printf("\t\t\t\t\t\t\t========================================================================="
+					"\n\t\t\t\t\t\t\t|\t\t\t1.  ARQUERO -> %d.\t\t\t\t|"
+					"\n\t\t\t\t\t\t\t|\t\t\t2.  DEFENSOR -> %d.\t\t\t\t|"
+					"\n\t\t\t\t\t\t\t|\t\t\t3.  MEDIOCAMPISTA -> %d.\t\t\t\t|"
+					"\n\t\t\t\t\t\t\t|\t\t\t4.  DELANTERO -> %d.\t\t\t\t|"
+					"\n\t\t\t\t\t\t\t=========================================================================\n", goalkeeperCounter, defenderCounter, midfielderCounter, strikerCounter);
 
+ return returnMenuPlayers;
 }
+
+
 
 float calculateTotalCost(float priceLodgin, float priceFood, float priceTransport)
 {

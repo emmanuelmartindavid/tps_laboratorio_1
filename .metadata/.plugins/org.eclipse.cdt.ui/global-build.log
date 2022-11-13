@@ -1,432 +1,823 @@
-18:05:17 **** Clean-only build of configuration Debug for project tp3_windows ****
-rm -rf Controller.d validaciones.d Seleccion.d Jugador.o Seleccion.o Jugador.d validaciones.o Controller.o menus.d main.o menus.o parser.o tp3_windows.exe parser.d main.d 
-Cannot run program "rm": Launching failed
-
-Error: Program "rm" not found in PATH
-PATH=[c:\mingw\bin;\bin;\usr\bin;C:/Users/cuerpos/.p2/pool/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.4.v20220903-1038/jre/bin/server;C:/Users/cuerpos/.p2/pool/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.4.v20220903-1038/jre/bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;c:\mingw\bin;C:\Program Files\Git\cmd;C:\Users\cuerpos\AppData\Local\Microsoft\WindowsApps;C:\Users\cuerpos\AppData\Local\GitHubDesktop\bin;C:\Users\cuerpos\eclipse\cpp-2022-06\eclipse]
-
-18:05:17 **** Clean-only build of configuration Debug for project tp3_windows ****
-18:05:26 **** Rebuild of configuration Debug for project tp3_windows ****
+08:24:29 **** Rebuild of configuration Debug for project tp3_windows ****
 Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o menus.o "..\\menus.c" 
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Seleccion.o "..\\Seleccion.c" 
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o parser.o "..\\parser.c" 
-..\parser.c: In function 'parserPlayerFromBinary':
-..\parser.c:68:6: warning: unused variable 'returnFread' [-Wunused-variable]
-   68 |  int returnFread;
-      |      ^~~~~~~~~~~
 gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Jugador.o "..\\Jugador.c" 
 gcc -O0 -g3 -Wall -c -fmessage-length=0 -o validaciones.o "..\\validaciones.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o menus.o "..\\menus.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o parser.o "..\\parser.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Seleccion.o "..\\Seleccion.c" 
 gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
-18:07:43 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Nothing to build for tp3_windows
+08:25:33 **** Incremental Build of configuration Debug for project tp3_windows ****
 Info: Internal Builder is used for build
 gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
 gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
 c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: cannot open output file tp3_windows.exe: Permission denied
 collect2.exe: error: ld returned 1 exit status
-18:07:45 **** Incremental Build of configuration Debug for project tp3_windows ****
+08:25:35 **** Incremental Build of configuration Debug for project tp3_windows ****
 Info: Internal Builder is used for build
 gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
-Info: Nothing to build for tp3_windows
-Info: Nothing to build for tp3_windows
-18:10:46 **** Incremental Build of configuration Debug for project tp3_windows ****
-Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o parser.o "..\\parser.c" 
-..\parser.c: In function 'parserPlayerFromBinary':
-..\parser.c:68:6: warning: unused variable 'returnFread' [-Wunused-variable]
-   68 |  int returnFread;
-      |      ^~~~~~~~~~~
-gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
-18:11:46 **** Incremental Build of configuration Debug for project tp3_windows ****
-Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o parser.o "..\\parser.c" 
-..\parser.c: In function 'parserPlayerFromBinary':
-..\parser.c:68:6: warning: unused variable 'returnFread' [-Wunused-variable]
-   68 |  int returnFread;
-      |      ^~~~~~~~~~~
-gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
-18:12:36 **** Incremental Build of configuration Debug for project tp3_windows ****
-Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o parser.o "..\\parser.c" 
-gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
-c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: cannot open output file tp3_windows.exe: Permission denied
-collect2.exe: error: ld returned 1 exit status
-18:12:38 **** Incremental Build of configuration Debug for project tp3_windows ****
-Info: Internal Builder is used for build
-gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
-18:13:49 **** Incremental Build of configuration Debug for project tp3_windows ****
-Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o parser.o "..\\parser.c" 
-gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
-18:14:50 **** Incremental Build of configuration Debug for project tp3_windows ****
-Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o parser.o "..\\parser.c" 
-gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
-c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: cannot open output file tp3_windows.exe: Permission denied
-collect2.exe: error: ld returned 1 exit status
-18:14:52 **** Incremental Build of configuration Debug for project tp3_windows ****
-Info: Internal Builder is used for build
-gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
-Info: Nothing to build for tp3_windows
-Info: Nothing to build for tp3_windows
-18:17:02 **** Incremental Build of configuration Debug for project tp3_windows ****
-Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o parser.o "..\\parser.c" 
-gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
-Info: Nothing to build for tp3_windows
-18:18:38 **** Incremental Build of configuration Debug for project tp3_windows ****
-Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
-gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
-18:20:29 **** Incremental Build of configuration Debug for project tp3_windows ****
-Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o parser.o "..\\parser.c" 
-gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
-18:21:30 **** Incremental Build of configuration Debug for project tp3_windows ****
-Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o parser.o "..\\parser.c" 
-gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
-Info: Nothing to build for tp3_windows
-18:23:41 **** Incremental Build of configuration Debug for project tp3_windows ****
-Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o parser.o "..\\parser.c" 
-gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
-Info: Nothing to build for tp3_windows
-18:25:53 **** Incremental Build of configuration Debug for project tp3_windows ****
-Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o parser.o "..\\parser.c" 
-gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
-c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: cannot open output file tp3_windows.exe: Permission denied
-collect2.exe: error: ld returned 1 exit status
-18:25:56 **** Incremental Build of configuration Debug for project tp3_windows ****
-Info: Internal Builder is used for build
-gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
-18:27:46 **** Incremental Build of configuration Debug for project tp3_windows ****
+08:27:47 **** Incremental Build of configuration Debug for project tp3_windows ****
 Info: Internal Builder is used for build
 gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o parser.o "..\\parser.c" 
-..\parser.c: In function 'parserPlayerFromBinary':
-..\parser.c:211:1: error: expected declaration or statement at end of input
-  211 | }
-      | ^
-..\parser.c:211:1: warning: control reaches end of non-void function [-Wreturn-type]
-  211 | }
-      | ^
-At top level:
-..\parser.c:195:5: warning: 'parserIdPlayerFromText' defined but not used [-Wunused-function]
-  195 | int parserIdPlayerFromText(FILE *pFile, int *pIdPlayer)
-      |     ^~~~~~~~~~~~~~~~~~~~~~
-..\parser.c:158:5: warning: 'parserNationalTeamFromText' defined but not used [-Wunused-function]
-  158 | int parserNationalTeamFromText(FILE *pFile, LinkedList *pArrayListNationalTeam)
-      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~
-18:28:04 **** Incremental Build of configuration Debug for project tp3_windows ****
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
+gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
+08:28:27 **** Incremental Build of configuration Debug for project tp3_windows ****
 Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o parser.o "..\\parser.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
 gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
 c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: cannot open output file tp3_windows.exe: Permission denied
 collect2.exe: error: ld returned 1 exit status
-18:28:09 **** Incremental Build of configuration Debug for project tp3_windows ****
+08:28:29 **** Incremental Build of configuration Debug for project tp3_windows ****
 Info: Internal Builder is used for build
 gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
-Info: Nothing to build for tp3_windows
-18:30:28 **** Incremental Build of configuration Debug for project tp3_windows ****
-Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o parser.o "..\\parser.c" 
-gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
-18:31:11 **** Incremental Build of configuration Debug for project tp3_windows ****
-Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o parser.o "..\\parser.c" 
-gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
-18:32:18 **** Incremental Build of configuration Debug for project tp3_windows ****
-Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o parser.o "..\\parser.c" 
-gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
-18:35:42 **** Incremental Build of configuration Debug for project tp3_windows ****
+08:31:58 **** Incremental Build of configuration Debug for project tp3_windows ****
 Info: Internal Builder is used for build
 gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
-gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
-18:36:27 **** Incremental Build of configuration Debug for project tp3_windows ****
-Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
-..\Controller.c: In function 'controllerGetPlayersByConfederationLOAD':
-..\Controller.c:855:14: warning: unused variable 'aux2' [-Wunused-variable]
-  855 |  LinkedList *aux2 = ll_clone(pArrayListPlayer);
-      |              ^~~~
-..\Controller.c:854:11: warning: unused variable 'pPlayer' [-Wunused-variable]
-  854 |  sPlayer *pPlayer = NULL;
-      |           ^~~~~~~
-..\Controller.c:853:7: warning: unused variable 'auxConfederation' [-Wunused-variable]
-  853 |  char auxConfederation[30];
-      |       ^~~~~~~~~~~~~~~~
-..\Controller.c:852:6: warning: unused variable 'auxIdPlayer' [-Wunused-variable]
-  852 |  int auxIdPlayer;
-      |      ^~~~~~~~~~~
-..\Controller.c:851:6: warning: unused variable 'lenListPlayer' [-Wunused-variable]
-  851 |  int lenListPlayer;
-      |      ^~~~~~~~~~~~~
-gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
-Info: Nothing to build for tp3_windows
-18:39:04 **** Incremental Build of configuration Debug for project tp3_windows ****
-Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o parser.o "..\\parser.c" 
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
-..\Controller.c: In function 'controllerGetPlayersByConfederationLOAD':
-..\Controller.c:856:14: warning: unused variable 'aux' [-Wunused-variable]
-  856 |  LinkedList *aux = ll_newLinkedList();
-      |              ^~~
-..\Controller.c:854:11: warning: unused variable 'pPlayer' [-Wunused-variable]
-  854 |  sPlayer *pPlayer = NULL;
-      |           ^~~~~~~
-..\Controller.c:853:7: warning: unused variable 'auxConfederation' [-Wunused-variable]
-  853 |  char auxConfederation[30];
-      |       ^~~~~~~~~~~~~~~~
-..\Controller.c:852:6: warning: unused variable 'auxIdPlayer' [-Wunused-variable]
-  852 |  int auxIdPlayer;
-      |      ^~~~~~~~~~~
-..\Controller.c:851:6: warning: unused variable 'lenListPlayer' [-Wunused-variable]
-  851 |  int lenListPlayer;
-      |      ^~~~~~~~~~~~~
 gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
 c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: cannot open output file tp3_windows.exe: Permission denied
 collect2.exe: error: ld returned 1 exit status
-18:39:09 **** Incremental Build of configuration Debug for project tp3_windows ****
+08:32:01 **** Incremental Build of configuration Debug for project tp3_windows ****
 Info: Internal Builder is used for build
 gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
-Info: Nothing to build for tp3_windows
-18:40:42 **** Incremental Build of configuration Debug for project tp3_windows ****
-Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
-..\Controller.c: In function 'controllerGetPlayersByConfederationLOAD':
-..\Controller.c:854:11: warning: unused variable 'pPlayer' [-Wunused-variable]
-  854 |  sPlayer *pPlayer = NULL;
-      |           ^~~~~~~
-..\Controller.c:853:7: warning: unused variable 'auxConfederation' [-Wunused-variable]
-  853 |  char auxConfederation[30];
-      |       ^~~~~~~~~~~~~~~~
-..\Controller.c:852:6: warning: unused variable 'auxIdPlayer' [-Wunused-variable]
-  852 |  int auxIdPlayer;
-      |      ^~~~~~~~~~~
-..\Controller.c:851:6: warning: unused variable 'lenListPlayer' [-Wunused-variable]
-  851 |  int lenListPlayer;
-      |      ^~~~~~~~~~~~~
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o parser.o "..\\parser.c" 
-gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
-18:40:58 **** Incremental Build of configuration Debug for project tp3_windows ****
+08:33:51 **** Incremental Build of configuration Debug for project tp3_windows ****
 Info: Internal Builder is used for build
 gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
 gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
-Info: Nothing to build for tp3_windows
-Info: Nothing to build for tp3_windows
-Info: Nothing to build for tp3_windows
-18:43:30 **** Incremental Build of configuration Debug for project tp3_windows ****
+08:34:12 **** Incremental Build of configuration Debug for project tp3_windows ****
 Info: Internal Builder is used for build
 gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
-..\Controller.c: In function 'controllerGetPlayersByConfederationLOAD':
-..\Controller.c:856:14: warning: unused variable 'aux' [-Wunused-variable]
-  856 |  LinkedList *aux = ll_newLinkedList();
-      |              ^~~
-..\Controller.c:854:11: warning: unused variable 'pPlayer' [-Wunused-variable]
-  854 |  sPlayer *pPlayer = NULL;
-      |           ^~~~~~~
-..\Controller.c:853:7: warning: unused variable 'auxConfederation' [-Wunused-variable]
-  853 |  char auxConfederation[30];
-      |       ^~~~~~~~~~~~~~~~
-..\Controller.c:852:6: warning: unused variable 'auxIdPlayer' [-Wunused-variable]
-  852 |  int auxIdPlayer;
-      |      ^~~~~~~~~~~
-..\Controller.c:851:6: warning: unused variable 'lenListPlayer' [-Wunused-variable]
-  851 |  int lenListPlayer;
-      |      ^~~~~~~~~~~~~
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o parser.o "..\\parser.c" 
-gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
-18:44:43 **** Incremental Build of configuration Debug for project tp3_windows ****
-Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o parser.o "..\\parser.c" 
 gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
 c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: cannot open output file tp3_windows.exe: Permission denied
 collect2.exe: error: ld returned 1 exit status
-18:44:45 **** Incremental Build of configuration Debug for project tp3_windows ****
+08:34:14 **** Incremental Build of configuration Debug for project tp3_windows ****
 Info: Internal Builder is used for build
 gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
-18:46:46 **** Incremental Build of configuration Debug for project tp3_windows ****
-Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o parser.o "..\\parser.c" 
-..\parser.c: In function 'parserPlayerFromBinary':
-..\parser.c:202:1: error: expected declaration or statement at end of input
-  202 | }
-      | ^
-..\parser.c:202:1: warning: control reaches end of non-void function [-Wreturn-type]
-  202 | }
-      | ^
-At top level:
-..\parser.c:186:5: warning: 'parserIdPlayerFromText' defined but not used [-Wunused-function]
-  186 | int parserIdPlayerFromText(FILE *pFile, int *pIdPlayer)
-      |     ^~~~~~~~~~~~~~~~~~~~~~
-..\parser.c:149:5: warning: 'parserNationalTeamFromText' defined but not used [-Wunused-function]
-  149 | int parserNationalTeamFromText(FILE *pFile, LinkedList *pArrayListNationalTeam)
-      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~
-18:46:48 **** Incremental Build of configuration Debug for project tp3_windows ****
-Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o parser.o "..\\parser.c" 
-..\parser.c: In function 'parserPlayerFromBinary':
-..\parser.c:202:1: error: expected declaration or statement at end of input
-  202 | }
-      | ^
-..\parser.c:202:1: warning: control reaches end of non-void function [-Wreturn-type]
-  202 | }
-      | ^
-At top level:
-..\parser.c:186:5: warning: 'parserIdPlayerFromText' defined but not used [-Wunused-function]
-  186 | int parserIdPlayerFromText(FILE *pFile, int *pIdPlayer)
-      |     ^~~~~~~~~~~~~~~~~~~~~~
-..\parser.c:149:5: warning: 'parserNationalTeamFromText' defined but not used [-Wunused-function]
-  149 | int parserNationalTeamFromText(FILE *pFile, LinkedList *pArrayListNationalTeam)
-      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~
-18:47:31 **** Incremental Build of configuration Debug for project tp3_windows ****
-Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o parser.o "..\\parser.c" 
-gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
-Info: Nothing to build for tp3_windows
-Info: Nothing to build for tp3_windows
-Info: Nothing to build for tp3_windows
-Info: Nothing to build for tp3_windows
-Info: Nothing to build for tp3_windows
-18:56:15 **** Incremental Build of configuration Debug for project tp3_windows ****
+08:35:19 **** Incremental Build of configuration Debug for project tp3_windows ****
 Info: Internal Builder is used for build
 gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
-..\Controller.c: In function 'controllerGetPlayersByConfederationLOAD':
-..\Controller.c:857:14: warning: unused variable 'aux' [-Wunused-variable]
-  857 |  LinkedList *aux = ll_newLinkedList();
-      |              ^~~
-..\Controller.c:855:11: warning: unused variable 'pPlayer' [-Wunused-variable]
-  855 |  sPlayer *pPlayer = NULL;
-      |           ^~~~~~~
-..\Controller.c:854:7: warning: unused variable 'auxConfederation' [-Wunused-variable]
-  854 |  char auxConfederation[30];
-      |       ^~~~~~~~~~~~~~~~
-..\Controller.c:853:6: warning: unused variable 'auxIdPlayer' [-Wunused-variable]
-  853 |  int auxIdPlayer;
-      |      ^~~~~~~~~~~
-..\Controller.c:852:6: warning: unused variable 'lenListPlayer' [-Wunused-variable]
-  852 |  int lenListPlayer;
-      |      ^~~~~~~~~~~~~
 gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
-18:57:12 **** Incremental Build of configuration Debug for project tp3_windows ****
+08:36:41 **** Incremental Build of configuration Debug for project tp3_windows ****
 Info: Internal Builder is used for build
 gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
-..\Controller.c: In function 'controllerGetPlayersByConfederationLOAD':
-..\Controller.c:858:14: warning: unused variable 'aux' [-Wunused-variable]
-  858 |  LinkedList *aux = ll_newLinkedList();
-      |              ^~~
-..\Controller.c:856:11: warning: unused variable 'pPlayer' [-Wunused-variable]
-  856 |  sPlayer *pPlayer = NULL;
-      |           ^~~~~~~
-..\Controller.c:855:7: warning: unused variable 'auxConfederation' [-Wunused-variable]
-  855 |  char auxConfederation[30];
-      |       ^~~~~~~~~~~~~~~~
-..\Controller.c:854:6: warning: unused variable 'auxIdPlayer' [-Wunused-variable]
-  854 |  int auxIdPlayer;
-      |      ^~~~~~~~~~~
-..\Controller.c:853:6: warning: unused variable 'lenListPlayer' [-Wunused-variable]
-  853 |  int lenListPlayer;
-      |      ^~~~~~~~~~~~~
 gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
-18:59:28 **** Incremental Build of configuration Debug for project tp3_windows ****
+09:18:12 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
+..\Controller.c: In function 'controllerCallUpPlayers':
+..\Controller.c:386:6: warning: unused variable 'calledUp' [-Wunused-variable]
+  386 |  int calledUp;
+      |      ^~~~~~~~
+..\Controller.c:384:6: warning: unused variable 'indexListNationalTeam' [-Wunused-variable]
+  384 |  int indexListNationalTeam;
+      |      ^~~~~~~~~~~~~~~~~~~~~
+..\Controller.c:380:6: warning: variable 'returncontrollerCallUpPlayers' set but not used [-Wunused-but-set-variable]
+  380 |  int returncontrollerCallUpPlayers = ERROR;
+      |      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Controller.c: At top level:
+..\Controller.c:425:2: error: expected identifier or '(' before 'return'
+  425 |  return returncontrollerCallUpPlayers;
+      |  ^~~~~~
+..\Controller.c:426:1: error: expected identifier or '(' before '}' token
+  426 | }
+      | ^
+..\Controller.c: In function 'controllerCallUpPlayers':
+..\Controller.c:424:2: warning: control reaches end of non-void function [-Wreturn-type]
+  424 |  }
+      |  ^
+09:20:15 **** Incremental Build of configuration Debug for project tp3_windows ****
 Info: Internal Builder is used for build
 gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
-..\Controller.c: In function 'controllerGetPlayersByConfederationLOAD':
-..\Controller.c:858:14: warning: unused variable 'aux' [-Wunused-variable]
-  858 |  LinkedList *aux = ll_newLinkedList();
-      |              ^~~
-..\Controller.c:856:11: warning: unused variable 'pPlayer' [-Wunused-variable]
-  856 |  sPlayer *pPlayer = NULL;
-      |           ^~~~~~~
-..\Controller.c:855:7: warning: unused variable 'auxConfederation' [-Wunused-variable]
-  855 |  char auxConfederation[30];
-      |       ^~~~~~~~~~~~~~~~
-..\Controller.c:854:6: warning: unused variable 'auxIdPlayer' [-Wunused-variable]
-  854 |  int auxIdPlayer;
-      |      ^~~~~~~~~~~
-..\Controller.c:853:6: warning: unused variable 'lenListPlayer' [-Wunused-variable]
-  853 |  int lenListPlayer;
-      |      ^~~~~~~~~~~~~
-gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
-19:04:58 **** Incremental Build of configuration Debug for project tp3_windows ****
-Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
-..\Controller.c: In function 'controllerGetPlayersByConfederationLOAD':
-..\Controller.c:855:7: warning: unused variable 'auxConfederation' [-Wunused-variable]
-  855 |  char auxConfederation[30];
-      |       ^~~~~~~~~~~~~~~~
-..\Controller.c:854:6: warning: unused variable 'auxIdPlayer' [-Wunused-variable]
-  854 |  int auxIdPlayer;
-      |      ^~~~~~~~~~~
-..\Controller.c:853:6: warning: unused variable 'lenListPlayer' [-Wunused-variable]
-  853 |  int lenListPlayer;
-      |      ^~~~~~~~~~~~~
+..\Controller.c: In function 'controllerCallUpPlayers':
+..\Controller.c:388:6: warning: unused variable 'calledUp' [-Wunused-variable]
+  388 |  int calledUp;
+      |      ^~~~~~~~
+..\Controller.c:386:6: warning: unused variable 'indexListNationalTeam' [-Wunused-variable]
+  386 |  int indexListNationalTeam;
+      |      ^~~~~~~~~~~~~~~~~~~~~
 gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
 c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: cannot open output file tp3_windows.exe: Permission denied
 collect2.exe: error: ld returned 1 exit status
-19:05:00 **** Incremental Build of configuration Debug for project tp3_windows ****
+09:20:33 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
+gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
+Info: Nothing to build for tp3_windows
+09:29:21 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
+..\Controller.c: In function 'controllerCallOffPlayers':
+..\Controller.c:433:6: warning: unused variable 'calledUp' [-Wunused-variable]
+  433 |  int calledUp;
+      |      ^~~~~~~~
+..\Controller.c:431:6: warning: unused variable 'indexListNationalTeam' [-Wunused-variable]
+  431 |  int indexListNationalTeam;
+      |      ^~~~~~~~~~~~~~~~~~~~~
+gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: cannot open output file tp3_windows.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+09:29:30 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
+gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: cannot open output file tp3_windows.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+09:29:31 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
+09:34:03 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
+gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: cannot open output file tp3_windows.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+09:34:07 **** Incremental Build of configuration Debug for project tp3_windows ****
 Info: Internal Builder is used for build
 gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
 Info: Nothing to build for tp3_windows
-19:06:14 **** Incremental Build of configuration Debug for project tp3_windows ****
+09:35:47 **** Incremental Build of configuration Debug for project tp3_windows ****
 Info: Internal Builder is used for build
 gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
-..\Controller.c: In function 'controllerGetPlayersByConfederationLOAD':
-..\Controller.c:855:7: warning: unused variable 'auxConfederation' [-Wunused-variable]
-  855 |  char auxConfederation[30];
-      |       ^~~~~~~~~~~~~~~~
-..\Controller.c:854:6: warning: unused variable 'auxIdPlayer' [-Wunused-variable]
-  854 |  int auxIdPlayer;
+gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: cannot open output file tp3_windows.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+09:35:51 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
+Info: Nothing to build for tp3_windows
+09:47:32 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: cannot open output file tp3_windows.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+09:47:34 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
+Info: Nothing to build for tp3_windows
+09:56:30 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
+Info: Nothing to build for tp3_windows
+09:58:20 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: cannot open output file tp3_windows.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+09:58:25 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
+Info: Nothing to build for tp3_windows
+09:59:49 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
+10:01:19 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
+..\Controller.c: In function 'controllerSaveIdplayerTextMode':
+..\Controller.c:803:17: warning: operation on 'idIncremented' may be undefined [-Wsequence-point]
+  803 |   idIncremented = idIncremented --;
+      |   ~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~
+gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: cannot open output file tp3_windows.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+10:01:39 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
+gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: cannot open output file tp3_windows.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+10:01:43 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
+Info: Nothing to build for tp3_windows
+10:02:27 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
+gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
+10:12:54 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c: In function 'main':
+..\main.c:375:11: error: too many arguments to function 'controllerSaveIdplayerTextMode'
+  375 |       if (controllerSaveIdplayerTextMode("IdJugadoresAutoincremental.csv", &condition) == SUCCESS
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from ..\main.c:4:
+..\Controller.h:51:5: note: declared here
+   51 | int controllerSaveIdplayerTextMode(char *path);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+10:13:47 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
+..\Controller.c: In function 'controllerGetIncrementalIdPlayer':
+..\Controller.c:789:14: warning: comparison between pointer and integer
+  789 |  if(condition==ADDPLAYER)
+      |              ^~
+..\Controller.c:792:21: warning: comparison between pointer and integer
+  792 |  }else if(condition ==NOTADDPLAYER)
+      |                     ^~
+..\Controller.c: In function 'controllerSaveIdplayerTextMode':
+..\Controller.c:806:52: warning: passing argument 1 of 'controllerGetIncrementalIdPlayer' makes pointer from integer without a cast [-Wint-conversion]
+  806 |   idIncremented = controllerGetIncrementalIdPlayer(*condition);
+      |                                                    ^~~~~~~~~~
+      |                                                    |
+      |                                                    int
+..\Controller.c:778:43: note: expected 'int *' but argument is of type 'int'
+  778 | int controllerGetIncrementalIdPlayer(int *condition)
+      |                                      ~~~~~^~~~~~~~~
+gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: cannot open output file tp3_windows.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+10:14:04 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
+..\Controller.c: In function 'controllerGetIncrementalIdPlayer':
+..\Controller.c:789:14: warning: comparison between pointer and integer
+  789 |  if(condition==ADDPLAYER)
+      |              ^~
+..\Controller.c:792:21: warning: comparison between pointer and integer
+  792 |  }else if(condition ==NOTADDPLAYER)
+      |                     ^~
+gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: cannot open output file tp3_windows.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+10:14:34 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
+gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
+Info: Nothing to build for tp3_windows
+10:15:21 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
+gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
+10:16:12 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
+gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
+Info: Nothing to build for tp3_windows
+10:18:46 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
+gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
+10:21:03 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o parser.o "..\\parser.c" 
+gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
+10:23:32 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
+gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
+Info: Nothing to build for tp3_windows
+10:25:51 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
+..\Controller.c: In function 'controllerAddPlayer':
+..\Controller.c:121:6: warning: variable 'auxIdplayer' set but not used [-Wunused-but-set-variable]
+  121 |  int auxIdplayer;
       |      ^~~~~~~~~~~
-..\Controller.c:853:6: warning: unused variable 'lenListPlayer' [-Wunused-variable]
-  853 |  int lenListPlayer;
-      |      ^~~~~~~~~~~~~
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o parser.o "..\\parser.c" 
 gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
-Info: Nothing to build for tp3_windows
-19:10:14 **** Incremental Build of configuration Debug for project tp3_windows ****
+10:26:10 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
+gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
+10:26:51 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
+gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
+10:27:08 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
+gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
+10:28:39 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
+gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
+10:30:16 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
+gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
+10:32:03 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
+..\Controller.c: In function 'controllerSaveIdplayerTextMode':
+..\Controller.c:815:27: warning: format '%d' expects argument of type 'int', but argument 2 has type 'int *' [-Wformat=]
+  815 |   printf("CONDICION SAVE %d", condition);
+      |                          ~^   ~~~~~~~~~
+      |                           |   |
+      |                           int int *
+      |                          %n
+gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: cannot open output file tp3_windows.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+10:32:13 **** Incremental Build of configuration Debug for project tp3_windows ****
 Info: Internal Builder is used for build
 gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
 gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
 Info: Nothing to build for tp3_windows
-19:12:12 **** Incremental Build of configuration Debug for project tp3_windows ****
+10:35:47 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
+..\Controller.c: In function 'controllerSaveIdplayerTextMode':
+..\Controller.c:816:31: error: invalid type argument of unary '*' (have 'int')
+  816 |   printf("CONDICION SAVE %d", *condition);
+      |                               ^~~~~~~~~~
+10:35:58 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
+gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
+Info: Nothing to build for tp3_windows
+Info: Nothing to build for tp3_windows
+10:37:25 **** Incremental Build of configuration Debug for project tp3_windows ****
 Info: Internal Builder is used for build
 gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
 gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
-19:15:08 **** Incremental Build of configuration Debug for project tp3_windows ****
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: cannot open output file tp3_windows.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+10:37:35 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
+Info: Nothing to build for tp3_windows
+10:38:23 **** Incremental Build of configuration Debug for project tp3_windows ****
 Info: Internal Builder is used for build
 gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
 gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
-19:16:56 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Nothing to build for tp3_windows
+10:38:50 **** Incremental Build of configuration Debug for project tp3_windows ****
 Info: Internal Builder is used for build
 gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
 gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
-19:25:18 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Nothing to build for tp3_windows
+10:41:48 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
+gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
+10:44:35 **** Incremental Build of configuration Debug for project tp3_windows ****
 Info: Internal Builder is used for build
 gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
 gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
 gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
 Info: Nothing to build for tp3_windows
 Info: Nothing to build for tp3_windows
-19:30:40 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Nothing to build for tp3_windows
+Info: Nothing to build for tp3_windows
+Info: Nothing to build for tp3_windows
+Info: Nothing to build for tp3_windows
+10:50:40 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o parser.o "..\\parser.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
+gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
+10:50:53 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
+11:00:35 **** Incremental Build of configuration Debug for project tp3_windows ****
 Info: Internal Builder is used for build
 gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
 gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
 c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: cannot open output file tp3_windows.exe: Permission denied
 collect2.exe: error: ld returned 1 exit status
-19:30:44 **** Incremental Build of configuration Debug for project tp3_windows ****
+11:00:37 **** Incremental Build of configuration Debug for project tp3_windows ****
 Info: Internal Builder is used for build
 gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
-19:31:42 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Nothing to build for tp3_windows
+11:03:46 **** Incremental Build of configuration Debug for project tp3_windows ****
 Info: Internal Builder is used for build
 gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
 gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
-19:34:31 **** Incremental Build of configuration Debug for project tp3_windows ****
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: cannot open output file tp3_windows.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+11:03:47 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
+Info: Nothing to build for tp3_windows
+Info: Nothing to build for tp3_windows
+11:05:11 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
+gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
+Info: Nothing to build for tp3_windows
+11:23:05 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
+gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
+Info: Nothing to build for tp3_windows
+11:29:43 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
+gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
+Info: Nothing to build for tp3_windows
+11:35:45 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
+gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
+11:46:17 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
+gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
+11:49:32 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
+gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
+11:52:32 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
+gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
+Info: Nothing to build for tp3_windows
+Info: Nothing to build for tp3_windows
+12:42:04 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
+gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
+Info: Nothing to build for tp3_windows
+13:42:08 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
+gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
+13:43:12 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
+gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
+13:59:19 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c: In function 'main':
+..\main.c:309:108: error: invalid operands to binary != (have 'LinkedList' {aka 'struct LinkedList'} and 'void *')
+  309 |        if (controllerLoadPlayersByConfederationFromBinary("AFC.bin", listPLayers, listNationalTeam, "AFC") != NULL)
+      |            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ^~
+      |            |
+      |            LinkedList {aka struct LinkedList}
+14:00:20 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c: In function 'main':
+..\main.c:309:12: error: used struct type value where scalar is required
+  309 |        if (controllerLoadPlayersByConfederationFromBinary("AFC.bin", listPLayers, listNationalTeam, "AFC"))
+      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+14:01:18 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
+..\Controller.c: In function 'controllerLoadPlayersByConfederationFromBinary':
+..\Controller.c:928:51: warning: assignment to 'int' from 'LinkedList *' {aka 'struct LinkedList *'} makes integer from pointer without a cast [-Wint-conversion]
+  928 |         returnControllerGetPlayersByConfederation = pArrayListPlayerAuxNew;
+      |                                                   ^
+..\Controller.c:940:9: error: incompatible types when returning type 'int' but 'LinkedList' {aka 'struct LinkedList'} was expected
+  940 |  return returnControllerGetPlayersByConfederation;
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Controller.c: In function 'controllerListPLayersByConfederationFromBinaryData':
+..\Controller.c:950:27: error: incompatible types when assigning to type 'LinkedList *' {aka 'struct LinkedList *'} from type 'LinkedList' {aka 'struct LinkedList'}
+  950 |  pArrayListPlayerAuxNew = controllerLoadPlayersByConfederationFromBinary(path, pArrayListPlayerAux, pArrayListNationalTeamAux, pConfederationRegister);
+      |                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Controller.c: In function 'controllerLoadPlayersByConfederationFromBinary':
+..\Controller.c:941:1: warning: control reaches end of non-void function [-Wreturn-type]
+  941 | }
+      | ^
+14:02:18 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
+In file included from c:\mingw\include\string.h:53,
+                 from ..\Controller.c:10:
+..\Controller.c: In function 'controllerLoadPlayersByConfederationFromBinary':
+..\Controller.c:903:57: error: invalid initializer
+  903 |  LinkedList returnControllerGetPlayersByConfederation = NULL;
+      |                                                         ^~~~
+..\Controller.c:928:53: error: incompatible types when assigning to type 'LinkedList' {aka 'struct LinkedList'} from type 'LinkedList *' {aka 'struct LinkedList *'}
+  928 |         returnControllerGetPlayersByConfederation = pArrayListPlayerAuxNew;
+      |                                                     ^~~~~~~~~~~~~~~~~~~~~~
+..\Controller.c: In function 'controllerListPLayersByConfederationFromBinaryData':
+..\Controller.c:950:27: error: incompatible types when assigning to type 'LinkedList *' {aka 'struct LinkedList *'} from type 'LinkedList' {aka 'struct LinkedList'}
+  950 |  pArrayListPlayerAuxNew = controllerLoadPlayersByConfederationFromBinary(path, pArrayListPlayerAux, pArrayListNationalTeamAux, pConfederationRegister);
+      |                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+14:02:57 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
+..\Controller.c: In function 'controllerLoadPlayersByConfederationFromBinary':
+..\Controller.c:928:53: error: incompatible types when assigning to type 'LinkedList' {aka 'struct LinkedList'} from type 'LinkedList *' {aka 'struct LinkedList *'}
+  928 |         returnControllerGetPlayersByConfederation = pArrayListPlayerAuxNew;
+      |                                                     ^~~~~~~~~~~~~~~~~~~~~~
+..\Controller.c: In function 'controllerListPLayersByConfederationFromBinaryData':
+..\Controller.c:950:27: error: incompatible types when assigning to type 'LinkedList *' {aka 'struct LinkedList *'} from type 'LinkedList' {aka 'struct LinkedList'}
+  950 |  pArrayListPlayerAuxNew = controllerLoadPlayersByConfederationFromBinary(path, pArrayListPlayerAux, pArrayListNationalTeamAux, pConfederationRegister);
+      |                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+14:03:18 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
+..\Controller.c: In function 'controllerLoadPlayersByConfederationFromBinary':
+..\Controller.c:928:54: error: incompatible types when assigning to type 'LinkedList' {aka 'struct LinkedList'} from type 'LinkedList *' {aka 'struct LinkedList *'}
+  928 |         *returnControllerGetPlayersByConfederation = pArrayListPlayerAuxNew;
+      |                                                      ^~~~~~~~~~~~~~~~~~~~~~
+..\Controller.c:940:9: error: incompatible types when returning type 'LinkedList *' {aka 'struct LinkedList *'} but 'LinkedList' {aka 'struct LinkedList'} was expected
+  940 |  return returnControllerGetPlayersByConfederation;
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Controller.c: In function 'controllerListPLayersByConfederationFromBinaryData':
+..\Controller.c:950:27: error: incompatible types when assigning to type 'LinkedList *' {aka 'struct LinkedList *'} from type 'LinkedList' {aka 'struct LinkedList'}
+  950 |  pArrayListPlayerAuxNew = controllerLoadPlayersByConfederationFromBinary(path, pArrayListPlayerAux, pArrayListNationalTeamAux, pConfederationRegister);
+      |                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Controller.c: In function 'controllerLoadPlayersByConfederationFromBinary':
+..\Controller.c:941:1: warning: control reaches end of non-void function [-Wreturn-type]
+  941 | }
+      | ^
+14:03:29 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c: In function 'main':
+..\main.c:309:108: error: invalid operands to binary != (have 'LinkedList' {aka 'struct LinkedList'} and 'void *')
+  309 |        if (controllerLoadPlayersByConfederationFromBinary("AFC.bin", listPLayers, listNationalTeam, "AFC") != NULL)
+      |            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ^~
+      |            |
+      |            LinkedList {aka struct LinkedList}
+14:29:21 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
+..\Controller.c: In function 'controllerLoadPlayersByConfederationFromBinary':
+..\Controller.c:928:54: error: incompatible types when assigning to type 'LinkedList' {aka 'struct LinkedList'} from type 'LinkedList *' {aka 'struct LinkedList *'}
+  928 |         *returnControllerGetPlayersByConfederation = pArrayListPlayerAuxNew;
+      |                                                      ^~~~~~~~~~~~~~~~~~~~~~
+..\Controller.c: In function 'controllerListPLayersByConfederationFromBinaryData':
+..\Controller.c:950:27: error: incompatible types when assigning to type 'LinkedList *' {aka 'struct LinkedList *'} from type 'LinkedList' {aka 'struct LinkedList'}
+  950 |  pArrayListPlayerAuxNew = controllerLoadPlayersByConfederationFromBinary(path, pArrayListPlayerAux, pArrayListNationalTeamAux, pConfederationRegister);
+      |                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+14:29:48 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
+..\Controller.c: In function 'controllerLoadPlayersByConfederationFromBinary':
+..\Controller.c:940:9: error: incompatible types when returning type 'LinkedList *' {aka 'struct LinkedList *'} but 'LinkedList' {aka 'struct LinkedList'} was expected
+  940 |  return returnControllerGetPlayersByConfederation;
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Controller.c: In function 'controllerListPLayersByConfederationFromBinaryData':
+..\Controller.c:950:27: error: incompatible types when assigning to type 'LinkedList *' {aka 'struct LinkedList *'} from type 'LinkedList' {aka 'struct LinkedList'}
+  950 |  pArrayListPlayerAuxNew = controllerLoadPlayersByConfederationFromBinary(path, pArrayListPlayerAux, pArrayListNationalTeamAux, pConfederationRegister);
+      |                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Controller.c: In function 'controllerLoadPlayersByConfederationFromBinary':
+..\Controller.c:941:1: warning: control reaches end of non-void function [-Wreturn-type]
+  941 | }
+      | ^
+14:30:18 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
+..\Controller.c: In function 'controllerLoadPlayersByConfederationFromBinary':
+..\Controller.c:928:9: error: 'returnControllerGetPlayersByConfederation' undeclared (first use in this function)
+  928 |         returnControllerGetPlayersByConfederation = pArrayListPlayerAuxNew;
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Controller.c:928:9: note: each undeclared identifier is reported only once for each function it appears in
+..\Controller.c:903:14: warning: unused variable 'pArrayListPlayerAuxNew' [-Wunused-variable]
+  903 |  LinkedList *pArrayListPlayerAuxNew;
+      |              ^~~~~~~~~~~~~~~~~~~~~~
+..\Controller.c: In function 'controllerListPLayersByConfederationFromBinaryData':
+..\Controller.c:950:27: error: incompatible types when assigning to type 'LinkedList *' {aka 'struct LinkedList *'} from type 'LinkedList' {aka 'struct LinkedList'}
+  950 |  pArrayListPlayerAuxNew = controllerLoadPlayersByConfederationFromBinary(path, pArrayListPlayerAux, pArrayListNationalTeamAux, pConfederationRegister);
+      |                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Controller.c: In function 'controllerLoadPlayersByConfederationFromBinary':
+..\Controller.c:941:1: warning: control reaches end of non-void function [-Wreturn-type]
+  941 | }
+      | ^
+14:30:36 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
+..\Controller.c: In function 'controllerListPLayersByConfederationFromBinaryData':
+..\Controller.c:950:27: error: incompatible types when assigning to type 'LinkedList *' {aka 'struct LinkedList *'} from type 'LinkedList' {aka 'struct LinkedList'}
+  950 |  pArrayListPlayerAuxNew = controllerLoadPlayersByConfederationFromBinary(path, pArrayListPlayerAux, pArrayListNationalTeamAux, pConfederationRegister);
+      |                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+14:30:56 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
+..\Controller.c: In function 'controllerLoadPlayersByConfederationFromBinary':
+..\Controller.c:940:9: warning: 'pArrayListPlayerAuxNew' is used uninitialized in this function [-Wuninitialized]
+  940 |  return *pArrayListPlayerAuxNew;
+      |         ^~~~~~~~~~~~~~~~~~~~~~~
+gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
+14:31:24 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
+gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
+Info: Nothing to build for tp3_windows
+Info: Nothing to build for tp3_windows
+14:33:04 **** Incremental Build of configuration Debug for project tp3_windows ****
 Info: Internal Builder is used for build
 gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
 gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
 Info: Nothing to build for tp3_windows
+14:34:17 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
+gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
+14:35:57 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
+..\Controller.c: In function 'controllerLoadPlayersByConfederationFromBinary':
+..\Controller.c:940:9: warning: unknown escape sequence: '\N'
+  940 |  printf("LINKED %p\N", *RETORNO);
+      |         ^~~~~~~~~~~~~
+..\Controller.c:940:18: warning: format '%p' expects argument of type 'void *', but argument 2 has type 'LinkedList' {aka 'struct LinkedList'} [-Wformat=]
+  940 |  printf("LINKED %p\N", *RETORNO);
+      |                 ~^     ~~~~~~~~
+      |                  |     |
+      |                  |     LinkedList {aka struct LinkedList}
+      |                  void *
+gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: cannot open output file tp3_windows.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+14:36:03 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
+..\Controller.c: In function 'controllerLoadPlayersByConfederationFromBinary':
+..\Controller.c:940:9: warning: unknown escape sequence: '\N'
+  940 |  printf("LINKED %p\N", RETORNO);
+      |         ^~~~~~~~~~~~~
+gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: cannot open output file tp3_windows.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+14:36:26 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
+gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: cannot open output file tp3_windows.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+14:36:29 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
+Info: Nothing to build for tp3_windows
+14:37:16 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
+..\Controller.c: In function 'controllerLoadPlayersByConfederationFromBinary':
+..\Controller.c:940:18: warning: format '%p' expects argument of type 'void *', but argument 2 has type 'LinkedList' {aka 'struct LinkedList'} [-Wformat=]
+  940 |  printf("LINKED %p\n", *RETORNO);
+      |                 ~^     ~~~~~~~~
+      |                  |     |
+      |                  |     LinkedList {aka struct LinkedList}
+      |                  void *
+gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
+Info: Nothing to build for tp3_windows
+14:38:10 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
+..\Controller.c: In function 'controllerLoadPlayersByConfederationFromBinary':
+..\Controller.c:928:24: error: incompatible types when returning type 'LinkedList *' {aka 'struct LinkedList *'} but 'LinkedList' {aka 'struct LinkedList'} was expected
+  928 |         return RETORNO = pArrayListPlayerAuxNew;
+      |                ~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~
+14:38:15 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
+..\Controller.c: In function 'controllerLoadPlayersByConfederationFromBinary':
+..\Controller.c:928:27: error: incompatible types when assigning to type 'LinkedList' {aka 'struct LinkedList'} from type 'LinkedList *' {aka 'struct LinkedList *'}
+  928 |         return *RETORNO = pArrayListPlayerAuxNew;
+      |                           ^~~~~~~~~~~~~~~~~~~~~~
+14:38:29 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
+..\Controller.c: In function 'controllerLoadPlayersByConfederationFromBinary':
+..\Controller.c:928:27: error: incompatible types when assigning to type 'LinkedList' {aka 'struct LinkedList'} from type 'LinkedList *' {aka 'struct LinkedList *'}
+  928 |         return *RETORNO = pArrayListPlayerAuxNew;
+      |                           ^~~~~~~~~~~~~~~~~~~~~~
+14:38:34 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
+..\Controller.c: In function 'controllerLoadPlayersByConfederationFromBinary':
+..\Controller.c:928:24: error: incompatible types when returning type 'LinkedList *' {aka 'struct LinkedList *'} but 'LinkedList' {aka 'struct LinkedList'} was expected
+  928 |         return RETORNO = pArrayListPlayerAuxNew;
+      |                ~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~
+14:38:50 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
+gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
+14:39:03 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
+gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
+Info: Nothing to build for tp3_windows
+14:40:25 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
+gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
+14:41:25 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
+gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
+14:45:09 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: cannot open output file tp3_windows.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+14:45:12 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
+Info: Nothing to build for tp3_windows
+14:48:43 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
+gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
+Info: Nothing to build for tp3_windows
+14:49:28 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: cannot open output file tp3_windows.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+14:49:31 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
+Info: Nothing to build for tp3_windows
+15:08:40 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
+gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
+Info: Nothing to build for tp3_windows
+15:10:23 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
+gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
+Info: Nothing to build for tp3_windows
+15:13:30 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
+..\Controller.c: In function 'controllerLoadPlayersByConfederationFromBinary':
+..\Controller.c:937:9: error: incompatible types when returning type 'LinkedList *' {aka 'struct LinkedList *'} but 'LinkedList' {aka 'struct LinkedList'} was expected
+  937 |  return returnControllerLoadPlayersByConfederationFromBinary;
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\Controller.c:938:1: warning: control reaches end of non-void function [-Wreturn-type]
+  938 | }
+      | ^
+15:13:41 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
+gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
+15:19:15 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
+gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
+15:38:25 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o menus.o "..\\menus.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o validaciones.o "..\\validaciones.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Seleccion.o "..\\Seleccion.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Jugador.o "..\\Jugador.c" 
+gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
+Info: Nothing to build for tp3_windows
+15:38:54 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o menus.o "..\\menus.c" 
+gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
+15:39:21 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o menus.o "..\\menus.c" 
+gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
+15:39:52 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o menus.o "..\\menus.c" 
+gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
+15:40:14 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o menus.o "..\\menus.c" 
+gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
+15:43:28 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o menus.o "..\\menus.c" 
+gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: main.o: in function `main':
+C:\Users\cuerpos\OneDrive\Desktop\TPS_Laboratorio_1\tps_laboratorio_1\tp3_windows\Debug/../main.c:237: undefined reference to `showSortConfederationMenu'
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: C:\Users\cuerpos\OneDrive\Desktop\TPS_Laboratorio_1\tps_laboratorio_1\tp3_windows\Debug/../main.c:303: undefined reference to `showSortConfederationMenu'
+collect2.exe: error: ld returned 1 exit status
+15:43:32 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: main.o: in function `main':
+C:\Users\cuerpos\OneDrive\Desktop\TPS_Laboratorio_1\tps_laboratorio_1\tp3_windows\Debug/../main.c:237: undefined reference to `showSortConfederationMenu'
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: C:\Users\cuerpos\OneDrive\Desktop\TPS_Laboratorio_1\tps_laboratorio_1\tp3_windows\Debug/../main.c:303: undefined reference to `showSortConfederationMenu'
+collect2.exe: error: ld returned 1 exit status
+15:44:29 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o menus.o "..\\menus.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o validaciones.o "..\\validaciones.c" 
+gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
+17:00:40 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o parser.o "..\\parser.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o menus.o "..\\menus.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o validaciones.o "..\\validaciones.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Seleccion.o "..\\Seleccion.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Jugador.o "..\\Jugador.c" 
+gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 

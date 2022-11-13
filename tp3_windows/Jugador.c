@@ -3,11 +3,13 @@
 #include <string.h>
 #include "jugador.h"
 #include "validaciones.h"
+/// @brief	newPlayer 					CONTRSTRUCTOR DE ENTIDAD JUGADOR EN MEMORIA DINAMICA.
+///
+/// @return			 					 RETORNA PUNTERO DE ENTIDAD CREADO EN MEMORIA DINAMICA EN CASO CORRECTO. RETORNA NULL EN CASO CONTRARIO.
 sPlayer* newPlayer()
 {
 	sPlayer *newPlayer = NULL;
 	newPlayer = (sPlayer*) malloc(sizeof(sPlayer));
-
 	if (newPlayer != NULL)
 	{
 		newPlayer->id = 0;
@@ -16,18 +18,21 @@ sPlayer* newPlayer()
 		strcpy(newPlayer->position, " ");
 		strcpy(newPlayer->nationality, " ");
 		newPlayer->idNationalTeam = 0;
-
 	}
-
 	return newPlayer;
-
 }
-
+/// @brief newPlayerParameters				CONTRUCTOR DE ENTIDAD JUGADOR CON SU PARAMETROS A SETEAR.
+///
+/// @param idStr							PUNTERO STRING.
+/// @param fullNameStr						PUNTERO STRING.
+/// @param ageStr							PUNTERO STRING.
+/// @param positionStr						PUNTERO STRING.
+/// @param nationalityStr					PUNTERO STRING.
+/// @param idNationalTeamStr				PUNTERO STRING.
+/// @return									RETORNA PUNTERO DE ENTIDAD CREADO CON SUS PARAMETROS SETEADOS EN CASO CORRECTO. RETORNA NULL EN CASO CONTRARIO.
 sPlayer* newPlayerParameters(char *idStr, char *fullNameStr, char *ageStr, char *positionStr, char *nationalityStr, char *idNationalTeamStr)
 {
-
 	sPlayer *auxNewPlayer = newPlayer();
-
 	if (idStr != NULL && fullNameStr != NULL && ageStr != NULL && positionStr != NULL && nationalityStr != NULL && idNationalTeamStr != NULL && auxNewPlayer != NULL)
 	{
 		if (!(setIdPlayer(auxNewPlayer, atoi(idStr)) && setFullNamePlayer(auxNewPlayer, fullNameStr) && setAgePlayer(auxNewPlayer, atoi(ageStr)) && setPositionPlayer(auxNewPlayer, positionStr) && setNationalityPlayer(auxNewPlayer, nationalityStr) && setIdNationalTeamPlayer(auxNewPlayer, atoi(idNationalTeamStr))))
@@ -36,18 +41,20 @@ sPlayer* newPlayerParameters(char *idStr, char *fullNameStr, char *ageStr, char 
 			auxNewPlayer = NULL;
 		}
 	}
-
 	return auxNewPlayer;
-
 }
-
+/// @brief	deletePlayer					LIBERA ESPACIO EN MEMORIA DINAMICA DEL TIPO PUNTERO POR PARAMETRO EN CASO DE SER NECESARIO.
+///
+/// @param this								PUNTERO DE TIPO ESTRUCTURA JUGADOR.
 void deletePlayer(sPlayer *this)
 {
-
 	free(this);
-
 }
-
+/// @brief setIdPlayer						SETEA ID DE JUGADOR.
+///
+/// @param this								PUNTERO DE TIPO ESTRUCTURA JUGADOR.
+/// @param id								ENTERO.
+/// @return									RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
 int setIdPlayer(sPlayer *this, int id)
 {
 
@@ -61,7 +68,11 @@ int setIdPlayer(sPlayer *this, int id)
 
 	return returnSetIdPlayer;
 }
-
+/// @brief	getIdPlayer						OBTIENE ID DE JUGADOR.
+///
+/// @param this								PUNTERO DE TIPO ESTRUCTURA JUGADOR.
+/// @param id								PUNTERO ENTERO.
+/// @return									RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
 int getIdPlayer(sPlayer *this, int *id)
 {
 
@@ -74,7 +85,11 @@ int getIdPlayer(sPlayer *this, int *id)
 	}
 	return returnGetIdPlayer;
 }
-
+/// @brief setFullNamePlayer				SETEA NOMBRE DE JUGADOR.
+///
+/// @param this								PUNTERO DE TIPO ESTRUCTURA JUGADOR.
+/// @param fullName							PUNTERO STRING.
+/// @return									RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
 int setFullNamePlayer(sPlayer *this, char *fullName)
 {
 
@@ -88,7 +103,11 @@ int setFullNamePlayer(sPlayer *this, char *fullName)
 
 	return returnSetName;
 }
-
+/// @brief getFullNamePlayer				OBTIENE NOMBRE DE JUGADOR.
+///
+/// @param this								PUNTERO DE TIPO ESTRUCTURA JUGADOR.
+/// @param fullName							PUNTERO STRING.
+/// @return									RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
 int getFullNamePlayer(sPlayer *this, char *fullName)
 {
 
@@ -101,7 +120,11 @@ int getFullNamePlayer(sPlayer *this, char *fullName)
 	}
 	return returnGetName;
 }
-
+/// @brief setAgePlayer						SETEA EDAD DE JUGADOR.
+///
+/// @param this								PUNTERO DE TIPO ESTRUCTURA JUGADOR.
+/// @param age								ENTERO
+/// @return									RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
 int setAgePlayer(sPlayer *this, int age)
 {
 	int returnSetAgePlayer = ERROR;
@@ -114,7 +137,11 @@ int setAgePlayer(sPlayer *this, int age)
 
 	return returnSetAgePlayer;
 }
-
+/// @brief getAgePlayer						OBTIENE EDAD DE JUGADOR.
+///
+/// @param this								PUNTERO DE TIPO ESTRUCTURA JUGADOR.
+/// @param age								PUNTERO ENTERO.
+/// @return									RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
 int getAgePlayer(sPlayer *this, int *age)
 {
 	int returnGetAgePlayer = ERROR;
@@ -126,49 +153,65 @@ int getAgePlayer(sPlayer *this, int *age)
 	}
 	return returnGetAgePlayer;
 }
-
+/// @brief setPositionPlayer 				SETEA POSICION DE JUGADOR.
+///
+/// @param this								PUNTERO DE TIPO ESTRUCTURA JUGADOR.
+/// @param position							PUNTERO STRING.
+/// @return									RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
 int setPositionPlayer(sPlayer *this, char *position)
 {
 
-	int returnSetPostion = ERROR;
+	int returnSetPostionPlayer = ERROR;
 
 	if (this != NULL && position != NULL)
 	{
 		strcpy(this->position, position);
-		returnSetPostion = SUCCESS;
+		returnSetPostionPlayer = SUCCESS;
 	}
 
-	return returnSetPostion;
+	return returnSetPostionPlayer;
 }
-
+/// @brief getPositionPlayer				OBTIENE POSICION DE JUGADOR.
+///
+/// @param this								PUNTERO DE TIPO ESTRUCTURA JUGADOR.
+/// @param position							PUNTERO STRING.
+/// @return									RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
 int getPositionPlayer(sPlayer *this, char *position)
 {
 
-	int returnGetPostion = ERROR;
+	int returnGetPostionPlayer = ERROR;
 
 	if (this != NULL && position != NULL)
 	{
 		strcpy(position, this->position);
-		returnGetPostion = SUCCESS;
+		returnGetPostionPlayer = SUCCESS;
 	}
 
-	return returnGetPostion;
+	return returnGetPostionPlayer;
 }
-
+/// @brief setNationalityPlayer					SETEA NACIONALIDAD DE JUGADOR.
+///
+/// @param this									PUNTERO DE TIPO ESTRUCTURA JUGADOR.
+/// @param nationality							PUNTERO STRING.
+/// @return										RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
 int setNationalityPlayer(sPlayer *this, char *nationality)
 {
 
-	int returnSetPostion = ERROR;
+	int returnSetNationalityPlayer = ERROR;
 
 	if (this != NULL && nationality != NULL)
 	{
 		strcpy(this->nationality, nationality);
-		returnSetPostion = SUCCESS;
+		returnSetNationalityPlayer = SUCCESS;
 	}
 
-	return returnSetPostion;
+	return returnSetNationalityPlayer;
 }
-
+/// @brief	getNationalityPlayer					OBTIENE NACIONALIDAD DE JUGADOR.
+///
+/// @param this										PUNTERO DE TIPO ESTRUCTURA JUGADOR.
+/// @param nationality								PUNTERO STRING.
+/// @return											RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
 int getNationalityPlayer(sPlayer *this, char *nationality)
 {
 
@@ -182,20 +225,28 @@ int getNationalityPlayer(sPlayer *this, char *nationality)
 
 	return returnGetNationalityPlayer;
 }
-
+/// @brief	setIdNationalTeamPlayer						SETEA ID SELECCION DE JUGADOR.
+///
+/// @param this											PUNTERO DE TIPO ESTRUCTURA JUGADOR.
+/// @param idNationalTeam								ENTERO
+/// @return												RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
 int setIdNationalTeamPlayer(sPlayer *this, int idNationalTeam)
 {
-	int returnSetShirtNumber = ERROR;
+	int returnSetIdNationalTeamPlayer = ERROR;
 
 	if (this != NULL && idNationalTeam >= 0)
 	{
 		this->idNationalTeam = idNationalTeam;
-		returnSetShirtNumber = SUCCESS;
+		returnSetIdNationalTeamPlayer = SUCCESS;
 	}
 
-	return returnSetShirtNumber;
+	return returnSetIdNationalTeamPlayer;
 }
-
+/// @brief getIdNationalTeamPLayer						OBTIENE ID SELECCION DE JUGADOR.
+///
+/// @param this											PUNTERO DE TIPO ESTRUCTURA JUGADOR.
+/// @param idNationalTeam								PUNTERO ENTERO.
+/// @return												RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
 int getIdNationalTeamPLayer(sPlayer *this, int *idNationalTeam)
 {
 	int returnGetIdNationalTeamPLayer = ERROR;
@@ -208,7 +259,10 @@ int getIdNationalTeamPLayer(sPlayer *this, int *idNationalTeam)
 
 	return returnGetIdNationalTeamPLayer;
 }
-
+/// @brief	listOnePlayer								LISTA UN JUGADOR.
+///
+/// @param this											PUNTERO DE TIPO ESTRUCTURA JUGADOR.
+/// @return												RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
 int listOnePlayer(sPlayer *this)
 {
 	int returncontrollerListOnePlayer = ERROR;
@@ -228,7 +282,10 @@ int listOnePlayer(sPlayer *this)
 	}
 	return returncontrollerListOnePlayer;
 }
-
+/// @brief editFullNamePlayer						EDICION DE NOMBRE DE JUGADOR.
+///
+/// @param this										PUNTERO DE TIPO ESTRUCTURA JUGADOR.
+/// @return											RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
 int editFullNamePlayer(sPlayer *this)
 {
 	int returnModifyFullNamePlayer;
@@ -249,7 +306,10 @@ int editFullNamePlayer(sPlayer *this)
 	}
 	return returnModifyFullNamePlayer;
 }
-
+/// @brief editAgePlayer						EDICION DE EDAD DE JUGADOR.
+///
+/// @param this									PUNTERO DE TIPO ESTRUCTURA JUGADOR.
+/// @return										RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
 int editAgePlayer(sPlayer *this)
 {
 	int returnEditAgePlayer;
@@ -270,7 +330,10 @@ int editAgePlayer(sPlayer *this)
 	}
 	return returnEditAgePlayer;
 }
-
+/// @brief editPositionPlayer				EDICION DE POSICION DE JUGADOR.
+///
+/// @param this								PUNTERO DE TIPO ESTRUCTURA JUGADOR.
+/// @return									RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
 int editPositionPlayer(sPlayer *this)
 {
 	int returnEditPositionPlayer;
@@ -291,7 +354,10 @@ int editPositionPlayer(sPlayer *this)
 	}
 	return returnEditPositionPlayer;
 }
-
+/// @brief editNationalityPlayer			EDICION DE NACIONALIDAD DE JUGADOR.
+///
+/// @param this								PUNTERO DE TIPO ESTRUCTURA JUGADOR.
+/// @return									RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
 int editNationalityPlayer(sPlayer *this)
 {
 	int returnEditNationalityPlayer;
@@ -312,7 +378,11 @@ int editNationalityPlayer(sPlayer *this)
 	}
 	return returnEditNationalityPlayer;
 }
-
+/// @brief comparePlayersByNationality			COMPARA JUGADORES POR NACIONALIDAD.
+///
+/// @param pPlayerOne							PUNTERO TIPO VOID.
+/// @param pPlayerTwo							PUNTERO TIPO VOID.
+/// @return										RETORNO COMPARACION DE STRCIMP.
 int comparePlayersByNationality(void *pPlayerOne, void *pPlayerTwo)
 {
 	int returnComparePlayersByNationality;
@@ -328,13 +398,18 @@ int comparePlayersByNationality(void *pPlayerOne, void *pPlayerTwo)
 	}
 	return returnComparePlayersByNationality;
 }
-
-int comparePlayersByAge(void *pPlayerOne, void *pPlayerTwo)
+/// @brief comparePlayersByAgeAndName			COMPARA JUGADORES POR EDAD Y NOMBRES.
+///
+/// @param pPlayerOne							PUNTERO TIPO VOID.
+/// @param pPlayerTwo							PUNTERO TIPO VOID.
+/// @return										RETORNA COMPARACION DE EDAD Y  DE  STRCIMP EN CASO DE IGUALDAD DE EDAD.
+int comparePlayersByAgeAndName(void *pPlayerOne, void *pPlayerTwo)
 {
 	int returncomparePlayersByAge = 0;
 	int agePlayerOne;
 	int agePlayerTwo;
-
+	char fullNamePlayerOne[30];
+	char fullNamePlayerTwo[30];
 	if (pPlayerOne != NULL && pPlayerTwo != NULL)
 	{
 		getAgePlayer(pPlayerOne, &agePlayerOne);
@@ -344,18 +419,24 @@ int comparePlayersByAge(void *pPlayerOne, void *pPlayerTwo)
 		{
 			returncomparePlayersByAge = 1;
 		}
-		else
+		else if (agePlayerOne < agePlayerTwo)
 		{
-			if (agePlayerOne < agePlayerTwo)
-			{
-				returncomparePlayersByAge = -1;
-			}
-
+			returncomparePlayersByAge = -1;
+		}
+		else if (agePlayerOne == agePlayerTwo)
+		{
+			getFullNamePlayer(pPlayerOne, fullNamePlayerOne);
+			getFullNamePlayer(pPlayerTwo, fullNamePlayerTwo);
+			returncomparePlayersByAge = stricmp(fullNamePlayerOne, fullNamePlayerTwo);
 		}
 	}
 	return returncomparePlayersByAge;
 }
-
+/// @brief comparePlayersByName			COMPARA JUGADORES POR NOMBRE.
+///
+/// @param pPlayerOne					PUNTERO TIPO VOID.
+/// @param pPlayerTwo					PUNTERO TIPO VOID.
+/// @return								RETONAR COMPARACION DE STRICMP
 int comparePlayersByName(void *pPlayerOne, void *pPlayerTwo)
 {
 	int returncomparePlayersByName = ERROR;
@@ -368,10 +449,10 @@ int comparePlayersByName(void *pPlayerOne, void *pPlayerTwo)
 		getFullNamePlayer(pPlayerTwo, fullNamePlayerTwo);
 		returncomparePlayersByName = stricmp(fullNamePlayerOne, fullNamePlayerTwo);
 	}
-
 	return returncomparePlayersByName;
 }
-
+/// @brief showPlayerData  MUESTRA DATOS DE JUGADOR.
+///
 void showPlayerData()
 {
 
@@ -380,13 +461,16 @@ void showPlayerData()
 	printf("\t\t\t\t\t\t========================================================================================================\n");
 
 }
-
+/// @brief showPlayerDataNationalTeam		MUESTRA DATOS DE JUGADOR CON SELECCION.
+///
 void showPlayerDataNationalTeam()
 {
 	printf("\t\t\t\t\t\t=================================================================================================================================\n");
 	printf("\t\t\t\t\t\t|  ID |               NOMBRE               | EDAD |        POSICION          |   NACIONALIDAD          |   SELECCION            |\n");
 	printf("\t\t\t\t\t\t=================================================================================================================================\n");
 }
+/// @brief showLine
+///
 void showLine()
 {
 	printf("\t\t\t\t\t\t========================================================================================================\n");

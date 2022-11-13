@@ -7,28 +7,31 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "menus.h"
-
+/// @brief showMainMenu       MENU PRINCIPAL FIFA
+///
 void showMainMenu()
 {
 
 	printf("\t\t\t\t\t\t\t==========================MENU-PRINCIPAL-FIFA============================"
 					"\n\t\t\t\t\t\t\t|\t\t\t\t\t\t\t\t\t|"
-					"\n\t\t\t\t\t\t\t|\t\t\t 1. CARGA DE ARCHIVOS.\t\t\t\t|"
-					"\n\t\t\t\t\t\t\t|\t\t\t 2. ALTA DE JUGADOR.\t\t\t\t|"
-					"\n\t\t\t\t\t\t\t|\t\t\t 3. MODIFICACION DE JUGADOR.\t\t\t|"
-					"\n\t\t\t\t\t\t\t|\t\t\t 4. BAJA DE JUGADOR.\t\t\t\t|"
-					"\n\t\t\t\t\t\t\t|\t\t\t 5. LISTADOS.\t\t\t\t\t|"
-					"\n\t\t\t\t\t\t\t|\t\t\t 6. CONVOCAR JUGADORES.\t\t\t\t|"
-					"\n\t\t\t\t\t\t\t|\t\t\t 7. ORDENAR Y LISTAR.\t\t\t\t|"
-					"\n\t\t\t\t\t\t\t|\t\t\t 8. GENERAR ARCHIVO BINARIO,\t\t\t|"
-					"\n\t\t\t\t\t\t\t|\t\t\t    POR CONFEDERACION ELEGIDA.\t\t\t|"
-					"\n\t\t\t\t\t\t\t|\t\t\t 9. CARGAR ARCHIVO BINARIO.\t\t\t|"
-					"\n\t\t\t\t\t\t\t|\t\t\t 10. GUARDAR ARCHIVOS .CSV.\t\t\t|"
-					"\n\t\t\t\t\t\t\t|\t\t\t 11. SALIR.\t\t\t\t\t|"
+					"\n\t\t\t\t\t\t\t|\t\t 1. CARGA DE ARCHIVOS.\t\t\t\t\t|"
+					"\n\t\t\t\t\t\t\t|\t\t 2. ALTA DE JUGADOR.\t\t\t\t\t|"
+					"\n\t\t\t\t\t\t\t|\t\t 3. MODIFICACION DE JUGADOR.\t\t\t\t|"
+					"\n\t\t\t\t\t\t\t|\t\t 4. BAJA DE JUGADOR.\t\t\t\t\t|"
+					"\n\t\t\t\t\t\t\t|\t\t 5. LISTADOS.\t\t\t\t\t\t|"
+					"\n\t\t\t\t\t\t\t|\t\t 6. CONVOCAR JUGADORES.\t\t\t\t\t|"
+					"\n\t\t\t\t\t\t\t|\t\t 7. ORDENAR Y LISTAR.\t\t\t\t\t|"
+					"\n\t\t\t\t\t\t\t|\t\t 8. GENERAR ARCHIVO BINARIO,\t\t\t\t|"
+					"\n\t\t\t\t\t\t\t|\t\t    POR CONFEDERACION ELEGIDA.\t\t\t\t|"
+					"\n\t\t\t\t\t\t\t|\t\t 9. CARGAR ARCHIVO BINARIO POR CONFEDERACION.\t\t|"
+					"\n\t\t\t\t\t\t\t|\t\t 	LISTADOS DE LOS MISMOS.\t\t\t\t|"
+					"\n\t\t\t\t\t\t\t|\t\t 10. GUARDAR ARCHIVOS .CSV.\t\t\t\t|"
+					"\n\t\t\t\t\t\t\t|\t\t 11. SALIR.\t\t\t\t\t\t|"
 					"\n\t\t\t\t\t\t\t|\t\t\t\t\t\t\t\t\t|\n"
 					"\t\t\t\t\t\t\t=========================================================================\n");
 }
-
+/// @brief showPositionMenu	    MENU POSICIONES.
+///
 void showPositionMenu()
 {
 
@@ -45,16 +48,18 @@ void showPositionMenu()
 					"11. DELANTERO CENTRAL\n");
 
 }
-
+/// @brief showNatiolatityMenu	MENU NACIONALIDADES.
+///
 void showNatiolatityMenu()
 {
-	printf("1. Saudi\n" "2. Australiano\n" "3. SurCoreano\n" "4. Irani\n" "5. Japones\n" "6. Qatari\n" "7. Camerunes\n"
-					"8. Ganhes\n" "9. Marroqui\n" "10. Senegales\n" "11. Tunecino\n" "12. Canadience\n" "13. Costarricense\n" "14. Estadounidense\n"
-					"15. Mexicano\n" "16. Argentino\n" "17. Brasilenio\n" "18. Ecuatoriano\n" "19. Uruguayo\n" "20. Aleman\n" "21. Belga\n" "22. Croata\n"
-					"23. Danes\n" "24. Espaniol\n" "25. Frances\n" "26. Gales\n" "27. Neerlandes\n" "28. Ingles\n" "29. Polaco\n" "30. Portugues\n" "31. Serbio\n" "32. Suizo\n");
+	printf("1. SAUDI\n" "2. AUSTRALIANO\n" "3. SURCOREANO\n" "4. IRANI\n" "5. JAPONES\n" "6. QATARI\n" "7. CAMERUNES\n"
+					"8. GANHES\n" "9. MARROQUI\n" "10. SENEGALES\n" "11. TUNECINO\n" "12. CANADIENCE\n" "13. COSTARRICENSE\n" "14. ESTADOUNIDENSE\n"
+					"15. MEXICANO\n" "16. ARGENTINO\n" "17. BRASILENIO\n" "18. ECUATORIANO\n" "19. URUGUAYO\n" "20. ALEMAN\n" "21. BELGA\n" "22. CROATA\n"
+					"23. DANES\n" "24. ESPANIOL\n" "25. FRANCES\n" "26. GALES\n" "27. NEERLANDES\n" "28. INGLES\n" "29. POLACO\n" "30. PORTUGES\n" "31. SERBIO\n" "32. SUIZO\n");
 
 }
-
+/// @brief showEditPlayerMenu  MENU EDICION DE JUGADOR.
+///
 void showEditPlayerMenu()
 {
 
@@ -69,7 +74,8 @@ void showEditPlayerMenu()
 		   "\t\t\t\t\t\t\t=========================================================================\n");
 
 }
-
+/// @brief showListMenuPlayers	MENU LISTAS.
+///
 void showListMenuPlayers()
 {
 
@@ -83,7 +89,8 @@ void showListMenuPlayers()
 					"\t\t\t\t\t\t\t=========================================================================\n");
 
 }
-
+/// @brief showCallPlayersMenu	MENU CONVOCAR JUGADORES.
+///
 void showCallPlayersMenu()
 {
 
@@ -96,7 +103,8 @@ void showCallPlayersMenu()
 					"\t\t\t\t\t\t\t=========================================================================\n");
 
 }
-
+/// @brief showSortMenu	 MENU ORDENAR Y LISTAR.
+///
 void showSortMenu()
 {
 
@@ -109,23 +117,24 @@ void showSortMenu()
 		   "\t\t\t\t\t\t\t=========================================================================\n");
 
 }
-
-
+/// @brief showSortPlayerMenu  MENU ORDENAR Y LISTAR JUGADORES.
+///
 void showSortPlayerMenu()
 {
 
 	printf("\t\t\t\t\t\t\t=========================MENU-ORDENAR-LISTAR-JUGADORES==================="
 					"\n\t\t\t\t\t\t\t|\t\t\t\t\t\t\t\t\t|"
 					"\n\t\t\t\t\t\t\t|\t\t\t 1. JUGADORES POR NACIONALIDAD.\t\t\t|"
-					"\n\t\t\t\t\t\t\t|\t\t\t 2. JUGADORES POR EDAD.\t\t\t\t|"
+					"\n\t\t\t\t\t\t\t|\t\t\t 2. JUGADORES POR EDAD Y NOMBRE.\t\t|"
 					"\n\t\t\t\t\t\t\t|\t\t\t 3. JUGADORES POR NOMBRE.\t\t\t|"
 					"\n\t\t\t\t\t\t\t|\t\t\t 4. SALIR.\t\t\t\t\t|"
 					"\n\t\t\t\t\t\t\t|\t\t\t\t\t\t\t\t\t|\n"
 		   "\t\t\t\t\t\t\t=========================================================================\n");
 
 }
-
-void showSortConfederationMenu()
+/// @brief showConfederationMenu  MENU CONFEDERACIONES
+///
+void showConfederationMenu()
 {
 
 	printf("\t\t\t\t\t\t\t==============================CONFEDERACIONES============================"

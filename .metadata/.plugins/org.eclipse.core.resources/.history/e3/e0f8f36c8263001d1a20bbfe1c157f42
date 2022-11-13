@@ -1,0 +1,150 @@
+/*
+ * menus.c
+ *
+ *  Created on: 4 nov. 2022
+ *      Author: cuerpos
+ */
+#include <stdio.h>
+#include <stdlib.h>
+#include "menus.h"
+/// @brief
+///
+void showMainMenu()
+{
+
+	printf("\t\t\t\t\t\t\t==========================MENU-PRINCIPAL-FIFA============================"
+					"\n\t\t\t\t\t\t\t|\t\t\t\t\t\t\t\t\t|"
+					"\n\t\t\t\t\t\t\t|\t\t\t 1. CARGA DE ARCHIVOS.\t\t\t\t|"
+					"\n\t\t\t\t\t\t\t|\t\t\t 2. ALTA DE JUGADOR.\t\t\t\t|"
+					"\n\t\t\t\t\t\t\t|\t\t\t 3. MODIFICACION DE JUGADOR.\t\t\t|"
+					"\n\t\t\t\t\t\t\t|\t\t\t 4. BAJA DE JUGADOR.\t\t\t\t|"
+					"\n\t\t\t\t\t\t\t|\t\t\t 5. LISTADOS.\t\t\t\t\t|"
+					"\n\t\t\t\t\t\t\t|\t\t\t 6. CONVOCAR JUGADORES.\t\t\t\t|"
+					"\n\t\t\t\t\t\t\t|\t\t\t 7. ORDENAR Y LISTAR.\t\t\t\t|"
+					"\n\t\t\t\t\t\t\t|\t\t\t 8. GENERAR ARCHIVO BINARIO,\t\t\t|"
+					"\n\t\t\t\t\t\t\t|\t\t\t    POR CONFEDERACION ELEGIDA.\t\t\t|"
+					"\n\t\t\t\t\t\t\t|\t\t\t 9. CARGAR ARCHIVO BINARIO DE CONFEDERACION.\t\t\t|"
+					"\n\t\t\t\t\t\t\t|\t\t\t 	LISTADOS DE LOS MISMOS.\t\t\t|"
+					"\n\t\t\t\t\t\t\t|\t\t\t 10. GUARDAR ARCHIVOS .CSV.\t\t\t|"
+					"\n\t\t\t\t\t\t\t|\t\t\t 11. SALIR.\t\t\t\t\t|"
+					"\n\t\t\t\t\t\t\t|\t\t\t\t\t\t\t\t\t|\n"
+					"\t\t\t\t\t\t\t=========================================================================\n");
+}
+/// @brief
+///
+void showPositionMenu()
+{
+
+	printf("1. PORTERO\n"
+					"2. DEFENSOR CENTRAL\n"
+					"3. LATERAL IZQUIERDO\n"
+					"4. LATERAL DERECHO\n"
+					"5. PIVOTE\n"
+					"6. MEDIOCENTRO\n"
+					"7. MEDIOCENTRO OFENSIVO\n"
+					"8. EXTREMO IZQUIERDO\n"
+					"9. EXTREMO DERECHO\n"
+					"10. MEDIAPUNTA\n"
+					"11. DELANTERO CENTRAL\n");
+
+}
+/// @brief
+///
+void showNatiolatityMenu()
+{
+	printf("1. SAUDI\n" "2. AUSTRALIANO\n" "3. SURCOREANO\n" "4. IRANI\n" "5. JAPONES\n" "6. QATARI\n" "7. CAMERUNES\n"
+					"8. GANHES\n" "9. MARROQUI\n" "10. SENEGALES\n" "11. TUNECINO\n" "12. CANADIENCE\n" "13. COSTARRICENSE\n" "14. ESTADOUNIDENSE\n"
+					"15. MEXICANO\n" "16. ARGENTINO\n" "17. BRASILENIO\n" "18. ECUATORIANO\n" "19. URUGUAYO\n" "20. ALEMAN\n" "21. BELGA\n" "22. CROATA\n"
+					"23. DANES\n" "24. ESPANIOL\n" "25. FRANCES\n" "26. GALES\n" "27. NEERLANDES\n" "28. INGLES\n" "29. POLACO\n" "30. PORTUGES\n" "31. SERBIO\n" "32. SUIZO\n");
+
+}
+/// @brief
+///
+void showEditPlayerMenu()
+{
+
+	printf("\t\t\t\t\t\t\t=========================MENU-EDITAR-JUGADOR=============================="
+					"\n\t\t\t\t\t\t\t|\t\t\t\t\t\t\t\t\t|"
+					"\n\t\t\t\t\t\t\t|\t\t\t 1. NOMBRE:\t\t\t\t\t|"
+					"\n\t\t\t\t\t\t\t|\t\t\t 2. EDAD:\t\t\t\t\t|"
+					"\n\t\t\t\t\t\t\t|\t\t\t 3. POSICION:\t\t\t\t\t|"
+					"\n\t\t\t\t\t\t\t|\t\t\t 4. NACIONALIDAD:\t\t\t\t|"
+					"\n\t\t\t\t\t\t\t|\t\t\t 5. SALIR.\t\t\t\t\t|"
+					"\n\t\t\t\t\t\t\t|\t\t\t\t\t\t\t\t\t|\n"
+		   "\t\t\t\t\t\t\t=========================================================================\n");
+
+}
+/// @brief
+///
+void showListMenuPlayers()
+{
+
+	printf("\t\t\t\t\t\t\t=============================MENU-LISTAR================================="
+					"\n\t\t\t\t\t\t\t|\t\t\t\t\t\t\t\t\t|"
+					"\n\t\t\t\t\t\t\t|\t\t\t 1. TODOS LOS JUGADORES:\t\t\t|"
+					"\n\t\t\t\t\t\t\t|\t\t\t 2. TODAS LAS SELECCIONES:\t\t\t|"
+					"\n\t\t\t\t\t\t\t|\t\t\t 3. JUGADORES CONVOCADOS:\t\t\t|"
+					"\n\t\t\t\t\t\t\t|\t\t\t 4. SALIR.\t\t\t\t\t|"
+					"\n\t\t\t\t\t\t\t|\t\t\t\t\t\t\t\t\t|\n"
+					"\t\t\t\t\t\t\t=========================================================================\n");
+
+}
+/// @brief
+///
+void showCallPlayersMenu()
+{
+
+	printf("\t\t\t\t\t\t\t=======================MENU-CONVOCATORIA-JUGADORES======================="
+					"\n\t\t\t\t\t\t\t|\t\t\t\t\t\t\t\t\t|"
+					"\n\t\t\t\t\t\t\t|\t\t\t 1. CONVOCAR.\t\t\t\t\t|"
+					"\n\t\t\t\t\t\t\t|\t\t\t 2. QUITAR DE SELECCION.\t\t\t|"
+					"\n\t\t\t\t\t\t\t|\t\t\t 3. SALIR.\t\t\t\t\t|"
+					"\n\t\t\t\t\t\t\t|\t\t\t\t\t\t\t\t\t|\n"
+					"\t\t\t\t\t\t\t=========================================================================\n");
+
+}
+/// @brief
+///
+void showSortMenu()
+{
+
+	printf("\t\t\t\t\t\t\t============================MENU-ORDENAR-LISTAR=========================="
+					"\n\t\t\t\t\t\t\t|\t\t\t\t\t\t\t\t\t|"
+					"\n\t\t\t\t\t\t\t|\t\t\t 1. JUGADORES.\t\t\t\t\t|"
+					"\n\t\t\t\t\t\t\t|\t\t\t 2. SELECCIONES POR CONFEDERACION.\t\t|"
+					"\n\t\t\t\t\t\t\t|\t\t\t 3. SALIR.\t\t\t\t\t|"
+					"\n\t\t\t\t\t\t\t|\t\t\t\t\t\t\t\t\t|\n"
+		   "\t\t\t\t\t\t\t=========================================================================\n");
+
+}
+/// @brief
+///
+void showSortPlayerMenu()
+{
+
+	printf("\t\t\t\t\t\t\t=========================MENU-ORDENAR-LISTAR-JUGADORES==================="
+					"\n\t\t\t\t\t\t\t|\t\t\t\t\t\t\t\t\t|"
+					"\n\t\t\t\t\t\t\t|\t\t\t 1. JUGADORES POR NACIONALIDAD.\t\t\t|"
+					"\n\t\t\t\t\t\t\t|\t\t\t 2. JUGADORES POR EDAD Y NOMBRE.\t\t|"
+					"\n\t\t\t\t\t\t\t|\t\t\t 3. JUGADORES POR NOMBRE.\t\t\t|"
+					"\n\t\t\t\t\t\t\t|\t\t\t 4. SALIR.\t\t\t\t\t|"
+					"\n\t\t\t\t\t\t\t|\t\t\t\t\t\t\t\t\t|\n"
+		   "\t\t\t\t\t\t\t=========================================================================\n");
+
+}
+/// @brief
+///
+void showSortConfederationMenu()
+{
+
+	printf("\t\t\t\t\t\t\t==============================CONFEDERACIONES============================"
+					"\n\t\t\t\t\t\t\t|\t\t\t\t\t\t\t\t\t|"
+					"\n\t\t\t\t\t\t\t|\t\t\t\t 1. AFC.\t\t\t\t|"
+					"\n\t\t\t\t\t\t\t|\t\t\t\t 2. CAF.\t\t\t\t|"
+					"\n\t\t\t\t\t\t\t|\t\t\t\t 3. CONCACAF.\t\t\t\t|\t\t"
+					"\n\t\t\t\t\t\t\t|\t\t\t\t 4. CONMEBOL.\t\t\t\t|"
+					"\n\t\t\t\t\t\t\t|\t\t\t\t 5. UEFA.\t\t\t\t|"
+					"\n\t\t\t\t\t\t\t|\t\t\t\t\t\t\t\t\t|\n"
+		   "\t\t\t\t\t\t\t=========================================================================\n");
+
+}

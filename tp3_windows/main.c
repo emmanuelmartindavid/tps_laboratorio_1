@@ -11,18 +11,15 @@ int main()
 {
 	setbuf(stdout, NULL);
 	int option = 0;
-	//int flagLoadPlayerFromTextAndBinary = 0;
 	int returnRemovePlayer;
 	int returnCallUpPlayers;
 	int returnEditPlayer;
+	char save[3];
 	char exit[3];
-
 	LinkedList *listPLayers = ll_newLinkedList();
 	LinkedList *listNationalTeam = ll_newLinkedList();
-//	LinkedList *ListPlayersByConfederationCAF = ll_newLinkedList();
 	do
 	{
-
 		showMainMenu();
 		if (utn_getNumber(&option, "Ingrese opcion.\n", "Error. Reintente.\n", 1, 11, 3) == 0)
 		{
@@ -77,7 +74,7 @@ int main()
 					{
 						printf("ERROR. REINTENTE\n");
 					}
-					else if (returnEditPlayer == 3)
+					else if (returnEditPlayer == NOEDIT)
 					{
 						printf("No realizo modificaciones.\n");
 					}
@@ -100,9 +97,13 @@ int main()
 					{
 						printf("ERROR. REINTENTE\n");
 					}
-					else
+					else if (returnRemovePlayer == REMOVECANCEL)
 					{
 						printf("BAJA CANCELADA.\n");
+					}
+					else
+					{
+						printf("NO EXISTE JUGADOR. REINTENTE.\n");
 					}
 				}
 				else
@@ -121,13 +122,13 @@ int main()
 							switch (option)
 							{
 							case 1:
-								controllerListPlayersNationalTeam(listPLayers, listNationalTeam, 2);
+								controllerListPlayersNationalTeam(listPLayers, listNationalTeam, CALLOFF);
 								break;
 							case 2:
 								controllerListNationalTeams(listNationalTeam);
 								break;
 							case 3:
-								controllerListPlayersNationalTeam(listPLayers, listNationalTeam, 1);
+								controllerListPlayersNationalTeam(listPLayers, listNationalTeam, CALLUP);
 								break;
 							}
 						}
@@ -174,15 +175,22 @@ int main()
 								}
 								break;
 							case 2:
-								if (controllerCallOffPlayers(listPLayers, listNationalTeam) == SUCCESS)
+								if (returnCallUpPlayers == SUCCESS)
 								{
-									printf("Jugador quitado de seleccion exitosamente.\n");
+									if (controllerCallOffPlayers(listPLayers, listNationalTeam) == SUCCESS)
+									{
+										printf("Jugador quitado de seleccion exitosamente.\n");
+									}
+									else
+									{
+										printf("Error. No existe id de jugador.\n");
+									}
+									break;
 								}
 								else
 								{
-									printf("Error. No existe id de jugador.\n");
+									printf("Aun no ha convocado jugadores.\n");
 								}
-								break;
 							}
 						}
 						else
@@ -226,7 +234,7 @@ int main()
 			case 8:
 				if (ll_isEmpty(listPLayers) == 0 && ll_isEmpty(listNationalTeam) == 0)
 				{
-					showSortConfederationMenu();
+					showConfederationMenu();
 					if (utn_getNumber(&option, "Ingrese opcion.\n", "Error. Reintente.\n", 1, 5, 3) == 0)
 					{
 						switch (option)
@@ -292,25 +300,26 @@ int main()
 			case 9:
 				if (ll_isEmpty(listPLayers) == 0 && ll_isEmpty(listNationalTeam) == 0)
 				{
-					showSortConfederationMenu();
+					showConfederationMenu();
 					if (utn_getNumber(&option, "Ingrese opcion.\n", "Error. Reintente.\n", 1, 5, 3) == 0)
 					{
 						switch (option)
 						{
 						case 1:
-							if (controllerLoadPlayersByConfederationFromBinary("AFC.bin", listPLayers, listNationalTeam, "AFC") == SUCCESS)
+							if (controllerListPLayersByConfederationFromBinaryData("AFC.bin", listPLayers, listNationalTeam, "AFC") == SUCCESS)
 							{
-								printf("\t\t\t\t\t\t\tLISTA CONVOCADOS DESDE BINARIO.\n");
+								printf("\t\t\t\t\t\t\t\t\t\tLISTA CONVOCADOS DESDE BINARIO.\n");
 							}
+
 							else
 							{
 								printf("Error. No se pudo cargar archivo binario. No exiten jugadores en esta confederacion.\n");
 							}
 							break;
 						case 2:
-							if (controllerLoadPlayersByConfederationFromBinary("CAF.bin", listPLayers, listNationalTeam, "CAF") == SUCCESS)
+							if (controllerListPLayersByConfederationFromBinaryData("CAF.bin", listPLayers, listNationalTeam, "CAF") == SUCCESS)
 							{
-								printf("\t\t\t\t\t\t\tLISTA CONVOCADOS DESDE BINARIO.\n");
+								printf("\t\t\t\t\t\t\t\t\t\tLISTA CONVOCADOS DESDE BINARIO.\n");
 							}
 							else
 							{
@@ -318,9 +327,9 @@ int main()
 							}
 							break;
 						case 3:
-							if (controllerLoadPlayersByConfederationFromBinary("CONCACAF.bin", listPLayers, listNationalTeam, "CONCACAF") == SUCCESS)
+							if (controllerListPLayersByConfederationFromBinaryData("CONCACAF.bin", listPLayers, listNationalTeam, "CONCACAF") == SUCCESS)
 							{
-								printf("\t\t\t\t\t\t\tLISTA CONVOCADOS DESDE BINARIO.\n");
+								printf("\t\t\t\t\t\t\t\t\t\tLISTA CONVOCADOS DESDE BINARIO.\n");
 							}
 							else
 							{
@@ -328,9 +337,9 @@ int main()
 							}
 							break;
 						case 4:
-							if (controllerLoadPlayersByConfederationFromBinary("CONMEBOL.bin", listPLayers, listNationalTeam, "CONMEBOL") == SUCCESS)
+							if (controllerListPLayersByConfederationFromBinaryData("CONMEBOL.bin", listPLayers, listNationalTeam, "CONMEBOL") == SUCCESS)
 							{
-								printf("\t\t\t\t\t\t\tLISTA CONVOCADOS DESDE BINARIO.\n");
+								printf("\t\t\t\t\t\t\t\t\t\tLISTA CONVOCADOS DESDE BINARIO.\n");
 							}
 							else
 							{
@@ -338,9 +347,9 @@ int main()
 							}
 							break;
 						case 5:
-							if (controllerLoadPlayersByConfederationFromBinary("UEFA.bin", listPLayers, listNationalTeam, "UEFA") == SUCCESS)
+							if (controllerListPLayersByConfederationFromBinaryData("UEFA.bin", listPLayers, listNationalTeam, "UEFA") == SUCCESS)
 							{
-								printf("\t\t\t\t\t\t\tLISTA CONVOCADOS DESDE BINARIO.\n");
+								printf("\t\t\t\t\t\t\t\t\t\tLISTA CONVOCADOS DESDE BINARIO.\n");
 							}
 							else
 							{
@@ -358,13 +367,23 @@ int main()
 			case 10:
 				if (ll_isEmpty(listPLayers) == 0 && ll_isEmpty(listNationalTeam) == 0)
 				{
-					if (controllerSaveIdplayerTextMode("IdJugadoresAutoincremental.csv") == SUCCESS && controllerSavePlayersTextMode("jugadores.csv", listPLayers) == SUCCESS && controllerSaveNationalTeamTextMode("selecciones.csv", listNationalTeam) == SUCCESS)
+					if (utn_getDescriptionExit(save, "Seguro desea guardar los cambios?.\n"
+									"Ingrese si para guardar.\n"
+									"Ingrese no para continuar en el menu.\n", "Error. Solo si o no.\n", 3) == 0)
 					{
-						printf("Archivo de texto guardado correctamente.\n");
+						if (controllerSaveIdplayerTextMode("IdJugadoresAutoincremental.csv") == SUCCESS && controllerSavePlayersTextMode("jugadores.csv", listPLayers) == SUCCESS && controllerSaveNationalTeamTextMode("selecciones.csv", listNationalTeam) == SUCCESS)
+						{
+
+							printf("Archivo de texto guardado correctamente.\n");
+						}
+						else
+						{
+							printf("Error al guardar el archivo.\n");
+						}
 					}
 					else
 					{
-						printf("Error al guardar el archivo.\n");
+						printf("DATOS INVALIDOS. REINTENTE\n");
 					}
 				}
 				else
@@ -373,7 +392,8 @@ int main()
 				}
 				break;
 			case 11:
-				utn_getDescriptionExit(exit, "Ingrese si para salir, no para continuar en el menu.\n", "Error. Solo si o no.\n", 3);
+				utn_getDescriptionExit(exit, "Ingrese SI para salir.\n"
+								"Ingrese NO para continuar en el menu.\n", "Error. Solo si o no.\n", 3);
 				break;
 			}
 		}
