@@ -178,13 +178,9 @@ int main()
 								{
 									printf("Maximo de convocados para seleccion alcanzado.\n");
 								}
-								else if (returnCallUpPlayers == -3)
+								else
 								{
 									printf("Jugador ya convocado por seleccion.\n");
-								}
-								else if (returnCallUpPlayers == -4)
-								{
-									printf("NO EXISTE JUGADOR.\n");
 								}
 								break;
 							case 2:

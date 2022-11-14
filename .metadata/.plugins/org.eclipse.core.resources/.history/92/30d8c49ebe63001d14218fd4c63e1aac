@@ -323,7 +323,7 @@ int main()
 						switch (option)
 						{
 						case 1:
-							if (controllerListPLayersByConfederationFromBinaryData("AFC.bin", listPLayers, listNationalTeam, "AFC") == SUCCESS)
+							if (controllerListPLayersByConfederationFromB9inaryData("AFC.bin", listPLayers, listNationalTeam, "AFC") == SUCCESS)
 							{
 								printf("\t\t\t\t\t\t\t\t\t\tLISTA CONVOCADOS DESDE BINARIO.\n");
 							}

@@ -81,6 +81,7 @@ int controllerLoadPlayerFromText(char *path, LinkedList *pArrayListPlayer)
 {
 	int returncontrollerLoadPlayerFromText = ERROR;
 	FILE *pFile = NULL;
+
 	if (path != NULL && pArrayListPlayer != NULL)
 	{
 		pFile = fopen(path, "r");
@@ -966,8 +967,7 @@ LinkedList controllerLoadPlayersByConfederationFromBinary(char *path, LinkedList
 /// @return																RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
 int controllerListPLayersByConfederationFromBinaryData(char *path, LinkedList *pArrayListPlayer, LinkedList *pArrayListNationalTeam, char *pConfederationRegister)
 {
-	int returnControllerListPLayersByConfederationFromBinaryData = ERROR;
-	int flag;
+	int returnControllerListPLayersByConfederationFromBinaryData;
 
 	if (path != NULL && pArrayListPlayer != NULL && pArrayListNationalTeam != NULL && pConfederationRegister != NULL)
 	{
@@ -979,21 +979,15 @@ int controllerListPLayersByConfederationFromBinaryData(char *path, LinkedList *p
 			*pArrayListPlayerAuxNew = controllerLoadPlayersByConfederationFromBinary(path, pArrayListPlayerAux, pArrayListNationalTeamAux, pConfederationRegister);
 			if (pArrayListPlayerAuxNew != NULL)
 			{
-				controllerValidateCallUpPlayers(pArrayListPlayerAuxNew, &flag);
-				if (flag == CALLUP)
+				if (controllerListPlayersNationalTeam(pArrayListPlayerAuxNew, pArrayListNationalTeamAux, CALLUP) == SUCCESS)
 				{
-					if (controllerListPlayersNationalTeam(pArrayListPlayerAuxNew, pArrayListNationalTeamAux, CALLUP) == SUCCESS)
-					{
-						returnControllerListPLayersByConfederationFromBinaryData = SUCCESS;
-					}
+					returnControllerListPLayersByConfederationFromBinaryData = SUCCESS;
 				}
-
 			}
 			ll_deleteLinkedList(pArrayListPlayerAux);
 			ll_deleteLinkedList(pArrayListNationalTeamAux);
 			ll_deleteLinkedList(pArrayListPlayerAuxNew);
 		}
-
 	}
 	return returnControllerListPLayersByConfederationFromBinaryData;
 }
@@ -1079,11 +1073,12 @@ int controllerGetConfederation(LinkedList *pArrayListNationalTeam, int idNationa
 	return returnControllerGetConfederation;
 }
 /// @brief controllerValidateCallUpPlayers		VERIFICA SI HAY O NO JUGADORES CONVOCADOS.
-///												UTILIZO LL_CLONE PARA NO TOCAR LOS LIKNKEDLIST ORIGINALES.
+///
 /// @param pArrayListPlayer						LINKEDLIST JUGADORES.
 /// @param pFlag								PUNTERO ENTERO.
 void controllerValidateCallUpPlayers(LinkedList *pArrayListPlayer, int *pFlag)
 {
+
 	int lenListPlayers;
 	int idNationalTeam;
 	sPlayer *pPlayer = NULL;

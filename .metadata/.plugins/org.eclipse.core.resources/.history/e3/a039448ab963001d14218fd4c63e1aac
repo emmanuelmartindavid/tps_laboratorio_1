@@ -178,13 +178,9 @@ int main()
 								{
 									printf("Maximo de convocados para seleccion alcanzado.\n");
 								}
-								else if (returnCallUpPlayers == -3)
+								else
 								{
 									printf("Jugador ya convocado por seleccion.\n");
-								}
-								else if (returnCallUpPlayers == -4)
-								{
-									printf("NO EXISTE JUGADOR.\n");
 								}
 								break;
 							case 2:
@@ -403,7 +399,7 @@ int main()
 				if (flag != 2)
 				{
 					if (utn_getDescriptionExit(exit, "VA A SALIR SIN GUARDAR CAMBIOS.\n"
-									"\t\t\t\t\t\t\tTENGA EN CUENTA. SI GENERO ARCHIVOS BINARIOS, LOS MISMOS SERAN ELIMINADOS AL CERRAR EL PROGRAMA.\n"
+									"\t\t\t\t\t\tTENGA EN CUENTA. SI GENERO ARCHIVOS BINARIOS, LOS MISMOS SERAN ELIMINADOS AL CERRAR EL PROGRAMA\n"
 									"INGRESE SI PARA SALIR SIN GUARDAR.\n"
 									"INGRESE NO PARA SEGUIR EN EL MENU.\n"
 									, "Error. Solo si o no.\n", 3) == 0)
@@ -415,7 +411,7 @@ int main()
 							remove("CONCACAF.bin");
 							remove("CONMEBOL.bin");
 							remove("UEFA.bin");
-							printf("\n\t\t\t\t\t\t\tSE HAN REMOVIDO TODOS LOS ARCHIVOS BINARIOS QUE HAYA CREADO SIN GUARDAR SUS ARCHIVOS DE TEXTO DEL PROGRAMA.\n");
+							printf("\n\t\t\t\t\t\t\tSE HAN REMOVIDO TODOS LOS ARCHIVOS BINARIOS QUE HAYA CREADO SIN GUARDAR SUS ARCHIVOS DEL PROGRAMA.\n");
 						}
 					}
 					else

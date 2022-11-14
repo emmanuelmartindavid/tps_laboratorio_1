@@ -182,7 +182,7 @@ int main()
 								{
 									printf("Jugador ya convocado por seleccion.\n");
 								}
-								else if (returnCallUpPlayers == -4)
+								else
 								{
 									printf("NO EXISTE JUGADOR.\n");
 								}
