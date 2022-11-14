@@ -278,7 +278,7 @@ int listOnePlayer(sPlayer *this)
 	{
 		if (getIdPlayer(this, &auxId) == SUCCESS && getFullNamePlayer(this, auxFullName) == SUCCESS && getAgePlayer(this, &auxAge) == SUCCESS && getPositionPlayer(this, auxPosition) == SUCCESS && getNationalityPlayer(this, auxNationality) == SUCCESS)
 		{
-			printf("\t\t\t\t\t\t|%-5d| %-35s| %-5d| %-25s| %-24s|\n", auxId, auxFullName, auxAge, auxPosition, auxNationality);
+			printf("\t\t|%-5d| %-35s| %-5d| %-25s| %-24s|\n", auxId, auxFullName, auxAge, auxPosition, auxNationality);
 			returncontrollerListOnePlayer = SUCCESS;
 		}
 	}
@@ -531,24 +531,24 @@ int comparePlayersByName(void *pPlayerOne, void *pPlayerTwo)
 void showPlayerData()
 {
 
-	printf("\t\t\t\t\t\t========================================================================================================\n");
-	printf("\t\t\t\t\t\t|  ID |               NOMBRE               | EDAD |        POSICION          |   NACIONALIDAD          |\n");
-	printf("\t\t\t\t\t\t========================================================================================================\n");
+	printf("\t\t========================================================================================================\n");
+	printf("\t\t|  ID |               NOMBRE               | EDAD |        POSICION          |   NACIONALIDAD          |\n");
+	printf("\t\t========================================================================================================\n");
 
 }
 /// @brief showPlayerDataNationalTeam		MUESTRA DATOS DE JUGADOR CON SELECCION.
 ///
 void showPlayerDataNationalTeam()
 {
-	printf("\t\t\t\t\t\t=================================================================================================================================\n");
-	printf("\t\t\t\t\t\t|  ID |               NOMBRE               | EDAD |        POSICION          |   NACIONALIDAD          |   SELECCION            |\n");
-	printf("\t\t\t\t\t\t=================================================================================================================================\n");
+	printf("\t\t\t=================================================================================================================================\n");
+	printf("\t\t\t|        SELECCION      | ID  |              NOMBRE                | EDAD |          POSICION        |      NACIONALIDAD        |\n");
+	printf("\t\t\t=================================================================================================================================\n");
 }
 /// @brief showLine
 ///
 void showLine()
 {
-	printf("\t\t\t\t\t\t========================================================================================================\n");
+	printf("\t\t========================================================================================================\n");
 
 }
 

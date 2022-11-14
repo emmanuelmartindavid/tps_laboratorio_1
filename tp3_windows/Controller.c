@@ -303,11 +303,6 @@ int controllerListPlayersNationalTeam(LinkedList *pArrayListPlayer, LinkedList *
 {
 	int returncontrollerListPlayer = ERROR;
 	int lenListPlayers;
-	int auxId;
-	char auxFullName[100];
-	int auxAge;
-	char auxPosition[30];
-	char auxNationality[30];
 	char country[30];
 	int auxIdNationalTeam;
 	sPlayer *pPlayer = NULL;
@@ -329,13 +324,17 @@ int controllerListPlayersNationalTeam(LinkedList *pArrayListPlayer, LinkedList *
 						for (int i = 0; i < lenListPlayers; i++)
 						{
 							pPlayer = (sPlayer*) ll_get(pArrayListPlayerAux, i);
-							if (pPlayer != NULL && getIdPlayer(pPlayer, &auxId) && getFullNamePlayer(pPlayer, auxFullName) && getAgePlayer(pPlayer, &auxAge) && getPositionPlayer(pPlayer, auxPosition) && getNationalityPlayer(pPlayer, auxNationality) && getIdNationalTeamPLayer(pPlayer, &auxIdNationalTeam)
-											&& controllerGetCountry(pArrayListNationalTeamAux, auxIdNationalTeam, country) && auxIdNationalTeam > 0)
+							if (pPlayer != NULL)
 							{
-								printf("\t\t\t\t\t\t|%-5d| %-35s| %-5d| %-25s| %-24s| %-23s|\n", auxId, auxFullName, auxAge, auxPosition, auxNationality, country);
+								if (getIdNationalTeamPLayer(pPlayer, &auxIdNationalTeam) == SUCCESS && controllerGetCountry(pArrayListNationalTeamAux, auxIdNationalTeam, country) && auxIdNationalTeam > 0)
+								{
+									printf("\t\t\t|%-10s", country);
+									listOnePlayer(pPlayer);
+								}
 							}
+
 						}
-						printf("\t\t\t\t\t\t=================================================================================================================================\n");
+						printf("\t\t\t================================================================================================================================\n");
 					}
 					else if (condition == CALLOFF)
 					{
@@ -343,13 +342,16 @@ int controllerListPlayersNationalTeam(LinkedList *pArrayListPlayer, LinkedList *
 						for (int i = 0; i < lenListPlayers; i++)
 						{
 							pPlayer = (sPlayer*) ll_get(pArrayListPlayerAux, i);
-							if (pPlayer != NULL && getIdPlayer(pPlayer, &auxId) && getFullNamePlayer(pPlayer, auxFullName) && getAgePlayer(pPlayer, &auxAge) && getPositionPlayer(pPlayer, auxPosition) && getNationalityPlayer(pPlayer, auxNationality) && getIdNationalTeamPLayer(pPlayer, &auxIdNationalTeam)
-											&& controllerGetCountry(pArrayListNationalTeamAux, auxIdNationalTeam, country))
+							if (pPlayer != NULL)
 							{
-								printf("\t\t\t\t\t\t|%-5d| %-35s| %-5d| %-25s| %-24s| %-23s|\n", auxId, auxFullName, auxAge, auxPosition, auxNationality, country);
+								if (getIdNationalTeamPLayer(pPlayer, &auxIdNationalTeam) == SUCCESS && controllerGetCountry(pArrayListNationalTeamAux, auxIdNationalTeam, country))
+								{
+									printf("\t\t\t|%-10s", country);
+									listOnePlayer(pPlayer);
+								}
 							}
 						}
-						printf("\t\t\t\t\t\t=================================================================================================================================\n");
+						printf("\t\t\t================================================================================================================================\n");
 					}
 				}
 			}
@@ -392,7 +394,6 @@ int controllerCallUpPlayers(LinkedList *pArrayListPlayer, LinkedList *pArrayList
 							if (idNationalTeamPlayer > 0)
 							{
 								returncontrollerCallUpPlayers = -3;
-
 							}
 							else
 							{
@@ -584,6 +585,7 @@ int controllerSavePlayersBinarytMode(char *path, LinkedList *pArrayListPlayer)
 	FILE *pFile = NULL;
 	int lenArrayListPlayer;
 	sPlayer *pPlayer = NULL;
+	int returnFwrite;
 
 	if (path != NULL && pArrayListPlayer != NULL)
 	{
@@ -599,13 +601,18 @@ int controllerSavePlayersBinarytMode(char *path, LinkedList *pArrayListPlayer)
 
 					if (pPlayer != NULL)
 					{
-						fwrite(pPlayer, sizeof(sPlayer), 1, pFile);
+						returnFwrite = fwrite(pPlayer, sizeof(sPlayer), 1, pFile);
+						if (returnFwrite == 1)
+						{
+							returnControllerSavePlayersBinarytMode = SUCCESS;
+						}
+
 					}
 				}
 				fclose(pFile);
 			}
 		}
-		returnControllerSavePlayersBinarytMode = SUCCESS;
+
 	}
 	return returnControllerSavePlayersBinarytMode;
 }
@@ -987,7 +994,6 @@ int controllerListPLayersByConfederationFromBinaryData(char *path, LinkedList *p
 						returnControllerListPLayersByConfederationFromBinaryData = SUCCESS;
 					}
 				}
-
 			}
 			ll_deleteLinkedList(pArrayListPlayerAux);
 			ll_deleteLinkedList(pArrayListNationalTeamAux);

@@ -30,7 +30,6 @@ int main()
 				{
 					if (controllerLoadPlayerFromText("jugadores.csv", listPLayers) == SUCCESS && controllerLoadNationalTeamFromText("selecciones.csv", listNationalTeam) == SUCCESS)
 					{
-
 						printf("Archivos de texto cargados correctamente.\n");
 					}
 					else
@@ -257,7 +256,6 @@ int main()
 						case 1:
 							if (controllerSavePlayersByConfederationBinaryMode("AFC.bin", listPLayers, listNationalTeam, "AFC") == SUCCESS)
 							{
-
 								printf("Archivo binario generado correctamente.\n");
 							}
 							else
@@ -415,7 +413,7 @@ int main()
 							remove("CONCACAF.bin");
 							remove("CONMEBOL.bin");
 							remove("UEFA.bin");
-							printf("\n\t\t\t\t\t\t\tSE HAN REMOVIDO TODOS LOS ARCHIVOS BINARIOS QUE HAYA CREADO SIN GUARDAR SUS ARCHIVOS DE TEXTO DEL PROGRAMA.\n");
+							printf("\n\t\t\t\t\t\t\tSE HAN REMOVIDO TODOS LOS ARCHIVOS BINARIOS QUE HAYA CREADO AL NO GUARDAR SUS ARCHIVOS DE TEXTO DEL PROGRAMA.\n");
 						}
 					}
 					else
