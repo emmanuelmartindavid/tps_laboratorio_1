@@ -1225,3 +1225,44 @@ Info: Internal Builder is used for build
 gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
 gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
 Info: Nothing to build for tp3_windows
+23:08:08 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o parser.o "..\\parser.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
+gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
+Info: Nothing to build for tp3_windows
+23:10:12 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
+gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
+Info: Nothing to build for tp3_windows
+23:14:49 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
+..\Controller.c:915:5: error: conflicting types for 'controllerLoadPlayersByConfederationFromBinary'
+  915 | int controllerLoadPlayersByConfederationFromBinary(char *path, LinkedList *pArrayListPlayer, LinkedList *pArrayListNationalTeam, char *pConfederationRegister)
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from ..\Controller.c:8:
+..\controller.h:148:12: note: previous declaration of 'controllerLoadPlayersByConfederationFromBinary' was here
+  148 | LinkedList controllerLoadPlayersByConfederationFromBinary(char *path, LinkedList *pArrayListPlayer, LinkedList *pArrayListNationalTeam, char *pConfederationRegister);
+      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+23:15:06 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
+gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
+Info: Nothing to build for tp3_windows
+23:17:22 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o parser.o "..\\parser.c" 
+gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
+23:20:21 **** Incremental Build of configuration Debug for project tp3_windows ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o parser.o "..\\parser.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o Controller.o "..\\Controller.c" 
+gcc "-LC:\\Users\\cuerpos\\OneDrive\\Desktop\\TPS_Laboratorio_1\\tps_laboratorio_1\\tp3_windows" -o tp3_windows.exe Controller.o Jugador.o Seleccion.o main.o menus.o parser.o validaciones.o -lLinkedList -lLinkedList 
+Info: Nothing to build for tp3_windows
+Info: Nothing to build for tp3_windows
+Info: Nothing to build for tp3_windows

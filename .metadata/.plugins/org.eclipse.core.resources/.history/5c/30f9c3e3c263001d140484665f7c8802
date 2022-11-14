@@ -3,13 +3,11 @@
 #include "LinkedList.h"
 #include "Jugador.h"
 #include "Seleccion.h"
-
-/** \brief Parsea los datos de los jugadores desde el archivo jugadores.csv (modo texto).
- *
- * \param path char*
- * \param pArrayListJugador LinkedList*
- * \return int
- */
+/// @brief parserPlayerFromText	PARSEA DATOS DE JUGADORES DESDE ARCHIVO CSV EN MODO TEXTO.
+///
+/// @param pFile				PUNTERO A FILE.
+/// @param pArrayListPlayer		LINKEDLIST JUGADORES.
+/// @return						RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
 int parserPlayerFromText(FILE *pFile, LinkedList *pArrayListPlayer)
 {
 	int returnParserPlayerFromText;
@@ -48,84 +46,52 @@ int parserPlayerFromText(FILE *pFile, LinkedList *pArrayListPlayer)
 	}
 	return returnParserPlayerFromText;
 }
-
-/** \brief Parsea los datos de los jugadores desde el archivo binario.
- *
- * \param path char*
- * \param pArrayListJugador LinkedList*
- * \return int
- *
- */
+/// @brief parserPlayerFromBinary PARSEA DATOS DE JUGADORES DESDE ARCHIVO CSV EN BINARIO.
+///
+/// @param pFile				PUNTERO A FILE.
+/// @param pArrayListPlayer		LINKEDLIST JUGADORES.
+/// @return						RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
 int parserPlayerFromBinary(FILE *pFile, LinkedList *pArrayListPlayer)
 {
-	int returnParserPlayerFromBinary;
+	int returnParserPlayerFromBinary = ERROR;
+	int auxId;
+	char auxFullName[2000];
+	int auxAge;
+	char auxPosition[2000];
+	char auxNationality[2000];
+	int auxIdNationalTeam;
+	int returnFread;
 	sPlayer *pPlayer;
 
 	if (pFile != NULL && pArrayListPlayer != NULL)
 	{
-		do
+
+		while (!feof(pFile))
 		{
-			pPlayer=newPlayer();
-			if(pPlayer != NULL)
+			pPlayer = newPlayer();
+			if (pPlayer != NULL)
 			{
-					fread(pPlayer, sizeof(sPlayer), 1, pFile);
-					ll_add(pArrayListPlayer, pPlayer);
-					returnParserPlayerFromBinary = SUCCESS;
+				returnFread = fread(pPlayer, sizeof(sPlayer), 1, pFile);
+
+				if (returnFread == 1)
+				{
+					if (!(getIdPlayer(pPlayer, &auxId) && getFullNamePlayer(pPlayer, auxFullName) && getAgePlayer(pPlayer, &auxAge) && getPositionPlayer(pPlayer, auxPosition) && getNationalityPlayer(pPlayer, auxNationality) && getIdNationalTeamPLayer(pPlayer, &auxIdNationalTeam)))
+					{
+						returnParserPlayerFromBinary = ERROR;
+						break;
+					}
+				}
 			}
-		} while (!feof(pFile));
+
+		}
 	}
 	return returnParserPlayerFromBinary;
 }
-//int parserPlayerFromBinary(FILE *pFile, LinkedList *pArrayListPlayer)
-//{
-//	int returnParserPlayerFromBinary;
-//
-//	int auxId;
-//	char auxFullName[2000];
-//	int auxAge;
-//	char auxPosition[2000];
-//	char auxNationality[2000];
-//	int auxIdNationalTeam;
-//	sPlayer *pPlayer;
-//	int returnFread;
-//	if (pFile != NULL && pArrayListPlayer != NULL)
-//	{
-//		do
-//		{
-//			returnFread = fread(&pPlayer, sizeof(sPlayer), 1, pFile);
-//			if (returnFread == 1)
-//			{
-//				if (getIdPlayer(pPlayer, &auxId) == SUCCESS
-//				&& getFullNamePlayer(pPlayer, auxFullName) == SUCCESS
-//				&& getAgePlayer(pPlayer, &auxAge)== SUCCESS
-//				&& getPositionPlayer(pPlayer, auxPosition)== SUCCESS
-//				&& getNationalityPlayer(pPlayer, auxNationality)==SUCCESS
-//				&& getIdNationalTeamPLayer(pPlayer, &auxIdNationalTeam)== SUCCESS)
-//				{
-//					ll_add(pArrayListPlayer, pPlayer);
-//					printf("ENTRE A PARSER ULTIMO IF PARSER\n");
-//					printf("JUGADOR PARSER %s. \n", auxFullName);
-//					returnParserPlayerFromBinary = SUCCESS;
-//				}
-//			}
-//			else
-//			{
-//				printf("ENTRE A  BREAK  PARSER\n");
-//				returnParserPlayerFromBinary = ERROR;
-//				break;
-//			}
-//		} while (!feof(pFile));
-//	}
-//	return returnParserPlayerFromBinary;
-//}
-
-/** \brief Parsea los datos de los selecciones desde el archivo selecciones.csv (modo texto).
- *
- * \param path char*
- * \param pArrayListSeleccion LinkedList*
- * \return int
- *
- */
+/// @brief parserNationalTeamFromText 	PARSEA DATOS DE SELECCIONES DESDE ARCHIVO CSV EN BINARIO.
+///
+/// @param pFile						PUNTERO A FILE.
+/// @param pArrayListNationalTeam		LINKEDLIST SELECCIONES.
+/// @return								RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
 int parserNationalTeamFromText(FILE *pFile, LinkedList *pArrayListNationalTeam)
 {
 	int returnParserNationalTeamFromText;
@@ -162,7 +128,11 @@ int parserNationalTeamFromText(FILE *pFile, LinkedList *pArrayListNationalTeam)
 	}
 	return returnParserNationalTeamFromText;
 }
-
+/// @brief parserIdPlayerFromText 	PARSEA DATO DE ID JUGADORES A DAR DE ALTA DESDE ARCHIVO CSV EN MODO TEXTO.
+///
+/// @param pFile					PUNTERO A FILE.
+/// @param pIdPlayer				PUNTERO ENTERO.
+/// @return							RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
 int parserIdPlayerFromText(FILE *pFile, int *pIdPlayer)
 {
 	int returnparserIdPlayerFromText = ERROR;
