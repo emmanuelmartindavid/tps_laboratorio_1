@@ -3,6 +3,8 @@
 #include <string.h>
 #include "jugador.h"
 #include "validaciones.h"
+#include "menus.h"
+#define NOEDIT 3
 /// @brief	newPlayer 					CONTRSTRUCTOR DE ENTIDAD JUGADOR EN MEMORIA DINAMICA.
 ///
 /// @return			 					 RETORNA PUNTERO DE ENTIDAD CREADO EN MEMORIA DINAMICA EN CASO CORRECTO. RETORNA NULL EN CASO CONTRARIO.
@@ -378,6 +380,79 @@ int editNationalityPlayer(sPlayer *this)
 	}
 	return returnEditNationalityPlayer;
 }
+/// @brief editOnePlayer			EDICION DE UN JUGADOR.
+///
+/// @param this						PUNTERO DE TIPO ESTRUCTURA JUGADOR.
+/// @return							RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO. RETORNO 3 EN CASO DE NO HABER REALIZADO MODIFICACIONES EN EL JUGADOR.
+int editOnePlayer(sPlayer *this)
+{
+	int returnrEditOnePlayer;
+	int optionEditMenu;
+	int flagEditPlayer = NOEDIT;
+	do
+	{
+		showEditPlayerMenu();
+		showPlayerData();
+		listOnePlayer(this);
+		showLine();
+		if (utn_getNumber(&optionEditMenu, "Ingrese opcion.\n", "Error. Reintente.\n", 1, 5, 3) == 0)
+		{
+			switch (optionEditMenu)
+			{
+			case 1:
+				if (editFullNamePlayer(this) == SUCCESS)
+				{
+					flagEditPlayer = SUCCESS;
+				}
+				else
+				{
+					flagEditPlayer = NOEDIT;
+				}
+				break;
+			case 2:
+				if (editAgePlayer(this) == SUCCESS)
+				{
+					flagEditPlayer = SUCCESS;
+				}
+				else
+				{
+					flagEditPlayer = NOEDIT;
+				}
+				break;
+			case 3:
+				if (editPositionPlayer(this) == SUCCESS)
+				{
+					flagEditPlayer = SUCCESS;
+				}
+				else
+				{
+					flagEditPlayer = NOEDIT;
+				}
+				break;
+			case 4:
+				if (editNationalityPlayer(this) == SUCCESS)
+				{
+					flagEditPlayer = SUCCESS;
+				}
+				else
+				{
+					flagEditPlayer = NOEDIT;
+				}
+				break;
+			}
+		}
+		else
+		{
+			returnrEditOnePlayer = ERROR;
+			break;
+		}
+	} while (optionEditMenu != 5);
+	returnrEditOnePlayer = flagEditPlayer;
+
+	return returnrEditOnePlayer;
+
+}
+
 /// @brief comparePlayersByNationality			COMPARA JUGADORES POR NACIONALIDAD.
 ///
 /// @param pPlayerOne							PUNTERO TIPO VOID.

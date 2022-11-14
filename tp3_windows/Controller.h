@@ -168,3 +168,8 @@ int controllerGetCountry(LinkedList *pArrayListNationalTeam, int idNationalTeamP
 /// @param pConfederation					PUNTERO STRING.
 /// @return									RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
 int controllerGetConfederation(LinkedList *pArrayListNationalTeam, int idNationalTeam, char *confederation);
+/// @brief controllerValidateCallUpPlayers		VERIFICA SI HAY O NO JUGADORES CONVOCADOS.
+///
+/// @param pArrayListPlayer						LINKEDLIST JUGADORES.
+/// @param pFlag								PUNTERO ENTERO.
+void controllerValidateCallUpPlayers(LinkedList *pArrayListPlayer, int *pFlag);

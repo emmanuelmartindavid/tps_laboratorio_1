@@ -6,7 +6,6 @@
 #include "validaciones.h"
 #include "menus.h"
 #include "string.h"
-
 int main()
 {
 	setbuf(stdout, NULL);
@@ -14,14 +13,15 @@ int main()
 	int returnRemovePlayer;
 	int returnCallUpPlayers;
 	int returnEditPlayer;
-	char save[3];
 	char exit[3];
 	LinkedList *listPLayers = ll_newLinkedList();
 	LinkedList *listNationalTeam = ll_newLinkedList();
+	int flag = 0;
+	int flagCallupCallOff;
 	do
 	{
 		showMainMenu();
-		if (utn_getNumber(&option, "Ingrese opcion.\n", "Error. Reintente.\n", 1, 11, 3) == 0)
+		if (utn_getNumber(&option, "Ingrese opcion.\n", "Error. Reintente.\n", 1, 12, 3) == 0)
 		{
 			switch (option)
 			{
@@ -42,13 +42,13 @@ int main()
 				{
 					printf("YA REALIZO LA CARGA DE ARCHIVOS.\n");
 				}
+				flag = 1;
 				break;
 			case 2:
 				if (ll_isEmpty(listPLayers) == 0 && ll_isEmpty(listNationalTeam) == 0)
 				{
 					if (controllerAddPlayer(listPLayers) == SUCCESS)
 					{
-
 						printf("Alta exitosa.\n");
 					}
 					else
@@ -60,6 +60,7 @@ int main()
 				{
 					printf("PRIMERO DEBE CARGAR LOS ARCHIVOS DE TEXTO.\n");
 				}
+				flag = 1;
 				break;
 			case 3:
 				if (ll_isEmpty(listPLayers) == 0 && ll_isEmpty(listNationalTeam) == 0)
@@ -68,7 +69,6 @@ int main()
 					if (returnEditPlayer == SUCCESS)
 					{
 						printf("Jugador modificado exitosamente.\n");
-
 					}
 					else if (returnEditPlayer == ERROR)
 					{
@@ -83,6 +83,7 @@ int main()
 				{
 					printf("PRIMERO DEBE CARGAR LOS ARCHIVOS DE TEXTO.\n");
 				}
+				flag = 1;
 				break;
 			case 4:
 				if (ll_isEmpty(listPLayers) == 0 && ll_isEmpty(listNationalTeam) == 0)
@@ -91,7 +92,6 @@ int main()
 					if (returnRemovePlayer == SUCCESS)
 					{
 						printf("Jugador dado de baja exitosamente.\n");
-
 					}
 					else if (returnRemovePlayer == ERROR)
 					{
@@ -110,6 +110,7 @@ int main()
 				{
 					printf("PRIMERO DEBE CARGAR LOS ARCHIVOS DE TEXTO.\n");
 				}
+				flag = 1;
 				break;
 			case 5:
 				if (ll_isEmpty(listPLayers) == 0 && ll_isEmpty(listNationalTeam) == 0)
@@ -128,11 +129,18 @@ int main()
 								controllerListNationalTeams(listNationalTeam);
 								break;
 							case 3:
-								controllerListPlayersNationalTeam(listPLayers, listNationalTeam, CALLUP);
+								controllerValidateCallUpPlayers(listPLayers, &flagCallupCallOff);
+								if (flagCallupCallOff == CALLUP)
+								{
+									controllerListPlayersNationalTeam(listPLayers, listNationalTeam, CALLUP);
+								}
+								else
+								{
+									printf("\n\t\t\t\t\t\t\t\t\t\t NO HAY JUGADORES CONVOCADOS.\n\n");
+								}
 								break;
 							}
 						}
-
 						else
 						{
 							printf("ALGO SALIO MAL.\n");
@@ -144,10 +152,13 @@ int main()
 				{
 					printf("PRIMERO DEBE CARGAR LOS ARCHIVOS DE TEXTO.\n");
 				}
+				flag = 1;
 				break;
 			case 6:
+
 				if (ll_isEmpty(listPLayers) == 0 && ll_isEmpty(listNationalTeam) == 0)
 				{
+
 					do
 					{
 						showCallPlayersMenu();
@@ -175,7 +186,8 @@ int main()
 								}
 								break;
 							case 2:
-								if (returnCallUpPlayers == SUCCESS)
+								controllerValidateCallUpPlayers(listPLayers, &flagCallupCallOff);
+								if (flagCallupCallOff == CALLUP)
 								{
 									if (controllerCallOffPlayers(listPLayers, listNationalTeam) == SUCCESS)
 									{
@@ -189,7 +201,7 @@ int main()
 								}
 								else
 								{
-									printf("Aun no ha convocado jugadores.\n");
+									printf("\n\t\t\t\t\t\t\t\t\t\t NO HAY JUGADORES CONVOCADOS.\n\n");
 								}
 							}
 						}
@@ -204,6 +216,7 @@ int main()
 				{
 					printf("PRIMERO DEBE CARGAR LOS ARCHIVOS DE TEXTO.\n");
 				}
+				flag = 1;
 				break;
 			case 7:
 				if (ll_isEmpty(listPLayers) == 0 && ll_isEmpty(listNationalTeam) == 0)
@@ -230,6 +243,7 @@ int main()
 				{
 					printf("PRIMERO DEBE CARGAR LOS ARCHIVOS DE TEXTO.\n");
 				}
+				flag = 1;
 				break;
 			case 8:
 				if (ll_isEmpty(listPLayers) == 0 && ll_isEmpty(listNationalTeam) == 0)
@@ -242,6 +256,7 @@ int main()
 						case 1:
 							if (controllerSavePlayersByConfederationBinaryMode("AFC.bin", listPLayers, listNationalTeam, "AFC") == SUCCESS)
 							{
+
 								printf("Archivo binario generado correctamente.\n");
 							}
 							else
@@ -296,6 +311,7 @@ int main()
 				{
 					printf("PRIMERO DEBE CARGAR LOS ARCHIVOS DE TEXTO.\n");
 				}
+				flag = 1;
 				break;
 			case 9:
 				if (ll_isEmpty(listPLayers) == 0 && ll_isEmpty(listNationalTeam) == 0)
@@ -310,7 +326,6 @@ int main()
 							{
 								printf("\t\t\t\t\t\t\t\t\t\tLISTA CONVOCADOS DESDE BINARIO.\n");
 							}
-
 							else
 							{
 								printf("Error. No se pudo cargar archivo binario. No exiten jugadores en esta confederacion.\n");
@@ -363,27 +378,19 @@ int main()
 				{
 					printf("PRIMERO DEBE CARGAR LOS ARCHIVOS DE TEXTO.\n");
 				}
+				flag = 1;
 				break;
 			case 10:
 				if (ll_isEmpty(listPLayers) == 0 && ll_isEmpty(listNationalTeam) == 0)
 				{
-					if (utn_getDescriptionExit(save, "Seguro desea guardar los cambios?.\n"
-									"Ingrese si para guardar.\n"
-									"Ingrese no para continuar en el menu.\n", "Error. Solo si o no.\n", 3) == 0)
+					if (controllerSaveIdplayerTextMode("IdJugadoresAutoincremental.csv") == SUCCESS && controllerSavePlayersTextMode("jugadores.csv", listPLayers) == SUCCESS && controllerSaveNationalTeamTextMode("selecciones.csv", listNationalTeam) == SUCCESS)
 					{
-						if (controllerSaveIdplayerTextMode("IdJugadoresAutoincremental.csv") == SUCCESS && controllerSavePlayersTextMode("jugadores.csv", listPLayers) == SUCCESS && controllerSaveNationalTeamTextMode("selecciones.csv", listNationalTeam) == SUCCESS)
-						{
-
-							printf("Archivo de texto guardado correctamente.\n");
-						}
-						else
-						{
-							printf("Error al guardar el archivo.\n");
-						}
+						flag = 2;
+						printf("Archivo de texto guardado correctamente.\n");
 					}
 					else
 					{
-						printf("DATOS INVALIDOS. REINTENTE\n");
+						printf("Error al guardar el archivo.\n");
 					}
 				}
 				else
@@ -392,8 +399,28 @@ int main()
 				}
 				break;
 			case 11:
-				utn_getDescriptionExit(exit, "Ingrese SI para salir.\n"
-								"Ingrese NO para continuar en el menu.\n", "Error. Solo si o no.\n", 3);
+				if (flag != 2)
+				{
+					if (utn_getDescriptionExit(exit, "VA A SALIR SIN GUARDAR CAMBIOS.\n"
+									"INGRESE SI PARA SALIR SIN GUARDAR.\n"
+									"INGRESE NO PARA SEGUIR EN EL MENU.\n", "Error. Solo si o no.\n", 3) == 0)
+					{
+						if ((stricmp(exit, "si") == 0))
+						{
+							remove("AFC.bin");
+							remove("CAF.bin");
+							remove("CONCACAF.bin");
+							remove("CONMEBOL.bin");
+							remove("UEFA.bin");
+							printf("\n\t\t\t\t\t\t\tSE HAN REMOVIDO TODOS LOS ARCHIVOS BINARIOS QUE HAYA CREADO SIN GUARDAR SUS ARCHIVOS DEL PROGRAMA.\n");
+						}
+					}
+				}
+				else if (flag == 2)
+				{
+					utn_getDescriptionExit(exit, "INGRESE SI PARA SALIR.\n"
+									"INGRESE NO PARA SEGUIR EN EL MENU.\n", "Error. Solo si o no.\n", 3);
+				}
 				break;
 			}
 		}
@@ -403,6 +430,7 @@ int main()
 			break;
 		}
 	} while (stricmp(exit, "si") != 0);
+	printf("\n\t\t\t\t\t\t\t\t\t\t\tHASTA LUEGO C. GRACIAS POR TODO.");
 	ll_deleteLinkedList(listPLayers);
 	ll_deleteLinkedList(listNationalTeam);
 	return EXIT_SUCCESS;

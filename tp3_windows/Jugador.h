@@ -129,6 +129,11 @@ int editPositionPlayer(sPlayer *this);
 /// @param this								PUNTERO DE TIPO ESTRUCTURA JUGADOR.
 /// @return									RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
 int editNationalityPlayer(sPlayer *this);
+/// @brief editOnePlayer			EDICION DE UN JUGADOR.
+///
+/// @param this						PUNTERO DE TIPO ESTRUCTURA JUGADOR.
+/// @return							RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO. RETORNO 3 EN CASO DE NO HABER REALIZADO MODIFICACIONES EN EL JUGADOR.
+int editOnePlayer(sPlayer *this);
 /// @brief comparePlayersByNationality			COMPARA JUGADORES POR NACIONALIDAD.
 ///
 /// @param pPlayerOne							PUNTERO TIPO VOID.
