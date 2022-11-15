@@ -391,10 +391,10 @@ int editOnePlayer(sPlayer *this)
 	int flagEditPlayer = NOEDIT;
 	do
 	{
-		showEditPlayerMenu();
 		showPlayerData();
 		listOnePlayer(this);
 		showLine();
+		showEditPlayerMenu();
 		if (utn_getNumber(&optionEditMenu, "Ingrese opcion.\n", "Error. Reintente.\n", 1, 5, 3) == 0)
 		{
 			switch (optionEditMenu)
@@ -540,9 +540,9 @@ void showPlayerData()
 ///
 void showPlayerDataNationalTeam()
 {
-	printf("\t\t\t=================================================================================================================================\n");
-	printf("\t\t\t|        SELECCION      | ID  |              NOMBRE                | EDAD |          POSICION        |      NACIONALIDAD        |\n");
-	printf("\t\t\t=================================================================================================================================\n");
+	printf("\t\t\t================================================================================================================================\n");
+	printf("\t\t\t|        SELECCION      | ID  |              NOMBRE                | EDAD |          POSICION        |      NACIONALIDAD       |\n");
+	printf("\t\t\t================================================================================================================================\n");
 }
 /// @brief showLine
 ///

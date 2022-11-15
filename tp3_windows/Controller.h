@@ -49,13 +49,18 @@ int controllerRemovePlayer(LinkedList *pArrayListPlayer, LinkedList *pArrayListN
 /// @param pArrayListPlayer			LINKEDLIST JUGADORES
 /// @return 						RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
 int controllerListPlayers(LinkedList *pArrayListPlayer);
-/// @brief  controllerListPlayersNationalTeam	LISTA JUGADORES NO CONVOCADOS O CONVOCADOS. CON SU LEYENDA CORRESPONDIENTE.
+/// @brief  controllerListPlayersNationalTeam	LISTA JUGADORES NO CONVOCADOS O CONVOCADOS CON SU LEYENDA CORRESPONDIENTE.
 ///												UTILIZO LL_CLONE PARA NO TOCAR LOS LIKNKEDLIST ORIGINALES.
 /// @param pArrayListPlayer						LINKEDLIST JUGADORES
 /// @param pArrayListNationalTeam				LINKEDLIST SELECCIONES.
-/// @param condition							ENTERO CONDICION.
 /// @return 									RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
-int controllerListPlayersNationalTeam(LinkedList *pArrayListPlayer, LinkedList *pArrayListNationalTeam, int condition);
+int controllerListCallupAndCallOffPlayers(LinkedList *pArrayListPlayer, LinkedList *pArrayListNationalTeam);
+/// @brief  controllerListPlayersNationalTeam	LISTA JUGADORES CONVOCADOS CON SU LEYENDA CORRESPONDIENTE.
+///												UTILIZO LL_CLONE PARA NO TOCAR LOS LIKNKEDLIST ORIGINALES.
+/// @param pArrayListPlayer						LINKEDLIST JUGADORES
+/// @param pArrayListNationalTeam				LINKEDLIST SELECCIONES.
+/// @return 									RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
+int controllerListCallupPlayers(LinkedList *pArrayListPlayer, LinkedList *pArrayListNationalTeam);
 /// @brief controllerCallUpPlayers		CONVOCAR JUGADORES
 /// 									UTILIZO LL_CLONE PARA NO TOCAR LOS LIKNKEDLIST ORIGINALES.
 /// @param pArrayListPlayer				LINKEDLIST JUGADORES.
@@ -124,7 +129,7 @@ int controllerLoadIdplayerTextMode(char *path, int *pIdPlayer);
 ///
 /// @param condition							PUNTERO ENTERO.
 /// @return										RETORNO ID DE JUGADOR EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
-int controllerGetIncrementalIdPlayer(int *condition);
+int controllerGetIncrementalIdPlayer(int *pCondition);
 /// @brief controllerSaveIdplayerTextMode    GAURDA ID DE JUGADOR EN MODO TEXTO A ARCHIVO CSV.
 ///
 /// @param path								 PUNTERO STRING.

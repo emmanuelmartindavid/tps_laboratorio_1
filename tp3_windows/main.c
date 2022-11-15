@@ -122,7 +122,7 @@ int main()
 							switch (option)
 							{
 							case 1:
-								controllerListPlayersNationalTeam(listPLayers, listNationalTeam, CALLOFF);
+								controllerListCallupAndCallOffPlayers(listPLayers, listNationalTeam);
 								break;
 							case 2:
 								controllerListNationalTeams(listNationalTeam);
@@ -131,7 +131,7 @@ int main()
 								controllerValidateCallUpPlayers(listPLayers, &flagCallupCallOff);
 								if (flagCallupCallOff == CALLUP)
 								{
-									controllerListPlayersNationalTeam(listPLayers, listNationalTeam, CALLUP);
+									controllerListCallupPlayers(listPLayers, listNationalTeam);
 								}
 								else
 								{

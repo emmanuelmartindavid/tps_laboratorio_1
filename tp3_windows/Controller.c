@@ -239,9 +239,11 @@ int controllerRemovePlayer(LinkedList *pArrayListPlayer, LinkedList *pArrayListN
 												returncontrollerRemovePlayer = ERROR;
 											}
 										}
-										ll_remove(pArrayListPlayer, indexListPlayer);
-										deletePlayer(pPlayer);
-										returncontrollerRemovePlayer = SUCCESS;
+										if (ll_remove(pArrayListPlayer, indexListPlayer) == 0)
+										{
+											deletePlayer(pPlayer);
+											returncontrollerRemovePlayer = SUCCESS;
+										}
 									}
 									else
 									{
@@ -293,13 +295,12 @@ int controllerListPlayers(LinkedList *pArrayListPlayer)
 	}
 	return returncontrollerListPlayer;
 }
-/// @brief  controllerListPlayersNationalTeam	LISTA JUGADORES NO CONVOCADOS O CONVOCADOS. CON SU LEYENDA CORRESPONDIENTE.
+/// @brief  controllerListPlayersNationalTeam	LISTA JUGADORES NO CONVOCADOS O CONVOCADOS CON SU LEYENDA CORRESPONDIENTE.
 ///												UTILIZO LL_CLONE PARA NO TOCAR LOS LIKNKEDLIST ORIGINALES.
 /// @param pArrayListPlayer						LINKEDLIST JUGADORES
 /// @param pArrayListNationalTeam				LINKEDLIST SELECCIONES.
-/// @param condition							ENTERO CONDICION.
 /// @return 									RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
-int controllerListPlayersNationalTeam(LinkedList *pArrayListPlayer, LinkedList *pArrayListNationalTeam, int condition)
+int controllerListCallupAndCallOffPlayers(LinkedList *pArrayListPlayer, LinkedList *pArrayListNationalTeam)
 {
 	int returncontrollerListPlayer = ERROR;
 	int lenListPlayers;
@@ -318,41 +319,20 @@ int controllerListPlayersNationalTeam(LinkedList *pArrayListPlayer, LinkedList *
 				lenListPlayers = ll_len(pArrayListPlayerAux);
 				if (lenListPlayers > 0)
 				{
-					if (condition == CALLUP)
+					showPlayerDataNationalTeam();
+					for (int i = 0; i < lenListPlayers; i++)
 					{
-						showPlayerDataNationalTeam();
-						for (int i = 0; i < lenListPlayers; i++)
+						pPlayer = (sPlayer*) ll_get(pArrayListPlayerAux, i);
+						if (pPlayer != NULL)
 						{
-							pPlayer = (sPlayer*) ll_get(pArrayListPlayerAux, i);
-							if (pPlayer != NULL)
+							if (getIdNationalTeamPLayer(pPlayer, &auxIdNationalTeam) == SUCCESS && controllerGetCountry(pArrayListNationalTeamAux, auxIdNationalTeam, country))
 							{
-								if (getIdNationalTeamPLayer(pPlayer, &auxIdNationalTeam) == SUCCESS && controllerGetCountry(pArrayListNationalTeamAux, auxIdNationalTeam, country) && auxIdNationalTeam > 0)
-								{
-									printf("\t\t\t|%-10s", country);
-									listOnePlayer(pPlayer);
-								}
-							}
-
-						}
-						printf("\t\t\t================================================================================================================================\n");
-					}
-					else if (condition == CALLOFF)
-					{
-						showPlayerDataNationalTeam();
-						for (int i = 0; i < lenListPlayers; i++)
-						{
-							pPlayer = (sPlayer*) ll_get(pArrayListPlayerAux, i);
-							if (pPlayer != NULL)
-							{
-								if (getIdNationalTeamPLayer(pPlayer, &auxIdNationalTeam) == SUCCESS && controllerGetCountry(pArrayListNationalTeamAux, auxIdNationalTeam, country))
-								{
-									printf("\t\t\t|%-10s", country);
-									listOnePlayer(pPlayer);
-								}
+								printf("\t\t\t|%-10s", country);
+								listOnePlayer(pPlayer);
 							}
 						}
-						printf("\t\t\t================================================================================================================================\n");
 					}
+					printf("\t\t\t================================================================================================================================\n");
 				}
 			}
 		}
@@ -361,6 +341,53 @@ int controllerListPlayersNationalTeam(LinkedList *pArrayListPlayer, LinkedList *
 		returncontrollerListPlayer = SUCCESS;
 	}
 	return returncontrollerListPlayer;
+}
+/// @brief  controllerListPlayersNationalTeam	LISTA JUGADORES CONVOCADOS CON SU LEYENDA CORRESPONDIENTE.
+///												UTILIZO LL_CLONE PARA NO TOCAR LOS LIKNKEDLIST ORIGINALES.
+/// @param pArrayListPlayer						LINKEDLIST JUGADORES
+/// @param pArrayListNationalTeam				LINKEDLIST SELECCIONES.
+/// @return 									RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
+int controllerListCallupPlayers(LinkedList *pArrayListPlayer, LinkedList *pArrayListNationalTeam)
+{
+	int returncontrollerListCallUpPlayer = ERROR;
+	int lenListPlayers;
+	char country[30];
+	int auxIdNationalTeam;
+	sPlayer *pPlayer = NULL;
+
+	if (pArrayListPlayer != NULL && pArrayListNationalTeam != NULL)
+	{
+		LinkedList *pArrayListPlayerAux = ll_clone(pArrayListPlayer);
+		LinkedList *pArrayListNationalTeamAux = ll_clone(pArrayListNationalTeam);
+		if (pArrayListPlayerAux != NULL && pArrayListNationalTeamAux != NULL)
+		{
+			if (ll_isEmpty(pArrayListPlayerAux) == 0 && ll_isEmpty(pArrayListNationalTeamAux) == 0)
+			{
+				lenListPlayers = ll_len(pArrayListPlayerAux);
+				if (lenListPlayers > 0)
+				{
+					showPlayerDataNationalTeam();
+					for (int i = 0; i < lenListPlayers; i++)
+					{
+						pPlayer = (sPlayer*) ll_get(pArrayListPlayerAux, i);
+						if (pPlayer != NULL)
+						{
+							if (getIdNationalTeamPLayer(pPlayer, &auxIdNationalTeam) == SUCCESS && controllerGetCountry(pArrayListNationalTeamAux, auxIdNationalTeam, country) && auxIdNationalTeam > 0)
+							{
+								printf("\t\t\t|%-10s", country);
+								listOnePlayer(pPlayer);
+							}
+						}
+					}
+					printf("\t\t\t================================================================================================================================\n");
+				}
+			}
+		}
+		ll_deleteLinkedList(pArrayListPlayerAux);
+		ll_deleteLinkedList(pArrayListNationalTeamAux);
+		returncontrollerListCallUpPlayer = SUCCESS;
+	}
+	return returncontrollerListCallUpPlayer;
 }
 /// @brief controllerCallUpPlayers		CONVOCAR JUGADORES
 /// 									UTILIZO LL_CLONE PARA NO TOCAR LOS LIKNKEDLIST ORIGINALES.
@@ -381,7 +408,7 @@ int controllerCallUpPlayers(LinkedList *pArrayListPlayer, LinkedList *pArrayList
 		LinkedList *pArrayListNationalTeamAux = ll_clone(pArrayListNationalTeam);
 		if (pArrayListPlayerAux != NULL && pArrayListNationalTeamAux != NULL)
 		{
-			if (controllerListPlayersNationalTeam(pArrayListPlayerAux, pArrayListNationalTeamAux, CALLOFF) == SUCCESS && utn_getNumber(&idPlayer, "Ingrese id de jugador a convocar.\n", "Error. Reintente.\n", 1, 500, 3) == 0)
+			if (controllerListCallupAndCallOffPlayers(pArrayListPlayerAux, pArrayListNationalTeamAux) == SUCCESS && utn_getNumber(&idPlayer, "Ingrese id de jugador a convocar.\n", "Error. Reintente.\n", 1, 500, 3) == 0)
 			{
 				indexListPlayer = controllerFindPlayerById(pArrayListPlayerAux, idPlayer);
 				if (indexListPlayer != ERROR)
@@ -416,7 +443,6 @@ int controllerCallUpPlayers(LinkedList *pArrayListPlayer, LinkedList *pArrayList
 						}
 
 					}
-
 				}
 				else
 				{
@@ -448,7 +474,7 @@ int controllerCallOffPlayers(LinkedList *pArrayListPlayer, LinkedList *pArrayLis
 		LinkedList *pArrayListNationalTeamAux = ll_clone(pArrayListNationalTeam);
 		if (pArrayListPlayerAux != NULL && pArrayListNationalTeamAux != NULL)
 		{
-			if (controllerListPlayersNationalTeam(pArrayListPlayerAux, pArrayListNationalTeamAux, CALLUP) == SUCCESS && utn_getNumber(&idPlayer, "Ingrese id de jugador a quitar de seleccion.\n", "Error. Reintente.\n", 1, 500, 3) == 0)
+			if (controllerListCallupPlayers(pArrayListPlayerAux, pArrayListNationalTeamAux) == SUCCESS && utn_getNumber(&idPlayer, "Ingrese id de jugador a quitar de seleccion.\n", "Error. Reintente.\n", 1, 500, 3) == 0)
 			{
 				indexListPlayer = controllerFindPlayerById(pArrayListPlayerAux, idPlayer);
 				if (indexListPlayer != ERROR)
@@ -460,8 +486,10 @@ int controllerCallOffPlayers(LinkedList *pArrayListPlayer, LinkedList *pArrayLis
 						{
 							if (controllerEditNationalTeam(pArrayListNationalTeamAux, idNationalTeamPlayer, CALLOFF) == SUCCESS)
 							{
-								setIdNationalTeamPlayer(pPlayer, 0);
-								returncontrollerCallOffPlayers = SUCCESS;
+								if (setIdNationalTeamPlayer(pPlayer, 0) == SUCCESS)
+								{
+									returncontrollerCallOffPlayers = SUCCESS;
+								}
 							}
 						}
 					}
@@ -563,14 +591,17 @@ int controllerSavePlayersTextMode(char *path, LinkedList *pArrayListPlayer)
 						if (getIdPlayer(pPlayer, &auxId) == SUCCESS && getFullNamePlayer(pPlayer, auxFullName) == SUCCESS && getAgePlayer(pPlayer, &auxAge) == SUCCESS && getPositionPlayer(pPlayer, auxPosition) == SUCCESS && getNationalityPlayer(pPlayer, auxNationality) == SUCCESS
 										&& getIdNationalTeamPLayer(pPlayer, &auxIdNationalTeam) == SUCCESS)
 						{
-							fprintf(pFile, "%d,%s,%d,%s,%s,%d\n", auxId, auxFullName, auxAge, auxPosition, auxNationality, auxIdNationalTeam);
+							if (fprintf(pFile, "%d,%s,%d,%s,%s,%d\n", auxId, auxFullName, auxAge, auxPosition, auxNationality, auxIdNationalTeam) > 0)
+							{
+								returnControllerSavePlayersTextMode = SUCCESS;
+							}
 						}
 					}
 				}
 				fclose(pFile);
 			}
 		}
-		returnControllerSavePlayersTextMode = SUCCESS;
+
 	}
 	return returnControllerSavePlayersTextMode;
 }
@@ -606,7 +637,6 @@ int controllerSavePlayersBinarytMode(char *path, LinkedList *pArrayListPlayer)
 						{
 							returnControllerSavePlayersBinarytMode = SUCCESS;
 						}
-
 					}
 				}
 				fclose(pFile);
@@ -647,6 +677,7 @@ int controllerLoadNationalTeamFromText(char *path, LinkedList *pArrayListNationa
 }
 /// @brief	controllerEditNationalTeam		EDITAR SELECCION
 ///       								    AGREGO PARAMETROS TIPO INT (ID - CONDICION) DEBIDO A QUE NO ENCONTRE UNA FORMA MEJOR DE UTILIZACION PARA LA FUNCION Y QUE ESTA PUEDA SER REUTILIZABLE.
+///											UTILIZO LL_CLONE PARA NO TOCAR LOS LIKNKEDLIST ORIGINALES.
 /// @param pArrayListNationalTeam 			LINKEDLIST SELECCIONES.
 /// @param idNationalTeam					ENTERO
 /// @param condition						ENTERO
@@ -659,33 +690,38 @@ int controllerEditNationalTeam(LinkedList *pArrayListNationalTeam, int idNationa
 	sNationalTeam *pNationalTeam = NULL;
 	if (pArrayListNationalTeam != NULL)
 	{
-		indexListNationalTeam = controllerFindNationalTeamById(pArrayListNationalTeam, idNationalTeam);
-		if (indexListNationalTeam != ERROR)
+		LinkedList *pArrayListNationalTeamAux = ll_clone(pArrayListNationalTeam);
+		if (pArrayListNationalTeamAux != NULL)
 		{
-			pNationalTeam = (sNationalTeam*) ll_get(pArrayListNationalTeam, indexListNationalTeam);
-			if (pNationalTeam != NULL)
+			indexListNationalTeam = controllerFindNationalTeamById(pArrayListNationalTeamAux, idNationalTeam);
+			if (indexListNationalTeam != ERROR)
 			{
-				if (getCalledUpNationalTeam(pNationalTeam, &calledUp) == SUCCESS)
+				pNationalTeam = (sNationalTeam*) ll_get(pArrayListNationalTeamAux, indexListNationalTeam);
+				if (pNationalTeam != NULL)
 				{
-					if (condition == CALLUP)
+					if (getCalledUpNationalTeam(pNationalTeam, &calledUp) == SUCCESS)
 					{
-						calledUp++;
-						if (setCalledUpNationalTeam(pNationalTeam, calledUp) != ERROR)
+						if (condition == CALLUP)
 						{
-							returnControllerEditSeleccion = SUCCESS;
+							calledUp++;
+							if (setCalledUpNationalTeam(pNationalTeam, calledUp) != ERROR)
+							{
+								returnControllerEditSeleccion = SUCCESS;
+							}
 						}
-					}
-					else if (condition == CALLOFF)
-					{
-						calledUp--;
-						if (setCalledUpNationalTeam(pNationalTeam, calledUp) != ERROR)
+						else if (condition == CALLOFF)
 						{
-							returnControllerEditSeleccion = SUCCESS;
+							calledUp--;
+							if (setCalledUpNationalTeam(pNationalTeam, calledUp) != ERROR)
+							{
+								returnControllerEditSeleccion = SUCCESS;
+							}
 						}
 					}
 				}
 			}
 		}
+		ll_deleteLinkedList(pArrayListNationalTeamAux);
 	}
 	return returnControllerEditSeleccion;
 }
@@ -736,8 +772,10 @@ int controllerSortNationalTeam(LinkedList *pArrayListNationalTeam)
 			if (utn_getNumber(&sortOption, "1 para ordenar de forma ascendente, 0 de forma descendente.\n", "Error. Reintente.\n", 0, 1, 3) == 0)
 			{
 				ll_sort(pArrayListNationalTeamAux, compareNationalTeamByConfederation, sortOption);
-				controllerListNationalTeams(pArrayListNationalTeamAux);
-				returnControllerSortNationalTeam = SUCCESS;
+				if (controllerListNationalTeams(pArrayListNationalTeamAux) == SUCCESS)
+				{
+					returnControllerSortNationalTeam = SUCCESS;
+				}
 			}
 		}
 		ll_deleteLinkedList(pArrayListNationalTeamAux);
@@ -776,8 +814,10 @@ int controllerSaveNationalTeamTextMode(char *path, LinkedList *pArrayListNationa
 
 					if (pNationalTeam != NULL && getIdNationalTeam(pNationalTeam, &auxId) == SUCCESS && getCountryNationalTeam(pNationalTeam, auxCountry) == SUCCESS && getConfederationNationalTeam(pNationalTeam, auxConfederation) == SUCCESS && getCalledUpNationalTeam(pNationalTeam, &auxCalledUp) == SUCCESS)
 					{
-						fprintf(pFile, "%d,%s,%s,%d\n", auxId, auxCountry, auxConfederation, auxCalledUp);
-						returnControllerSaveNationalTeamTextMode = SUCCESS;
+						if (fprintf(pFile, "%d,%s,%s,%d\n", auxId, auxCountry, auxConfederation, auxCalledUp) > 0)
+						{
+							returnControllerSaveNationalTeamTextMode = SUCCESS;
+						}
 					}
 				}
 			}
@@ -796,7 +836,7 @@ int controllerLoadIdplayerTextMode(char *path, int *pIdPlayer)
 	int returnControllerIdplayerTextMode = ERROR;
 	FILE *pFile = NULL;
 
-	if (path != NULL && pIdPlayer)
+	if (path != NULL && pIdPlayer != NULL)
 	{
 		pFile = fopen(path, "r");
 
@@ -815,24 +855,30 @@ int controllerLoadIdplayerTextMode(char *path, int *pIdPlayer)
 ///
 /// @param condition							PUNTERO ENTERO.
 /// @return										RETORNO ID DE JUGADOR EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
-int controllerGetIncrementalIdPlayer(int *condition)
+int controllerGetIncrementalIdPlayer(int *pCondition)
 {
 	int returnControllerGetIncrementalIdPlayer = ERROR;
 	static int flag = 0;
 	static int idAutoincremental;
-	if (flag == 0)
+	if (pCondition != NULL)
 	{
-		controllerLoadIdplayerTextMode("IdJugadoresAutoincremental.csv", &idAutoincremental);
-	}
-	flag = 1;
-	if (*condition == ADDPLAYER)
-	{
-		idAutoincremental++;
-		returnControllerGetIncrementalIdPlayer = idAutoincremental;
-	}
-	else
-	{
-		returnControllerGetIncrementalIdPlayer = idAutoincremental;
+		if (flag == 0)
+		{
+			if (controllerLoadIdplayerTextMode("IdJugadoresAutoincremental.csv", &idAutoincremental) == ERROR)
+			{
+				returnControllerGetIncrementalIdPlayer = ERROR;
+			}
+		}
+		flag = 1;
+		if (*pCondition == ADDPLAYER)
+		{
+			idAutoincremental++;
+			returnControllerGetIncrementalIdPlayer = idAutoincremental;
+		}
+		else
+		{
+			returnControllerGetIncrementalIdPlayer = idAutoincremental;
+		}
 	}
 	return returnControllerGetIncrementalIdPlayer;
 }
@@ -846,15 +892,22 @@ int controllerSaveIdplayerTextMode(char *path)
 	int idIncremented;
 	int condition;
 	FILE *pFile = NULL;
-
-	pFile = fopen(path, "r+");
-	if (pFile != NULL)
+	if (path != NULL)
 	{
-		idIncremented = controllerGetIncrementalIdPlayer(&condition);
-		fprintf(pFile, "%d\n", idIncremented);
-		returnControllerSaveIdplayerTextMode = SUCCESS;
+		pFile = fopen(path, "r+");
+		if (pFile != NULL)
+		{
+			idIncremented = controllerGetIncrementalIdPlayer(&condition);
+			if (idIncremented >= 370)
+			{
+				if (fprintf(pFile, "%d\n", idIncremented) > 0)
+				{
+					returnControllerSaveIdplayerTextMode = SUCCESS;
+				}
+			}
+		}
+		fclose(pFile);
 	}
-	fclose(pFile);
 	return returnControllerSaveIdplayerTextMode;
 }
 /// @brief	controllerSavePlayersByConfederationBinaryMode  GENERA Y GUARDA ARCHIVO BINARIO DE JUGADORES CON SU SELECCION EN CONFEDERACION ELEGIDA.
@@ -871,7 +924,7 @@ int controllerSavePlayersByConfederationBinaryMode(char *path, LinkedList *pArra
 	int auxIdPlayer;
 	char auxConfederation[30];
 	sPlayer *pPlayer = NULL;
-	if (pArrayListPlayer != NULL && pArrayListNationalTeam != NULL && pConfederationRegister != NULL)
+	if (path != NULL && pArrayListPlayer != NULL && pArrayListNationalTeam != NULL && pConfederationRegister != NULL)
 	{
 		LinkedList *pArrayListPlayerAux = ll_clone(pArrayListPlayer);
 		LinkedList *pArrayListNationalTeamAux = ll_clone(pArrayListNationalTeam);
@@ -989,7 +1042,7 @@ int controllerListPLayersByConfederationFromBinaryData(char *path, LinkedList *p
 				controllerValidateCallUpPlayers(pArrayListPlayerAuxNew, &flag);
 				if (flag == CALLUP)
 				{
-					if (controllerListPlayersNationalTeam(pArrayListPlayerAuxNew, pArrayListNationalTeamAux, CALLUP) == SUCCESS)
+					if (controllerListCallupPlayers(pArrayListPlayerAuxNew, pArrayListNationalTeamAux) == SUCCESS)
 					{
 						returnControllerListPLayersByConfederationFromBinaryData = SUCCESS;
 					}
@@ -999,7 +1052,6 @@ int controllerListPLayersByConfederationFromBinaryData(char *path, LinkedList *p
 			ll_deleteLinkedList(pArrayListNationalTeamAux);
 			ll_deleteLinkedList(pArrayListPlayerAuxNew);
 		}
-
 	}
 	return returnControllerListPLayersByConfederationFromBinaryData;
 }
@@ -1120,6 +1172,7 @@ void controllerValidateCallUpPlayers(LinkedList *pArrayListPlayer, int *pFlag)
 				}
 			}
 		}
+		ll_deleteLinkedList(pArrayListPlayerAux);
 	}
 }
 
