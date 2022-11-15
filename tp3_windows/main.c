@@ -16,6 +16,7 @@ int main()
 	char exit[3];
 	int flag = 0;
 	int flagCallupCallOff;
+	int flagSaveBinary = 0;
 	LinkedList *listPLayers = ll_newLinkedList();
 	LinkedList *listNationalTeam = ll_newLinkedList();
 	do
@@ -257,6 +258,7 @@ int main()
 							if (controllerSavePlayersByConfederationBinaryMode("AFC.bin", listPLayers, listNationalTeam, "AFC") == SUCCESS)
 							{
 								printf("Archivo binario generado correctamente.\n");
+								flagSaveBinary = 1;
 							}
 							else
 							{
@@ -303,6 +305,7 @@ int main()
 								printf("Error. No se pudo generar archivo binario. No hay jugadores convocados.\n");
 							}
 							break;
+
 						}
 					}
 				}
@@ -315,62 +318,69 @@ int main()
 			case 9:
 				if (ll_isEmpty(listPLayers) == 0 && ll_isEmpty(listNationalTeam) == 0)
 				{
-					showConfederationMenu();
-					if (utn_getNumber(&option, "Ingrese opcion.\n", "Error. Reintente.\n", 1, 5, 3) == 0)
+					if (flagSaveBinary == 1)
 					{
-						switch (option)
+						showConfederationMenu();
+						if (utn_getNumber(&option, "Ingrese opcion.\n", "Error. Reintente.\n", 1, 5, 3) == 0)
 						{
-						case 1:
-							if (controllerListPLayersByConfederationFromBinaryData("AFC.bin", listPLayers, listNationalTeam, "AFC") == SUCCESS)
+							switch (option)
 							{
-								printf("\t\t\t\t\t\t\t\t\t\tLISTA CONVOCADOS DESDE BINARIO.\n");
+							case 1:
+								if (controllerListPLayersByConfederationFromBinaryData("AFC.bin", listPLayers, listNationalTeam, "AFC") == SUCCESS)
+								{
+									printf("\t\t\t\t\t\t\t\t\t\tLISTA CONVOCADOS DESDE BINARIO.\n");
+								}
+								else
+								{
+									printf("Error. No se pudo cargar archivo binario. No exiten jugadores en esta confederacion.\n");
+								}
+								break;
+							case 2:
+								if (controllerListPLayersByConfederationFromBinaryData("CAF.bin", listPLayers, listNationalTeam, "CAF") == SUCCESS)
+								{
+									printf("\t\t\t\t\t\t\t\t\t\tLISTA CONVOCADOS DESDE BINARIO.\n");
+								}
+								else
+								{
+									printf("Error. No se pudo cargar archivo binario. No exiten jugadores en esta confederacion.\n");
+								}
+								break;
+							case 3:
+								if (controllerListPLayersByConfederationFromBinaryData("CONCACAF.bin", listPLayers, listNationalTeam, "CONCACAF") == SUCCESS)
+								{
+									printf("\t\t\t\t\t\t\t\t\t\tLISTA CONVOCADOS DESDE BINARIO.\n");
+								}
+								else
+								{
+									printf("Error. No se pudo cargar archivo binario. No exiten jugadores en esta confederacion.\n");
+								}
+								break;
+							case 4:
+								if (controllerListPLayersByConfederationFromBinaryData("CONMEBOL.bin", listPLayers, listNationalTeam, "CONMEBOL") == SUCCESS)
+								{
+									printf("\t\t\t\t\t\t\t\t\t\tLISTA CONVOCADOS DESDE BINARIO.\n");
+								}
+								else
+								{
+									printf("Error. No se pudo cargar archivo binario. No exiten jugadores en esta confederacion.\n");
+								}
+								break;
+							case 5:
+								if (controllerListPLayersByConfederationFromBinaryData("UEFA.bin", listPLayers, listNationalTeam, "UEFA") == SUCCESS)
+								{
+									printf("\t\t\t\t\t\t\t\t\t\tLISTA CONVOCADOS DESDE BINARIO.\n");
+								}
+								else
+								{
+									printf("Error. No se pudo cargar archivo binario. No exiten jugadores en esta confederacion.\n");
+								}
+								break;
 							}
-							else
-							{
-								printf("Error. No se pudo cargar archivo binario. No exiten jugadores en esta confederacion.\n");
-							}
-							break;
-						case 2:
-							if (controllerListPLayersByConfederationFromBinaryData("CAF.bin", listPLayers, listNationalTeam, "CAF") == SUCCESS)
-							{
-								printf("\t\t\t\t\t\t\t\t\t\tLISTA CONVOCADOS DESDE BINARIO.\n");
-							}
-							else
-							{
-								printf("Error. No se pudo cargar archivo binario. No exiten jugadores en esta confederacion.\n");
-							}
-							break;
-						case 3:
-							if (controllerListPLayersByConfederationFromBinaryData("CONCACAF.bin", listPLayers, listNationalTeam, "CONCACAF") == SUCCESS)
-							{
-								printf("\t\t\t\t\t\t\t\t\t\tLISTA CONVOCADOS DESDE BINARIO.\n");
-							}
-							else
-							{
-								printf("Error. No se pudo cargar archivo binario. No exiten jugadores en esta confederacion.\n");
-							}
-							break;
-						case 4:
-							if (controllerListPLayersByConfederationFromBinaryData("CONMEBOL.bin", listPLayers, listNationalTeam, "CONMEBOL") == SUCCESS)
-							{
-								printf("\t\t\t\t\t\t\t\t\t\tLISTA CONVOCADOS DESDE BINARIO.\n");
-							}
-							else
-							{
-								printf("Error. No se pudo cargar archivo binario. No exiten jugadores en esta confederacion.\n");
-							}
-							break;
-						case 5:
-							if (controllerListPLayersByConfederationFromBinaryData("UEFA.bin", listPLayers, listNationalTeam, "UEFA") == SUCCESS)
-							{
-								printf("\t\t\t\t\t\t\t\t\t\tLISTA CONVOCADOS DESDE BINARIO.\n");
-							}
-							else
-							{
-								printf("Error. No se pudo cargar archivo binario. No exiten jugadores en esta confederacion.\n");
-							}
-							break;
 						}
+					}
+					else
+					{
+						printf("PRIMERO DEBE GENERAR EL ARCHIVO BINARIO.\n");
 					}
 				}
 				else
@@ -403,8 +413,7 @@ int main()
 					if (utn_getDescriptionExit(exit, "VA A SALIR SIN GUARDAR CAMBIOS.\n"
 									"\t\t\t\t\t\t\tTENGA EN CUENTA. SI GENERO ARCHIVOS BINARIOS, LOS MISMOS SERAN ELIMINADOS AL CERRAR EL PROGRAMA.\n"
 									"INGRESE SI PARA SALIR SIN GUARDAR.\n"
-									"INGRESE NO PARA SEGUIR EN EL MENU.\n"
-									, "Error. Solo si o no.\n", 3) == 0)
+									"INGRESE NO PARA SEGUIR EN EL MENU.\n", "Error. Solo si o no.\n", 3) == 0)
 					{
 						if ((stricmp(exit, "si") == 0))
 						{

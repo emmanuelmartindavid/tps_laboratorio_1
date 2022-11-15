@@ -1,0 +1,200 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include "LinkedList.h"
+#include "Jugador.h"
+#include "Seleccion.h"
+/// @brief parserPlayerFromText	PARSEA DATOS DE JUGADORES DESDE ARCHIVO CSV EN MODO TEXTO.
+///
+/// @param pFile				PUNTERO A FILE.
+/// @param pArrayListPlayer		LINKEDLIST JUGADORES.
+/// @return						RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
+int parserPlayerFromText(FILE *pFile, LinkedList *pArrayListPlayer)
+{
+	int returnParserPlayerFromText;
+	char auxId[2000];
+	char auxFullName[2000];
+	char auxAge[2000];
+	char auxPosition[2000];
+	char auxNationality[2000];
+	char auxIdNationalTeam[2000];
+	sPlayer *pPlayer;
+	int returnFscanf;
+
+	if (pFile != NULL && pArrayListPlayer != NULL)
+	{
+		fscanf(pFile, "%[^,],%[^,],%[^,],%[^,],%[^,],%[^\n]\n", auxId, auxFullName, auxAge, auxPosition, auxNationality, auxIdNationalTeam);
+		do
+		{
+			returnFscanf = fscanf(pFile, "%[^,],%[^,],%[^,],%[^,],%[^,],%[^\n]\n", auxId, auxFullName, auxAge, auxPosition, auxNationality, auxIdNationalTeam);
+			if (returnFscanf == 6)
+			{
+				pPlayer = newPlayerParameters(auxId, auxFullName, auxAge, auxPosition, auxNationality, auxIdNationalTeam);
+				if (pPlayer != NULL)
+				{
+					if (ll_add(pArrayListPlayer, pPlayer) == 0)
+					{
+						returnParserPlayerFromText = SUCCESS;
+					}
+				}
+			}
+			else
+			{
+				returnParserPlayerFromText = ERROR;
+				break;
+			}
+		} while (!feof(pFile));
+	}
+	return returnParserPlayerFromText;
+}
+/// @brief parserPlayerFromBinary PARSEA DATOS DE JUGADORES DESDE ARCHIVO CSV EN BINARIO.
+///
+/// @param pFile				PUNTERO A FILE.
+/// @param pArrayListPlayer		LINKEDLIST JUGADORES.
+/// @return						RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
+//int parserPlayerFromBinary(FILE *pFile, LinkedList *pArrayListPlayer)
+//{
+//	int returnParserPlayerFromBinary = ERROR;
+//	int auxId;
+//	char auxFullName[2000];
+//	int auxAge;
+//	char auxPosition[2000];
+//	char auxNationality[2000];
+//	int auxIdNationalTeam;
+//	int returnFread;
+//	sPlayer *pPlayer;
+//
+//	if (pFile != NULL && pArrayListPlayer != NULL)
+//	{
+//
+//		while (!feof(pFile))
+//		{
+//			pPlayer = newPlayer();
+//			if (pPlayer != NULL)
+//			{
+//				returnFread = fread(pPlayer, sizeof(sPlayer), 1, pFile);
+//
+//				if (returnFread == 1)
+//				{
+//					if (!(getIdPlayer(pPlayer, &auxId) && getFullNamePlayer(pPlayer, auxFullName) && getAgePlayer(pPlayer, &auxAge) && getPositionPlayer(pPlayer, auxPosition) && getNationalityPlayer(pPlayer, auxNationality) && getIdNationalTeamPLayer(pPlayer, &auxIdNationalTeam)))
+//					{
+//						returnParserPlayerFromBinary = ERROR;
+//						break;
+//					}
+//				}
+//			}
+//			returnParserPlayerFromBinary = SUCCESS;
+//		}
+//	}
+//	return returnParserPlayerFromBinary;
+//}
+int parserPlayerFromBinary(FILE *pFile, LinkedList *pArrayListPlayer)
+{
+	int returnParserPlayerFromBinary = ERROR;
+	int auxId;
+	char auxFullName[2000];
+	int auxAge;
+	char auxPosition[2000];
+	char auxNationality[2000];
+	int auxIdNationalTeam;
+	int returnFread;
+	sPlayer *pPlayer;
+
+	if (pFile != NULL && pArrayListPlayer != NULL)
+	{
+		LinkedList *paux = ll_clone(pArrayListPlayer);
+		//ll_clear(paux);
+		if (paux != NULL)
+		{
+			do
+			{
+				pPlayer = newPlayer();
+				if (pPlayer != NULL)
+				{
+					returnFread = fread(pPlayer, sizeof(sPlayer), 1, pFile);
+
+					if (returnFread == 1)
+					{
+						if (getIdPlayer(pPlayer, &auxId) == SUCCESS && getFullNamePlayer(pPlayer, auxFullName) == SUCCESS && getAgePlayer(pPlayer, &auxAge) == SUCCESS && getPositionPlayer(pPlayer, auxPosition) == SUCCESS && getNationalityPlayer(pPlayer, auxNationality) == SUCCESS
+										&& getIdNationalTeamPLayer(pPlayer, &auxIdNationalTeam) == SUCCESS)
+						{
+							ll_add(paux, pPlayer);
+						}
+						returnParserPlayerFromBinary = SUCCESS;
+					}
+
+					else
+					{
+						break;
+					}
+				}
+
+			} while (!feof(pFile));
+		}
+	}
+	return returnParserPlayerFromBinary;
+}
+
+/// @brief parserNationalTeamFromText 	PARSEA DATOS DE SELECCIONES DESDE ARCHIVO CSV EN BINARIO.
+///
+/// @param pFile						PUNTERO A FILE.
+/// @param pArrayListNationalTeam		LINKEDLIST SELECCIONES.
+/// @return								RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
+int parserNationalTeamFromText(FILE *pFile, LinkedList *pArrayListNationalTeam)
+{
+	int returnParserNationalTeamFromText;
+	char auxId[2000];
+	char auxCountry[2000];
+	char auxConfederation[2000];
+	char auxCalledUp[2000];
+	sNationalTeam *pNationalTeam;
+	int returnFscanf;
+
+	if (pFile != NULL && pArrayListNationalTeam != NULL)
+	{
+		fscanf(pFile, "%[^,],%[^,],%[^,],%[^\n]\n", auxId, auxCountry, auxConfederation, auxCalledUp);
+		do
+		{
+			returnFscanf = fscanf(pFile, "%[^,],%[^,],%[^,],%[^\n]\n", auxId, auxCountry, auxConfederation, auxCalledUp);
+			if (returnFscanf == 4)
+			{
+				pNationalTeam = newNationalTeamParameters(auxId, auxCountry, auxConfederation, auxCalledUp);
+				if (pNationalTeam != NULL)
+				{
+					if (ll_add(pArrayListNationalTeam, pNationalTeam) == 0)
+					{
+						returnParserNationalTeamFromText = SUCCESS;
+					}
+				}
+			}
+			else
+			{
+				returnParserNationalTeamFromText = ERROR;
+				break;
+			}
+		} while (!feof(pFile));
+	}
+	return returnParserNationalTeamFromText;
+}
+/// @brief parserIdPlayerFromText 	PARSEA DATO DE ID JUGADORES A DAR DE ALTA DESDE ARCHIVO CSV EN MODO TEXTO.
+///
+/// @param pFile					PUNTERO A FILE.
+/// @param pIdPlayer				PUNTERO ENTERO.
+/// @return							RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
+int parserIdPlayerFromText(FILE *pFile, int *pIdPlayer)
+{
+	int returnparserIdPlayerFromText = ERROR;
+	int returnFscanf;
+	char auxId[1000];
+
+	if (pFile != NULL && pIdPlayer != NULL)
+	{
+		returnFscanf = fscanf(pFile, "%[^\n]\n", auxId);
+		if (returnFscanf == 1)
+		{
+			*pIdPlayer = atoi(auxId);
+			returnparserIdPlayerFromText = SUCCESS;
+		}
+	}
+	return returnparserIdPlayerFromText;
+}
+

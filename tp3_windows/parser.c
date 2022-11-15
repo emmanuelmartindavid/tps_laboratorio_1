@@ -65,25 +65,29 @@ int parserPlayerFromBinary(FILE *pFile, LinkedList *pArrayListPlayer)
 
 	if (pFile != NULL && pArrayListPlayer != NULL)
 	{
-
-		while (!feof(pFile))
-		{
-			pPlayer = newPlayer();
-			if (pPlayer != NULL)
+		ll_clear(pArrayListPlayer);
+			do
 			{
-				returnFread = fread(pPlayer, sizeof(sPlayer), 1, pFile);
-
-				if (returnFread == 1)
+				pPlayer = newPlayer();
+				if (pPlayer != NULL)
 				{
-					if (!(getIdPlayer(pPlayer, &auxId) && getFullNamePlayer(pPlayer, auxFullName) && getAgePlayer(pPlayer, &auxAge) && getPositionPlayer(pPlayer, auxPosition) && getNationalityPlayer(pPlayer, auxNationality) && getIdNationalTeamPLayer(pPlayer, &auxIdNationalTeam)))
+					returnFread = fread(pPlayer, sizeof(sPlayer), 1, pFile);
+
+					if (returnFread == 1)
 					{
-						returnParserPlayerFromBinary = ERROR;
+						if (getIdPlayer(pPlayer, &auxId) == SUCCESS && getFullNamePlayer(pPlayer, auxFullName) == SUCCESS && getAgePlayer(pPlayer, &auxAge) == SUCCESS && getPositionPlayer(pPlayer, auxPosition) == SUCCESS && getNationalityPlayer(pPlayer, auxNationality) == SUCCESS
+										&& getIdNationalTeamPLayer(pPlayer, &auxIdNationalTeam) == SUCCESS)
+						{
+							ll_add(pArrayListPlayer, pPlayer);
+						}
+						returnParserPlayerFromBinary = SUCCESS;
+					}
+					else
+					{
 						break;
 					}
 				}
-			}
-			returnParserPlayerFromBinary = SUCCESS;
-		}
+			} while (!feof(pFile));
 	}
 	return returnParserPlayerFromBinary;
 }

@@ -144,13 +144,12 @@ int controllerSaveIdplayerTextMode(char *path);
 /// @return													RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
 int controllerSavePlayersByConfederationBinaryMode(char *path, LinkedList *pArrayListPlayer, LinkedList *pArrayListNationalTeam, char *confederationRegister);
 /// @brief	controllerLoadPlayersByConfederationFromBinary  CARGA ARCHIVO BINARIO DE JUGADORES CON SU SELECCION EN CONFEDERACION ELEGIDA.
-///															UTILIZO LL_CLONE PARA NO TOCAR LOS LIKNKEDLIST ORIGINALES.
+///
 /// @param path												PUNTERO STRING
 /// @param pArrayListPlayer									LINKEDLIST JUGADORES.
-/// @param pArrayListNationalTeam							LINKEDLIST SELECCIONES.
 /// @param pConfederationRegister							PUNTERO STRING.
-/// @return													RETORNO PUNTERO LINKEDLIST CARGADO CON DATOS EN CASO DE HABER FUNCIONADO CORRECTAMENTE. NULL EN CASO CONTRARIO.
-LinkedList controllerLoadPlayersByConfederationFromBinary(char *path, LinkedList *pArrayListPlayer, LinkedList *pArrayListNationalTeam, char *pConfederationRegister);
+/// @return													RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
+int controllerLoadPlayersByConfederationFromBinary(char *path, LinkedList *pArrayListPlayer, char *pConfederationRegister);
 /// @brief controllerListPLayersByConfederationFromBinaryData 			LISTA JUGADORES CONVOCADOS POR CONFEDERACION ELEGIDOS POR EL USUARIO. TRAIDOS DESDE BINARIO.
 /// 																	UTILIZO LL_CLONE PARA NO TOCAR LOS LIKNKEDLIST ORIGINALES.
 /// @param path															PUNTERO STRING

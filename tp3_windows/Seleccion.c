@@ -30,7 +30,6 @@ sNationalTeam* newNationalTeam()
 /// @return											RETORNA PUNTERO DE ENTIDAD CREADO CON SUS PARAMETROS SETEADOS EN CASO CORRECTO. RETORNA NULL EN CASO CONTRARIO.
 sNationalTeam* newNationalTeamParameters(char *idStr, char *countryStr, char *confederationStr, char *calledUpStr)
 {
-
 	sNationalTeam *auxNewNationalTeam = newNationalTeam();
 
 	if (idStr != NULL && countryStr != NULL && confederationStr != NULL && calledUpStr != NULL && auxNewNationalTeam != NULL)
