@@ -1,0 +1,186 @@
+#define CALLUP 1
+#define CALLOFF 2
+#define ADDPLAYER 1
+#define NOEDIT 3
+#define REMOVECANCEL -2
+#define NOPLAYER -3
+/// @brief  controllerFindPlayerById	FUNCION PARA BUSCAR INDICE DE ELEMENTO
+///
+/// @param pArrayListPlayer				LINKEDLIST JUGADORES
+/// @param idPlayer						ENTERO
+/// @return								RETORNO  POSICION DE JUGADOR EN CASO CORRECTO. RETORNO ERROR(-1) EN CASO CONTRARIO.
+int controllerFindPlayerById(LinkedList *pArrayListPlayer, int idPlayer);
+/// @brief controllerFindPlayerById 		FUNCION PARA BUSCAR INDICE DE ELEMENTO
+///
+/// @param pArrayListNationalTeam			LINKEDLIST SELECCIONES
+/// @param idNationalTeam					ENTERO
+/// @return									RETORNO POSICION DE SELECCION EN CASO CORRECTO. RETORNO ERROR(-1) EN CASO CONTRARIO.
+int controllerFindNationalTeamById(LinkedList *pArrayListNationalTeam, int idNationalTeam);
+/// @brief controllerLoadPlayerFromText  	CARGA DATOS DE JUGADORES DESDE ARCHIVO CSV EN MODO TEXTO.
+///
+/// @param path								PUNTERO STRING
+/// @param pArrayListPlayer					LINKEDLIST JUGADORES
+/// @return									RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
+int controllerLoadPlayerFromText(char* path , LinkedList* pArrayListPlayer);
+/// @brief controllerLoadPlayerFromBinary  	CARGA DATOS DE JUGADORES DESDE ARCHIVO CSV EN MODO BINARIO.
+///
+/// @param path								PUNTERO STRING
+/// @param pArrayListPlayer					LINKEDLIST JUGADORES
+/// @return 								RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
+int controllerLoadPlayerFromBinary(char *path, LinkedList *pArrayListPlayer);
+/// @brief controllerAddPlayer		ALTA DE JUGADOR.
+///
+/// @param pArrayListPlayer			LINKEDLIST JUGADORES
+/// @return 						RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
+int controllerAddPlayer(LinkedList *pArrayListPlayer);
+/// @brief  controllerEditPlayer			EDITAR JUGADOR.
+///
+/// @param 	pArrayListPlayer				LINKEDLIST JUGADORES
+/// @return   								RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO. RETORNO 3 EN CASO DE NO HABER REALIZADO MODIFICACIONES EN EL JUGADOR.
+int controllerEditPlayer(LinkedList *pArrayListPlayer);
+/// @brief  controllerRemovePlayer	REMOVER JUGADOR.
+/// 								AGREGO PARAMETRO LINKEDLIST SELECCIONES, DEBIDO A QUE NO ENCONTRE UNA MEJOR MANERA DE PODER DISMINUIR EL CONTADOR DE CONVOCADOS EN CASO DE QUE EL JUGADOR A DAR DE BAJA ESTE CONVOCADO.
+/// @param pArrayListPlayer			LINKEDLIST JUGADORES.
+/// @param pArrayListNationalTeam	LINKEDLIST SELECCIONES.
+/// @return 						RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
+int controllerRemovePlayer(LinkedList *pArrayListPlayer, LinkedList *pArrayListNationalTeam);
+/// @brief  controllerListPlayers   LISTA JUGADORES.
+///
+/// @param pArrayListPlayer			LINKEDLIST JUGADORES
+/// @return 						RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
+int controllerListPlayers(LinkedList *pArrayListPlayer);
+/// @brief  controllerListPlayersNationalTeam	LISTA JUGADORES NO CONVOCADOS O CONVOCADOS CON SU LEYENDA CORRESPONDIENTE.
+///												UTILIZO LL_CLONE PARA NO TOCAR LOS LIKNKEDLIST ORIGINALES.
+/// @param pArrayListPlayer						LINKEDLIST JUGADORES
+/// @param pArrayListNationalTeam				LINKEDLIST SELECCIONES.
+/// @return 									RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
+int controllerListCallupAndCallOffPlayers(LinkedList *pArrayListPlayer, LinkedList *pArrayListNationalTeam);
+/// @brief  controllerListPlayersNationalTeam	LISTA JUGADORES CONVOCADOS CON SU LEYENDA CORRESPONDIENTE.
+///												UTILIZO LL_CLONE PARA NO TOCAR LOS LIKNKEDLIST ORIGINALES.
+/// @param pArrayListPlayer						LINKEDLIST JUGADORES
+/// @param pArrayListNationalTeam				LINKEDLIST SELECCIONES.
+/// @return 									RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
+int controllerListCallupPlayers(LinkedList *pArrayListPlayer, LinkedList *pArrayListNationalTeam);
+/// @brief controllerCallUpPlayers		CONVOCAR JUGADORES
+/// 									UTILIZO LL_CLONE PARA NO TOCAR LOS LIKNKEDLIST ORIGINALES.
+/// @param pArrayListPlayer				LINKEDLIST JUGADORES.
+/// @param pArrayListNationalTeam		LINKEDLIST SELECCIONES.
+/// @return 							RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
+int controllerCallUpPlayers(LinkedList *pArrayListPlayer,  LinkedList *pArrayListNationalTeam);
+/// @brief controllerCallOffPlayers		QUITAR JUGADOR DE SELECCION.
+/// 									UTILIZO LL_CLONE PARA NO TOCAR LOS LIKNKEDLIST ORIGINALES.
+/// @param pArrayListPlayer				LINKEDLIST JUGADORES.
+/// @param pArrayListNationalTeam		LINKEDLIST SELECCIONES.
+/// @return								RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
+int controllerCallOffPlayers(LinkedList *pArrayListPlayer, LinkedList *pArrayListNationalTeam);
+/// @brief 	controllerSortPlayers			ORDENAMIENTO DE JUGADORES.
+/// 										UTILIZO LL_CLONE PARA NO TOCAR LOS LIKNKEDLIST ORIGINALES.
+/// @param pArrayListPlayer					LINKEDLIST JUGADORES.
+/// @return									RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
+int controllerSortPlayers(LinkedList *pArrayListPlayer);
+/// @brief	controllerSavePlayersTextMode	GUARDA DATOS DE JUGADORES DESDE ARCHIVO CSV EN MODO TEXTO.
+///
+/// @param path								PUNTERO STRING
+/// @param pArrayListPlayer					LINKEDLIST JUGADORES.
+/// @return									RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
+int controllerSavePlayersTextMode(char *path, LinkedList *pArrayListPlayer);
+/// @brief controllerSavePlayersBinarytMode   GUARDA DATOS DE JUGADORES DESDE ARCHIVO CSV EN MODO BINARIO.
+///
+/// @param path								  PUNTERO STRING
+/// @param pArrayListPlayer					  LINKEDLIST JUGADORES.
+/// @return									  RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
+int controllerSavePlayersBinarytMode(char *path, LinkedList *pArrayListPlayer);
+/// @brief controllerLoadNationalTeamFromText 	CARGA DATOS DE SELECCIONES DESDE ARCHIVO CSV EN MODO TEXTO.
+///
+/// @param path									PUNTERO STRING
+/// @param pArrayListNationalTeam				LINKEDLIST SELECCIONES.
+/// @return										RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
+int controllerLoadNationalTeamFromText(char *path, LinkedList *pArrayListNationalTeam);
+/// @brief	controllerEditNationalTeam		EDITAR SELECCION
+///       								    AGREGO PARAMETROS TIPO INT (ID - CONDICION) DEBIDO A QUE NO ENCONTRE UNA FORMA MEJOR DE UTILIZACION PARA LA FUNCION Y QUE ESTA PUEDA SER REUTILIZABLE.
+/// @param pArrayListNationalTeam 			LINKEDLIST SELECCIONES.
+/// @param idNationalTeam					ENTERO
+/// @param condition						ENTERO
+/// @return									RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
+int controllerEditNationalTeam(LinkedList *pArrayListNationalTeam, int idNationalTeam, int condition);
+/// @brief	controllerListNationalTeams	LISTA SELECCIONES.
+///
+/// @param  pArrayListNationalTeam		LINKEDLIST SELECCIONES.
+/// @return								RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
+int controllerListNationalTeams(LinkedList *pArrayListNationalTeam);
+/// @brief	controllerSortNationalTeam  ORDENAMIENTO DE SELECCIONES.
+///										UTILIZO LL_CLONE PARA NO TOCAR LOS LIKNKEDLIST ORIGINALES.
+/// @param pArrayListNationalTeam		LINKEDLIST SELECCIONES.
+/// @return								RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
+int controllerSortNationalTeam(LinkedList *pArrayListNationalTeam);
+/// @brief	controllerSaveNationalTeamTextMode	GUARDA DATOS DE SELECCIONES DESDE ARCHIVO CSV EN MODO TEXTO.
+///
+/// @param path									PUNTERO STRING.
+/// @param pArrayListNationalTeam				LINKEDLIST SELECCIONES.
+/// @return										RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
+int controllerSaveNationalTeamTextMode(char *path, LinkedList *pArrayListNationalTeam);
+/// @brief controllerLoadIdplayerTextMode 	CARGA DATO DE ID JUGADORES A DAR DE ALTA DESDE ARCHIVO CSV EN MODO TEXTO.
+///
+/// @param path								PUNTERO STRING.
+/// @param pIdPlayer						PUNTERO ENTERO.
+/// @return									RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
+int controllerLoadIdplayerTextMode(char *path, int *pIdPlayer);
+/// @brief controllerGetIncrementalIdPlayer 	OBTIENE ID INCREMENTAL PARA JUGADOR A DAR DE ALTA.
+///
+/// @param condition							PUNTERO ENTERO.
+/// @return										RETORNO ID DE JUGADOR EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
+int controllerGetIncrementalIdPlayer(int *pCondition);
+/// @brief controllerSaveIdplayerTextMode    GAURDA ID DE JUGADOR EN MODO TEXTO A ARCHIVO CSV.
+///
+/// @param path								 PUNTERO STRING.
+/// @return									 RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
+int controllerSaveIdplayerTextMode(char *path);
+/// @brief	controllerSavePlayersByConfederationBinaryMode  GENERA Y GUARDA ARCHIVO BINARIO DE JUGADORES CON SU SELECCION EN CONFEDERACION ELEGIDA.
+///															UTILIZO LL_CLONE PARA NO TOCAR LOS LIKNKEDLIST ORIGINALES.
+/// @param path												PUNTERO STRING
+/// @param pArrayListPlayer									LINKEDLIST JUGADORES.
+/// @param pArrayListNationalTeam							LINKEDLIST SELECCIONES.
+/// @param pConfederationRegister							PUNTERO STRING.
+/// @return													RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
+int controllerSavePlayersByConfederationBinaryMode(char *path, LinkedList *pArrayListPlayer, LinkedList *pArrayListNationalTeam, char *confederationRegister);
+/// @brief	controllerLoadPlayersByConfederationFromBinary  CARGA ARCHIVO BINARIO DE JUGADORES CON SU SELECCION EN CONFEDERACION ELEGIDA.
+///
+/// @param path												PUNTERO STRING
+/// @param pArrayListPlayer									LINKEDLIST JUGADORES.
+/// @param pConfederationRegister							PUNTERO STRING.
+/// @return													RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
+int controllerLoadPlayersByConfederationFromBinary(char *path, LinkedList *pArrayListPlayer, LinkedList *pArrayListNationalTeam, char *pConfederationRegister);
+/// @brief controllerListPLayersByConfederationFromBinaryData 			LISTA JUGADORES CONVOCADOS POR CONFEDERACION ELEGIDOS POR EL USUARIO. TRAIDOS DESDE BINARIO.
+/// 																	UTILIZO LL_CLONE PARA NO TOCAR LOS LIKNKEDLIST ORIGINALES.
+/// @param path															PUNTERO STRING
+/// @param pArrayListPlayer												LINKEDLIST JUGADORES.
+/// @param pArrayListNationalTeam										LINKEDLIST SELECCIONES.
+/// @param pConfederationRegister										PUNTERO STRING.
+/// @return																RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
+int controllerListPLayersByConfederationFromBinaryData(char *path, LinkedList *pArrayListPlayer, LinkedList *pArrayListNationalTeam, char *pConfederationRegister);
+/// @brief controllerGetCountry	   				OBTIENE STRING DE PAIS A TRAVES DE ID
+///
+/// @param pArrayListNationalTeam				LINKEDLIST SELECCIONES.
+/// @param idNationalTeamPLayer					ENTERO.
+/// @param pCountry								PUNTERO STRING.
+/// @return										RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
+int controllerGetCountry(LinkedList *pArrayListNationalTeam, int idNationalTeamPLayer, char *pCountry);
+/// @brief controllerGetConfederation		OBTIENE STRING DE CONFEDERACION A TRAVES DE ID
+///
+/// @param pArrayListNationalTeam			LINKEDLIST SELECCIONES.
+/// @param idNationalTeam					ENTERO.
+/// @param pConfederation					PUNTERO STRING.
+/// @return									RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
+int controllerGetConfederation(LinkedList *pArrayListNationalTeam, int idNationalTeam, char *confederation);
+/// @brief controllerValidateCallUpPlayers		VERIFICA SI HAY O NO JUGADORES CONVOCADOS.
+///
+/// @param pArrayListPlayer						LINKEDLIST JUGADORES.
+/// @param pFlag								PUNTERO ENTERO.
+void controllerValidateCallUpPlayers(LinkedList *pArrayListPlayer, int *pFlag);
+/// @brief  controllerValidateConfederationExistence		VERIFICA SI EXISTE ALGUN JUGADOR EN CONFEDERACION.
+///															UTILIZO LL_CLONE PARA NO TOCAR LOS LIKNKEDLIST ORIGINALES.
+/// @param pArrayListPlayer									LINKEDLIST JUGADORES.
+/// @param pArrayListNationalTeam							LINKEDLIST SELECCIONES.
+/// @param pConfederationRegister							PUNTERO STRING.
+/// @param pFlag											PUNTERO INTERO.
+void controllerValidateConfederationExistence(LinkedList *pArrayListPlayer, LinkedList *pArrayListNationalTeam, char *pConfederationRegister, int *pFlag);

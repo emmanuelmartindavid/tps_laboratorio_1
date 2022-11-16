@@ -147,9 +147,10 @@ int controllerSavePlayersByConfederationBinaryMode(char *path, LinkedList *pArra
 ///
 /// @param path												PUNTERO STRING
 /// @param pArrayListPlayer									LINKEDLIST JUGADORES.
+/// @param pArrayListNationalTeam							LINKEDLIST SELECCIONES.
 /// @param pConfederationRegister							PUNTERO STRING.
 /// @return													RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
-int controllerLoadPlayersByConfederationFromBinary(char *path, LinkedList *pArrayListPlayer, char *pConfederationRegister);
+int controllerLoadPlayersByConfederationFromBinary(char *path, LinkedList *pArrayListPlayer, LinkedList *pArrayListNationalTeam, char *pConfederationRegister);
 /// @brief controllerListPLayersByConfederationFromBinaryData 			LISTA JUGADORES CONVOCADOS POR CONFEDERACION ELEGIDOS POR EL USUARIO. TRAIDOS DESDE BINARIO.
 /// 																	UTILIZO LL_CLONE PARA NO TOCAR LOS LIKNKEDLIST ORIGINALES.
 /// @param path															PUNTERO STRING
@@ -177,3 +178,10 @@ int controllerGetConfederation(LinkedList *pArrayListNationalTeam, int idNationa
 /// @param pArrayListPlayer						LINKEDLIST JUGADORES.
 /// @param pFlag								PUNTERO ENTERO.
 void controllerValidateCallUpPlayers(LinkedList *pArrayListPlayer, int *pFlag);
+/// @brief  controllerValidateConfederationExistence		VERIFICA SI EXISTE ALGUN JUGADOR EN CONFEDERACION.
+///															UTILIZO LL_CLONE PARA NO TOCAR LOS LIKNKEDLIST ORIGINALES.
+/// @param pArrayListPlayer									LINKEDLIST JUGADORES.
+/// @param pArrayListNationalTeam							LINKEDLIST SELECCIONES.
+/// @param pConfederationRegister							PUNTERO STRING.
+/// @param pFlag											PUNTERO INTERO.
+void controllerValidateConfederationExistence(LinkedList *pArrayListPlayer, LinkedList *pArrayListNationalTeam, char *pConfederationRegister, int *pFlag);

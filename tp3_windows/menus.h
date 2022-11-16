@@ -34,4 +34,7 @@ void showSortPlayerMenu();
 /// @brief showConfederationMenu  MENU CONFEDERACIONES
 ///
 void showConfederationMenu();
+/// @brief showConfederationMenu  MENU CONFEDERACIONES CARGA
+///
+void showConfederationMenuLoad();
 #endif /* MENUS_H_ */

@@ -137,7 +137,23 @@ void showSortPlayerMenu()
 void showConfederationMenu()
 {
 
-	printf("\t\t\t\t\t\t\t==============================CONFEDERACIONES============================"
+	printf("\t\t\t\t\t\t\t==================GENERAR-ARCHIVO-BINARIO-CONFEDERACIONES================"
+					"\n\t\t\t\t\t\t\t|\t\t\t\t\t\t\t\t\t|"
+					"\n\t\t\t\t\t\t\t|\t\t\t\t 1. AFC.\t\t\t\t|"
+					"\n\t\t\t\t\t\t\t|\t\t\t\t 2. CAF.\t\t\t\t|"
+					"\n\t\t\t\t\t\t\t|\t\t\t\t 3. CONCACAF.\t\t\t\t|\t\t"
+					"\n\t\t\t\t\t\t\t|\t\t\t\t 4. CONMEBOL.\t\t\t\t|"
+					"\n\t\t\t\t\t\t\t|\t\t\t\t 5. UEFA.\t\t\t\t|"
+					"\n\t\t\t\t\t\t\t|\t\t\t\t\t\t\t\t\t|\n"
+		   "\t\t\t\t\t\t\t=========================================================================\n");
+
+}
+/// @brief showConfederationMenu  MENU CONFEDERACIONES CARGA
+///
+void showConfederationMenuLoad()
+{
+
+	printf("\t\t\t\t\t\t\t===============CARGAR-LISTAR-ARCHIVO-BINARIO-CONFEDERACIONES============="
 					"\n\t\t\t\t\t\t\t|\t\t\t\t\t\t\t\t\t|"
 					"\n\t\t\t\t\t\t\t|\t\t\t\t 1. AFC.\t\t\t\t|"
 					"\n\t\t\t\t\t\t\t|\t\t\t\t 2. CAF.\t\t\t\t|"
