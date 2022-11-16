@@ -168,7 +168,7 @@ int controllerEditPlayer(LinkedList *pArrayListPlayer)
 
 	if (pArrayListPlayer != NULL)
 	{
-		if (ll_isEmpty(pArrayListPlayer) == 0 && controllerListPlayers(pArrayListPlayer) == SUCCESS && utn_getNumber(&auxId, "Ingrese ID de jugador a modificar.\n", "Error. Reintente.\n", 1, 500, 3) == 0)
+		if (ll_isEmpty(pArrayListPlayer) == 0 && controllerListPlayers(pArrayListPlayer) == SUCCESS && utn_getNumber(&auxId, "INGRESE ID DE JUGADOR A MODIFICAR.\n", "ERROR. REINTENTE.\n", 1, 500, 3) == 0)
 		{
 			indexListPlayer = controllerFindPlayerById(pArrayListPlayer, auxId);
 			if (indexListPlayer != ERROR)
@@ -215,7 +215,7 @@ int controllerRemovePlayer(LinkedList *pArrayListPlayer, LinkedList *pArrayListN
 			LinkedList *pArrayListNationalTeamAux = ll_clone(pArrayListNationalTeam);
 			if (pArrayListNationalTeamAux != NULL)
 			{
-				if (utn_getNumber(&auxId, "Ingrese ID de jugador a dar de baja.\n", "Error. Reintente.\n", 1, 500, 3) == 0)
+				if (utn_getNumber(&auxId, "INGRESE ID DE JUGADOR A DAR DE BAJA.\n", "ERROR. REINTENTE.\n", 1, 500, 3) == 0)
 				{
 					indexListPlayer = controllerFindPlayerById(pArrayListPlayer, auxId);
 					if (indexListPlayer != ERROR)
@@ -228,7 +228,9 @@ int controllerRemovePlayer(LinkedList *pArrayListPlayer, LinkedList *pArrayListN
 								showPlayerData();
 								listOnePlayer(pPlayer);
 								showLine();
-								if (utn_getDescriptionExit(confirmation, "Se dara de baja. Ingrese si para continuar, no para cancelar baja.\n", "Error. Reintente.\n", 3) == 0)
+								if (utn_getDescriptionExit(confirmation, "SE DARA DE BAJA.\n"
+												" INGRESE SI PARA CONTINUAR.\n"
+												"INGESE NO PARA CANCELAR BAJA.\n", "ERROR. REINTENTE.\n", 3) == 0)
 								{
 									if (stricmp(confirmation, "si") == 0)
 									{
@@ -408,7 +410,7 @@ int controllerCallUpPlayers(LinkedList *pArrayListPlayer, LinkedList *pArrayList
 		LinkedList *pArrayListNationalTeamAux = ll_clone(pArrayListNationalTeam);
 		if (pArrayListPlayerAux != NULL && pArrayListNationalTeamAux != NULL)
 		{
-			if (controllerListCallupAndCallOffPlayers(pArrayListPlayerAux, pArrayListNationalTeamAux) == SUCCESS && utn_getNumber(&idPlayer, "Ingrese id de jugador a convocar.\n", "Error. Reintente.\n", 1, 500, 3) == 0)
+			if (controllerListCallupAndCallOffPlayers(pArrayListPlayerAux, pArrayListNationalTeamAux) == SUCCESS && utn_getNumber(&idPlayer, "INGRESE ID DE JUGADOR A CONVOCAR.\n", "ERROR. REINTENTE.\n", 1, 500, 3) == 0)
 			{
 				indexListPlayer = controllerFindPlayerById(pArrayListPlayerAux, idPlayer);
 				if (indexListPlayer != ERROR)
@@ -425,7 +427,7 @@ int controllerCallUpPlayers(LinkedList *pArrayListPlayer, LinkedList *pArrayList
 							else
 							{
 								ll_sort(pArrayListNationalTeamAux, compareNationalTeamById, 1);
-								if (controllerListNationalTeams(pArrayListNationalTeamAux) == SUCCESS && utn_getNumber(&idNationalTeam, "Ingrese id de seleccion a la que sera convocado.\n", "Error. Reintente.\n", 1, 32, 3) == 0)
+								if (controllerListNationalTeams(pArrayListNationalTeamAux) == SUCCESS && utn_getNumber(&idNationalTeam, "INGRESE ID DE SELECCION A LA QUE SERA CONVOCADO.\n", "ERROR. REINTENTE.\n", 1, 32, 3) == 0)
 								{
 									if (controllerEditNationalTeam(pArrayListNationalTeamAux, idNationalTeam, CALLUP) == SUCCESS)
 									{
@@ -474,7 +476,7 @@ int controllerCallOffPlayers(LinkedList *pArrayListPlayer, LinkedList *pArrayLis
 		LinkedList *pArrayListNationalTeamAux = ll_clone(pArrayListNationalTeam);
 		if (pArrayListPlayerAux != NULL && pArrayListNationalTeamAux != NULL)
 		{
-			if (controllerListCallupPlayers(pArrayListPlayerAux, pArrayListNationalTeamAux) == SUCCESS && utn_getNumber(&idPlayer, "Ingrese id de jugador a quitar de seleccion.\n", "Error. Reintente.\n", 1, 500, 3) == 0)
+			if (controllerListCallupPlayers(pArrayListPlayerAux, pArrayListNationalTeamAux) == SUCCESS && utn_getNumber(&idPlayer, "INGRESE ID DE JUGADOR A QUITAR DE SELECCION.\n", "ERROR. REINTENTE.\n", 1, 500, 3) == 0)
 			{
 				indexListPlayer = controllerFindPlayerById(pArrayListPlayerAux, idPlayer);
 				if (indexListPlayer != ERROR)
@@ -518,9 +520,10 @@ int controllerSortPlayers(LinkedList *pArrayListPlayer)
 			do
 			{
 				showSortPlayerMenu();
-				if (utn_getNumber(&option, "Ingrese opcion.\n", "Error. Reintente.\n", 1, 4, 3) == 0)
+				if (utn_getNumber(&option, "INGRESE OPCION.\n", "ERROR. REINTENTE.\n", 1, 4, 3) == 0)
 				{
-					if (option != 4 && utn_getNumber(&sortOption, "1 para ordenar de forma ascendente, 0 de forma descendente.\n", "Error. Reintente.\n", 0, 1, 3) == 0)
+					if (option != 4 && utn_getNumber(&sortOption, "PRESIONE 1 PARA ORDENAR DE FORMA ASCENDENTE.\n "
+									"PRESIONE 0 PARA ORDENAR DE FORMA DESCENDENTE.\n", "ERROR. REINTENTE.\n", 0, 1, 3) == 0)
 					{
 						switch (option)
 						{
@@ -769,7 +772,8 @@ int controllerSortNationalTeam(LinkedList *pArrayListNationalTeam)
 		LinkedList *pArrayListNationalTeamAux = ll_clone(pArrayListNationalTeam);
 		if (pArrayListNationalTeamAux != NULL)
 		{
-			if (utn_getNumber(&sortOption, "1 para ordenar de forma ascendente, 0 de forma descendente.\n", "Error. Reintente.\n", 0, 1, 3) == 0)
+			if (utn_getNumber(&sortOption, "PRESIONE 1 PARA ORDENAR DE FORMA ASCENDENTE.\n "
+							"PRESIONE 0 PARA ORDENAR DE FORMA DESCENDENTE.\n", "ERROR. REINTENTE.\n", 0, 1, 3) == 0)
 			{
 				ll_sort(pArrayListNationalTeamAux, compareNationalTeamByConfederation, sortOption);
 				if (controllerListNationalTeams(pArrayListNationalTeamAux) == SUCCESS)

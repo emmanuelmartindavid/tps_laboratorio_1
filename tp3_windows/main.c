@@ -23,7 +23,7 @@ int main()
 	do
 	{
 		showMainMenu();
-		if (utn_getNumber(&option, "Ingrese opcion.\n", "Error. Reintente.\n", 1, 11, 3) == 0)
+		if (utn_getNumber(&option, "INGRESE OPCION.\n", "ERROR. REINTENTE.\n", 1, 11, 3) == 0)
 		{
 			switch (option)
 			{
@@ -32,11 +32,11 @@ int main()
 				{
 					if (controllerLoadPlayerFromText("jugadores.csv", listPLayers) == SUCCESS && controllerLoadNationalTeamFromText("selecciones.csv", listNationalTeam) == SUCCESS)
 					{
-						printf("Archivos de texto cargados correctamente.\n");
+						printf("ARCHIVOS DE TEXTO CARGADOS CORRECTAMENTE.\n");
 					}
 					else
 					{
-						printf("Error al cargar archivos.\n");
+						printf("ERROR AL CARGAR EL ARCHIVO.\n");
 					}
 				}
 				else
@@ -50,7 +50,7 @@ int main()
 				{
 					if (controllerAddPlayer(listPLayers) == SUCCESS)
 					{
-						printf("Alta exitosa.\n");
+						printf("ALTA DE JUGADOR EXITOSA.\n");
 					}
 					else
 					{
@@ -69,7 +69,7 @@ int main()
 					returnEditPlayer = controllerEditPlayer(listPLayers);
 					if (returnEditPlayer == SUCCESS)
 					{
-						printf("Jugador modificado exitosamente.\n");
+						printf("JUGADOR MODIFICADO EXITOSAMENTE.\n");
 					}
 					else if (returnEditPlayer == ERROR)
 					{
@@ -77,7 +77,7 @@ int main()
 					}
 					else if (returnEditPlayer == NOEDIT)
 					{
-						printf("No realizo modificaciones.\n");
+						printf("NO REALIZO MODIFICACIONES.\n");
 					}
 				}
 				else
@@ -92,7 +92,7 @@ int main()
 					returnRemovePlayer = controllerRemovePlayer(listPLayers, listNationalTeam);
 					if (returnRemovePlayer == SUCCESS)
 					{
-						printf("Jugador dado de baja exitosamente.\n");
+						printf("JUGADOR DADO DE BAJA EXITOSAMENTE.\n");
 					}
 					else if (returnRemovePlayer == ERROR)
 					{
@@ -119,7 +119,7 @@ int main()
 					do
 					{
 						showListMenuPlayers();
-						if (utn_getNumber(&option, "Ingrese opcion.\n", "Error. Reintente.\n", 1, 4, 3) == 0)
+						if (utn_getNumber(&option, "INGRESE OPCION.\n", "ERROR. REINTENTE.\n", 1, 4, 3) == 0)
 						{
 							switch (option)
 							{
@@ -161,7 +161,7 @@ int main()
 					do
 					{
 						showCallPlayersMenu();
-						if (utn_getNumber(&option, "Ingrese opcion.\n", "Error. Reintente.\n", 1, 3, 3) == 0)
+						if (utn_getNumber(&option, "INGRESE OPCION.\n", "ERROR. REINTENTE.\n", 1, 3, 3) == 0)
 						{
 							switch (option)
 							{
@@ -169,19 +169,19 @@ int main()
 								returnCallUpPlayers = controllerCallUpPlayers(listPLayers, listNationalTeam);
 								if (returnCallUpPlayers == SUCCESS)
 								{
-									printf("Jugador convocado exitosamente\n");
+									printf("JUGADOR CONVOCADO EXITOSAMENTE.\n");
 								}
 								else if (returnCallUpPlayers == ERROR)
 								{
-									printf("Error. Reintente\n");
+									printf("ERROR. REINTENTEe\n");
 								}
 								else if (returnCallUpPlayers == -2)
 								{
-									printf("Maximo de convocados para seleccion alcanzado.\n");
+									printf("MAXIMO DE CONVOCADOS PARA SELECCION ALCANZADO.\n");
 								}
 								else if (returnCallUpPlayers == -3)
 								{
-									printf("Jugador ya convocado por seleccion.\n");
+									printf("ERROR. JUGADOR YA FUE CONVOCADO POR SELECCION. REINTENTE.\n");
 								}
 								else if (returnCallUpPlayers == -4)
 								{
@@ -194,11 +194,11 @@ int main()
 								{
 									if (controllerCallOffPlayers(listPLayers, listNationalTeam) == SUCCESS)
 									{
-										printf("Jugador quitado de seleccion exitosamente.\n");
+										printf("JUGADOR QUITADO DE SELECCION EXITOSAMENTE.\n");
 									}
 									else
 									{
-										printf("Error. No existe id de jugador.\n");
+										printf("ERROR. NO EXISTE ID DE JUGADOR. REINTENTE.\n");
 									}
 									break;
 								}
@@ -227,7 +227,7 @@ int main()
 					do
 					{
 						showSortMenu();
-						if (utn_getNumber(&option, "Ingrese opcion.\n", "Error. Reintente.\n", 1, 3, 3) == 0)
+						if (utn_getNumber(&option, "INGRESE OPCION.\n", "ERROR. REINTENTE.\n", 1, 3, 3) == 0)
 						{
 							switch (option)
 							{
@@ -251,63 +251,63 @@ int main()
 				if (ll_isEmpty(listPLayers) == 0 && ll_isEmpty(listNationalTeam) == 0)
 				{
 					showConfederationMenu();
-					if (utn_getNumber(&option, "Ingrese opcion.\n", "Error. Reintente.\n", 1, 5, 3) == 0)
+					if (utn_getNumber(&option, "INGRESE OPCION.\n", "ERROR. REINTENTE.\n", 1, 5, 3) == 0)
 					{
 						switch (option)
 						{
 						case 1:
 							if (controllerSavePlayersByConfederationBinaryMode("AFC.bin", listPLayers, listNationalTeam, "AFC") == SUCCESS)
 							{
-								printf("Archivo binario generado correctamente.\n");
+								printf("ARCHIVO BINARIO GENERADO EXITOSAMENTE.\n");
 								flagSaveBinary = 1;
 							}
 							else
 							{
-								printf("Error. No se pudo generar archivo binario. No hay jugadores convocados en confederacion AFC.\n");
+								printf("ERROR . NO SE PUDO GENERAR ARCHIVO BINARIO. NO HAY JUGADORES CONVOCADOS EN CONFEDERACION AFC.\n");
 							}
 							break;
 						case 2:
 							if (controllerSavePlayersByConfederationBinaryMode("CAF.bin", listPLayers, listNationalTeam, "CAF") == SUCCESS)
 							{
-								printf("Archivo binario generado correctamente.\n");
+								printf("ARCHIVO BINARIO GENERADO EXITOSAMENTE.\n");
 								flagSaveBinary = 1;
 							}
 							else
 							{
-								printf("Error. No se pudo generar archivo binario. No hay jugadores convocados en confederacion CAF.\n");
+								printf("ERROR . NO SE PUDO GENERAR ARCHIVO BINARIO. NO HAY JUGADORES CONVOCADOS EN CONFEDERACION CAF.\n");
 							}
 							break;
 						case 3:
 							if (controllerSavePlayersByConfederationBinaryMode("CONCACAF.bin", listPLayers, listNationalTeam, "CONCACAF") == SUCCESS)
 							{
-								printf("Archivo binario generado correctamente.\n");
+								printf("ARCHIVO BINARIO GENERADO EXITOSAMENTE.\n");
 								flagSaveBinary = 1;
 							}
 							else
 							{
-								printf("Error. No se pudo generar archivo binario. No hay jugadores convocados en confederacion CONCACAF.\n");
+								printf("ERROR . NO SE PUDO GENERAR ARCHIVO BINARIO. NO HAY JUGADORES CONVOCADOS EN CONFEDERACION CONCACAF.\n");
 							}
 							break;
 						case 4:
 							if (controllerSavePlayersByConfederationBinaryMode("CONMEBOL.bin", listPLayers, listNationalTeam, "CONMEBOL") == SUCCESS)
 							{
-								printf("Archivo binario generado correctamente.\n");
+								printf("ARCHIVO BINARIO GENERADO EXITOSAMENTE.\n");
 								flagSaveBinary = 1;
 							}
 							else
 							{
-								printf("Error. No se pudo generar archivo binario. No hay jugadores convocados en confederacion CONMEBOL.\n");
+								printf("ERROR . NO SE PUDO GENERAR ARCHIVO BINARIO. NO HAY JUGADORES CONVOCADOS EN CONFEDERACION CONMEBOL.\n");
 							}
 							break;
 						case 5:
 							if (controllerSavePlayersByConfederationBinaryMode("UEFA.bin", listPLayers, listNationalTeam, "UEFA") == SUCCESS)
 							{
-								printf("Archivo binario generado correctamente.\n");
+								printf("ARCHIVO BINARIO GENERADO EXITOSAMENTE.\n");
 								flagSaveBinary = 1;
 							}
 							else
 							{
-								printf("Error. No se pudo generar archivo binario. No hay jugadores convocados en confederacion UEFA.\n");
+								printf("ERROR . NO SE PUDO GENERAR ARCHIVO BINARIO. NO HAY JUGADORES CONVOCADOS EN CONFEDERACION UEFA.\n");
 							}
 							break;
 						}
@@ -325,7 +325,7 @@ int main()
 					if (flagSaveBinary == 1)
 					{
 						showConfederationMenuLoad();
-						if (utn_getNumber(&option, "Ingrese opcion.\n", "Error. Reintente.\n", 1, 5, 3) == 0)
+						if (utn_getNumber(&option, "INGRESE OPCION.\n", "ERROR. REINTENTE.\n", 1, 5, 3) == 0)
 						{
 							switch (option)
 							{
@@ -337,7 +337,7 @@ int main()
 								}
 								else if (returnLoadBinary == ERROR)
 								{
-									printf("Error. No se pudo cargar archivo binario. Aun no ha sido generado el mismo.\n");
+									printf("ERROR. NO SE PUDO CARGAR ARCHIVO BINARIO. AUN NO HA SIDO GENERADO EL MISMO.\n");
 								}
 								else if (returnLoadBinary == CALLOFF)
 								{
@@ -352,8 +352,7 @@ int main()
 								}
 								else if (returnLoadBinary == ERROR)
 								{
-									printf("Error. No se pudo cargar archivo binario. Aun no ha sido generado el mismo.\n");
-								}
+									printf("ERROR. NO SE PUDO CARGAR ARCHIVO BINARIO. AUN NO HA SIDO GENERADO EL MISMO.\n");								}
 								else if (returnLoadBinary == CALLOFF)
 								{
 									printf("\t\t\t\t\t\tSE HA ELIMINADO SU ARCHIVO BINARIO DEBIDO A QUE, O HA ELIMINADO O HA DESCONVOCADO AL UNICO JUGADOR EN ESTA CONFEDERACION DE SU ARCHIVO BINARIO.\n\n");
@@ -367,8 +366,7 @@ int main()
 								}
 								else if (returnLoadBinary == ERROR)
 								{
-									printf("Error. No se pudo cargar archivo binario. Aun no ha sido generado el mismo.\n");
-								}
+									printf("ERROR. NO SE PUDO CARGAR ARCHIVO BINARIO. AUN NO HA SIDO GENERADO EL MISMO.\n");								}
 								else if (returnLoadBinary == CALLOFF)
 								{
 									printf("\t\t\t\t\t\tSE HA ELIMINADO SU ARCHIVO BINARIO DEBIDO A QUE, O HA ELIMINADO O HA DESCONVOCADO AL UNICO JUGADOR EN ESTA CONFEDERACION DE SU ARCHIVO BINARIO.\n\n");
@@ -382,8 +380,7 @@ int main()
 								}
 								else if (returnLoadBinary == ERROR)
 								{
-									printf("Error. No se pudo cargar archivo binario. Aun no ha sido generado el mismo.\n");
-								}
+									printf("ERROR. NO SE PUDO CARGAR ARCHIVO BINARIO. AUN NO HA SIDO GENERADO EL MISMO.\n");								}
 								else if (returnLoadBinary == CALLOFF)
 								{
 									printf("\t\t\t\t\t\tSE HA ELIMINADO SU ARCHIVO BINARIO DEBIDO A QUE, O HA ELIMINADO O HA DESCONVOCADO AL UNICO JUGADOR EN ESTA CONFEDERACION DE SU ARCHIVO BINARIO.\n\n");
@@ -397,8 +394,7 @@ int main()
 								}
 								else if (returnLoadBinary == ERROR)
 								{
-									printf("Error. No se pudo cargar archivo binario. Aun no ha sido generado el mismo.\n");
-								}
+									printf("ERROR. NO SE PUDO CARGAR ARCHIVO BINARIO. AUN NO HA SIDO GENERADO EL MISMO.\n");								}
 								else if (returnLoadBinary == CALLOFF)
 								{
 									printf("\t\t\t\t\t\tSE HA ELIMINADO SU ARCHIVO BINARIO DEBIDO A QUE, O HA ELIMINADO O HA DESCONVOCADO AL UNICO JUGADOR EN ESTA CONFEDERACION DE SU ARCHIVO BINARIO.\n\n");
@@ -424,11 +420,11 @@ int main()
 					if (controllerSaveIdplayerTextMode("IdJugadoresAutoincremental.csv") == SUCCESS && controllerSavePlayersTextMode("jugadores.csv", listPLayers) == SUCCESS && controllerSaveNationalTeamTextMode("selecciones.csv", listNationalTeam) == SUCCESS)
 					{
 						flag = 2;
-						printf("Archivo de texto guardado correctamente.\n");
+						printf("ARCHIVO DE TEXTO GUARDADO  EXITOSAMENTE.\n");
 					}
 					else
 					{
-						printf("Error al guardar el archivo.\n");
+						printf("ERROR AL GUARDAR EL ARCHIVO.\n");
 					}
 				}
 				else

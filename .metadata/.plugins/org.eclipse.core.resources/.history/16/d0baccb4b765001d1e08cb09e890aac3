@@ -969,20 +969,36 @@ int controllerSavePlayersByConfederationBinaryMode(char *path, LinkedList *pArra
 ///
 /// @param path												PUNTERO STRING
 /// @param pArrayListPlayer									LINKEDLIST JUGADORES.
+/// @param pArrayListNationalTeam							LINKEDLIST SELECCIONES.
 /// @param pConfederationRegister							PUNTERO STRING.
 /// @return													RETORNO SUCCESS(1) EN CASO CORRECTO. ERROR(-1) EN CASO CONTRARIO.
-int controllerLoadPlayersByConfederationFromBinary(char *path, LinkedList *pArrayListPlayer, char *pConfederationRegister)
+int controllerLoadPlayersByConfederationFromBinary(char *path, LinkedList *pArrayListPlayer, LinkedList *pArrayListNationalTeam, char *pConfederationRegister)
 {
-	int returnControllerLoadPlayersByConfederationFromBinary = ERROR;
-	if (path != NULL && pArrayListPlayer != NULL && pConfederationRegister != NULL)
+	int returnControllerLoadPlayersByConfederationFromBinary;
+	int flagConfederationExistence;
+	if (path != NULL && pArrayListPlayer != NULL && pArrayListNationalTeam != NULL && pConfederationRegister != NULL)
 	{
-		if (controllerLoadPlayerFromBinary(path, pArrayListPlayer) == SUCCESS)
+		controllerValidateConfederationExistence(pArrayListPlayer, pArrayListNationalTeam, pConfederationRegister, &flagConfederationExistence);
+		if (flagConfederationExistence == CALLUP)
 		{
-			returnControllerLoadPlayersByConfederationFromBinary = SUCCESS;
+			if (controllerLoadPlayerFromBinary(path, pArrayListPlayer) == SUCCESS)
+			{
+				returnControllerLoadPlayersByConfederationFromBinary = SUCCESS;
+			}
+			else
+			{
+				returnControllerLoadPlayersByConfederationFromBinary = ERROR;
+			}
+		}
+		else
+		{
+			returnControllerLoadPlayersByConfederationFromBinary = CALLOFF;
+			remove(path);
 		}
 	}
 	return returnControllerLoadPlayersByConfederationFromBinary;
 }
+
 /// @brief controllerListPLayersByConfederationFromBinaryData 			LISTA JUGADORES CONVOCADOS POR CONFEDERACION ELEGIDOS POR EL USUARIO. TRAIDOS DESDE BINARIO.
 /// 																	UTILIZO LL_CLONE PARA NO TOCAR LOS LIKNKEDLIST ORIGINALES.
 /// @param path															PUNTERO STRING
@@ -994,13 +1010,15 @@ int controllerListPLayersByConfederationFromBinaryData(char *path, LinkedList *p
 {
 	int returnControllerListPLayersByConfederationFromBinaryData = ERROR;
 	int flag;
+	int returnLoadPlayerBinary;
 	if (path != NULL && pArrayListPlayer != NULL && pArrayListNationalTeam != NULL && pConfederationRegister != NULL)
 	{
 		LinkedList *pArrayListPlayerAux = ll_clone(pArrayListPlayer);
 		LinkedList *pArrayListNationalTeamAux = ll_clone(pArrayListNationalTeam);
 		if (pArrayListPlayerAux != NULL && pArrayListNationalTeamAux != NULL)
 		{
-			if (controllerLoadPlayersByConfederationFromBinary(path, pArrayListPlayerAux, pConfederationRegister) == SUCCESS)
+			returnLoadPlayerBinary = controllerLoadPlayersByConfederationFromBinary(path, pArrayListPlayerAux, pArrayListNationalTeamAux, pConfederationRegister);
+			if (returnLoadPlayerBinary == SUCCESS)
 			{
 				controllerValidateCallUpPlayers(pArrayListPlayerAux, &flag);
 				if (flag == CALLUP)
@@ -1010,6 +1028,14 @@ int controllerListPLayersByConfederationFromBinaryData(char *path, LinkedList *p
 						returnControllerListPLayersByConfederationFromBinaryData = SUCCESS;
 					}
 				}
+			}
+			else if (returnLoadPlayerBinary == ERROR)
+			{
+				returnControllerListPLayersByConfederationFromBinaryData = ERROR;
+			}
+			else if (returnLoadPlayerBinary == CALLOFF)
+			{
+				returnControllerListPLayersByConfederationFromBinaryData = CALLOFF;
 			}
 			ll_deleteLinkedList(pArrayListPlayerAux);
 			ll_deleteLinkedList(pArrayListNationalTeamAux);
@@ -1135,6 +1161,54 @@ void controllerValidateCallUpPlayers(LinkedList *pArrayListPlayer, int *pFlag)
 			}
 		}
 		ll_deleteLinkedList(pArrayListPlayerAux);
+	}
+}
+/// @brief  controllerValidateConfederationExistence		VERIFICA SI EXISTE ALGUN JUGADOR EN CONFEDERACION.
+///															UTILIZO LL_CLONE PARA NO TOCAR LOS LIKNKEDLIST ORIGINALES.
+/// @param pArrayListPlayer									LINKEDLIST JUGADORES.
+/// @param pArrayListNationalTeam							LINKEDLIST SELECCIONES.
+/// @param pConfederationRegister							PUNTERO STRING.
+/// @param pFlag											PUNTERO INTERO.
+void controllerValidateConfederationExistence(LinkedList *pArrayListPlayer, LinkedList *pArrayListNationalTeam, char *pConfederationRegister, int *pFlag)
+{
+	int lenListPlayer;
+	int auxIdPlayer;
+	char auxConfederation[30];
+	sPlayer *pPlayer = NULL;
+	if (pArrayListPlayer != NULL && pConfederationRegister != NULL && pFlag != NULL)
+	{
+		LinkedList *pArrayListPlayerAux = ll_clone(pArrayListPlayer);
+		LinkedList *pArrayListNationalTeamAux = ll_clone(pArrayListNationalTeam);
+		if (pArrayListPlayerAux != NULL && pArrayListNationalTeamAux != NULL)
+		{
+			lenListPlayer = ll_len(pArrayListPlayerAux);
+			if (lenListPlayer > 0)
+			{
+				for (int i = 0; i < lenListPlayer; i++)
+				{
+					pPlayer = (sPlayer*) ll_get(pArrayListPlayerAux, i);
+					if (pPlayer != NULL)
+					{
+						if (getIdNationalTeamPLayer(pPlayer, &auxIdPlayer) == SUCCESS)
+						{
+							if (controllerGetConfederation(pArrayListNationalTeamAux, auxIdPlayer, auxConfederation) == SUCCESS)
+							{
+								if (stricmp(auxConfederation, pConfederationRegister) == 0)
+								{
+									*pFlag = CALLUP;
+									break;
+								}
+								else
+								{
+									*pFlag = CALLOFF;
+								}
+							}
+
+						}
+					}
+				}
+			}
+		}
 	}
 }
 

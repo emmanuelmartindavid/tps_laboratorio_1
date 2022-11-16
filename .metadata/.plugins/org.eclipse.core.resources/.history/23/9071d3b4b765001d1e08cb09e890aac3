@@ -434,7 +434,7 @@ int utn_getPositionPlayer(char *pPosition)
 	if (pPosition != NULL)
 	{
 		showPositionMenu();
-		if (utn_getNumber(&option, "INGRESE SU POSICION.\n", "ERROR. REINTENTE.\n", 1, 11, 3) == 0)
+		if (utn_getNumber(&option, "INGRESE SU POSICION.\n", "Dato invalido. Reintente.\n", 1, 11, 3) == 0)
 		{
 			for (int i = 0; i < 12; i++)
 			{
@@ -458,6 +458,7 @@ int utn_getPositionPlayer(char *pPosition)
 /// @return									RETORNO 0 EN CASO CORRECTO. -1 EN CASO CONTRARIO.
 int utn_getNationalityPlayer(char *pPosition)
 {
+
 	int returnUtn_getNationalityPlayer;
 	int option;
 	char auxNationality[33][30] =
@@ -467,7 +468,7 @@ int utn_getNationalityPlayer(char *pPosition)
 	if (pPosition != NULL)
 	{
 		showNatiolatityMenu();
-		if (utn_getNumber(&option, "INGRESE SU NACIONALIDAD.\n", "ERROR. REINTENTE.\n", 1, 32, 3) == 0)
+		if (utn_getNumber(&option, "INGRESE SU NACIONALIDAD.\n", "Dato invalido. Reintente.\n", 1, 32, 3) == 0)
 		{
 			for (int i = 0; i < 33; i++)
 			{
@@ -476,13 +477,17 @@ int utn_getNationalityPlayer(char *pPosition)
 					strcpy(pPosition, auxNationality[i]);
 					returnUtn_getNationalityPlayer = 0;
 				}
+
 			}
+
 		}
 		else
 		{
+
 			returnUtn_getNationalityPlayer = -1;
 		}
 	}
+
 	return returnUtn_getNationalityPlayer;
 }
 
