@@ -34,62 +34,29 @@ void showMainMenu()
 ///
 void showPositionMenu()
 {
-	printf("\t\t\t\t\t\t\t===========================POSICIONES============================"
-			"\n\t\t\t\t\t\t\t|\t\t\t\t\t\t\t\t|"
-			"\n\t\t\t\t\t\t\t|\t\t 1. PORTERO.\t\t\t\t\t|"
-			"\n\t\t\t\t\t\t\t|\t\t 2. DEFENSOR CENTRAL.\t\t\t\t|"
-			"\n\t\t\t\t\t\t\t|\t\t 3. LATERAL IZQUIERDO.\t\t\t\t|"
-			"\n\t\t\t\t\t\t\t|\t\t 4. LATERAL DERECHO.\t\t\t\t|"
-			"\n\t\t\t\t\t\t\t|\t\t 5. PIVOTE.\t\t\t\t\t|"
-			"\n\t\t\t\t\t\t\t|\t\t 6. MEDIOCENTRO.\t\t\t\t|"
-			"\n\t\t\t\t\t\t\t|\t\t 7. MEDIOCENTRO OFENSIVO.\t\t\t|"
-			"\n\t\t\t\t\t\t\t|\t\t 8. EXTREMO IZQUIERDO.\t\t\t\t|"
-			"\n\t\t\t\t\t\t\t|\t\t 9. EXTREMO DERECHO.\t\t\t\t|"
-			"\n\t\t\t\t\t\t\t|\t\t 10. MEDIAPUNTA.\t\t\t\t|"
-			"\n\t\t\t\t\t\t\t|\t\t 11. DELANTERO CENTRAL.\t\t\t\t|"
-			"\n\t\t\t\t\t\t\t|\t\t\t\t\t\t\t\t|\n"
-			"\t\t\t\t\t\t\t=================================================================\n");
+
+	printf("1. PORTERO\n"
+					"2. DEFENSOR CENTRAL\n"
+					"3. LATERAL IZQUIERDO\n"
+					"4. LATERAL DERECHO\n"
+					"5. PIVOTE\n"
+					"6. MEDIOCENTRO\n"
+					"7. MEDIOCENTRO OFENSIVO\n"
+					"8. EXTREMO IZQUIERDO\n"
+					"9. EXTREMO DERECHO\n"
+					"10. MEDIAPUNTA\n"
+					"11. DELANTERO CENTRAL\n");
+
 }
 /// @brief showNatiolatityMenu	MENU NACIONALIDADES.
 ///
 void showNatiolatityMenu()
 {
-	printf("\t\t\t\t\t\t\t======================NACIONALIDADES====================="
-			"\n\t\t\t\t\t\t\t|\t\t\t\t\t\t\t|"
-			"\n\t\t\t\t\t\t\t|\t\t 1. SAUDI.\t\t\t\t|"
-			"\n\t\t\t\t\t\t\t|\t\t 2. AUSTRALIANO.\t\t\t|"
-			"\n\t\t\t\t\t\t\t|\t\t 3. SURCOREANO.\t\t\t\t|"
-			"\n\t\t\t\t\t\t\t|\t\t 4. IRANI.\t\t\t\t|"
-			"\n\t\t\t\t\t\t\t|\t\t 5. JAPONES.\t\t\t\t|"
-			"\n\t\t\t\t\t\t\t|\t\t 6. QATARI.\t\t\t\t|"
-			"\n\t\t\t\t\t\t\t|\t\t 7. CAMERUNES.\t\t\t\t|"
-			"\n\t\t\t\t\t\t\t|\t\t 8. GANHES.\t\t\t\t|"
-			"\n\t\t\t\t\t\t\t|\t\t 9. MARROQUI.\t\t\t\t|"
-			"\n\t\t\t\t\t\t\t|\t\t 10. SENEGALES.\t\t\t\t|"
-			"\n\t\t\t\t\t\t\t|\t\t 11. TUNECINO.\t\t\t\t|"
-			"\n\t\t\t\t\t\t\t|\t\t 12. CANADIENCE.\t\t\t|"
-			"\n\t\t\t\t\t\t\t|\t\t 13. COSTARRICENSE.\t\t\t|"
-			"\n\t\t\t\t\t\t\t|\t\t 14. ESTADOUNIDENSE.\t\t\t|"
-			"\n\t\t\t\t\t\t\t|\t\t 15. MEXICANO.\t\t\t\t|"
-			"\n\t\t\t\t\t\t\t|\t\t 16. ARGENTINO.\t\t\t\t|"
-			"\n\t\t\t\t\t\t\t|\t\t 17. BRASILENIO.\t\t\t|"
-			"\n\t\t\t\t\t\t\t|\t\t 18. ECUATORIANO.\t\t\t|"
-			"\n\t\t\t\t\t\t\t|\t\t 19. URUGUAYO.\t\t\t\t|"
-			"\n\t\t\t\t\t\t\t|\t\t 20. ALEMAN.\t\t\t\t|"
-			"\n\t\t\t\t\t\t\t|\t\t 21. BELGA.\t\t\t\t|"
-			"\n\t\t\t\t\t\t\t|\t\t 22. CROATA.\t\t\t\t|"
-			"\n\t\t\t\t\t\t\t|\t\t 23. DANES.\t\t\t\t|"
-			"\n\t\t\t\t\t\t\t|\t\t 24. ESPANIOL.\t\t\t\t|"
-			"\n\t\t\t\t\t\t\t|\t\t 25. FRANCES.\t\t\t\t|"
-			"\n\t\t\t\t\t\t\t|\t\t 26. GALES.\t\t\t\t|"
-			"\n\t\t\t\t\t\t\t|\t\t 27. NEERLANDES.\t\t\t|"
-			"\n\t\t\t\t\t\t\t|\t\t 28. INGLES.\t\t\t\t|"
-			"\n\t\t\t\t\t\t\t|\t\t 29. POLACO.\t\t\t\t|"
-			"\n\t\t\t\t\t\t\t|\t\t 30. PORTUGUES.\t\t\t\t|"
-			"\n\t\t\t\t\t\t\t|\t\t 31. SERBIO.\t\t\t\t|"
-			"\n\t\t\t\t\t\t\t|\t\t 32. SUIZO.\t\t\t\t|"
-			"\n\t\t\t\t\t\t\t|\t\t\t\t\t\t\t|\n"
-			"\t\t\t\t\t\t\t=========================================================\n");
+	printf("1. SAUDI\n" "2. AUSTRALIANO\n" "3. SURCOREANO\n" "4. IRANI\n" "5. JAPONES\n" "6. QATARI\n" "7. CAMERUNES\n"
+					"8. GANHES\n" "9. MARROQUI\n" "10. SENEGALES\n" "11. TUNECINO\n" "12. CANADIENCE\n" "13. COSTARRICENSE\n" "14. ESTADOUNIDENSE\n"
+					"15. MEXICANO\n" "16. ARGENTINO\n" "17. BRASILENIO\n" "18. ECUATORIANO\n" "19. URUGUAYO\n" "20. ALEMAN\n" "21. BELGA\n" "22. CROATA\n"
+					"23. DANES\n" "24. ESPANIOL\n" "25. FRANCES\n" "26. GALES\n" "27. NEERLANDES\n" "28. INGLES\n" "29. POLACO\n" "30. PORTUGES\n" "31. SERBIO\n" "32. SUIZO\n");
+
 }
 /// @brief showEditPlayerMenu  MENU EDICION DE JUGADOR.
 ///
