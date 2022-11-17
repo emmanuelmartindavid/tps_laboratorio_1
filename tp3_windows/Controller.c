@@ -132,25 +132,30 @@ int controllerAddPlayer(LinkedList *pArrayListPlayer)
 	sPlayer *pPlayer = NULL;
 	if (pArrayListPlayer != NULL)
 	{
-		auxIdplayer = controllerGetIncrementalIdPlayer(&condition);
-		if (auxIdplayer > 370)
+
+		pPlayer = newPlayer();
+		if (pPlayer != NULL)
 		{
-			pPlayer = newPlayer();
-			if (pPlayer != NULL)
+			if (editFullNamePlayer(pPlayer) == SUCCESS && editAgePlayer(pPlayer) == SUCCESS && editPositionPlayer(pPlayer) == SUCCESS && editNationalityPlayer(pPlayer) == SUCCESS && setIdNationalTeamPlayer(pPlayer, auxIdNationalTeam) == SUCCESS)
 			{
-				if (setIdPlayer(pPlayer, auxIdplayer) == SUCCESS && editFullNamePlayer(pPlayer) == SUCCESS && editAgePlayer(pPlayer) == SUCCESS && editPositionPlayer(pPlayer) == SUCCESS && editNationalityPlayer(pPlayer) == SUCCESS && setIdNationalTeamPlayer(pPlayer, auxIdNationalTeam) == SUCCESS)
+				auxIdplayer = controllerGetIncrementalIdPlayer(&condition);
+				if (auxIdplayer > 370)
 				{
-					if (ll_add(pArrayListPlayer, pPlayer) == 0)
+					if (setIdPlayer(pPlayer, auxIdplayer) == SUCCESS)
 					{
-						returnControllerAddPlayer = SUCCESS;
+						if (ll_add(pArrayListPlayer, pPlayer) == 0)
+						{
+							returnControllerAddPlayer = SUCCESS;
+						}
 					}
 				}
 			}
-			else
-			{
-				deletePlayer(pPlayer);
-			}
 		}
+		else
+		{
+			deletePlayer(pPlayer);
+		}
+
 	}
 	return returnControllerAddPlayer;
 }
