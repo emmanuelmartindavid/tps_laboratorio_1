@@ -235,6 +235,7 @@ int main(void)
 				}
 				printf(" CONTADOR %d", counterTotalPlayers);
 				break;
+
 			case 3:
 
 				if (lodginPrice == 0 || foodPrice == 0 || transportPrice == 0)

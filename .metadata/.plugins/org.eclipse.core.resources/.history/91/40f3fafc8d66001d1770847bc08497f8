@@ -42,15 +42,6 @@ int main(void)
 	int flagSubstracCounter = 0;
 	int optionConfederation;
 	int flagMax = 0;
-	float totalPrice;
-	int counterTotalPlayers = 0;
-	float afcAverage;
-	float cafAverage;
-	float concacafAverage;
-	float conmebolAverage;
-	float uefaAverage;
-	float ofcAverage;
-	float incrementedTotalPrice;
 
 	do
 	{
@@ -203,7 +194,6 @@ int main(void)
 							}
 							else
 							{
-								counterTotalPlayers++;
 								switch (optionConfederation)
 								{
 								case 1:
@@ -233,30 +223,13 @@ int main(void)
 				{
 					printf("\t\t\t\t\t\t\t\t\tYA REALIZO LA CARGA DE JUGADORES\n\n");
 				}
-				printf(" CONTADOR %d", counterTotalPlayers);
 				break;
 			case 3:
-
 				if (lodginPrice == 0 || foodPrice == 0 || transportPrice == 0)
 				{
 					if (goalkeeperCounter == 0 || defenderCounter == 0 || midfielderCounter == 0 || strikerCounter == 0)
 					{
 						printf("\t\t\t\t\t\t\t\t\tPRIMERO DEBE INGRESAR TODOS LOS COSTOS Y AL MENOS UN JUGADOR.\n");
-					}
-					else
-					{
-						if (calculateAveragePlayersPerConfederation(afcCounter, counterTotalPlayers, &afcAverage) == SUCCESS && calculateAveragePlayersPerConfederation(cafCounter, counterTotalPlayers, &cafAverage) == SUCCESS
-										&& calculateAveragePlayersPerConfederation(concacafCounter, counterTotalPlayers, &concacafAverage) == SUCCESS && calculateAveragePlayersPerConfederation(conmebolCounter, counterTotalPlayers, &conmebolAverage) == SUCCESS
-										&& calculateAveragePlayersPerConfederation(uefaCounter, counterTotalPlayers, &uefaAverage) == SUCCESS && calculateAveragePlayersPerConfederation(ofcCounter, counterTotalPlayers, &ofcAverage) == SUCCESS)
-
-							if (calculateTotalCost(lodginPrice, foodPrice, transportPrice, &totalPrice) == SUCCESS)
-							{
-								printf("\t\tSE REALIZARON LOS CALCULOS CORRECTAMENTE.\n\n");
-							}
-						if (uefaAverage > 0.5)
-						{
-							calculatePriceIncremented(totalPrice, &incrementedTotalPrice);
-						}
 					}
 				}
 

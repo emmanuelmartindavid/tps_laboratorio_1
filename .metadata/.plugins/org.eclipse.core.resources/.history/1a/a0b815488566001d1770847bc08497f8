@@ -13,8 +13,8 @@
 #define SUCCESS 1
 #define ERROR -1
 
-void mainMenu(float lodginPrice, float foodPrice, float transportPrice, int goalkeeperCounter, int defenderCounter, int midfielderCounter, int strikerCounter);
-void costsMenu(float lodginPrice, float foodPrice, float transportPrice);
+void mainMenu(float priceLodgin, float priceFood, float priceTransport, int goalkeeperCounter, int defenderCounter, int midfielderCounter, int strikerCounter);
+void costsMenu(float priceLodgin, float priceFood, float priceTransport);
 void playersMenu(int goalkeeperCounter, int defenderCounter, int midfielderCounter, int strikerCounter);
 void conferationMenu(int afcCounter, int cafCounter, int concacafCounter, int conmebolCounter, int uefaCounter, int ofcCounter);
 void disccountCounter(int *counter, int *pFlag);
@@ -25,9 +25,9 @@ int main(void)
 	int options;
 	int optionCost;
 	int optionPlayers;
-	float lodginPrice = 0;
-	float foodPrice = 0;
-	float transportPrice = 0;
+	float priceFood = 0;
+	float priceLodgin = 0;
+	float priceTransport = 0;
 	int goalkeeperCounter = 0;
 	int defenderCounter = 0;
 	int midfielderCounter = 0;
@@ -42,19 +42,10 @@ int main(void)
 	int flagSubstracCounter = 0;
 	int optionConfederation;
 	int flagMax = 0;
-	float totalPrice;
-	int counterTotalPlayers = 0;
-	float afcAverage;
-	float cafAverage;
-	float concacafAverage;
-	float conmebolAverage;
-	float uefaAverage;
-	float ofcAverage;
-	float incrementedTotalPrice;
 
 	do
 	{
-		mainMenu(lodginPrice, foodPrice, transportPrice, goalkeeperCounter, defenderCounter, midfielderCounter, strikerCounter);
+		mainMenu(priceLodgin, priceFood, priceTransport, goalkeeperCounter, defenderCounter, midfielderCounter, strikerCounter);
 		if (utn_getNumber(&options, "\nIngrese opcion\n", "\nOpcion incorrecta\n ", 1, 5, 3) == 0)
 		{
 
@@ -62,14 +53,14 @@ int main(void)
 			{
 
 			case 1:
-				costsMenu(lodginPrice, foodPrice, transportPrice);
+				costsMenu(priceLodgin, priceFood, priceTransport);
 				if (utn_getNumber(&optionCost, "\nIngrese opcion\n", "\nOpcion incorrecta\n ", 1, 5, 3) == 0)
 				{
 					switch (optionCost)
 					{
 
 					case 1:
-						if (utn_getNumberFloat(&lodginPrice, "Ingrese costo de hospedaje. Desde $1000\n", "Ingrese precio valido\n", 1000, 10000000, 3) == 0)
+						if (utn_getNumberFloat(&priceLodgin, "Ingrese costo de hospedaje. Desde $1000\n", "Ingrese precio valido\n", 1000, 10000000, 3) == 0)
 						{
 							printf("CARGA CORRECTA.\n");
 						}
@@ -79,7 +70,7 @@ int main(void)
 						}
 						break;
 					case 2:
-						if (utn_getNumberFloat(&foodPrice, "Ingrese costo de comida. Desde $1000\n", "Ingrese precio valido\n", 1000, 10000000, 3) == 0)
+						if (utn_getNumberFloat(&priceFood, "Ingrese costo de comida. Desde $1000\n", "Ingrese precio valido\n", 1000, 10000000, 3) == 0)
 						{
 							printf("CARGA CORRECTA.\n");
 						}
@@ -89,7 +80,7 @@ int main(void)
 						}
 						break;
 					case 3:
-						if (utn_getNumberFloat(&transportPrice, "Ingrese costo de transporte. Desde $1000\n", "Ingrese precio valido\n", 1000, 10000000, 3) == 0)
+						if (utn_getNumberFloat(&priceTransport, "Ingrese costo de transporte. Desde $1000\n", "Ingrese precio valido\n", 1000, 10000000, 3) == 0)
 						{
 							printf("CARGA CORRECTA.\n");
 						}
@@ -123,7 +114,7 @@ int main(void)
 						}
 						else
 						{
-							flagMax = 0;
+							flagMax=0;
 							switch (optionPlayers)
 							{
 							case 1:
@@ -203,7 +194,6 @@ int main(void)
 							}
 							else
 							{
-								counterTotalPlayers++;
 								switch (optionConfederation)
 								{
 								case 1:
@@ -233,32 +223,8 @@ int main(void)
 				{
 					printf("\t\t\t\t\t\t\t\t\tYA REALIZO LA CARGA DE JUGADORES\n\n");
 				}
-				printf(" CONTADOR %d", counterTotalPlayers);
 				break;
 			case 3:
-
-				if (lodginPrice == 0 || foodPrice == 0 || transportPrice == 0)
-				{
-					if (goalkeeperCounter == 0 || defenderCounter == 0 || midfielderCounter == 0 || strikerCounter == 0)
-					{
-						printf("\t\t\t\t\t\t\t\t\tPRIMERO DEBE INGRESAR TODOS LOS COSTOS Y AL MENOS UN JUGADOR.\n");
-					}
-					else
-					{
-						if (calculateAveragePlayersPerConfederation(afcCounter, counterTotalPlayers, &afcAverage) == SUCCESS && calculateAveragePlayersPerConfederation(cafCounter, counterTotalPlayers, &cafAverage) == SUCCESS
-										&& calculateAveragePlayersPerConfederation(concacafCounter, counterTotalPlayers, &concacafAverage) == SUCCESS && calculateAveragePlayersPerConfederation(conmebolCounter, counterTotalPlayers, &conmebolAverage) == SUCCESS
-										&& calculateAveragePlayersPerConfederation(uefaCounter, counterTotalPlayers, &uefaAverage) == SUCCESS && calculateAveragePlayersPerConfederation(ofcCounter, counterTotalPlayers, &ofcAverage) == SUCCESS)
-
-							if (calculateTotalCost(lodginPrice, foodPrice, transportPrice, &totalPrice) == SUCCESS)
-							{
-								printf("\t\tSE REALIZARON LOS CALCULOS CORRECTAMENTE.\n\n");
-							}
-						if (uefaAverage > 0.5)
-						{
-							calculatePriceIncremented(totalPrice, &incrementedTotalPrice);
-						}
-					}
-				}
 
 				break;
 			case 4:
@@ -279,7 +245,7 @@ int main(void)
 	return EXIT_SUCCESS;
 }
 
-void mainMenu(float lodginPrice, float foodPrice, float transportPrice, int goalkeeperCounter, int defenderCounter, int midfielderCounter, int strikerCounter)
+void mainMenu(float priceLodgin, float priceFood, float priceTransport, int goalkeeperCounter, int defenderCounter, int midfielderCounter, int strikerCounter)
 {
 
 	printf("\t\t\t\t\t\t\t=============================MENU-PRINCIPAL=============================="
@@ -297,23 +263,23 @@ void mainMenu(float lodginPrice, float foodPrice, float transportPrice, int goal
 					"\n\t\t\t\t\t\t\t|\t\t\t 4. INFORMAR RESULTADOS.\t\t\t|"
 					"\n\t\t\t\t\t\t\t|\t\t\t 5. SALIR.\t\t\t\t\t|"
 					"\n\t\t\t\t\t\t\t|\t\t\t\t\t\t\t\t\t|\n"
-					"\t\t\t\t\t\t\t=========================================================================\n", lodginPrice, foodPrice, transportPrice, goalkeeperCounter, defenderCounter, midfielderCounter, strikerCounter);
+					"\t\t\t\t\t\t\t=========================================================================\n", priceLodgin, priceFood, priceTransport, goalkeeperCounter, defenderCounter, midfielderCounter, strikerCounter);
 }
 
-void costsMenu(float lodginPrice, float foodPrice, float transportPrice)
+void costsMenu(float priceLodgin, float priceFood, float priceTransport)
 {
 
-	printf("\t\t\t\t\t\t\t=============================MENU-COSTOS================================="
+	printf("\t\t\t\t\t\t\t========================================================================="
 					"\n\t\t\t\t\t\t\t|\t\t1. INGRESAR COSTO DE HOSPEDAJE -> $%.2f.\t\t|"
 					"\n\t\t\t\t\t\t\t|\t\t2. INGRESAR COSTO DE COMIDA -> $%.2f.\t\t\t|"
 					"\n\t\t\t\t\t\t\t|\t\t3. INGRESAR COSTO DE TRANSPORTE -> $%.2f.\t\t|"
-					"\n\t\t\t\t\t\t\t=========================================================================\n", lodginPrice, foodPrice, transportPrice);
+					"\n\t\t\t\t\t\t\t=========================================================================\n", priceLodgin, priceFood, priceTransport);
 
 }
 
 void playersMenu(int goalkeeperCounter, int defenderCounter, int midfielderCounter, int strikerCounter)
 {
-	printf("\t\t\t\t\t\t\t============================MENU-JUGADORES==============================="
+	printf("\t\t\t\t\t\t\t========================================================================="
 					"\n\t\t\t\t\t\t\t|\t\t\t1.  ARQUERO -> %d.\t\t\t\t|"
 					"\n\t\t\t\t\t\t\t|\t\t\t2.  DEFENSOR -> %d.\t\t\t\t|"
 					"\n\t\t\t\t\t\t\t|\t\t\t3.  MEDIOCAMPISTA -> %d.\t\t\t\t|"
@@ -323,7 +289,7 @@ void playersMenu(int goalkeeperCounter, int defenderCounter, int midfielderCount
 
 void conferationMenu(int afcCounter, int cafCounter, int concacafCounter, int conmebolCounter, int uefaCounter, int ofcCounter)
 {
-	printf("\t\t\t\t\t\t\t============================MENU-CONFEDERACIONES========================="
+	printf("\t\t\t\t\t\t\t========================================================================="
 					"\n\t\t\t\t\t\t\t|\t\t\t1.  AFC -> %d.\t\t\t\t\t|"
 					"\n\t\t\t\t\t\t\t|\t\t\t2.  CAF -> %d.\t\t\t\t\t|"
 					"\n\t\t\t\t\t\t\t|\t\t\t3.  CONCACAF -> %d.\t\t\t\t|"
@@ -333,51 +299,47 @@ void conferationMenu(int afcCounter, int cafCounter, int concacafCounter, int co
 					"\n\t\t\t\t\t\t\t=========================================================================\n", afcCounter, cafCounter, concacafCounter, conmebolCounter, uefaCounter, ofcCounter);
 }
 
-int calculateTotalCost(float lodginPrice, float foodPrice, float transportPrice, float *pResult)
+float calculateTotalCost(float priceLodgin, float priceFood, float priceTransport)
 {
-	int returnCalculateTotalCost = ERROR;
-	if (pResult != NULL)
-	{
-		*pResult = lodginPrice + foodPrice + transportPrice;
-		returnCalculateTotalCost = SUCCESS;
-	}
-	return returnCalculateTotalCost;
+	float result;
+	result = priceLodgin + priceFood + priceTransport;
+	return result;
 }
 
-int calculatePriceIncremented(float totalPrice, float *pResult)
+float calculatePriceIncremented(float totalPrice)
 {
-	int returnCalculatePriceIncremented = ERROR;
-	if (pResult != NULL)
-	{
-		*pResult = (totalPrice * 1.35);
-		returnCalculatePriceIncremented = SUCCESS;
-	}
-	return returnCalculatePriceIncremented;
+	float result;
+	result = totalPrice + (totalPrice * 0.35);
+	return result;
 }
 
 int countPlayersOrConfederation(int *pCounter, int max)
 {
-	int returnCountPlayers = ERROR;
-	if (pCounter != NULL)
+	int returnCountPlayers;
+	if (*pCounter < max)
 	{
-		if (*pCounter < max)
-		{
-			(*pCounter)++;
-			returnCountPlayers = SUCCESS;
-		}
+		(*pCounter)++;
+		returnCountPlayers = SUCCESS;
+	}
+	else
+	{
+		returnCountPlayers = ERROR;
 	}
 	return returnCountPlayers;
 }
 
-int calculateAveragePlayersPerConfederation(int confederationCounter, int playerCounter, float *pResult)
+float calculateAveragePlayersPerConfederation(int confederationCounter, int playerCounter)
 {
-	int returnCalculateAveragePlayersPerConfederation = ERROR;
-	if (playerCounter > 0 && pResult != NULL)
+	float result;
+	if (playerCounter > 0)
 	{
-		*pResult = (float) confederationCounter / playerCounter;
-		returnCalculateAveragePlayersPerConfederation = SUCCESS;
+		result = (float) confederationCounter / playerCounter;
 	}
-	return returnCalculateAveragePlayersPerConfederation;
+	else
+	{
+		result = ERROR;
+	}
+	return result;
 }
 
 void disccountCounter(int *counter, int *pFlag)
