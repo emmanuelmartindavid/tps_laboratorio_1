@@ -1,1 +1,6 @@
-Info: Nothing to build for TP1-Corregido
+20:38:10 **** Incremental Build of configuration Debug for project TP1-Corregido ****
+Info: Internal Builder is used for build
+gcc -o TP1-Corregido.exe "src\\TP1-Corregido.o" "src\\calculos.o" "src\\menus.o" "src\\validaciones.o" 
+
+20:38:11 Build Finished. 0 errors, 0 warnings. (took 197ms)
+

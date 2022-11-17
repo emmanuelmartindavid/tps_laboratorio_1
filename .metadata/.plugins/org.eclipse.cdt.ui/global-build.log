@@ -1,2 +1,565 @@
-Info: Nothing to build for tp3_windows
-Info: Nothing to build for tp3_windows
+16:26:48 **** Incremental Build of configuration Debug for project TP1-Corregido ****
+Info: Internal Builder is used for build
+gcc -o TP1-Corregido.exe "src\\TP1-Corregido.o" "src\\validaciones.o" 
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: cannot open output file TP1-Corregido.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+16:26:59 **** Incremental Build of configuration Debug for project TP1-Corregido ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP1-Corregido.o" "..\\src\\TP1-Corregido.c" 
+gcc -o TP1-Corregido.exe "src\\TP1-Corregido.o" "src\\validaciones.o" 
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: cannot open output file TP1-Corregido.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+16:27:05 **** Incremental Build of configuration Debug for project TP1-Corregido ****
+Info: Internal Builder is used for build
+gcc -o TP1-Corregido.exe "src\\TP1-Corregido.o" "src\\validaciones.o" 
+16:28:14 **** Incremental Build of configuration Debug for project TP1-Corregido ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP1-Corregido.o" "..\\src\\TP1-Corregido.c" 
+gcc -o TP1-Corregido.exe "src\\TP1-Corregido.o" "src\\validaciones.o" 
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: cannot open output file TP1-Corregido.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+16:28:17 **** Incremental Build of configuration Debug for project TP1-Corregido ****
+Info: Internal Builder is used for build
+gcc -o TP1-Corregido.exe "src\\TP1-Corregido.o" "src\\validaciones.o" 
+Info: Nothing to build for TP1-Corregido
+16:51:25 **** Incremental Build of configuration Debug for project TP1-Corregido ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP1-Corregido.o" "..\\src\\TP1-Corregido.c" 
+gcc -o TP1-Corregido.exe "src\\TP1-Corregido.o" "src\\validaciones.o" 
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: cannot open output file TP1-Corregido.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+16:51:27 **** Incremental Build of configuration Debug for project TP1-Corregido ****
+Info: Internal Builder is used for build
+gcc -o TP1-Corregido.exe "src\\TP1-Corregido.o" "src\\validaciones.o" 
+Info: Nothing to build for TP1-Corregido
+16:54:36 **** Incremental Build of configuration Debug for project TP1-Corregido ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP1-Corregido.o" "..\\src\\TP1-Corregido.c" 
+..\src\TP1-Corregido.c: In function 'main':
+..\src\TP1-Corregido.c:252:50: warning: passing argument 1 of 'calculateAveragePlayersPerConfederation' makes integer from pointer without a cast [-Wint-conversion]
+  252 |      if (calculateAveragePlayersPerConfederation(&afcCounter, &counterTotalPlayers, &afcAverage) == SUCCESS || calculateAveragePlayersPerConfederation(&cafCounter, &counterTotalPlayers, &cafAverage) == SUCCESS
+      |                                                  ^~~~~~~~~~~
+      |                                                  |
+      |                                                  int *
+..\src\TP1-Corregido.c:25:49: note: expected 'int' but argument is of type 'int *'
+   25 | int calculateAveragePlayersPerConfederation(int confederationCounter, int playerCounter, float *pResult);
+      |                                             ~~~~^~~~~~~~~~~~~~~~~~~~
+..\src\TP1-Corregido.c:252:63: warning: passing argument 2 of 'calculateAveragePlayersPerConfederation' makes integer from pointer without a cast [-Wint-conversion]
+  252 |      if (calculateAveragePlayersPerConfederation(&afcCounter, &counterTotalPlayers, &afcAverage) == SUCCESS || calculateAveragePlayersPerConfederation(&cafCounter, &counterTotalPlayers, &cafAverage) == SUCCESS
+      |                                                               ^~~~~~~~~~~~~~~~~~~~
+      |                                                               |
+      |                                                               int *
+..\src\TP1-Corregido.c:25:75: note: expected 'int' but argument is of type 'int *'
+   25 | int calculateAveragePlayersPerConfederation(int confederationCounter, int playerCounter, float *pResult);
+      |                                                                       ~~~~^~~~~~~~~~~~~
+..\src\TP1-Corregido.c:252:152: warning: passing argument 1 of 'calculateAveragePlayersPerConfederation' makes integer from pointer without a cast [-Wint-conversion]
+  252 |      if (calculateAveragePlayersPerConfederation(&afcCounter, &counterTotalPlayers, &afcAverage) == SUCCESS || calculateAveragePlayersPerConfederation(&cafCounter, &counterTotalPlayers, &cafAverage) == SUCCESS
+      |                                                                                                                                                        ^~~~~~~~~~~
+      |                                                                                                                                                        |
+      |                                                                                                                                                        int *
+..\src\TP1-Corregido.c:25:49: note: expected 'int' but argument is of type 'int *'
+   25 | int calculateAveragePlayersPerConfederation(int confederationCounter, int playerCounter, float *pResult);
+      |                                             ~~~~^~~~~~~~~~~~~~~~~~~~
+..\src\TP1-Corregido.c:252:165: warning: passing argument 2 of 'calculateAveragePlayersPerConfederation' makes integer from pointer without a cast [-Wint-conversion]
+  252 |      if (calculateAveragePlayersPerConfederation(&afcCounter, &counterTotalPlayers, &afcAverage) == SUCCESS || calculateAveragePlayersPerConfederation(&cafCounter, &counterTotalPlayers, &cafAverage) == SUCCESS
+      |                                                                                                                                                                     ^~~~~~~~~~~~~~~~~~~~
+      |                                                                                                                                                                     |
+      |                                                                                                                                                                     int *
+..\src\TP1-Corregido.c:25:75: note: expected 'int' but argument is of type 'int *'
+   25 | int calculateAveragePlayersPerConfederation(int confederationCounter, int playerCounter, float *pResult);
+      |                                                                       ~~~~^~~~~~~~~~~~~
+..\src\TP1-Corregido.c:253:53: warning: passing argument 1 of 'calculateAveragePlayersPerConfederation' makes integer from pointer without a cast [-Wint-conversion]
+  253 |          || calculateAveragePlayersPerConfederation(&concacafCounter, &counterTotalPlayers, &concacafAverage) == SUCCESS || calculateAveragePlayersPerConfederation(&conmebolCounter, &counterTotalPlayers, &conmebolAverage) == SUCCESS
+      |                                                     ^~~~~~~~~~~~~~~~
+      |                                                     |
+      |                                                     int *
+..\src\TP1-Corregido.c:25:49: note: expected 'int' but argument is of type 'int *'
+   25 | int calculateAveragePlayersPerConfederation(int confederationCounter, int playerCounter, float *pResult);
+      |                                             ~~~~^~~~~~~~~~~~~~~~~~~~
+..\src\TP1-Corregido.c:253:71: warning: passing argument 2 of 'calculateAveragePlayersPerConfederation' makes integer from pointer without a cast [-Wint-conversion]
+  253 |          || calculateAveragePlayersPerConfederation(&concacafCounter, &counterTotalPlayers, &concacafAverage) == SUCCESS || calculateAveragePlayersPerConfederation(&conmebolCounter, &counterTotalPlayers, &conmebolAverage) == SUCCESS
+      |                                                                       ^~~~~~~~~~~~~~~~~~~~
+      |                                                                       |
+      |                                                                       int *
+..\src\TP1-Corregido.c:25:75: note: expected 'int' but argument is of type 'int *'
+   25 | int calculateAveragePlayersPerConfederation(int confederationCounter, int playerCounter, float *pResult);
+      |                                                                       ~~~~^~~~~~~~~~~~~
+..\src\TP1-Corregido.c:253:165: warning: passing argument 1 of 'calculateAveragePlayersPerConfederation' makes integer from pointer without a cast [-Wint-conversion]
+  253 |          || calculateAveragePlayersPerConfederation(&concacafCounter, &counterTotalPlayers, &concacafAverage) == SUCCESS || calculateAveragePlayersPerConfederation(&conmebolCounter, &counterTotalPlayers, &conmebolAverage) == SUCCESS
+      |                                                                                                                                                                     ^~~~~~~~~~~~~~~~
+      |                                                                                                                                                                     |
+      |                                                                                                                                                                     int *
+..\src\TP1-Corregido.c:25:49: note: expected 'int' but argument is of type 'int *'
+   25 | int calculateAveragePlayersPerConfederation(int confederationCounter, int playerCounter, float *pResult);
+      |                                             ~~~~^~~~~~~~~~~~~~~~~~~~
+..\src\TP1-Corregido.c:253:183: warning: passing argument 2 of 'calculateAveragePlayersPerConfederation' makes integer from pointer without a cast [-Wint-conversion]
+  253 |          || calculateAveragePlayersPerConfederation(&concacafCounter, &counterTotalPlayers, &concacafAverage) == SUCCESS || calculateAveragePlayersPerConfederation(&conmebolCounter, &counterTotalPlayers, &conmebolAverage) == SUCCESS
+      |                                                                                                                                                                                       ^~~~~~~~~~~~~~~~~~~~
+      |                                                                                                                                                                                       |
+      |                                                                                                                                                                                       int *
+..\src\TP1-Corregido.c:25:75: note: expected 'int' but argument is of type 'int *'
+   25 | int calculateAveragePlayersPerConfederation(int confederationCounter, int playerCounter, float *pResult);
+      |                                                                       ~~~~^~~~~~~~~~~~~
+..\src\TP1-Corregido.c:254:53: warning: passing argument 1 of 'calculateAveragePlayersPerConfederation' makes integer from pointer without a cast [-Wint-conversion]
+  254 |          || calculateAveragePlayersPerConfederation(&uefaCounter, &counterTotalPlayers, &uefaAverage) == SUCCESS || calculateAveragePlayersPerConfederation(&ofcCounter, &counterTotalPlayers, &ofcAverage) == SUCCESS)
+      |                                                     ^~~~~~~~~~~~
+      |                                                     |
+      |                                                     int *
+..\src\TP1-Corregido.c:25:49: note: expected 'int' but argument is of type 'int *'
+   25 | int calculateAveragePlayersPerConfederation(int confederationCounter, int playerCounter, float *pResult);
+      |                                             ~~~~^~~~~~~~~~~~~~~~~~~~
+..\src\TP1-Corregido.c:254:67: warning: passing argument 2 of 'calculateAveragePlayersPerConfederation' makes integer from pointer without a cast [-Wint-conversion]
+  254 |          || calculateAveragePlayersPerConfederation(&uefaCounter, &counterTotalPlayers, &uefaAverage) == SUCCESS || calculateAveragePlayersPerConfederation(&ofcCounter, &counterTotalPlayers, &ofcAverage) == SUCCESS)
+      |                                                                   ^~~~~~~~~~~~~~~~~~~~
+      |                                                                   |
+      |                                                                   int *
+..\src\TP1-Corregido.c:25:75: note: expected 'int' but argument is of type 'int *'
+   25 | int calculateAveragePlayersPerConfederation(int confederationCounter, int playerCounter, float *pResult);
+      |                                                                       ~~~~^~~~~~~~~~~~~
+..\src\TP1-Corregido.c:254:157: warning: passing argument 1 of 'calculateAveragePlayersPerConfederation' makes integer from pointer without a cast [-Wint-conversion]
+  254 |          || calculateAveragePlayersPerConfederation(&uefaCounter, &counterTotalPlayers, &uefaAverage) == SUCCESS || calculateAveragePlayersPerConfederation(&ofcCounter, &counterTotalPlayers, &ofcAverage) == SUCCESS)
+      |                                                                                                                                                             ^~~~~~~~~~~
+      |                                                                                                                                                             |
+      |                                                                                                                                                             int *
+..\src\TP1-Corregido.c:25:49: note: expected 'int' but argument is of type 'int *'
+   25 | int calculateAveragePlayersPerConfederation(int confederationCounter, int playerCounter, float *pResult);
+      |                                             ~~~~^~~~~~~~~~~~~~~~~~~~
+..\src\TP1-Corregido.c:254:170: warning: passing argument 2 of 'calculateAveragePlayersPerConfederation' makes integer from pointer without a cast [-Wint-conversion]
+  254 |          || calculateAveragePlayersPerConfederation(&uefaCounter, &counterTotalPlayers, &uefaAverage) == SUCCESS || calculateAveragePlayersPerConfederation(&ofcCounter, &counterTotalPlayers, &ofcAverage) == SUCCESS)
+      |                                                                                                                                                                          ^~~~~~~~~~~~~~~~~~~~
+      |                                                                                                                                                                          |
+      |                                                                                                                                                                          int *
+..\src\TP1-Corregido.c:25:75: note: expected 'int' but argument is of type 'int *'
+   25 | int calculateAveragePlayersPerConfederation(int confederationCounter, int playerCounter, float *pResult);
+      |                                                                       ~~~~^~~~~~~~~~~~~
+..\src\TP1-Corregido.c: At top level:
+..\src\TP1-Corregido.c:393:5: error: conflicting types for 'calculateAveragePlayersPerConfederation'
+  393 | int calculateAveragePlayersPerConfederation(int *confederationCounter, int *playerCounter, float *pResult)
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\src\TP1-Corregido.c:25:5: note: previous declaration of 'calculateAveragePlayersPerConfederation' was here
+   25 | int calculateAveragePlayersPerConfederation(int confederationCounter, int playerCounter, float *pResult);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\src\TP1-Corregido.c: In function 'calculateAveragePlayersPerConfederation':
+..\src\TP1-Corregido.c:398:3: error: pointer value used where a floating point value was expected
+  398 |   *pResult = (float) confederationCounter / playerCounter;
+      |   ^
+..\src\TP1-Corregido.c:398:43: error: invalid operands to binary / (have 'float' and 'int *')
+  398 |   *pResult = (float) confederationCounter / playerCounter;
+      |              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ^
+      |              |
+      |              float
+16:55:01 **** Incremental Build of configuration Debug for project TP1-Corregido ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP1-Corregido.o" "..\\src\\TP1-Corregido.c" 
+..\src\TP1-Corregido.c: In function 'calculateAveragePlayersPerConfederation':
+..\src\TP1-Corregido.c:28:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+   28 | {
+      | ^
+..\src\TP1-Corregido.c:304:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+  304 | {
+      | ^
+..\src\TP1-Corregido.c:325:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+  325 | {
+      | ^
+..\src\TP1-Corregido.c:336:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+  336 | {
+      | ^
+..\src\TP1-Corregido.c:346:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+  346 | {
+      | ^
+..\src\TP1-Corregido.c:358:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+  358 | {
+      | ^
+..\src\TP1-Corregido.c:369:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+  369 | {
+      | ^
+..\src\TP1-Corregido.c:380:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+  380 | {
+      | ^
+..\src\TP1-Corregido.c:394:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+  394 | {
+      | ^
+..\src\TP1-Corregido.c:405:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+  405 | {
+      | ^
+..\src\TP1-Corregido.c:416:1: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+  416 | {
+      | ^
+..\src\TP1-Corregido.c:25:5: error: old-style parameter declarations in prototyped function definition
+   25 | int calculateAveragePlayersPerConfederation(int *confederationCounter, int *playerCounter, float *pResult)
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\src\TP1-Corregido.c:426: error: expected '{' at end of input
+  426 | }
+      | 
+..\src\TP1-Corregido.c:426:1: warning: control reaches end of non-void function [-Wreturn-type]
+  426 | }
+      | ^
+16:55:38 **** Incremental Build of configuration Debug for project TP1-Corregido ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP1-Corregido.o" "..\\src\\TP1-Corregido.c" 
+..\src\TP1-Corregido.c: In function 'main':
+..\src\TP1-Corregido.c:252:50: warning: passing argument 1 of 'calculateAveragePlayersPerConfederation' makes integer from pointer without a cast [-Wint-conversion]
+  252 |      if (calculateAveragePlayersPerConfederation(&afcCounter, &counterTotalPlayers, &afcAverage) == SUCCESS || calculateAveragePlayersPerConfederation(&cafCounter, &counterTotalPlayers, &cafAverage) == SUCCESS
+      |                                                  ^~~~~~~~~~~
+      |                                                  |
+      |                                                  int *
+..\src\TP1-Corregido.c:25:49: note: expected 'int' but argument is of type 'int *'
+   25 | int calculateAveragePlayersPerConfederation(int confederationCounter, int playerCounter, float *pResult);
+      |                                             ~~~~^~~~~~~~~~~~~~~~~~~~
+..\src\TP1-Corregido.c:252:63: warning: passing argument 2 of 'calculateAveragePlayersPerConfederation' makes integer from pointer without a cast [-Wint-conversion]
+  252 |      if (calculateAveragePlayersPerConfederation(&afcCounter, &counterTotalPlayers, &afcAverage) == SUCCESS || calculateAveragePlayersPerConfederation(&cafCounter, &counterTotalPlayers, &cafAverage) == SUCCESS
+      |                                                               ^~~~~~~~~~~~~~~~~~~~
+      |                                                               |
+      |                                                               int *
+..\src\TP1-Corregido.c:25:75: note: expected 'int' but argument is of type 'int *'
+   25 | int calculateAveragePlayersPerConfederation(int confederationCounter, int playerCounter, float *pResult);
+      |                                                                       ~~~~^~~~~~~~~~~~~
+..\src\TP1-Corregido.c:252:152: warning: passing argument 1 of 'calculateAveragePlayersPerConfederation' makes integer from pointer without a cast [-Wint-conversion]
+  252 |      if (calculateAveragePlayersPerConfederation(&afcCounter, &counterTotalPlayers, &afcAverage) == SUCCESS || calculateAveragePlayersPerConfederation(&cafCounter, &counterTotalPlayers, &cafAverage) == SUCCESS
+      |                                                                                                                                                        ^~~~~~~~~~~
+      |                                                                                                                                                        |
+      |                                                                                                                                                        int *
+..\src\TP1-Corregido.c:25:49: note: expected 'int' but argument is of type 'int *'
+   25 | int calculateAveragePlayersPerConfederation(int confederationCounter, int playerCounter, float *pResult);
+      |                                             ~~~~^~~~~~~~~~~~~~~~~~~~
+..\src\TP1-Corregido.c:252:165: warning: passing argument 2 of 'calculateAveragePlayersPerConfederation' makes integer from pointer without a cast [-Wint-conversion]
+  252 |      if (calculateAveragePlayersPerConfederation(&afcCounter, &counterTotalPlayers, &afcAverage) == SUCCESS || calculateAveragePlayersPerConfederation(&cafCounter, &counterTotalPlayers, &cafAverage) == SUCCESS
+      |                                                                                                                                                                     ^~~~~~~~~~~~~~~~~~~~
+      |                                                                                                                                                                     |
+      |                                                                                                                                                                     int *
+..\src\TP1-Corregido.c:25:75: note: expected 'int' but argument is of type 'int *'
+   25 | int calculateAveragePlayersPerConfederation(int confederationCounter, int playerCounter, float *pResult);
+      |                                                                       ~~~~^~~~~~~~~~~~~
+..\src\TP1-Corregido.c:253:53: warning: passing argument 1 of 'calculateAveragePlayersPerConfederation' makes integer from pointer without a cast [-Wint-conversion]
+  253 |          || calculateAveragePlayersPerConfederation(&concacafCounter, &counterTotalPlayers, &concacafAverage) == SUCCESS || calculateAveragePlayersPerConfederation(&conmebolCounter, &counterTotalPlayers, &conmebolAverage) == SUCCESS
+      |                                                     ^~~~~~~~~~~~~~~~
+      |                                                     |
+      |                                                     int *
+..\src\TP1-Corregido.c:25:49: note: expected 'int' but argument is of type 'int *'
+   25 | int calculateAveragePlayersPerConfederation(int confederationCounter, int playerCounter, float *pResult);
+      |                                             ~~~~^~~~~~~~~~~~~~~~~~~~
+..\src\TP1-Corregido.c:253:71: warning: passing argument 2 of 'calculateAveragePlayersPerConfederation' makes integer from pointer without a cast [-Wint-conversion]
+  253 |          || calculateAveragePlayersPerConfederation(&concacafCounter, &counterTotalPlayers, &concacafAverage) == SUCCESS || calculateAveragePlayersPerConfederation(&conmebolCounter, &counterTotalPlayers, &conmebolAverage) == SUCCESS
+      |                                                                       ^~~~~~~~~~~~~~~~~~~~
+      |                                                                       |
+      |                                                                       int *
+..\src\TP1-Corregido.c:25:75: note: expected 'int' but argument is of type 'int *'
+   25 | int calculateAveragePlayersPerConfederation(int confederationCounter, int playerCounter, float *pResult);
+      |                                                                       ~~~~^~~~~~~~~~~~~
+..\src\TP1-Corregido.c:253:165: warning: passing argument 1 of 'calculateAveragePlayersPerConfederation' makes integer from pointer without a cast [-Wint-conversion]
+  253 |          || calculateAveragePlayersPerConfederation(&concacafCounter, &counterTotalPlayers, &concacafAverage) == SUCCESS || calculateAveragePlayersPerConfederation(&conmebolCounter, &counterTotalPlayers, &conmebolAverage) == SUCCESS
+      |                                                                                                                                                                     ^~~~~~~~~~~~~~~~
+      |                                                                                                                                                                     |
+      |                                                                                                                                                                     int *
+..\src\TP1-Corregido.c:25:49: note: expected 'int' but argument is of type 'int *'
+   25 | int calculateAveragePlayersPerConfederation(int confederationCounter, int playerCounter, float *pResult);
+      |                                             ~~~~^~~~~~~~~~~~~~~~~~~~
+..\src\TP1-Corregido.c:253:183: warning: passing argument 2 of 'calculateAveragePlayersPerConfederation' makes integer from pointer without a cast [-Wint-conversion]
+  253 |          || calculateAveragePlayersPerConfederation(&concacafCounter, &counterTotalPlayers, &concacafAverage) == SUCCESS || calculateAveragePlayersPerConfederation(&conmebolCounter, &counterTotalPlayers, &conmebolAverage) == SUCCESS
+      |                                                                                                                                                                                       ^~~~~~~~~~~~~~~~~~~~
+      |                                                                                                                                                                                       |
+      |                                                                                                                                                                                       int *
+..\src\TP1-Corregido.c:25:75: note: expected 'int' but argument is of type 'int *'
+   25 | int calculateAveragePlayersPerConfederation(int confederationCounter, int playerCounter, float *pResult);
+      |                                                                       ~~~~^~~~~~~~~~~~~
+..\src\TP1-Corregido.c:254:53: warning: passing argument 1 of 'calculateAveragePlayersPerConfederation' makes integer from pointer without a cast [-Wint-conversion]
+  254 |          || calculateAveragePlayersPerConfederation(&uefaCounter, &counterTotalPlayers, &uefaAverage) == SUCCESS || calculateAveragePlayersPerConfederation(&ofcCounter, &counterTotalPlayers, &ofcAverage) == SUCCESS)
+      |                                                     ^~~~~~~~~~~~
+      |                                                     |
+      |                                                     int *
+..\src\TP1-Corregido.c:25:49: note: expected 'int' but argument is of type 'int *'
+   25 | int calculateAveragePlayersPerConfederation(int confederationCounter, int playerCounter, float *pResult);
+      |                                             ~~~~^~~~~~~~~~~~~~~~~~~~
+..\src\TP1-Corregido.c:254:67: warning: passing argument 2 of 'calculateAveragePlayersPerConfederation' makes integer from pointer without a cast [-Wint-conversion]
+  254 |          || calculateAveragePlayersPerConfederation(&uefaCounter, &counterTotalPlayers, &uefaAverage) == SUCCESS || calculateAveragePlayersPerConfederation(&ofcCounter, &counterTotalPlayers, &ofcAverage) == SUCCESS)
+      |                                                                   ^~~~~~~~~~~~~~~~~~~~
+      |                                                                   |
+      |                                                                   int *
+..\src\TP1-Corregido.c:25:75: note: expected 'int' but argument is of type 'int *'
+   25 | int calculateAveragePlayersPerConfederation(int confederationCounter, int playerCounter, float *pResult);
+      |                                                                       ~~~~^~~~~~~~~~~~~
+..\src\TP1-Corregido.c:254:157: warning: passing argument 1 of 'calculateAveragePlayersPerConfederation' makes integer from pointer without a cast [-Wint-conversion]
+  254 |          || calculateAveragePlayersPerConfederation(&uefaCounter, &counterTotalPlayers, &uefaAverage) == SUCCESS || calculateAveragePlayersPerConfederation(&ofcCounter, &counterTotalPlayers, &ofcAverage) == SUCCESS)
+      |                                                                                                                                                             ^~~~~~~~~~~
+      |                                                                                                                                                             |
+      |                                                                                                                                                             int *
+..\src\TP1-Corregido.c:25:49: note: expected 'int' but argument is of type 'int *'
+   25 | int calculateAveragePlayersPerConfederation(int confederationCounter, int playerCounter, float *pResult);
+      |                                             ~~~~^~~~~~~~~~~~~~~~~~~~
+..\src\TP1-Corregido.c:254:170: warning: passing argument 2 of 'calculateAveragePlayersPerConfederation' makes integer from pointer without a cast [-Wint-conversion]
+  254 |          || calculateAveragePlayersPerConfederation(&uefaCounter, &counterTotalPlayers, &uefaAverage) == SUCCESS || calculateAveragePlayersPerConfederation(&ofcCounter, &counterTotalPlayers, &ofcAverage) == SUCCESS)
+      |                                                                                                                                                                          ^~~~~~~~~~~~~~~~~~~~
+      |                                                                                                                                                                          |
+      |                                                                                                                                                                          int *
+..\src\TP1-Corregido.c:25:75: note: expected 'int' but argument is of type 'int *'
+   25 | int calculateAveragePlayersPerConfederation(int confederationCounter, int playerCounter, float *pResult);
+      |                                                                       ~~~~^~~~~~~~~~~~~
+..\src\TP1-Corregido.c: At top level:
+..\src\TP1-Corregido.c:393:5: error: conflicting types for 'calculateAveragePlayersPerConfederation'
+  393 | int calculateAveragePlayersPerConfederation(int *confederationCounter, int *playerCounter, float *pResult)
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+..\src\TP1-Corregido.c:25:5: note: previous declaration of 'calculateAveragePlayersPerConfederation' was here
+   25 | int calculateAveragePlayersPerConfederation(int confederationCounter, int playerCounter, float *pResult);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+16:55:55 **** Incremental Build of configuration Debug for project TP1-Corregido ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP1-Corregido.o" "..\\src\\TP1-Corregido.c" 
+gcc -o TP1-Corregido.exe "src\\TP1-Corregido.o" "src\\validaciones.o" 
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: cannot open output file TP1-Corregido.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+16:55:58 **** Incremental Build of configuration Debug for project TP1-Corregido ****
+Info: Internal Builder is used for build
+gcc -o TP1-Corregido.exe "src\\TP1-Corregido.o" "src\\validaciones.o" 
+Info: Nothing to build for TP1-Corregido
+16:57:52 **** Incremental Build of configuration Debug for project TP1-Corregido ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP1-Corregido.o" "..\\src\\TP1-Corregido.c" 
+gcc -o TP1-Corregido.exe "src\\TP1-Corregido.o" "src\\validaciones.o" 
+16:59:09 **** Incremental Build of configuration Debug for project TP1-Corregido ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP1-Corregido.o" "..\\src\\TP1-Corregido.c" 
+gcc -o TP1-Corregido.exe "src\\TP1-Corregido.o" "src\\validaciones.o" 
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: cannot open output file TP1-Corregido.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+16:59:11 **** Incremental Build of configuration Debug for project TP1-Corregido ****
+Info: Internal Builder is used for build
+gcc -o TP1-Corregido.exe "src\\TP1-Corregido.o" "src\\validaciones.o" 
+17:02:39 **** Incremental Build of configuration Debug for project TP1-Corregido ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP1-Corregido.o" "..\\src\\TP1-Corregido.c" 
+gcc -o TP1-Corregido.exe "src\\TP1-Corregido.o" "src\\validaciones.o" 
+17:12:15 **** Incremental Build of configuration Debug for project TP1-Corregido ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP1-Corregido.o" "..\\src\\TP1-Corregido.c" 
+gcc -o TP1-Corregido.exe "src\\TP1-Corregido.o" "src\\validaciones.o" 
+17:14:09 **** Incremental Build of configuration Debug for project TP1-Corregido ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP1-Corregido.o" "..\\src\\TP1-Corregido.c" 
+gcc -o TP1-Corregido.exe "src\\TP1-Corregido.o" "src\\validaciones.o" 
+17:15:32 **** Incremental Build of configuration Debug for project TP1-Corregido ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP1-Corregido.o" "..\\src\\TP1-Corregido.c" 
+gcc -o TP1-Corregido.exe "src\\TP1-Corregido.o" "src\\validaciones.o" 
+17:17:07 **** Incremental Build of configuration Debug for project TP1-Corregido ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP1-Corregido.o" "..\\src\\TP1-Corregido.c" 
+gcc -o TP1-Corregido.exe "src\\TP1-Corregido.o" "src\\validaciones.o" 
+17:18:51 **** Incremental Build of configuration Debug for project TP1-Corregido ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP1-Corregido.o" "..\\src\\TP1-Corregido.c" 
+..\src\TP1-Corregido.c: In function 'main':
+..\src\TP1-Corregido.c:76:19: warning: statement will never be executed [-Wswitch-unreachable]
+   76 |      flagCalculate=0;
+      |      ~~~~~~~~~~~~~^~
+gcc -o TP1-Corregido.exe "src\\TP1-Corregido.o" "src\\validaciones.o" 
+17:19:09 **** Incremental Build of configuration Debug for project TP1-Corregido ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP1-Corregido.o" "..\\src\\TP1-Corregido.c" 
+..\src\TP1-Corregido.c: In function 'main':
+..\src\TP1-Corregido.c:75:21: warning: statement will never be executed [-Wswitch-unreachable]
+   75 |      { flagCalculate=0;
+      |        ~~~~~~~~~~~~~^~
+gcc -o TP1-Corregido.exe "src\\TP1-Corregido.o" "src\\validaciones.o" 
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: cannot open output file TP1-Corregido.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+17:19:26 **** Incremental Build of configuration Debug for project TP1-Corregido ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP1-Corregido.o" "..\\src\\TP1-Corregido.c" 
+gcc -o TP1-Corregido.exe "src\\TP1-Corregido.o" "src\\validaciones.o" 
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: cannot open output file TP1-Corregido.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+17:19:29 **** Incremental Build of configuration Debug for project TP1-Corregido ****
+Info: Internal Builder is used for build
+gcc -o TP1-Corregido.exe "src\\TP1-Corregido.o" "src\\validaciones.o" 
+Info: Nothing to build for TP1-Corregido
+17:21:00 **** Incremental Build of configuration Debug for project TP1-Corregido ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP1-Corregido.o" "..\\src\\TP1-Corregido.c" 
+gcc -o TP1-Corregido.exe "src\\TP1-Corregido.o" "src\\validaciones.o" 
+17:22:23 **** Incremental Build of configuration Debug for project TP1-Corregido ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP1-Corregido.o" "..\\src\\TP1-Corregido.c" 
+gcc -o TP1-Corregido.exe "src\\TP1-Corregido.o" "src\\validaciones.o" 
+17:25:19 **** Incremental Build of configuration Debug for project TP1-Corregido ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP1-Corregido.o" "..\\src\\TP1-Corregido.c" 
+gcc -o TP1-Corregido.exe "src\\TP1-Corregido.o" "src\\validaciones.o" 
+17:26:56 **** Incremental Build of configuration Debug for project TP1-Corregido ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP1-Corregido.o" "..\\src\\TP1-Corregido.c" 
+gcc -o TP1-Corregido.exe "src\\TP1-Corregido.o" "src\\validaciones.o" 
+17:30:57 **** Incremental Build of configuration Debug for project TP1-Corregido ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP1-Corregido.o" "..\\src\\TP1-Corregido.c" 
+gcc -o TP1-Corregido.exe "src\\TP1-Corregido.o" "src\\validaciones.o" 
+17:31:57 **** Incremental Build of configuration Debug for project TP1-Corregido ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP1-Corregido.o" "..\\src\\TP1-Corregido.c" 
+gcc -o TP1-Corregido.exe "src\\TP1-Corregido.o" "src\\validaciones.o" 
+17:33:12 **** Incremental Build of configuration Debug for project TP1-Corregido ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP1-Corregido.o" "..\\src\\TP1-Corregido.c" 
+gcc -o TP1-Corregido.exe "src\\TP1-Corregido.o" "src\\validaciones.o" 
+17:36:45 **** Incremental Build of configuration Debug for project TP1-Corregido ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP1-Corregido.o" "..\\src\\TP1-Corregido.c" 
+gcc -o TP1-Corregido.exe "src\\TP1-Corregido.o" "src\\validaciones.o" 
+17:38:56 **** Incremental Build of configuration Debug for project TP1-Corregido ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP1-Corregido.o" "..\\src\\TP1-Corregido.c" 
+gcc -o TP1-Corregido.exe "src\\TP1-Corregido.o" "src\\validaciones.o" 
+17:40:40 **** Incremental Build of configuration Debug for project TP1-Corregido ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP1-Corregido.o" "..\\src\\TP1-Corregido.c" 
+gcc -o TP1-Corregido.exe "src\\TP1-Corregido.o" "src\\validaciones.o" 
+18:00:55 **** Incremental Build of configuration Debug for project TP1-Corregido ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP1-Corregido.o" "..\\src\\TP1-Corregido.c" 
+gcc -o TP1-Corregido.exe "src\\TP1-Corregido.o" "src\\validaciones.o" 
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: cannot open output file TP1-Corregido.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+18:00:59 **** Incremental Build of configuration Debug for project TP1-Corregido ****
+Info: Internal Builder is used for build
+gcc -o TP1-Corregido.exe "src\\TP1-Corregido.o" "src\\validaciones.o" 
+Info: Nothing to build for TP1-Corregido
+18:06:40 **** Incremental Build of configuration Debug for project TP1-Corregido ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP1-Corregido.o" "..\\src\\TP1-Corregido.c" 
+gcc -o TP1-Corregido.exe "src\\TP1-Corregido.o" "src\\validaciones.o" 
+18:13:38 **** Incremental Build of configuration Debug for project TP1-Corregido ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP1-Corregido.o" "..\\src\\TP1-Corregido.c" 
+gcc -o TP1-Corregido.exe "src\\TP1-Corregido.o" "src\\validaciones.o" 
+18:20:46 **** Incremental Build of configuration Debug for project TP1-Corregido ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP1-Corregido.o" "..\\src\\TP1-Corregido.c" 
+..\src\TP1-Corregido.c: In function 'main':
+..\src\TP1-Corregido.c:62:8: warning: unused variable 'maximusAverage' [-Wunused-variable]
+   62 |  float maximusAverage;
+      |        ^~~~~~~~~~~~~~
+gcc -o TP1-Corregido.exe "src\\TP1-Corregido.o" "src\\validaciones.o" 
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: cannot open output file TP1-Corregido.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+18:20:50 **** Incremental Build of configuration Debug for project TP1-Corregido ****
+Info: Internal Builder is used for build
+gcc -o TP1-Corregido.exe "src\\TP1-Corregido.o" "src\\validaciones.o" 
+Info: Nothing to build for TP1-Corregido
+18:28:49 **** Incremental Build of configuration Debug for project TP1-Corregido ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP1-Corregido.o" "..\\src\\TP1-Corregido.c" 
+..\src\TP1-Corregido.c: In function 'main':
+..\src\TP1-Corregido.c:61:8: warning: unused variable 'maximusAverage' [-Wunused-variable]
+   61 |  float maximusAverage;
+      |        ^~~~~~~~~~~~~~
+gcc -o TP1-Corregido.exe "src\\TP1-Corregido.o" "src\\validaciones.o" 
+18:29:28 **** Incremental Build of configuration Debug for project TP1-Corregido ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP1-Corregido.o" "..\\src\\TP1-Corregido.c" 
+gcc -o TP1-Corregido.exe "src\\TP1-Corregido.o" "src\\validaciones.o" 
+18:35:37 **** Incremental Build of configuration Debug for project TP1-Corregido ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP1-Corregido.o" "..\\src\\TP1-Corregido.c" 
+gcc -o TP1-Corregido.exe "src\\TP1-Corregido.o" "src\\validaciones.o" 
+18:39:56 **** Incremental Build of configuration Debug for project TP1-Corregido ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP1-Corregido.o" "..\\src\\TP1-Corregido.c" 
+gcc -o TP1-Corregido.exe "src\\TP1-Corregido.o" "src\\validaciones.o" 
+20:17:09 **** Incremental Build of configuration Debug for project TP1-Corregido ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP1-Corregido.o" "..\\src\\TP1-Corregido.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menus.o" "..\\src\\menus.c" 
+gcc -o TP1-Corregido.exe "src\\TP1-Corregido.o" "src\\menus.o" "src\\validaciones.o" 
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: cannot open output file TP1-Corregido.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+20:17:12 **** Incremental Build of configuration Debug for project TP1-Corregido ****
+Info: Internal Builder is used for build
+gcc -o TP1-Corregido.exe "src\\TP1-Corregido.o" "src\\menus.o" "src\\validaciones.o" 
+Info: Nothing to build for TP1-Corregido
+20:20:23 **** Incremental Build of configuration Debug for project TP1-Corregido ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP1-Corregido.o" "..\\src\\TP1-Corregido.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\calculos.o" "..\\src\\calculos.c" 
+gcc -o TP1-Corregido.exe "src\\TP1-Corregido.o" "src\\calculos.o" "src\\menus.o" "src\\validaciones.o" 
+Info: Nothing to build for TP1-Corregido
+20:20:58 **** Incremental Build of configuration Debug for project TP1-Corregido ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\calculos.o" "..\\src\\calculos.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menus.o" "..\\src\\menus.c" 
+gcc -o TP1-Corregido.exe "src\\TP1-Corregido.o" "src\\calculos.o" "src\\menus.o" "src\\validaciones.o" 
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: cannot open output file TP1-Corregido.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+20:21:05 **** Incremental Build of configuration Debug for project TP1-Corregido ****
+Info: Internal Builder is used for build
+gcc -o TP1-Corregido.exe "src\\TP1-Corregido.o" "src\\calculos.o" "src\\menus.o" "src\\validaciones.o" 
+Info: Nothing to build for TP1-Corregido
+20:22:02 **** Incremental Build of configuration Debug for project TP1-Corregido ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menus.o" "..\\src\\menus.c" 
+gcc -o TP1-Corregido.exe "src\\TP1-Corregido.o" "src\\calculos.o" "src\\menus.o" "src\\validaciones.o" 
+20:22:22 **** Incremental Build of configuration Debug for project TP1-Corregido ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menus.o" "..\\src\\menus.c" 
+gcc -o TP1-Corregido.exe "src\\TP1-Corregido.o" "src\\calculos.o" "src\\menus.o" "src\\validaciones.o" 
+20:23:08 **** Incremental Build of configuration Debug for project TP1-Corregido ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menus.o" "..\\src\\menus.c" 
+gcc -o TP1-Corregido.exe "src\\TP1-Corregido.o" "src\\calculos.o" "src\\menus.o" "src\\validaciones.o" 
+20:23:54 **** Incremental Build of configuration Debug for project TP1-Corregido ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menus.o" "..\\src\\menus.c" 
+gcc -o TP1-Corregido.exe "src\\TP1-Corregido.o" "src\\calculos.o" "src\\menus.o" "src\\validaciones.o" 
+Info: Nothing to build for TP1-Corregido
+20:25:11 **** Incremental Build of configuration Debug for project TP1-Corregido ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menus.o" "..\\src\\menus.c" 
+gcc -o TP1-Corregido.exe "src\\TP1-Corregido.o" "src\\calculos.o" "src\\menus.o" "src\\validaciones.o" 
+20:25:30 **** Incremental Build of configuration Debug for project TP1-Corregido ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menus.o" "..\\src\\menus.c" 
+gcc -o TP1-Corregido.exe "src\\TP1-Corregido.o" "src\\calculos.o" "src\\menus.o" "src\\validaciones.o" 
+20:25:39 **** Incremental Build of configuration Debug for project TP1-Corregido ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menus.o" "..\\src\\menus.c" 
+gcc -o TP1-Corregido.exe "src\\TP1-Corregido.o" "src\\calculos.o" "src\\menus.o" "src\\validaciones.o" 
+20:26:41 **** Incremental Build of configuration Debug for project TP1-Corregido ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menus.o" "..\\src\\menus.c" 
+gcc -o TP1-Corregido.exe "src\\TP1-Corregido.o" "src\\calculos.o" "src\\menus.o" "src\\validaciones.o" 
+20:26:53 **** Incremental Build of configuration Debug for project TP1-Corregido ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menus.o" "..\\src\\menus.c" 
+gcc -o TP1-Corregido.exe "src\\TP1-Corregido.o" "src\\calculos.o" "src\\menus.o" "src\\validaciones.o" 
+20:28:11 **** Incremental Build of configuration Debug for project TP1-Corregido ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP1-Corregido.o" "..\\src\\TP1-Corregido.c" 
+gcc -o TP1-Corregido.exe "src\\TP1-Corregido.o" "src\\calculos.o" "src\\menus.o" "src\\validaciones.o" 
+20:31:21 **** Incremental Build of configuration Debug for project TP1-Corregido ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP1-Corregido.o" "..\\src\\TP1-Corregido.c" 
+gcc -o TP1-Corregido.exe "src\\TP1-Corregido.o" "src\\calculos.o" "src\\menus.o" "src\\validaciones.o" 
+20:35:39 **** Incremental Build of configuration Debug for project TP1-Corregido ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP1-Corregido.o" "..\\src\\TP1-Corregido.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menus.o" "..\\src\\menus.c" 
+gcc -o TP1-Corregido.exe "src\\TP1-Corregido.o" "src\\calculos.o" "src\\menus.o" "src\\validaciones.o" 
+20:36:58 **** Incremental Build of configuration Debug for project TP1-Corregido ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP1-Corregido.o" "..\\src\\TP1-Corregido.c" 
+gcc -o TP1-Corregido.exe "src\\TP1-Corregido.o" "src\\calculos.o" "src\\menus.o" "src\\validaciones.o" 
+20:37:55 **** Incremental Build of configuration Debug for project TP1-Corregido ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP1-Corregido.o" "..\\src\\TP1-Corregido.c" 
+..\src\TP1-Corregido.c: In function 'main':
+..\src\TP1-Corregido.c:125:67: error: 'SUCCESS' undeclared (first use in this function)
+  125 |         if (countPlayersOrConfederation(&goalkeeperCounter, 2) == SUCCESS)
+      |                                                                   ^~~~~~~
+..\src\TP1-Corregido.c:125:67: note: each undeclared identifier is reported only once for each function it appears in
+20:38:07 **** Incremental Build of configuration Debug for project TP1-Corregido ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP1-Corregido.o" "..\\src\\TP1-Corregido.c" 
+gcc -o TP1-Corregido.exe "src\\TP1-Corregido.o" "src\\calculos.o" "src\\menus.o" "src\\validaciones.o" 
+c:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: cannot open output file TP1-Corregido.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+20:38:10 **** Incremental Build of configuration Debug for project TP1-Corregido ****
+Info: Internal Builder is used for build
+gcc -o TP1-Corregido.exe "src\\TP1-Corregido.o" "src\\calculos.o" "src\\menus.o" "src\\validaciones.o" 
