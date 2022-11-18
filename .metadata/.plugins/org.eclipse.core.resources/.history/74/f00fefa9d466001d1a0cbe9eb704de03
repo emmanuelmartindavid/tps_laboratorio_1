@@ -6,15 +6,8 @@
  */
 #include <stdio.h>
 #include <stdlib.h>
-/// @brief mainMenu					MUESTRA MENU PRINCIPAL CON SUS VALORES.
-///
-/// @param lodginPrice				FLOTANTE.
-/// @param foodPrice				FLOTANTE.
-/// @param transportPrice			FLOTANTE.
-/// @param goalkeeperCounter		ENTERO.
-/// @param defenderCounter			ENTERO.
-/// @param midfielderCounter		ENTERO.
-/// @param strikerCounter			ENTERO.
+
+
 void mainMenu(float lodginPrice, float foodPrice, float transportPrice, int goalkeeperCounter, int defenderCounter, int midfielderCounter, int strikerCounter)
 {
 
@@ -35,11 +28,7 @@ void mainMenu(float lodginPrice, float foodPrice, float transportPrice, int goal
 					"\n\t\t\t\t\t\t\t|\t\t\t\t\t\t\t\t\t|\n"
 					"\t\t\t\t\t\t\t=========================================================================\n\n\n", lodginPrice, foodPrice, transportPrice, goalkeeperCounter, defenderCounter, midfielderCounter, strikerCounter);
 }
-/// @brief costsMenu				MUESTRA MENU COSTOS CON SUS VALORES.
-///
-/// @param lodginPrice				FLOTANTE.
-/// @param foodPrice				FLOTANTE.
-/// @param transportPrice			FLOTANTE.
+
 void costsMenu(float lodginPrice, float foodPrice, float transportPrice)
 {
 
@@ -50,12 +39,7 @@ void costsMenu(float lodginPrice, float foodPrice, float transportPrice)
 					"\n\t\t\t\t\t\t\t=========================================================================\n", lodginPrice, foodPrice, transportPrice);
 
 }
-/// @brief playersMenu				MUESTRA MENU JUGADORES CON SUS VALORES.
-///
-/// @param goalkeeperCounter		ENTERO.
-/// @param defenderCounter			ENTERO.
-/// @param midfielderCounter		ENTERO.
-/// @param strikerCounter			ENTERO.
+
 void playersMenu(int goalkeeperCounter, int defenderCounter, int midfielderCounter, int strikerCounter)
 {
 	printf("\t\t\t\t\t\t\t============================MENU-JUGADORES==============================="
@@ -65,14 +49,7 @@ void playersMenu(int goalkeeperCounter, int defenderCounter, int midfielderCount
 					"\n\t\t\t\t\t\t\t|\t\t\t4.  DELANTERO -> %d.\t\t\t\t|"
 					"\n\t\t\t\t\t\t\t=========================================================================\n", goalkeeperCounter, defenderCounter, midfielderCounter, strikerCounter);
 }
-/// @brief conferationMenu			MUESTRA MENU CONFEDERACIONES CON SUS VALORES.
-///
-/// @param afcCounter				ENTERO.
-/// @param cafCounter				ENTERO.
-/// @param concacafCounter			ENTERO.
-/// @param conmebolCounter			ENTERO.
-/// @param uefaCounter				ENTERO.
-/// @param ofcCounter				ENTERO.
+
 void conferationMenu(int afcCounter, int cafCounter, int concacafCounter, int conmebolCounter, int uefaCounter, int ofcCounter)
 {
 	printf("\t\t\t\t\t\t\t============================MENU-CONFEDERACIONES========================="
@@ -84,14 +61,7 @@ void conferationMenu(int afcCounter, int cafCounter, int concacafCounter, int co
 					"\n\t\t\t\t\t\t\t|\t\t\t6.  OFC -> %d.\t\t\t\t\t|"
 					"\n\t\t\t\t\t\t\t=========================================================================\n", afcCounter, cafCounter, concacafCounter, conmebolCounter, uefaCounter, ofcCounter);
 }
-/// @brief reportAverageMenu		MUESTRA MENU INFORMES CON SUS VALORES.
-///
-/// @param afcAverage				FLOTANTE.
-/// @param cafAverage				FLOTANTE.
-/// @param concacafAverage			FLOTANTE.
-/// @param conmebolAverage			FLOTANTE.
-/// @param uefaAverage				FLOTANTE.
-/// @param ofcAverage				FLOTANTE.
+
 void reportAverageMenu(float afcAverage, float cafAverage, float concacafAverage, float conmebolAverage, float uefaAverage, float ofcAverage)
 {
 	printf("\t\t\t\t\t\t\t=========================PROMEDIO-CONFEDERACIONES========================"

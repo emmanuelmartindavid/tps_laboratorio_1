@@ -280,6 +280,7 @@ int main(void)
 			printf("\t\tAlgo salió mal.\n\n");
 			break;
 		}
+
 	} while (options != 5);
 
 	return EXIT_SUCCESS;

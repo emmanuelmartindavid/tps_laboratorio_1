@@ -244,6 +244,7 @@ int main(void)
 						{
 							printf("\t\t\t\t\t\t\t\tSE REALIZARON LOS CALCULOS CORRECTAMENTE.\n\n");
 						}
+
 						if (uefaAverage > afcAverage && uefaAverage > cafAverage && uefaAverage > concacafAverage && uefaAverage > conmebolAverage && uefaAverage > ofcAverage)
 						{
 							calculatePriceIncremented(totalPrice, &incrementedTotalPrice);
@@ -280,6 +281,7 @@ int main(void)
 			printf("\t\tAlgo salió mal.\n\n");
 			break;
 		}
+
 	} while (options != 5);
 
 	return EXIT_SUCCESS;

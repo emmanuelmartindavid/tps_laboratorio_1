@@ -8,13 +8,7 @@
 #include <stdlib.h>
 #define SUCCESS 1
 #define ERROR -1
-/// @brief calculateTotalCost				CALCULA COSTOS DE MANTENIMIENTO.
-///
-/// @param lodginPrice						FLOTANTE.
-/// @param foodPrice						FLOTANTE.
-/// @param transportPrice					FLOTANTE.
-/// @param pResult
-/// @return									RETORNO, SUCCES (1) EN CASO DE HANER FUNCIONADO CORRECTAMENTE. RETORNO, ERROR (-1) EN CASO CONTRARIO.
+
 int calculateTotalCost(float lodginPrice, float foodPrice, float transportPrice, float *pResult)
 {
 	int returnCalculateTotalCost = ERROR;
@@ -25,11 +19,7 @@ int calculateTotalCost(float lodginPrice, float foodPrice, float transportPrice,
 	}
 	return returnCalculateTotalCost;
 }
-/// @brief calculatePriceIncremented		CALCULA PRECIO INCREMENTADO DE MANTENIMIENTO.
-///
-/// @param totalPrice						FLOTANTE.
-/// @param pResult							PUNTERO FLOTANTE.
-/// @return									RETORNO, SUCCES (1) EN CASO DE HANER FUNCIONADO CORRECTAMENTE. RETORNO, ERROR (-1) EN CASO CONTRARIO.
+
 int calculatePriceIncremented(float totalPrice, float *pResult)
 {
 	int returnCalculatePriceIncremented = ERROR;
@@ -40,11 +30,7 @@ int calculatePriceIncremented(float totalPrice, float *pResult)
 	}
 	return returnCalculatePriceIncremented;
 }
-/// @brief countPlayersOrConfederation		CUENTA JUGADORES O CONFEDERACIONES SEGUN CRITERIO PASADO POR PARAMETRO.
-///
-/// @param pCounter							PUNTERO ENTERO.
-/// @param max								ENTERO
-/// @return									RETORNO, SUCCES (1) EN CASO DE HANER FUNCIONADO CORRECTAMENTE. RETORNO, ERROR (-1) EN CASO CONTRARIO.
+
 int countPlayersOrConfederation(int *pCounter, int max)
 {
 	int returnCountPlayers = ERROR;
@@ -58,12 +44,7 @@ int countPlayersOrConfederation(int *pCounter, int max)
 	}
 	return returnCountPlayers;
 }
-/// @brief calculateAveragePlayersPerConfederation		CALCULA PROMEDIO SEGUN PARAMETROS.
-///
-/// @param confederationCounter					ENTERO
-/// @param playerCounter						ENTERO
-/// @param pResult								PUNTERO FLOTANTE.
-/// @return										RETORNO, SUCCES (1) EN CASO DE HANER FUNCIONADO CORRECTAMENTE. RETORNO, ERROR (-1) EN CASO CONTRARIO.
+
 int calculateAveragePlayersPerConfederation(int confederationCounter, int playerCounter, float *pResult)
 {
 	int returnCalculateAveragePlayersPerConfederation = ERROR;
@@ -74,10 +55,7 @@ int calculateAveragePlayersPerConfederation(int confederationCounter, int player
 	}
 	return returnCalculateAveragePlayersPerConfederation;
 }
-/// @brief disccountCounter					DESCUENTA CONTADOR SEGUN CRITERIO PASADO POR PARAMETRO.
-///
-/// @param counter							PUNTERO ENTERO.
-/// @param pFlag							PUNTERO ENTERO.
+
 void disccountCounter(int *counter, int *pFlag)
 {
 	if (counter != NULL && pFlag != NULL)
