@@ -29,7 +29,7 @@ void costsMenu(float lodginPrice, float foodPrice, float transportPrice);
 /// @param defenderCounter			ENTERO.
 /// @param midfielderCounter		ENTERO.
 /// @param strikerCounter			ENTERO.
-void playersMenu(int goalkeeperCounter, int defenderCounter, int midfielderCounter, int strikerCounter);
+int playersMenu(int goalkeeperCounter, int defenderCounter, int midfielderCounter, int strikerCounter);
 /// @brief conferationMenu			MUESTRA MENU CONFEDERACIONES CON SUS VALORES.
 ///
 /// @param afcCounter				ENTERO.
@@ -38,7 +38,7 @@ void playersMenu(int goalkeeperCounter, int defenderCounter, int midfielderCount
 /// @param conmebolCounter			ENTERO.
 /// @param uefaCounter				ENTERO.
 /// @param ofcCounter				ENTERO.
-void conferationMenu(int afcCounter, int cafCounter, int concacafCounter, int conmebolCounter, int uefaCounter, int ofcCounter);
+int conferationMenu(int afcCounter, int cafCounter, int concacafCounter, int conmebolCounter, int uefaCounter, int ofcCounter);
 /// @brief reportAverageMenu		MUESTRA MENU INFORMES CON SUS VALORES.
 ///
 /// @param afcAverage				FLOTANTE.

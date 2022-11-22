@@ -1,0 +1,50 @@
+
+
+
+int controllerFindPlayerById(LinkedList *pArrayListPlayer, int idPlayer);
+
+int controllerLoadPlayerFromText(char* path , LinkedList* pArrayListPlayer);
+
+int controllerLoadPlayerFromBinary(char *path, LinkedList *pArrayListPlayer);
+
+int controllerAddPlayer(LinkedList *pArrayListPlayer);
+
+int controllerEditPlayer(LinkedList *pArrayListPlayer);
+
+int controllerRemovePlayer(LinkedList *pArrayListPlayer);
+
+int controllerListOnePlayer(LinkedList *pArrayListPlayer, int indexPlayer);
+
+int controllerListPlayers(LinkedList *pArrayListPlayer);
+
+
+int controllerListOnePlayerNationalTeam(LinkedList *pArrayListPlayer,  LinkedList *pArrayListNationalTeam,  int indexPlayer);
+
+
+int controllerListPlayersNationalTeam(LinkedList *pArrayListPlayer,  LinkedList *pArrayListNationalTeam);
+
+
+
+int controller_ordenarJugadores(LinkedList* pArrayListJugador);
+
+int controllerSavePlayersTextMode(char *path, LinkedList *pArrayListPlayer);
+
+int controllerSavePlayersBinarytMode(char *path, LinkedList *pArrayListPlayer);
+
+int controllerLoadNationalTeamFromText(char *path, LinkedList *pArrayListNationalTeam);
+
+int controller_editarSeleccion(LinkedList* pArrayListSeleccion);
+
+int controllerListNationalTeams(LinkedList *pArrayListNationalTeam);
+
+int controller_ordenarSelecciones(LinkedList* pArrayListSeleccion);
+
+int controllerSaveNationalTeamTextMode(char *path, LinkedList *pArrayListNationalTeam);
+
+
+int controllerLoadIdplayerTextMode(char *path, int *pIdPlayer);
+
+int controllerGetIncrementalIdPlayer(int *pIdPlayer);
+
+int controllerGetCountry(LinkedList *pArrayListNationalTeam, int idNationalTeamPLayer, char *pCountry);
+

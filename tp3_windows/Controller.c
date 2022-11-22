@@ -132,7 +132,6 @@ int controllerAddPlayer(LinkedList *pArrayListPlayer)
 	sPlayer *pPlayer = NULL;
 	if (pArrayListPlayer != NULL)
 	{
-
 		pPlayer = newPlayer();
 		if (pPlayer != NULL)
 		{

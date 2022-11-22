@@ -580,6 +580,56 @@ void validateRegisterOrDownPlayer(sPlayer arrayPlayer[], int lenArrayPlayer, int
 /// @param lenArrayPlayer				 Tamanio de ARRAY de jugadores.
 /// @param pNextId						 Puntero a entero autoincremental a traves de contador.
 /// @return								 Retorno, OK(1) en caso de haber funcionado correctamente. Retorno, ERROR(-1) en caso contrario.
+//int hardCodePlayers(sPlayer arrayPlayer[], int lenArrayPlayer, int ammount, int *pNextId)
+//{
+//
+//	int returnHardCodePlayers = ERROR;
+//
+//	if (arrayPlayer != NULL && lenArrayPlayer > 0 && pNextId != NULL)
+//	{
+//		sPlayer aux[27] =
+//		{
+//
+//		{ 0, "Ronaldo Nazario", "Delantero", 9, 100, 23000, 10, 1 },
+//		{ 0, "Lionel Messi", "Delantero", 10, 100, 999000, 7, 1 },
+//		{ 0, "Cristiano Ronaldo", "Delantero", 7, 101, 999000, 2, 1 },
+//		{ 0, "Estefania Banini", "Mediocampista", 10, 102, 400000, 4, 1 },
+//		{ 0, "Megan Rapinoe", "Mediocampista", 15, 102, 450000, 3, 1 },
+//		{ 0, "Mariana Larroquette", "Delantera", 19, 102, 300000, 3, 1 },
+//		{ 0, "Diego Maradona", "Delantero", 10, 101, 999999, 2, 1 },
+//		{ 0, "Johan Cruyff", "Mediocampista", 14, 101, 600000, 2, 1 },
+//		{ 0, "Zinedine Zidane", "Mediocampista", 10, 101, 700000, 3, 1 },
+//		{ 0, "Alex Morgan", "Defensora", 10, 101, 400000, 4, 1 },
+//		{ 0, "Alfredo Di Stefano", "Mediocampista", 9, 101, 500000, 2, 1 },
+//		{ 0, "Dalila Ippolito", "Mediocampista", 8, 101, 350000, 3, 1 },
+//		{ 0, "Julieta Cruz", "Defensora", 4, 105, 450000, 3, 1 },
+//		{ 0, "Virgil van Dijk", "Defensor", 4, 104, 700000, 3, 1 },
+//		{ 0, "Cristian Romero", "Defensor", 13, 104, 500000, 2, 1 },
+//		{ 0, "Agustina Barroso", "Mediocampista", 2, 103, 550000, 3, 1 },
+//		{ 0, "Virginia Gomez", "Mediocampista", 13, 105, 200000, 2, 1 },
+//		{ 0, "Robert Lewandowski", "Delantero", 10, 101, 400000, 4, 1 },
+//		{ 0, "Vivianne Miedema", "Mediocampista", 10, 105, 400000, 4, 1 },
+//		{ 0, "Jan Oblak", "Arquero", 10, 102, 400000, 4, 1 },
+//		{ 0, "Kevin De Bruyne", "Mediocampista", 10, 102, 400000, 4, 1 },
+//		{ 0, "Kylian Mbappe", "Delantero", 7, 101, 400000, 4, 1 },
+//		{ 0, "Neymar Jr", "Delantero", 10, 101, 400000, 4, 1 },
+//		{ 0, "Alexia Putellas", "Mediocampista", 10, 101, 400000, 4, 1 }
+//
+//		};
+//		if (arrayPlayer != NULL && pNextId != NULL && lenArrayPlayer > 0 && lenArrayPlayer <= 3000 && ammount <= lenArrayPlayer)
+//		{
+//			for (int i = 0; i < ammount; i++)
+//			{
+//				arrayPlayer[i] = aux[i];
+//				arrayPlayer[i].idPlayer = *pNextId;
+//				(*pNextId)++;
+//			}
+//			returnHardCodePlayers = OK;
+//		}
+//	}
+//	return returnHardCodePlayers;
+//
+//}
 int hardCodePlayers(sPlayer arrayPlayer[], int lenArrayPlayer, int ammount, int *pNextId)
 {
 

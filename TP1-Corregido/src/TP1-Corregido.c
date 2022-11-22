@@ -247,8 +247,8 @@ int main(void)
 						if (uefaAverage > afcAverage && uefaAverage > cafAverage && uefaAverage > concacafAverage && uefaAverage > conmebolAverage && uefaAverage > ofcAverage)
 						{
 							calculatePriceIncremented(totalPrice, &incrementedTotalPrice);
+							incrementedPrice = totalPrice * 0.35;
 						}
-
 						flagCalculate = 1;
 					}
 				}
@@ -258,9 +258,10 @@ int main(void)
 				{
 					printf("\t\t\t\t\t\t\t\t\t\tINFORMES\n\n");
 					reportAverageMenu(afcAverage, cafAverage, concacafAverage, conmebolAverage, uefaAverage, ofcAverage);
+
 					if (uefaAverage > afcAverage && uefaAverage > cafAverage && uefaAverage > concacafAverage && uefaAverage > conmebolAverage && uefaAverage > ofcAverage)
 					{
-						incrementedPrice = totalPrice * 0.35;
+
 						printf("\t\t\t\t\t\tEL COSTO DE MANTENIMIENTO ERA DE $%.2f Y RECIBIO UN AUMENTO DE $%.2f. SU NUEVO VALOR ES DE $%.2f\n\n", totalPrice, incrementedPrice, incrementedTotalPrice);
 					}
 					else
@@ -284,5 +285,4 @@ int main(void)
 
 	return EXIT_SUCCESS;
 }
-
 

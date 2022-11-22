@@ -1,0 +1,197 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include "LinkedList.h"
+#include "Jugador.h"
+#include "Seleccion.h"
+
+/** \brief Parsea los datos de los jugadores desde el archivo jugadores.csv (modo texto).
+ *
+ * \param path char*
+ * \param pArrayListJugador LinkedList*
+ * \return int
+ */
+int parserPlayerFromText(FILE *pFile, LinkedList *pArrayListPlayer)
+{
+	int returnParserPlayerFromText;
+	char auxId[2000];
+	char auxFullName[2000];
+	char auxAge[2000];
+	char auxPosition[2000];
+	char auxNationality[2000];
+	char auxIdNationalTeam[2000];
+	sPlayer *pPlayer;
+	int returnFscanf;
+
+	if (pFile != NULL && pArrayListPlayer != NULL)
+	{
+
+		fscanf(pFile, "%[^,],%[^,],%[^,],%[^,],%[^,],%[^\n]\n", auxId, auxFullName, auxAge, auxPosition, auxNationality, auxIdNationalTeam); //LECTURA FANTASMA
+		do
+		{
+			returnFscanf = fscanf(pFile, "%[^,],%[^,],%[^,],%[^,],%[^,],%[^\n]\n", auxId, auxFullName, auxAge, auxPosition, auxNationality, auxIdNationalTeam);
+			if (returnFscanf == 6)
+			{
+
+				pPlayer = newPlayerParameters(auxId, auxFullName, auxAge, auxPosition, auxNationality, auxIdNationalTeam);
+
+				if (pPlayer != NULL)
+				{
+
+					if (ll_add(pArrayListPlayer, pPlayer) == 0)
+					{
+						returnParserPlayerFromText = SUCCESS;
+
+					}
+
+				}
+
+			}
+			else
+			{
+
+				returnParserPlayerFromText = ERROR;
+				break; //si no leyo 4 variables break. se rompe
+			}
+
+		} while (!feof(pFile));
+	}
+
+	return returnParserPlayerFromText;
+}
+
+/** \brief Parsea los datos de los jugadores desde el archivo binario.
+ *
+ * \param path char*
+ * \param pArrayListJugador LinkedList*
+ * \return int
+ *
+ */
+int parserPlayerFromBinary(FILE *pFile, LinkedList *pArrayListPlayer)
+{
+	int returnParserPlayerFromBinary;
+	int auxId;
+	char auxFullName[2000];
+	int auxAge;
+	char auxPosition[2000];
+	char auxNationality[2000];
+	int auxIdNationalTeam;
+	sPlayer *pPlayer;
+	int returnFread;
+
+	if (pFile != NULL && pArrayListPlayer != NULL)
+	{
+
+		do
+		{
+
+			returnFread = fread(&pPlayer, sizeof(sPlayer), 1, pFile);
+
+			if (returnFread == 1)
+			{
+
+				if (getIdPlayer(pPlayer, &auxId) == SUCCESS
+				&& getFullNamePlayer(pPlayer, auxFullName) == SUCCESS
+				&& getAgePlayer(pPlayer, &auxAge)
+				&& getPositionPlayer(pPlayer, auxPosition)== SUCCESS
+				&& getNationalityPlayer(pPlayer, auxNationality)==SUCCESS
+				&& getIdNationalTeamPLayer(pPlayer, &auxIdNationalTeam)== SUCCESS)
+				{
+
+					ll_add(pArrayListPlayer, pPlayer);
+					returnParserPlayerFromBinary = SUCCESS;
+
+				}
+
+			}
+			else
+			{
+
+				returnParserPlayerFromBinary = ERROR;
+				break;
+			}
+
+		} while (!feof(pFile));
+	}
+
+	return returnParserPlayerFromBinary;
+
+}
+
+/** \brief Parsea los datos de los selecciones desde el archivo selecciones.csv (modo texto).
+ *
+ * \param path char*
+ * \param pArrayListSeleccion LinkedList*
+ * \return int
+ *
+ */
+int parserNationalTeamFromText(FILE *pFile, LinkedList *pArrayListNationalTeam)
+{
+	int returnParserNationalTeamFromText;
+	char auxId[2000];
+	char auxCountry[2000];
+	char auxConfederation[2000];
+	char auxCalledUp[2000];
+	sNationalTeam *pNationalTeam;
+	int returnFscanf;
+
+	if (pFile != NULL && pArrayListNationalTeam != NULL)
+	{
+
+		fscanf(pFile, "%[^,],%[^,],%[^,],%[^\n]\n", auxId, auxCountry, auxConfederation, auxCalledUp);
+		do
+		{
+			returnFscanf = fscanf(pFile, "%[^,],%[^,],%[^,],%[^\n]\n", auxId, auxCountry, auxConfederation, auxCalledUp);
+			if (returnFscanf == 4)
+			{
+
+				pNationalTeam = newNationalTeamParameters(auxId, auxCountry, auxConfederation, auxCalledUp);
+
+				if (pNationalTeam != NULL)
+				{
+
+					if (ll_add(pArrayListNationalTeam, pNationalTeam) == 0)
+					{
+
+						printf("LINKED");
+						returnParserNationalTeamFromText = SUCCESS;
+
+					}
+
+				}
+
+			}
+			else
+			{
+				returnParserNationalTeamFromText = ERROR;
+				break;
+			}
+
+		} while (!feof(pFile));
+	}
+
+	return returnParserNationalTeamFromText;
+
+}
+
+int parserIdPlayerFromText(FILE *pFile, int *pIdPlayer)
+{
+	int returnparserIdPlayerFromText = ERROR;
+	int returnFscanf;
+	char auxId[1000];
+
+	if (pFile != NULL && pIdPlayer != NULL)
+	{
+		*pIdPlayer=0;
+		returnFscanf = fscanf(pFile, "%[^\n]\n", auxId);
+		if (returnFscanf == 1)
+		{
+			*pIdPlayer = atoi(auxId);
+
+			returnparserIdPlayerFromText = SUCCESS;
+		}
+
+	}
+
+	return returnparserIdPlayerFromText;
+}
+

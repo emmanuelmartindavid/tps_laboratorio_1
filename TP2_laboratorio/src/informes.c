@@ -62,43 +62,31 @@ int sortPerConfederationAndPlayerName(sPlayer arrayPlayer[], int lenArrayPlayer,
 /// @param lenArrayConfederation 			 		 Tamanio de  Array de jugadores.
 void listConfederationPerPlayers(sPlayer arrayPlayer[], int lenArrayPlayer, sConfederation arrayConfederation[], int lenArrayConfederation)
 {
-
 	int ammount = 0;
-
 	if (arrayPlayer != NULL && lenArrayPlayer > 0 && arrayConfederation != NULL && lenArrayConfederation > 0)
 	{
 		for (int j = 0; j < lenArrayConfederation; j++)
 		{
-
 			printf("\n\t\t\t\t\t\t\t\t\t\t\t\tCONFEDERACION: %s\n", arrayConfederation[j].confederationName);
 			printf("\t\t\t\t\t\t=========================================================================================================================================\n");
 			printf("\t\t\t\t\t\t| ID      |         NOMBRE           |      POSICION     | N. DE CAMISETA |      SUELDO    |    CONFEDERACION         |ANIOS DE CONTRATO|\n");
 			printf("\t\t\t\t\t\t=========================================================================================================================================\n");
 			for (int i = 0; i < lenArrayPlayer; i++)
 			{
-
 				if (arrayPlayer[i].isEmpty == OCCUPIED)
 				{
-
 					if (arrayPlayer[i].confederationId == arrayConfederation[j].idConfederation && listOnePlayer(arrayPlayer[i], arrayConfederation, lenArrayConfederation) == OK)
 					{
-
 						ammount++;
 					}
-
 				}
-
 			}
 			if (ammount > 0)
 			{
-
 				printf("\t\t\t\t\t\t=========================================================================================================================================\n");
 			}
-
 		}
-
 	}
-
 }
 /// @brief countPlayers								 Cuenta jugadores dados de alta.
 ///
